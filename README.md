@@ -104,7 +104,3 @@ Audit findings are encoded as machine-readable artifacts for [BioOrchestrator](h
 If you use this code or data, please cite:
 
 > [Manuscript in preparation]
-
-## License
-
-MIT
