@@ -1,0 +1,22 @@
+dataset_id	tissue	organism	disease	cell_type	n_donors	n_cells	jaccard_top100	direction_agreement	wilcoxon_sig_count	pseudobulk_sig_count	wilcoxon_inflation_factor	shared_in_top100
+37a17b78-4864-4a42-b67b-31c00962795a	brain	Homo sapiens	Lewy body dementia; Parkinson disease; amyotrophic lateral sclerosis	oligodendrocyte	988	20000	0.3605442176870748	1.0	985	388	2.538659793814433	53
+9f222629-9e39-47d0-b83f-e08d610c7479	lung	Homo sapiens	COVID-19; chronic obstructive pulmonary disease; chronic rhinitis	unknown	332	20000	0.0416666666666666	1.0	8417	2539	3.3150846790074837	8
+5c97eeeb-7e52-44b3-b010-b832b1f5424c	brain	Homo sapiens	atherosclerosis; atherosclerosis || tardive dyskinesia || schizoaffective bipolar disorder; bipolar I disorder	oligodendrocyte	279	20000	0.282051282051282	1.0	2378	343	6.932944606413995	44
+218acb0f-9f2f-4f76-b90b-15a4b7c7f629	blood	Homo sapiens	systemic lupus erythematosus	CD4-positive, alpha-beta T cell	261	20000	0.4184397163120567	1.0	2404	1463	1.643198906356801	59
+67b6b9ac-b841-42ce-b2d4-ed2ec12327bd	lymph node	Homo sapiens	B-cell non-Hodgkin lymphoma	CD8-positive, alpha-beta T cell	207	12909	0.0928961748633879	1.0	5771	539	10.706864564007422	17
+9dbab10c-118d-496b-966a-67f1763a6b7d	blood	Homo sapiens	COVID-19	CD8-positive, alpha-beta T cell	181	20000	0.0638297872340425	1.0	5901	5419	1.0889463000553607	12
+a19d1667-a7b5-4556-9e5f-f9bfa690c0f1	skin of body	Homo sapiens	injury; keloid; localized scleroderma	skin fibroblast	185	18327	0.0050251256281407	1.0	9340	2485	3.7585513078470822	1
+19053a82-9c89-4fb8-bd19-d7b1800b0b7b	stomach	Homo sapiens	Crohn disease; celiac disease; colorectal cancer	IgA plasma cell	108	20000	0.0638297872340425	1.0	7100	42	169.04761904761904	12
+5e57cd50-8e42-42d6-940d-5c1660d06864	brain	Homo sapiens	amyotrophic lateral sclerosis; dementia; dementia || Alzheimer disease	oligodendrocyte	151	20000	0.0050251256281407	1.0	4879	1	4879.0	1
+b617ee1b-f8c8-4de9-b82b-e803ab93550d	breast	Homo sapiens	breast cancer; colorectal cancer; liver cancer	T cell	98	20000	0.0101010101010101	1.0	9249	235	39.35744680851064	2
+d9f3a82c-24bb-4277-b715-8ec92a33dd32	blood	Homo sapiens	hematologic disorder; myelodysplastic syndrome; myelodysplastic/myeloproliferative disease	hematopoietic multipotent progenitor cell	132	20000	0.0989010989010989	1.0	6932	2094	3.3104106972301817	18
+c7775e88-49bf-4ba2-a03b-93f00447c958	blood	Homo sapiens	COVID-19; respiratory system disorder	naive thymus-derived CD4-positive, alpha-beta T cell	114	20000	0.1235955056179775	1.0	6755	1091	6.191567369385885	22
+4a5b00e0-1ba3-4fd4-af89-d3512eb20720	blood	Homo sapiens	hematologic disorder; myelodysplastic syndrome; myelodysplastic/myeloproliferative disease	hematopoietic precursor cell	107	20000	0.1173184357541899	1.0	5487	516	10.633720930232558	21
+16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	colon adenocarcinoma	stem cell	62	20000	0.0101010101010101	1.0	9651	2223	4.341430499325236	2
+6a270451-b4d9-43e0-aa89-e33aac1ac74b	colon	Homo sapiens	colon sessile serrated adenoma/polyp; colorectal cancer; hyperplastic polyp	T cell	58	4410	0.1111111111111111	1.0	1056	4	264.0	20
+c2876b1b-06d8-4d96-a56b-5304f815b99a	brain	Homo sapiens	dementia	L2/3-6 intratelencephalic projecting glutamatergic neuron	88	20000	0.0416666666666666	1.0	7488	3023	2.477009593119418	8
+6f7fd0f1-a2ed-4ff1-80d3-33dde731cbc3	brain	Homo sapiens	dementia	L2/3-6 intratelencephalic projecting glutamatergic neuron	83	20000	0.0416666666666666	1.0	7393	1809	4.086788280818132	8
+b6f472f1-a58d-43a7-a898-2d6822a0b2b2	nervous system	Mus musculus	peripheral neuropathy	sensory neuron of dorsal root ganglion	90	20000	0.0101010101010101	1.0	9789	5243	1.8670608430288005	2
+49e4ffcc-5444-406d-bdee-577127404ba8	pancreas	Mus musculus	endocrine pancreas disorder; type 1 diabetes mellitus; type 2 diabetes mellitus	type B pancreatic cell	55	20000	0.0256410256410256	1.0	8306	3386	2.45304193738925	5
+b2dd6bc9-36ed-4cd4-a2b3-51f6a2386afa	skin of body	Mus musculus	injury	skin fibroblast	28	14248	0.0309278350515463	1.0	8341	3742	2.229021913415286	6
+a48343a2-7570-49d0-8849-9db6c21dffcb	musculature	Mus musculus	lesion of sciatic nerve; neuromuscular junction disease; toxin-mediated infectious botulism	type IIb muscle cell	12	20000	0.0256410256410256	1.0	8283	3706	2.2350242849433357	5

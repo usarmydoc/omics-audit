@@ -1,0 +1,121 @@
+dataset_id	tissue	method_pair	spearman_rank_correlation	pathway_jaccard	housekeeping_cv	n_tissue_specific_genes_affected
+GTEx_v10_brain_cortex	Brain - Cortex	TPM_vs_TMM	0.9885	0.0		964
+GTEx_v10_brain_cortex	Brain - Cortex	TPM_vs_VST	0.9885	0.0		910
+GTEx_v10_brain_cortex	Brain - Cortex	TPM_vs_FPKM	1.0	1.0		72
+GTEx_v10_brain_cortex	Brain - Cortex	TMM_vs_VST	1.0	0.8182		334
+GTEx_v10_brain_cortex	Brain - Cortex	TMM_vs_FPKM	0.9885	0.0		956
+GTEx_v10_brain_cortex	Brain - Cortex	VST_vs_FPKM	0.9885	0.0		894
+GTEx_v10_heart_left_ventricle	Heart - Left Ventricle	TPM_vs_TMM	0.9914	0.0		938
+GTEx_v10_heart_left_ventricle	Heart - Left Ventricle	TPM_vs_VST	0.9914	0.0		906
+GTEx_v10_heart_left_ventricle	Heart - Left Ventricle	TPM_vs_FPKM	1.0	0.9048		32
+GTEx_v10_heart_left_ventricle	Heart - Left Ventricle	TMM_vs_VST	1.0	0.9048		174
+GTEx_v10_heart_left_ventricle	Heart - Left Ventricle	TMM_vs_FPKM	0.9914	0.0		932
+GTEx_v10_heart_left_ventricle	Heart - Left Ventricle	VST_vs_FPKM	0.9914	0.0		900
+GTEx_v10_liver	Liver	TPM_vs_TMM	0.9898	0.0526		902
+GTEx_v10_liver	Liver	TPM_vs_VST	0.9898	0.0526		866
+GTEx_v10_liver	Liver	TPM_vs_FPKM	1.0	0.9048		42
+GTEx_v10_liver	Liver	TMM_vs_VST	1.0	0.9048		152
+GTEx_v10_liver	Liver	TMM_vs_FPKM	0.9898	0.0526		896
+GTEx_v10_liver	Liver	VST_vs_FPKM	0.9898	0.0526		858
+GTEx_v10_kidney_cortex	Kidney - Cortex	TPM_vs_TMM	0.9886	0.0		868
+GTEx_v10_kidney_cortex	Kidney - Cortex	TPM_vs_VST	0.9886	0.0		860
+GTEx_v10_kidney_cortex	Kidney - Cortex	TPM_vs_FPKM	1.0	0.9048		72
+GTEx_v10_kidney_cortex	Kidney - Cortex	TMM_vs_VST	1.0	0.6		134
+GTEx_v10_kidney_cortex	Kidney - Cortex	TMM_vs_FPKM	0.9884	0.0		848
+GTEx_v10_kidney_cortex	Kidney - Cortex	VST_vs_FPKM	0.9884	0.0		832
+GTEx_v10_lung	Lung	TPM_vs_TMM	0.9877	0.0		894
+GTEx_v10_lung	Lung	TPM_vs_VST	0.9877	0.0256		870
+GTEx_v10_lung	Lung	TPM_vs_FPKM	1.0	0.9048		18
+GTEx_v10_lung	Lung	TMM_vs_VST	1.0	0.6667		106
+GTEx_v10_lung	Lung	TMM_vs_FPKM	0.9877	0.0		892
+GTEx_v10_lung	Lung	VST_vs_FPKM	0.9877	0.0256		868
+GTEx_v10_muscle_skeletal	Muscle - Skeletal	TPM_vs_TMM	0.9913	0.0		908
+GTEx_v10_muscle_skeletal	Muscle - Skeletal	TPM_vs_VST	0.9913	0.0		882
+GTEx_v10_muscle_skeletal	Muscle - Skeletal	TPM_vs_FPKM	1.0	1.0		26
+GTEx_v10_muscle_skeletal	Muscle - Skeletal	TMM_vs_VST	1.0	0.7391		162
+GTEx_v10_muscle_skeletal	Muscle - Skeletal	TMM_vs_FPKM	0.9913	0.0		910
+GTEx_v10_muscle_skeletal	Muscle - Skeletal	VST_vs_FPKM	0.9913	0.0		882
+GTEx_v10_skin_sun_exposed_lower_leg	Skin - Sun Exposed (Lower leg)	TPM_vs_TMM	0.9879	0.0		820
+GTEx_v10_skin_sun_exposed_lower_leg	Skin - Sun Exposed (Lower leg)	TPM_vs_VST	0.9879	0.0		774
+GTEx_v10_skin_sun_exposed_lower_leg	Skin - Sun Exposed (Lower leg)	TPM_vs_FPKM	1.0	1.0		20
+GTEx_v10_skin_sun_exposed_lower_leg	Skin - Sun Exposed (Lower leg)	TMM_vs_VST	1.0	0.7391		180
+GTEx_v10_skin_sun_exposed_lower_leg	Skin - Sun Exposed (Lower leg)	TMM_vs_FPKM	0.9879	0.0		816
+GTEx_v10_skin_sun_exposed_lower_leg	Skin - Sun Exposed (Lower leg)	VST_vs_FPKM	0.9879	0.0		770
+GTEx_v10_colon_transverse	Colon - Transverse	TPM_vs_TMM	0.9885	0.0256		740
+GTEx_v10_colon_transverse	Colon - Transverse	TPM_vs_VST	0.9885	0.0256		734
+GTEx_v10_colon_transverse	Colon - Transverse	TPM_vs_FPKM	1.0	0.9048		72
+GTEx_v10_colon_transverse	Colon - Transverse	TMM_vs_VST	1.0	0.9048		26
+GTEx_v10_colon_transverse	Colon - Transverse	TMM_vs_FPKM	0.9885	0.0256		716
+GTEx_v10_colon_transverse	Colon - Transverse	VST_vs_FPKM	0.9885	0.0256		708
+GTEx_v10_small_intestine_terminal_ileum	Small Intestine - Terminal Ileum	TPM_vs_TMM	0.9869	0.0256		804
+GTEx_v10_small_intestine_terminal_ileum	Small Intestine - Terminal Ileum	TPM_vs_VST	0.9869	0.0256		792
+GTEx_v10_small_intestine_terminal_ileum	Small Intestine - Terminal Ileum	TPM_vs_FPKM	1.0	1.0		76
+GTEx_v10_small_intestine_terminal_ileum	Small Intestine - Terminal Ileum	TMM_vs_VST	1.0	1.0		52
+GTEx_v10_small_intestine_terminal_ileum	Small Intestine - Terminal Ileum	TMM_vs_FPKM	0.9869	0.0256		780
+GTEx_v10_small_intestine_terminal_ileum	Small Intestine - Terminal Ileum	VST_vs_FPKM	0.9869	0.0256		764
+GTEx_v10_stomach	Stomach	TPM_vs_TMM	0.9892	0.1429		788
+GTEx_v10_stomach	Stomach	TPM_vs_VST	0.9892	0.1429		784
+GTEx_v10_stomach	Stomach	TPM_vs_FPKM	1.0	1.0		96
+GTEx_v10_stomach	Stomach	TMM_vs_VST	1.0	1.0		24
+GTEx_v10_stomach	Stomach	TMM_vs_FPKM	0.9891	0.1429		736
+GTEx_v10_stomach	Stomach	VST_vs_FPKM	0.9891	0.1429		734
+GTEx_v10_whole_blood	Whole Blood	TPM_vs_TMM	0.991	0.0		866
+GTEx_v10_whole_blood	Whole Blood	TPM_vs_VST	0.991	0.0		852
+GTEx_v10_whole_blood	Whole Blood	TPM_vs_FPKM	1.0	0.8182		60
+GTEx_v10_whole_blood	Whole Blood	TMM_vs_VST	1.0	1.0		70
+GTEx_v10_whole_blood	Whole Blood	TMM_vs_FPKM	0.9908	0.0		852
+GTEx_v10_whole_blood	Whole Blood	VST_vs_FPKM	0.9908	0.0		836
+GTEx_v10_testis	Testis	TPM_vs_TMM	0.9722	0.0		952
+GTEx_v10_testis	Testis	TPM_vs_VST	0.9722	0.0		888
+GTEx_v10_testis	Testis	TPM_vs_FPKM	1.0	1.0		22
+GTEx_v10_testis	Testis	TMM_vs_VST	1.0	0.6667		260
+GTEx_v10_testis	Testis	TMM_vs_FPKM	0.9722	0.0		952
+GTEx_v10_testis	Testis	VST_vs_FPKM	0.9722	0.0		886
+GTEx_v10_ovary	Ovary	TPM_vs_TMM	0.9878	0.0		924
+GTEx_v10_ovary	Ovary	TPM_vs_VST	0.9878	0.0		908
+GTEx_v10_ovary	Ovary	TPM_vs_FPKM	1.0	1.0		14
+GTEx_v10_ovary	Ovary	TMM_vs_VST	1.0	0.6		180
+GTEx_v10_ovary	Ovary	TMM_vs_FPKM	0.9878	0.0		924
+GTEx_v10_ovary	Ovary	VST_vs_FPKM	0.9878	0.0		906
+GTEx_v10_uterus	Uterus	TPM_vs_TMM	0.9885	0.0		966
+GTEx_v10_uterus	Uterus	TPM_vs_VST	0.9885	0.0		932
+GTEx_v10_uterus	Uterus	TPM_vs_FPKM	1.0	1.0		28
+GTEx_v10_uterus	Uterus	TMM_vs_VST	1.0	0.7391		186
+GTEx_v10_uterus	Uterus	TMM_vs_FPKM	0.9886	0.0		968
+GTEx_v10_uterus	Uterus	VST_vs_FPKM	0.9886	0.0		934
+GTEx_v10_prostate	Prostate	TPM_vs_TMM	0.9875	0.0		862
+GTEx_v10_prostate	Prostate	TPM_vs_VST	0.9875	0.0526		834
+GTEx_v10_prostate	Prostate	TPM_vs_FPKM	1.0	0.9048		38
+GTEx_v10_prostate	Prostate	TMM_vs_VST	1.0	0.4286		116
+GTEx_v10_prostate	Prostate	TMM_vs_FPKM	0.9875	0.0		858
+GTEx_v10_prostate	Prostate	VST_vs_FPKM	0.9875	0.0811		828
+GTEx_v10_thyroid	Thyroid	TPM_vs_TMM	0.9874	0.0526		830
+GTEx_v10_thyroid	Thyroid	TPM_vs_VST	0.9874	0.0811		794
+GTEx_v10_thyroid	Thyroid	TPM_vs_FPKM	1.0	1.0		42
+GTEx_v10_thyroid	Thyroid	TMM_vs_VST	1.0	0.7391		170
+GTEx_v10_thyroid	Thyroid	TMM_vs_FPKM	0.9874	0.0526		808
+GTEx_v10_thyroid	Thyroid	VST_vs_FPKM	0.9874	0.0811		766
+GTEx_v10_pituitary	Pituitary	TPM_vs_TMM	0.9867	0.0		890
+GTEx_v10_pituitary	Pituitary	TPM_vs_VST	0.9867	0.0		852
+GTEx_v10_pituitary	Pituitary	TPM_vs_FPKM	1.0	1.0		44
+GTEx_v10_pituitary	Pituitary	TMM_vs_VST	1.0	0.9048		164
+GTEx_v10_pituitary	Pituitary	TMM_vs_FPKM	0.9866	0.0		896
+GTEx_v10_pituitary	Pituitary	VST_vs_FPKM	0.9866	0.0		856
+GTEx_v10_adrenal_gland	Adrenal Gland	TPM_vs_TMM	0.9897	0.0256		930
+GTEx_v10_adrenal_gland	Adrenal Gland	TPM_vs_VST	0.9897	0.0256		914
+GTEx_v10_adrenal_gland	Adrenal Gland	TPM_vs_FPKM	1.0	0.9048		52
+GTEx_v10_adrenal_gland	Adrenal Gland	TMM_vs_VST	1.0	0.8182		96
+GTEx_v10_adrenal_gland	Adrenal Gland	TMM_vs_FPKM	0.9897	0.0256		924
+GTEx_v10_adrenal_gland	Adrenal Gland	VST_vs_FPKM	0.9897	0.0256		908
+GTEx_v10_artery_aorta	Artery - Aorta	TPM_vs_TMM	0.9896	0.0		918
+GTEx_v10_artery_aorta	Artery - Aorta	TPM_vs_VST	0.9896	0.0		868
+GTEx_v10_artery_aorta	Artery - Aorta	TPM_vs_FPKM	1.0	1.0		20
+GTEx_v10_artery_aorta	Artery - Aorta	TMM_vs_VST	1.0	0.8182		200
+GTEx_v10_artery_aorta	Artery - Aorta	TMM_vs_FPKM	0.9896	0.0		914
+GTEx_v10_artery_aorta	Artery - Aorta	VST_vs_FPKM	0.9896	0.0		864
+GTEx_v10_nerve_tibial	Nerve - Tibial	TPM_vs_TMM	0.988	0.0811		884
+GTEx_v10_nerve_tibial	Nerve - Tibial	TPM_vs_VST	0.988	0.0526		842
+GTEx_v10_nerve_tibial	Nerve - Tibial	TPM_vs_FPKM	1.0	1.0		34
+GTEx_v10_nerve_tibial	Nerve - Tibial	TMM_vs_VST	1.0	0.7391		302
+GTEx_v10_nerve_tibial	Nerve - Tibial	TMM_vs_FPKM	0.988	0.0811		884
+GTEx_v10_nerve_tibial	Nerve - Tibial	VST_vs_FPKM	0.988	0.0526		842

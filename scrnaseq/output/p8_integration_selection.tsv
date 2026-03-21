@@ -1,0 +1,7 @@
+dataset_id	tissue	organism	n_donors	n_batches	n_cells	n_cell_types	best_method	harmony_ari	scanorama_ari	scvi_ari	decision_tree_prediction	prediction_correct
+98219f72-0f9a-4de9-a859-c81834f24ab1	embryo	Homo sapiens	2	2	166085	17						
+64267fb5-7b70-4705-a13b-cc38966c22a8	brain	Homo sapiens	2	2	163714	2						
+9ec34295-ab16-47e2-af33-b884143e520b	brain	Homo sapiens	2	2	49110	12						
+37a17b78-4864-4a42-b67b-31c00962795a	brain	Homo sapiens	1042	1042	4140453	25						
+3faad104-2ab8-4434-816d-474d8d2641db	blood	Homo sapiens	981	981	1248980	29						
+c838aec3-03ef-4398-b882-0e3912abfff0	blood	Homo sapiens	625	625	1265624	32						
