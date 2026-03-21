@@ -90,7 +90,7 @@ python scrnaseq/master_run.py  # ~12 hours total
 
 ## Reproducibility
 
-All outputs include `repro.lock` files (via [repro-lock](https://pypi.org/project/repro-lock/)) capturing the exact environment state at runtime. Census queries are pinned to version `2025-11-08`.
+All outputs include `repro.lock` files (via [repro-lock](https://github.com/usarmydoc/repro)) capturing the exact environment state at runtime. Census queries are pinned to version `2025-11-08`.
 
 ## BioOrchestrator Integration
 
