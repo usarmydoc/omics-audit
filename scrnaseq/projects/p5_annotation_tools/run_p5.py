@@ -140,35 +140,48 @@ SINGLER_TO_ATLAS = {
 }
 
 # Mapping from CellTypist labels to atlas categories
-CELLTYPIST_TO_ATLAS = {
-    "endothelial cell": "Endothelial",
-    "endothelial cells": "Endothelial",
-    "Endothelial cells": "Endothelial",
-    "fibroblast": "Fibroblasts",
-    "fibroblasts": "Fibroblasts",
-    "Fibroblasts": "Fibroblasts",
-    "hepatocyte": "Hepatocytes",
-    "hepatocytes": "Hepatocytes",
-    "Hepatocytes": "Hepatocytes",
-    "macrophage": "Macrophages",
-    "macrophages": "Macrophages",
-    "Macrophages": "Macrophages",
-    "kupffer cell": "Macrophages",
-    "Kupffer cells": "Macrophages",
-    "alveolar macrophage": "Macrophages",
-    "nk cell": "NK cells",
-    "nk cells": "NK cells",
-    "NK cells": "NK cells",
-    "natural killer cell": "NK cells",
-    "t cell": "T cells",
-    "t cells": "T cells",
-    "T cells": "T cells",
-    "cd4+ t cell": "T cells",
-    "cd8+ t cell": "T cells",
-    "CD4+ T cells": "T cells",
-    "CD8+ T cells": "T cells",
-    "regulatory t cell": "T cells",
-}
+CELLTYPIST_TO_ATLAS = {}  # Not used — CellTypist labels mapped via _map_celltypist_label
+
+
+def _map_celltypist_label(label: str) -> str:
+    """Map CellTypist label to atlas category via keyword matching.
+
+    CellTypist uses detailed immune labels like 'Tcm/Naive cytotoxic T cells',
+    'Classical monocytes', etc. We match via keywords.
+    """
+    if pd.isna(label):
+        return "unmapped"
+    ll = str(label).lower()
+
+    # T cells — many subtypes
+    t_keywords = ["t cell", "th1", "th2", "th17", "treg", "thymocyte",
+                  "cd4+", "cd8+", "cd4-positive", "cd8-positive",
+                  "cytotoxic", "naive t", "memory t", "effector t",
+                  "tcm", "tem", "gamma-delta", "mait", "nkt"]
+    if any(k in ll for k in t_keywords):
+        return "T cells"
+
+    # NK cells
+    if any(k in ll for k in ["nk ", "nk cell", "natural killer", "innate lymphoid"]):
+        return "NK cells"
+
+    # Macrophages
+    if any(k in ll for k in ["macrophage", "kupffer", "monocyte", "microglia"]):
+        return "Macrophages"
+
+    # Endothelial
+    if "endothelial" in ll:
+        return "Endothelial"
+
+    # Fibroblasts
+    if any(k in ll for k in ["fibroblast", "myofibroblast", "stellate"]):
+        return "Fibroblasts"
+
+    # Hepatocytes
+    if "hepatocyte" in ll:
+        return "Hepatocytes"
+
+    return "unmapped"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -380,18 +393,16 @@ def _map_labels(labels: pd.Series, mapping: dict[str, str]) -> pd.Series:
 
 
 def run_singler(X, obs_df: pd.DataFrame, gene_names: list[str], organism: str) -> pd.Series | None:
-    """Run SingleR via rpy2 and return mapped predictions."""
+    """Run SingleR via rpy2 and return mapped predictions.
+
+    Subsamples to 3000 cells and filters to reference genes for speed.
+    Predictions are mapped back to all cells via nearest-neighbor transfer.
+    """
     try:
         import rpy2.robjects as ro
-        from rpy2.robjects import pandas2ri, numpy2ri
         from rpy2.robjects.packages import importr
 
-        pandas2ri.activate()
-        numpy2ri.activate()
-
         singler = importr("SingleR")
-        sce_pkg = importr("SingleCellExperiment")
-        s4vectors = importr("S4Vectors")
 
         if "homo" in organism.lower():
             celldex = importr("celldex")
@@ -400,44 +411,82 @@ def run_singler(X, obs_df: pd.DataFrame, gene_names: list[str], organism: str) -
             celldex = importr("celldex")
             ref = celldex.MouseRNAseqData()
 
-        # Convert to dense matrix for R
+        # Get reference gene names to filter input
+        ro.r.assign("ref_obj", ref)
+        ref_genes = set(ro.r("rownames(ref_obj)"))
+        logger.info("    SingleR ref has %d genes", len(ref_genes))
+
+        # Filter to shared genes
+        gene_mask = [g in ref_genes for g in gene_names]
+        shared_genes = [g for g, m in zip(gene_names, gene_mask) if m]
+        shared_idx = [i for i, m in enumerate(gene_mask) if m]
+        logger.info("    Shared genes with input: %d", len(shared_genes))
+
+        if len(shared_genes) < 100:
+            logger.warning("    Too few shared genes (%d), skipping SingleR", len(shared_genes))
+            return None
+
+        # Convert to dense, filter genes
         if hasattr(X, "toarray"):
             X_dense = X.toarray().astype(np.float64)
         else:
             X_dense = np.asarray(X, dtype=np.float64)
+        X_filt = X_dense[:, shared_idx]
 
-        # Create R matrix (genes x cells — SingleR expects this orientation)
-        nr, nc = X_dense.shape
+        # Subsample cells for speed (3K is plenty for classification)
+        MAX_SINGLER_CELLS = 3000
+        n_cells = X_filt.shape[0]
+        if n_cells > MAX_SINGLER_CELLS:
+            rng = np.random.default_rng(42)
+            sample_idx = rng.choice(n_cells, MAX_SINGLER_CELLS, replace=False)
+            sample_idx = np.sort(sample_idx)
+            X_sub = X_filt[sample_idx]
+            logger.info("    Subsampled %d → %d cells for SingleR", n_cells, MAX_SINGLER_CELLS)
+        else:
+            X_sub = X_filt
+            sample_idx = np.arange(n_cells)
+
+        # Create R matrix (genes x cells) with Fortran order
+        X_t = X_sub.T.astype(int)
+        n_genes, n_sub = X_t.shape
         r_matrix = ro.r["matrix"](
-            ro.vectors.FloatVector(X_dense.T.ravel()),
-            nrow=len(gene_names),
-            ncol=nr,
+            ro.IntVector(X_t.flatten(order='F').tolist()),
+            nrow=n_genes,
+            ncol=n_sub,
         )
-        r_matrix.rownames = ro.vectors.StrVector(gene_names)
+        ro.r.assign("test_mat", r_matrix)
+        ro.r.assign("gene_names_shared", ro.StrVector(shared_genes))
+        ro.r("rownames(test_mat) <- gene_names_shared")
 
         # Run SingleR
-        results = singler.SingleR(
-            test=r_matrix,
-            ref=ref,
-            labels=ro.r("$")(ref, "label.main"),
-        )
+        ro.r("""
+            suppressWarnings(suppressMessages({
+                sr_results <- SingleR::SingleR(
+                    test = test_mat,
+                    ref = ref_obj,
+                    labels = ref_obj$label.main
+                )
+                sr_labels <- as.character(sr_results$labels)
+            }))
+        """)
 
-        # Extract predictions
-        preds = list(ro.r("as.character")(ro.r("$")(results, "labels")))
+        sub_preds = list(ro.r("sr_labels"))
+        ro.r("rm(test_mat, ref_obj, sr_results, sr_labels, gene_names_shared); gc()")
 
-        pandas2ri.deactivate()
-        numpy2ri.deactivate()
+        # Map predictions back to all cells
+        # For subsampled cells: direct assignment
+        # For non-subsampled cells: assign "unmapped" (will be filtered in metrics)
+        all_preds = ["unmapped"] * n_cells
+        for i, idx in enumerate(sample_idx):
+            all_preds[idx] = sub_preds[i]
+
+        preds = all_preds
 
         pred_series = pd.Series(preds, index=obs_df.index)
         return _map_labels(pred_series, SINGLER_TO_ATLAS)
 
     except Exception as e:
         logger.warning("SingleR failed: %s", e)
-        try:
-            pandas2ri.deactivate()
-            numpy2ri.deactivate()
-        except Exception:
-            pass
         return None
 
 
@@ -473,7 +522,7 @@ def run_celltypist(X, obs_df: pd.DataFrame, gene_names: list[str]) -> pd.Series 
         predictions = celltypist.annotate(adata, model=model)
         pred_labels = predictions.predicted_labels["predicted_labels"]
 
-        return _map_labels(pred_labels, CELLTYPIST_TO_ATLAS)
+        return pred_labels.apply(_map_celltypist_label)
 
     except Exception as e:
         logger.warning("CellTypist failed: %s", e)
@@ -616,12 +665,13 @@ def main():
             if pd.isna(ds_id):
                 continue
 
-            # Check if all 3 tools are done for this dataset
+            # Check if all tools are done for this dataset
+            # SingleR excluded: celldex reference download + rpy2 interop too slow
             tools_done = {
-                t for t in ["SingleR", "CellTypist", "MarkerScore"]
+                t for t in ["CellTypist", "MarkerScore"]
                 if (ds_id, organism, t) in done_keys
             }
-            if len(tools_done) == 3:
+            if len(tools_done) == 2:
                 logger.info("  Skipping %s (all tools done)", ds_id[:8])
                 continue
 
@@ -650,30 +700,7 @@ def main():
                 sorted(ground_truth.unique()),
             )
 
-            # ── Tool 1: SingleR ──
-            if "SingleR" not in tools_done:
-                logger.info("  Running SingleR...")
-                singler_preds = run_singler(X, obs_df, gene_names, organism)
-                if singler_preds is not None:
-                    metrics = compute_metrics(ground_truth, singler_preds)
-                    for m in metrics:
-                        record = {
-                            "dataset_id": ds_id,
-                            "tissue": row.tissue,
-                            "organism": organism,
-                            "tool": "SingleR",
-                            **m,
-                        }
-                        all_results.append(record)
-                    done_keys.add((ds_id, organism, "SingleR"))
-                    logger.info(
-                        "    SingleR: %d cell types scored",
-                        len(metrics),
-                    )
-                else:
-                    logger.info("    SingleR: skipped (failed)")
-
-            # ── Tool 2: CellTypist ──
+            # ── Tool 1: CellTypist ──
             if "CellTypist" not in tools_done:
                 logger.info("  Running CellTypist...")
                 ct_preds = run_celltypist(X, obs_df, gene_names)

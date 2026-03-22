@@ -152,7 +152,15 @@ def run_integration(adata, method: str, batch_key: str = "donor_id") -> np.ndarr
         # Normalize + HVG + PCA
         sc.pp.normalize_total(ad, target_sum=1e4)
         sc.pp.log1p(ad)
-        sc.pp.highly_variable_genes(ad, n_top_genes=2000, batch_key=batch_key)
+        # Use batch_key for HVG if few batches, otherwise skip it
+        n_batches = ad.obs[batch_key].nunique()
+        try:
+            if n_batches <= 50:
+                sc.pp.highly_variable_genes(ad, n_top_genes=2000, batch_key=batch_key)
+            else:
+                sc.pp.highly_variable_genes(ad, n_top_genes=2000)
+        except Exception:
+            sc.pp.highly_variable_genes(ad, n_top_genes=2000)
         ad = ad[:, ad.var.highly_variable].copy()
         sc.pp.scale(ad, max_value=10)
         sc.tl.pca(ad, n_comps=30, random_state=RNG_SEED)
@@ -173,6 +181,11 @@ def run_integration(adata, method: str, batch_key: str = "donor_id") -> np.ndarr
             import scipy.sparse as sp
             ad_merged = sc.concat(corrected)
             ad.obsm["X_corrected"] = ad_merged.obsm["X_scanorama"]
+        elif method == "bbknn":
+            import bbknn
+            bbknn.bbknn(ad, batch_key=batch_key)
+            # BBKNN modifies the neighbor graph directly; use PCA as embedding
+            ad.obsm["X_corrected"] = ad.obsm["X_pca"]
         elif method == "scvi":
             import scvi as scvi_module
             ad_raw = adata.copy()
@@ -272,7 +285,7 @@ def process_edge_dataset(
 ) -> dict | None:
     """Fetch data and run integration methods on an edge-case dataset."""
     if methods is None:
-        methods = ["harmony", "scanorama"]
+        methods = ["scanorama", "bbknn"]
 
     exp = census["census_data"][_census_key(organism)]
 
@@ -395,10 +408,12 @@ def normalize_p3_results(p3_df: pd.DataFrame) -> pd.DataFrame:
     logger.info("P3 columns: %s", cols)
 
     # Try to pivot if P3 has a 'method' column with per-method rows
-    if "method" in cols and "ari" in cols:
+    # Handle both 'ari' and 'ARI' column names
+    ari_col = "ARI" if "ARI" in cols else "ari" if "ari" in cols else None
+    if "method" in cols and ari_col:
         id_cols = [c for c in ["dataset_id", "tissue", "organism"] if c in cols]
         pivoted = p3_df.pivot_table(
-            index=id_cols, columns="method", values="ari", aggfunc="first",
+            index=id_cols, columns="method", values=ari_col, aggfunc="first",
         ).reset_index()
         pivoted.columns = [
             f"{c.lower()}_ari" if c in ["harmony", "Harmony", "scanorama", "Scanorama",
@@ -458,18 +473,29 @@ def main():
 
                 record = {**features}
                 # Pull ARI values from P3
-                for method in ["harmony", "scanorama", "scvi"]:
+                for method in ["scanorama", "scvi"]:
                     col = f"{method}_ari"
                     record[col] = row.get(col, np.nan)
+
+                # Run BBKNN on this dataset to add a third method
+                logger.info("  Running BBKNN on P3 dataset %s...", ds_id[:8])
+                organism = features.get("organism", "Homo sapiens")
+                edge_result = process_edge_dataset(
+                    census, ds_id, organism, methods=["bbknn"],
+                )
+                if edge_result and "bbknn_ari" in edge_result:
+                    record["bbknn_ari"] = edge_result["bbknn_ari"]
+                else:
+                    record["bbknn_ari"] = np.nan
 
                 all_results.append(record)
                 done_ids.add(ds_id)
                 logger.info(
-                    "  P3 dataset %s: harmony=%.3f scanorama=%.3f scvi=%.3f",
+                    "  P3 dataset %s: scanorama=%.3f scvi=%.3f bbknn=%.3f",
                     ds_id[:8],
-                    record.get("harmony_ari", np.nan),
                     record.get("scanorama_ari", np.nan),
                     record.get("scvi_ari", np.nan),
+                    record.get("bbknn_ari", np.nan),
                 )
 
             # Checkpoint
@@ -502,27 +528,27 @@ def main():
             if features is None:
                 continue
 
-            # Run Harmony + Scanorama (skip scVI for edge cases)
+            # Run Scanorama + BBKNN (skip scVI for edge cases)
             integration_results = process_edge_dataset(
-                census, ds_id, methods=["harmony", "scanorama"],
+                census, ds_id, methods=["scanorama", "bbknn"],
             )
 
             record = {**features}
             if integration_results:
                 record.update(integration_results)
             else:
-                record["harmony_ari"] = np.nan
                 record["scanorama_ari"] = np.nan
+                record["bbknn_ari"] = np.nan
             record["scvi_ari"] = np.nan  # Skipped for edge cases
 
             all_results.append(record)
             done_ids.add(ds_id)
             logger.info(
-                "  Edge %s (%s): %d donors, harmony=%.3f scanorama=%.3f",
+                "  Edge %s (%s): %d donors, scanorama=%.3f bbknn=%.3f",
                 ds_id[:8], category,
                 features["n_donors"],
-                record.get("harmony_ari", np.nan),
                 record.get("scanorama_ari", np.nan),
+                record.get("bbknn_ari", np.nan),
             )
 
             # Checkpoint
@@ -538,7 +564,7 @@ def main():
         logger.error("No results to process. Exiting.")
         sys.exit(1)
 
-    ari_cols = [c for c in ["harmony_ari", "scanorama_ari", "scvi_ari"]
+    ari_cols = [c for c in ["scanorama_ari", "scvi_ari", "bbknn_ari"]
                 if c in result_df.columns]
     for col in ari_cols:
         if col not in result_df.columns:

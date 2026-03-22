@@ -4,9 +4,6 @@
 Order: shortest to longest estimated runtime.
 Runs each project, then its knowledge emission, then BioOrchestrator tests.
 Stops if tests fail.
-
-Set SCRNASEQ_VENV to override the default venv path.
-Set BIOORCHESTRATOR_ROOT to override the BioOrchestrator location.
 """
 
 import os
@@ -15,69 +12,58 @@ import sys
 import time
 from pathlib import Path
 
-MASTER_DIR = Path(__file__).resolve().parent
-REPO_ROOT = MASTER_DIR.parent
-PROJECTS_DIR = MASTER_DIR / "projects"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SCRNASEQ_DIR = REPO_ROOT / "scrnaseq"
+PROJECTS_DIR = SCRNASEQ_DIR / "projects"
 
-# Venv: override with SCRNASEQ_VENV env var, otherwise use .venv in repo root
-VENV = os.environ.get("SCRNASEQ_VENV", str(REPO_ROOT / ".venv"))
-
-# (label, run_script, emit_script, project_dir)
+# (label, run_script, emit_script)
 PROJECTS = [
     (
         "P6 Min Cell Filter",
         str(PROJECTS_DIR / "p6_min_cell_filter" / "run_p6.py"),
         str(PROJECTS_DIR / "p6_min_cell_filter" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p6_min_cell_filter"),
     ),
     (
         "P9 Clustering Resolution",
         str(PROJECTS_DIR / "p9_clustering_resolution" / "run_p9.py"),
         str(PROJECTS_DIR / "p9_clustering_resolution" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p9_clustering_resolution"),
     ),
     (
         "P4 Pseudobulk",
         str(PROJECTS_DIR / "p4_pseudobulk" / "run_p4.py"),
         str(PROJECTS_DIR / "p4_pseudobulk" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p4_pseudobulk"),
     ),
     (
         "P2 Doublet Audit",
         str(PROJECTS_DIR / "p2_doublet_audit" / "run_p2.py"),
         str(PROJECTS_DIR / "p2_doublet_audit" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p2_doublet_audit"),
     ),
     (
         "P7 Normalization",
         str(PROJECTS_DIR / "p7_normalization" / "run_p7.py"),
         str(PROJECTS_DIR / "p7_normalization" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p7_normalization"),
     ),
     (
         "P5 Annotation Tools",
         str(PROJECTS_DIR / "p5_annotation_tools" / "run_p5.py"),
         str(PROJECTS_DIR / "p5_annotation_tools" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p5_annotation_tools"),
     ),
     (
         "P3 Batch Correction",
         str(PROJECTS_DIR / "p3_batch_correction" / "run_p3.py"),
         str(PROJECTS_DIR / "p3_batch_correction" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p3_batch_correction"),
     ),
     (
         "P8 Integration Selection",
         str(PROJECTS_DIR / "p8_integration_selection" / "run_p8.py"),
         str(PROJECTS_DIR / "p8_integration_selection" / "emit_knowledge.py"),
-        str(PROJECTS_DIR / "p8_integration_selection"),
     ),
 ]
 
 BIOORCHESTRATOR_DIR = os.environ.get(
     "BIOORCHESTRATOR_ROOT",
     str(Path.home() / "bioorchestrator"),
-).removesuffix("/src/bioorchestrator")
+).replace("/src/bioorchestrator", "")
 
 
 def run_cmd(label: str, cmd: list[str], cwd: str | None = None) -> int:
@@ -109,9 +95,10 @@ def main():
     completed = []
     failed = []
 
-    python = f"{VENV}/bin/python"
+    for label, run_script, emit_script in PROJECTS:
+        python = sys.executable
+        project_dir = str(Path(run_script).parent)
 
-    for label, run_script, emit_script, project_dir in PROJECTS:
         # Run project
         rc = run_cmd(f"{label} — run", [python, run_script], cwd=project_dir)
         if rc != 0:

@@ -7,105 +7,278 @@ dataset_id	tissue	organism	tool	cell_type	precision	recall	f1	n_cells
 02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	MarkerScore	T cells	0.91956052579949	0.8113207547169812	0.8620562810373368	5777
 bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	MarkerScore	Endothelial	0.7899408284023669	0.9535714285714286	0.8640776699029126	280
 bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	MarkerScore	Fibroblasts	0.7622739018087855	0.8501440922190202	0.8038147138964578	347
-bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	MarkerScore	Macrophages	0.946031746031746	0.863768115942029	0.9030303030303031	345
+bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	MarkerScore	Macrophages	0.946031746031746	0.863768115942029	0.9030303030303032	345
 bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	MarkerScore	NK cells	0.9204545454545454	0.2977941176470588	0.45	272
 bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	MarkerScore	T cells	0.5134408602150538	0.74609375	0.60828025477707	256
-1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	Endothelial	0.8274456521739131	0.9854368932038835	0.8995568685376661	618
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	Endothelial	0.8274456521739131	0.9854368932038836	0.8995568685376661	618
 1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	Fibroblasts	0.7745098039215687	0.9813664596273292	0.8657534246575342	161
-1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	Macrophages	0.9931761786600496	0.8672806067172264	0.9259687680740313	1846
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	Macrophages	0.9931761786600496	0.8672806067172264	0.9259687680740312	1846
 1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	NK cells	0.5560344827586207	0.9485294117647058	0.7010869565217391	136
-1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	T cells	0.9830246913580247	0.9493293591654247	0.9658832448824868	671
-e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	Endothelial	0.9815518176885513	0.9917763157894737	0.9866375784019634	1824
-e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	Fibroblasts	0.9898132427843803	0.9965811965811966	0.9931856899488927	585
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	MarkerScore	T cells	0.9830246913580248	0.9493293591654248	0.9658832448824868	671
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	Endothelial	0.9815518176885512	0.9917763157894736	0.9866375784019634	1824
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	Fibroblasts	0.9898132427843804	0.9965811965811966	0.9931856899488928	585
 e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	Macrophages	0.2608695652173913	0.75	0.3870967741935484	32
 e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	NK cells	0.7383966244725738	0.9943181818181818	0.847457627118644	1232
-e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	T cells	0.9957627118644068	0.31501340482573725	0.4786150712830957	746
-8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	Endothelial	0.9473453268977622	0.9570035460992907	0.9521499448732084	2256
-8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	Fibroblasts	0.8782467532467533	0.9491228070175438	0.9123102866779089	570
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	MarkerScore	T cells	0.9957627118644068	0.3150134048257372	0.4786150712830957	746
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	Endothelial	0.9473453268977622	0.9570035460992908	0.9521499448732084	2256
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	Fibroblasts	0.8782467532467533	0.9491228070175438	0.9123102866779088	570
 8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	Macrophages	0.9632089933571794	0.8619112940100594	0.9097490347490348	2187
 8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	NK cells	0.9429338704263176	0.9818245368752184	0.961986301369863	2861
 8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	MarkerScore	T cells	0.5859375	0.8823529411764706	0.704225352112676	85
-d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	Endothelial	0.7778546712802769	0.9205569205569205	0.8432108027006752	1221
-d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	Fibroblasts	0.9600233440326816	0.8745348219032429	0.9152872444011685	3762
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	Endothelial	0.7778546712802769	0.9205569205569204	0.8432108027006752	1221
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	Fibroblasts	0.9600233440326816	0.8745348219032429	0.9152872444011684	3762
 d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
 d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	Macrophages	0.9522330097087378	0.9615686274509804	0.9568780487804878	2550
 d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	NK cells	0.8488943488943489	0.8927648578811369	0.8702770780856424	774
 d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	MarkerScore	T cells	0.8194945848375451	0.8884540117416829	0.8525821596244132	511
 acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	Endothelial	0.4244652406417112	0.7706310679611651	0.5474137931034483	824
-acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	Fibroblasts	0.7654504839910647	0.9097345132743363	0.8313788920339669	5650
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	Fibroblasts	0.7654504839910647	0.9097345132743364	0.8313788920339669	5650
 acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
-acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	Macrophages	0.8998482549317147	0.3001012145748988	0.45009487666034154	1976
-acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	NK cells	0.34146341463414637	0.2	0.25225225225225223	140
-acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	T cells	0.8275862068965517	0.060759493670886074	0.11320754716981132	395
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	Macrophages	0.8998482549317147	0.3001012145748988	0.4500948766603415	1976
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	NK cells	0.3414634146341463	0.2	0.2522522522522522	140
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	MarkerScore	T cells	0.8275862068965517	0.060759493670886	0.1132075471698113	395
 7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	Endothelial	0.534201052340072	0.972768532526475	0.6896675008938148	1983
-7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	Fibroblasts	0.9755182625863771	0.8587069864442127	0.9133931047231721	5754
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	Fibroblasts	0.9755182625863772	0.8587069864442127	0.913393104723172	5754
 7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
 7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	Macrophages	0.9426070038910506	0.8841240875912408	0.9124293785310734	1096
-7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	NK cells	0.43807574206755373	0.7353951890034365	0.5490699166132136	582
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	NK cells	0.4380757420675537	0.7353951890034365	0.5490699166132136	582
 7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	MarkerScore	T cells	0.926226012793177	0.5978530140379852	0.7266644362663098	3633
-b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	Endothelial	0.18375918795939797	0.9130434782608695	0.30594405594405594	575
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	Endothelial	0.1837591879593979	0.9130434782608696	0.3059440559440559	575
 b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	Fibroblasts	0.8781542898341744	0.99185667752443	0.931548757170172	1228
-b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	Macrophages	0.8505182760501909	0.9500304692260817	0.897524467472654	1641
-b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	NK cells	0.28240963855421686	0.9949066213921901	0.43993993993993996	1178
-b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	T cells	0.9987424020121568	0.45923284502698536	0.6291674919125899	10376
-80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	Endothelial	0.8883305415968733	0.957568462232922	0.9216509775524981	3323
-80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	Fibroblasts	0.9376237623762376	0.9978925184404637	0.9668198060234814	2847
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	Macrophages	0.8505182760501909	0.9500304692260816	0.897524467472654	1641
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	NK cells	0.2824096385542168	0.99490662139219	0.4399399399399399	1178
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	MarkerScore	T cells	0.9987424020121568	0.4592328450269853	0.6291674919125899	10376
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	Endothelial	0.8883305415968733	0.957568462232922	0.921650977552498	3323
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	Fibroblasts	0.9376237623762376	0.9978925184404636	0.9668198060234814	2847
 80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
 80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	Macrophages	0.8243114909781576	0.949671772428884	0.8825622775800712	914
 80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	NK cells	0.6203703703703703	0.8445378151260504	0.7153024911032029	714
-80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	T cells	0.9832886646697147	0.86625	0.9210662334785498	7200
-9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	Endothelial	0.5873556691273898	0.9910571702331523	0.7375802234371286	3131
-9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	Fibroblasts	0.9856536674075571	0.7667400188619931	0.8625232074971267	6362
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	MarkerScore	T cells	0.9832886646697148	0.86625	0.9210662334785498	7200
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	Endothelial	0.5873556691273898	0.9910571702331524	0.7375802234371286	3131
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	Fibroblasts	0.9856536674075572	0.7667400188619931	0.8625232074971267	6362
 9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
 9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	Macrophages	0.8979857050032488	0.8030214991284137	0.8478527607361963	3442
-9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	NK cells	0.26026119402985076	0.7728531855955678	0.38939288206559663	361
-9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	T cells	0.9518413597733711	0.19753086419753085	0.32716650438169426	1701
-9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	Endothelial	0.9305289993626513	0.8926933659431366	0.9112185988453737	3271
-9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	Fibroblasts	0.90053460889139	0.999843798812871	0.9475943745373797	6402
-9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	Macrophages	0.9377652050919377	0.8532818532818532	0.8935309973045822	777
-9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	NK cells	0.22094594594594594	0.7250554323725056	0.338684619368203	451
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	NK cells	0.2602611940298507	0.7728531855955678	0.3893928820655966	361
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	MarkerScore	T cells	0.9518413597733713	0.1975308641975308	0.3271665043816942	1701
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	Endothelial	0.9305289993626512	0.8926933659431366	0.9112185988453736	3271
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	Fibroblasts	0.90053460889139	0.999843798812871	0.9475943745373796	6402
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	Macrophages	0.9377652050919376	0.8532818532818532	0.8935309973045822	777
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	NK cells	0.2209459459459459	0.7250554323725056	0.338684619368203	451
 9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	MarkerScore	T cells	0.952808112324493	0.596435546875	0.7336336336336337	4096
-e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Endothelial	0.09316920106203234	0.2992248062015504	0.1420946070311062	1290
-e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Fibroblasts	0.35731414868105515	0.030944963655244028	0.05695718654434251	4815
+e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Endothelial	0.0931692010620323	0.2992248062015504	0.1420946070311062	1290
+e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Fibroblasts	0.3573141486810551	0.030944963655244	0.0569571865443425	4815
 e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
-e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Macrophages	0.13302752293577982	0.011439842209072978	0.021067925899019253	2535
-e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	NK cells	0.2353870458135861	0.043288785589773386	0.07312883435582822	3442
-e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	T cells	0.17183544303797468	0.18621399176954734	0.17873601053324556	2916
+e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	Macrophages	0.1330275229357798	0.0114398422090729	0.0210679258990192	2535
+e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	NK cells	0.2353870458135861	0.0432887855897733	0.0731288343558282	3442
+e7c5ba7e-4be0-4696-af50-a07d0dc7aac5	skin of body	Homo sapiens	MarkerScore	T cells	0.1718354430379746	0.1862139917695473	0.1787360105332455	2916
 cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	Endothelial	0.9615115465360392	0.9835361488904796	0.9723991507430998	1397
-cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	Fibroblasts	0.9892435808466343	0.9989488437281009	0.9940725244072525	2854
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	Fibroblasts	0.9892435808466344	0.9989488437281008	0.9940725244072524	2854
 cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
-cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	Macrophages	0.8442622950819673	0.9856459330143541	0.9094922737306843	209
-cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	NK cells	0.9754098360655737	0.7484276729559748	0.8469750889679716	477
-cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	T cells	0.9879900744416873	0.9894632206759444	0.9887260988328781	10060
-16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	Endothelial	0.6606129398410897	0.9651741293532339	0.784366576819407	603
-16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	Fibroblasts	0.9680451127819549	0.987535953978907	0.9776934029425723	1043
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	Macrophages	0.8442622950819673	0.985645933014354	0.9094922737306844	209
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	NK cells	0.9754098360655736	0.7484276729559748	0.8469750889679716	477
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	MarkerScore	T cells	0.9879900744416872	0.9894632206759444	0.988726098832878	10060
+16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	Endothelial	0.6606129398410897	0.965174129353234	0.784366576819407	603
+16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	Fibroblasts	0.9680451127819548	0.987535953978907	0.9776934029425725	1043
 16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	Macrophages	0.9881960482422376	0.9518042511122096	0.9696588190859876	4046
-16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	NK cells	0.04173303599872571	0.9924242424242424	0.08009782940996638	132
-16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	T cells	0.9940159574468085	0.6519132235909735	0.7874119428533808	9173
+16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	NK cells	0.0417330359987257	0.9924242424242424	0.0800978294099663	132
+16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	Homo sapiens	MarkerScore	T cells	0.9940159574468084	0.6519132235909735	0.7874119428533808	9173
 afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	Endothelial	0.483343428225318	0.7770204479065238	0.5959671396564601	2054
 afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	Fibroblasts	0.7343368592351506	0.8359061438715653	0.7818365578977765	6478
 afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	Hepatocytes	0.6376122556788167	0.8927514792899408	0.7439137134052388	1352
 afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	Macrophages	0.854253112033195	0.4789182902006397	0.6137506987143656	3439
 afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	NK cells	0.0	0.0	0.0	0
-afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	T cells	0.9471153846153846	0.11761194029850747	0.2092405735528412	1675
+afae4675-434d-4e89-b5ce-2854c9dc38a3	abdomen	Homo sapiens	MarkerScore	T cells	0.9471153846153846	0.1176119402985074	0.2092405735528412	1675
 4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	MarkerScore	Endothelial	0.765295887662989	0.9769526248399488	0.8582677165354331	781
-4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	MarkerScore	Fibroblasts	0.9674054758800521	0.8688524590163934	0.9154842689697718	854
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	MarkerScore	Fibroblasts	0.967405475880052	0.8688524590163934	0.9154842689697718	854
 4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	MarkerScore	Macrophages	0.9554455445544554	0.8008298755186722	0.871331828442438	241
 4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	MarkerScore	NK cells	0.0	0.0	0.0	0
 4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	MarkerScore	T cells	0.9970588235294118	0.6108108108108108	0.7575418994413408	555
 a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	Endothelial	0.5354058721934369	0.8985507246376812	0.670995670995671	345
 a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	Fibroblasts	0.0	0.0	0.0	0
-a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	Macrophages	0.9902761571373007	0.8279674796747968	0.9018774353524619	3075
-a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	NK cells	0.7723970944309927	0.9140401146131805	0.8372703412073491	349
-a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	T cells	0.03409090909090909	0.3333333333333333	0.061855670103092786	9
-e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	Endothelial	0.9973333333333333	0.7586206896551724	0.8617511520737328	493
-e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	Fibroblasts	0.9653311189537056	1.0	0.9823597760642231	4650
-e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	Macrophages	0.9981718464351006	0.9285714285714286	0.9621145374449339	588
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	Macrophages	0.9902761571373008	0.8279674796747968	0.901877435352462	3075
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	NK cells	0.7723970944309927	0.9140401146131804	0.8372703412073491	349
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	MarkerScore	T cells	0.034090909090909	0.3333333333333333	0.0618556701030927	9
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	Endothelial	0.9973333333333332	0.7586206896551724	0.8617511520737328	493
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	Fibroblasts	0.9653311189537056	1.0	0.9823597760642232	4650
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	Macrophages	0.9981718464351006	0.9285714285714286	0.962114537444934	588
 e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	NK cells	0.9655172413793104	0.6829268292682927	0.8	41
 e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	MarkerScore	T cells	0.0	0.0	0.0	0
-61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	Endothelial	0.7116793778974129	0.9278611815168649	0.8055179417738659	5129
-61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	Fibroblasts	0.939146082120072	0.9274636510500808	0.9332683085426319	6190
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	Endothelial	0.7116793778974129	0.9278611815168648	0.8055179417738659	5129
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	Fibroblasts	0.939146082120072	0.9274636510500808	0.933268308542632	6190
 61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
 61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	Macrophages	0.7236492471213464	0.5254019292604502	0.6087928464977646	1555
 61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	NK cells	0.0	0.0	0.0	0
-61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	T cells	0.9714285714285714	0.192090395480226	0.32075471698113206	2124
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	MarkerScore	T cells	0.9714285714285714	0.192090395480226	0.320754716981132	2124
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	SingleR	Endothelial	0.998	1.0	0.999	979
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	SingleR	Fibroblasts	1.0	0.875	0.9333	8
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	SingleR	Macrophages	0.9957	0.9951	0.9954	1622
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	SingleR	NK cells	0.9549	0.8787	0.9152	602
+1a2e3350-28a8-4f49-b33c-5b67ceb001f6	bone marrow	Homo sapiens	SingleR	T cells	0.8955	0.9597	0.9265	670
+02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	SingleR	Endothelial	0.2	0.1815	0.1903	1047
+02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	SingleR	Fibroblasts	0.0	0.0	0.0	1
+02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	SingleR	Hepatocytes	0.2728	0.3052	0.2881	1491
+02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	SingleR	Macrophages	0.1564	0.1453	0.1507	578
+02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	SingleR	NK cells	0.0246	0.0318	0.0278	377
+02792605-4760-4023-82ad-40fc4458a5db	liver	Homo sapiens	SingleR	T cells	0.2781	0.247	0.2616	1344
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	SingleR	Endothelial	0.0078	0.0973	0.0145	113
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	SingleR	Fibroblasts	0.6783	0.1396	0.2315	1526
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	SingleR	Macrophages	0.9457	0.9317	0.9387	1216
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	SingleR	NK cells	0.0	0.0	0.0	16
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	SingleR	T cells	0.0	0.0	0.0	67
+human_5bc42b88_placenta	placenta	Homo sapiens	SingleR	Endothelial	0.0	0.0	0.0	180
+human_5bc42b88_placenta	placenta	Homo sapiens	SingleR	Fibroblasts	0.0	0.0	0.0	297
+human_5bc42b88_placenta	placenta	Homo sapiens	SingleR	Macrophages	0.0045	0.0041	0.0043	977
+human_5bc42b88_placenta	placenta	Homo sapiens	SingleR	NK cells	0.3024	0.3262	0.3138	1867
+human_5bc42b88_placenta	placenta	Homo sapiens	SingleR	T cells	0.2108	0.2189	0.2147	1325
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	SingleR	Endothelial	0.1861	0.2536	0.2147	548
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	SingleR	Fibroblasts	0.2231	0.0684	0.1048	789
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	SingleR	Hepatocytes	0.0	0.0	0.0	0
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	SingleR	Macrophages	0.0296	0.0327	0.0311	153
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	SingleR	NK cells	0.0299	0.1842	0.0514	76
+7bb64315-9e5a-41b9-9235-59acf9642a3e	stomach	Homo sapiens	SingleR	T cells	0.5366	0.5148	0.5255	1824
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	SingleR	Endothelial	0.3824	0.4827	0.4267	808
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	SingleR	Fibroblasts	0.0	0.0	0.0	613
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	SingleR	Hepatocytes	0.0	0.0	0.0	0
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	SingleR	Macrophages	0.0361	0.037	0.0366	162
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	SingleR	NK cells	0.0632	0.2911	0.1038	79
+80a2c5b6-02e7-4fc0-9f12-179f5247c1bc	small intestine	Homo sapiens	SingleR	T cells	0.4995	0.5057	0.5026	2021
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	SingleR	Endothelial	0.0	0.0	0.0	1636
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	SingleR	Fibroblasts	0.0	0.0	0.0	344
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	SingleR	Macrophages	0.0	0.0	0.0	137
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	SingleR	NK cells	0.0229	0.0662	0.034	136
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	SingleR	T cells	0.144	0.1305	0.1369	2407
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	SingleR	Endothelial	0.5836	0.6002	0.5917	2566
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	SingleR	Fibroblasts	0.0556	0.025	0.0345	160
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	SingleR	Macrophages	0.0316	0.0296	0.0306	609
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	SingleR	NK cells	0.2154	0.2769	0.2423	726
+8f3e7fcf-0b16-4a29-a5f1-a7a8b267d689	uterus	Homo sapiens	SingleR	T cells	0.0807	0.0602	0.069	598
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	SingleR	Endothelial	0.21	0.2168	0.2134	987
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	SingleR	Fibroblasts	0.0	0.0	0.0	95
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	SingleR	Hepatocytes	0.0	0.0	0.0	0
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	SingleR	Macrophages	0.0169	0.0179	0.0174	56
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	SingleR	NK cells	0.1857	0.2392	0.2091	882
+d7dcfd8f-2ee7-4385-b9ac-e074c23ed190	kidney	Homo sapiens	SingleR	T cells	0.5775	0.5324	0.554	2821
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	SingleR	Endothelial	0.1276	0.2117	0.1592	614
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	SingleR	Fibroblasts	0.3369	0.0729	0.1198	1304
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	SingleR	Hepatocytes	0.0	0.0	0.0	0
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	SingleR	Macrophages	0.2222	0.3432	0.2698	676
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	SingleR	NK cells	0.0242	0.0353	0.0287	85
+9f1a899f-05a0-44c5-8aa9-39df61ae4324	eye	Homo sapiens	SingleR	T cells	0.0625	0.0978	0.0763	368
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	SingleR	Endothelial	0.3958	0.4789	0.4334	1443
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	SingleR	Fibroblasts	0.2891	0.1078	0.1571	909
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	SingleR	Macrophages	0.0	0.0	0.0	139
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	SingleR	NK cells	0.0	0.0	0.0	56
+9fcb0b73-c734-40a5-be9c-ace7eea401c9	mucosa	Homo sapiens	SingleR	T cells	0.3046	0.3311	0.3173	1175
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	SingleR	Endothelial	0.0615	0.0612	0.0613	670
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	SingleR	Fibroblasts	0.1677	0.0976	0.1234	543
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	SingleR	Macrophages	0.051	0.0519	0.0514	482
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	SingleR	NK cells	0.0299	0.0805	0.0436	149
+61af564d-e5ea-4d34-a0f3-2668a00db376	breast	Homo sapiens	SingleR	T cells	0.5427	0.5366	0.5396	2773
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	SingleR	Endothelial	0.0	0.0	0.0	7
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	SingleR	Fibroblasts	0.0	0.0	0.0	41
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	SingleR	Macrophages	0.0753	0.5	0.1309	36
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	SingleR	NK cells	0.0	0.0	0.0	1
+a77176ec-96c8-4448-a3e7-b56940bdfab6	lymph node	Homo sapiens	SingleR	T cells	0.9246	0.5489	0.6889	603
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	SingleR	Endothelial	0.1019	0.2031	0.1357	448
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	SingleR	Fibroblasts	0.594	0.1815	0.2781	1201
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	SingleR	Macrophages	0.1229	0.2141	0.1562	453
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	SingleR	NK cells	0.0	0.0	0.0	40
+acd544d0-4d8b-46c7-98b3-fc48f7e6fdb7	musculature	Homo sapiens	SingleR	T cells	0.0209	0.0288	0.0242	139
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	SingleR	Endothelial	0.3147	0.394	0.3499	1028
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	SingleR	Fibroblasts	0.0331	0.0069	0.0114	581
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	SingleR	Macrophages	0.093	0.1231	0.106	390
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	SingleR	NK cells	0.0353	0.1656	0.0582	157
+b61a921b-7fa3-4b42-b455-aaaf32447920	respiratory system	Homo sapiens	SingleR	T cells	0.54	0.3978	0.4581	1918
+bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	SingleR	Endothelial	0.9893	1.0	0.9946	277
+bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	SingleR	Fibroblasts	0.9697	0.9143	0.9412	35
+bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	SingleR	Macrophages	0.9962	0.9962	0.9962	262
+bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	SingleR	NK cells	0.8706	0.2721	0.4146	272
+bdd109f1-ca27-45dc-bb9f-473008449428	skeletal system	Homo sapiens	SingleR	T cells	0.552	0.9531	0.6991	256
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	SingleR	Endothelial	0.0147	0.0176	0.016	284
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	SingleR	Fibroblasts	0.119	0.0428	0.063	584
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	SingleR	Macrophages	0.0	0.0	0.0	22
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	SingleR	NK cells	0.0098	0.0088	0.0093	114
+cda2c8cd-be1c-42e5-b2cd-162caa1c4ce7	endocrine gland	Homo sapiens	SingleR	T cells	0.7542	0.8252	0.7881	3444
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	SingleR	Endothelial	1.0	0.9984	0.9992	1864
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	SingleR	Fibroblasts	1.0	1.0	1.0	300
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	SingleR	Macrophages	0.9412	1.0	0.9697	32
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	SingleR	NK cells	0.8368	0.9853	0.905	1228
+e04daea4-4412-45b5-989e-76a9be070a89	lung	Homo sapiens	SingleR	T cells	0.9675	0.6838	0.8013	740
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	SingleR	Endothelial	0.0731	0.1864	0.105	118
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	SingleR	Fibroblasts	0.881	0.6572	0.7528	1059
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	SingleR	Macrophages	0.0337	0.375	0.0619	8
+e595c979-c2de-4dad-8c02-8334a8e56de6	hindlimb	Homo sapiens	SingleR	NK cells	0.0	0.0	0.0	2
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	SingleR	Endothelial	0.0327	0.0698	0.0445	172
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	SingleR	Fibroblasts	0.2019	0.1538	0.1746	416
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	SingleR	Hepatocytes	0.0	0.0	0.0	0
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	SingleR	Macrophages	0.0333	0.0896	0.0486	67
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	SingleR	NK cells	0.026	0.0588	0.036	34
+4a90bbba-df97-4a28-83ae-7386fe7d9167	exocrine gland	Homo sapiens	SingleR	T cells	0.2862	0.1947	0.2318	832
+mouse_2a262b59_urethra	urethra	Mus musculus	SingleR	Endothelial	0.1169	0.1178	0.1174	1061
+mouse_2a262b59_urethra	urethra	Mus musculus	SingleR	Fibroblasts	0.4695	0.4672	0.4683	2502
+mouse_2a262b59_urethra	urethra	Mus musculus	SingleR	Hepatocytes	0.0	0.0	0.0	0
+mouse_2a262b59_urethra	urethra	Mus musculus	SingleR	Macrophages	0.037	0.0369	0.037	1110
+mouse_2a262b59_urethra	urethra	Mus musculus	SingleR	NK cells	0.0132	0.0202	0.016	99
+mouse_2a262b59_urethra	urethra	Mus musculus	SingleR	T cells	0.0165	0.0115	0.0136	174
+mouse_42bb7f78_kidney	kidney	Mus musculus	SingleR	Endothelial	0.8183	0.8298	0.824	3777
+mouse_42bb7f78_kidney	kidney	Mus musculus	SingleR	Fibroblasts	0.0	0.0	0.0	270
+mouse_42bb7f78_kidney	kidney	Mus musculus	SingleR	Hepatocytes	0.0	0.0	0.0	0
+mouse_42bb7f78_kidney	kidney	Mus musculus	SingleR	Macrophages	0.081	0.0733	0.0769	273
+mouse_42bb7f78_kidney	kidney	Mus musculus	SingleR	NK cells	0.07	0.1556	0.0966	45
+mouse_42bb7f78_kidney	kidney	Mus musculus	SingleR	T cells	0.314	0.2902	0.3016	410
+mouse_48b37086_musculature	musculature	Mus musculus	SingleR	Endothelial	0.2868	0.2998	0.2932	1221
+mouse_48b37086_musculature	musculature	Mus musculus	SingleR	Fibroblasts	0.0504	0.0586	0.0542	478
+mouse_48b37086_musculature	musculature	Mus musculus	SingleR	Hepatocytes	0.0	0.0	0.0	237
+mouse_48b37086_musculature	musculature	Mus musculus	SingleR	Macrophages	0.3809	0.3797	0.3803	977
+mouse_48b37086_musculature	musculature	Mus musculus	SingleR	NK cells	0.0045	0.0051	0.0048	197
+mouse_48b37086_musculature	musculature	Mus musculus	SingleR	T cells	0.3397	0.3038	0.3208	1639
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	SingleR	Endothelial	0.1786	0.1779	0.1783	517
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	SingleR	Fibroblasts	0.8638	0.8702	0.867	4082
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	SingleR	Macrophages	0.1006	0.1107	0.1054	298
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	SingleR	NK cells	0.0526	0.04	0.0455	25
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	SingleR	T cells	0.0	0.0	0.0	66
+mouse_7b6bab5a_blood	blood	Mus musculus	SingleR	Endothelial	0.0	0.0	0.0	976
+mouse_7b6bab5a_blood	blood	Mus musculus	SingleR	Fibroblasts	0.0104	0.0102	0.0103	689
+mouse_7b6bab5a_blood	blood	Mus musculus	SingleR	Hepatocytes	0.0	0.0	0.0	643
+mouse_7b6bab5a_blood	blood	Mus musculus	SingleR	Macrophages	0.0463	0.0456	0.046	1052
+mouse_7b6bab5a_blood	blood	Mus musculus	SingleR	NK cells	0.0	0.0	0.0	124
+mouse_7b6bab5a_blood	blood	Mus musculus	SingleR	T cells	0.0086	0.0086	0.0086	1505
+mouse_89840cec_lung	lung	Mus musculus	SingleR	Endothelial	0.5862	0.5966	0.5914	2918
+mouse_89840cec_lung	lung	Mus musculus	SingleR	Fibroblasts	0.3249	0.3193	0.3221	1610
+mouse_89840cec_lung	lung	Mus musculus	SingleR	Macrophages	0.0528	0.0514	0.0521	253
+mouse_89840cec_lung	lung	Mus musculus	SingleR	NK cells	0.0	0.0	0.0	28
+mouse_89840cec_lung	lung	Mus musculus	SingleR	T cells	0.0361	0.0331	0.0346	181
+mouse_98e5ea9f_heart	heart	Mus musculus	SingleR	Endothelial	0.3699	0.4021	0.3853	1634
+mouse_98e5ea9f_heart	heart	Mus musculus	SingleR	Fibroblasts	0.2047	0.2274	0.2154	1038
+mouse_98e5ea9f_heart	heart	Mus musculus	SingleR	Hepatocytes	0.0448	0.0899	0.0598	178
+mouse_98e5ea9f_heart	heart	Mus musculus	SingleR	Macrophages	0.0649	0.0483	0.0554	497
+mouse_98e5ea9f_heart	heart	Mus musculus	SingleR	NK cells	0.0659	0.0671	0.0665	164
+mouse_98e5ea9f_heart	heart	Mus musculus	SingleR	T cells	0.1825	0.1303	0.152	1090
+mouse_db83a61c_small_intestine	small intestine	Mus musculus	SingleR	Endothelial	1.0	0.9954	0.9977	432
+mouse_db83a61c_small_intestine	small intestine	Mus musculus	SingleR	Fibroblasts	1.0	1.0	1.0	858
+mouse_db83a61c_small_intestine	small intestine	Mus musculus	SingleR	Macrophages	0.9833	0.9983	0.9907	589
+mouse_db83a61c_small_intestine	small intestine	Mus musculus	SingleR	NK cells	0.0	0.0	0.0	0
+mouse_db83a61c_small_intestine	small intestine	Mus musculus	SingleR	T cells	0.9991	0.9797	0.9893	2311
+mouse_e056b20b_brain	brain	Mus musculus	SingleR	Endothelial	0.2461	0.2423	0.2442	194
+mouse_e056b20b_brain	brain	Mus musculus	SingleR	Fibroblasts	0.0294	0.0294	0.0294	102
+mouse_e056b20b_brain	brain	Mus musculus	SingleR	Macrophages	0.8042	0.805	0.8046	3964
+mouse_e056b20b_brain	brain	Mus musculus	SingleR	NK cells	0.0165	0.0201	0.0181	149
+mouse_e056b20b_brain	brain	Mus musculus	SingleR	T cells	0.1715	0.1615	0.1664	582
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	MarkerScore	Endothelial	0.0069	0.0063	0.0066	1429
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	MarkerScore	Fibroblasts	0.3856	0.4002	0.3928	2174
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	MarkerScore	Macrophages	0.9117	0.9216	0.9166	1288
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	MarkerScore	NK cells	0.0	0.0	0.0	19
+human_58f43044_central_nervous_system	central nervous system	Homo sapiens	MarkerScore	T cells	1.0	0.0682	0.1277	88
+human_5bc42b88_placenta	placenta	Homo sapiens	MarkerScore	Endothelial	0.0178	0.0166	0.0171	181
+human_5bc42b88_placenta	placenta	Homo sapiens	MarkerScore	Fibroblasts	0.0167	0.0263	0.0204	304
+human_5bc42b88_placenta	placenta	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
+human_5bc42b88_placenta	placenta	Homo sapiens	MarkerScore	Macrophages	0.0136	0.0071	0.0094	981
+human_5bc42b88_placenta	placenta	Homo sapiens	MarkerScore	NK cells	0.4323	0.5988	0.5021	1929
+human_5bc42b88_placenta	placenta	Homo sapiens	MarkerScore	T cells	0.2295	0.166	0.1927	1602
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	MarkerScore	Endothelial	0.0093	0.0089	0.0091	1919
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	MarkerScore	Fibroblasts	0.0229	0.029	0.0256	345
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	MarkerScore	Hepatocytes	0.0	0.0	0.0	0
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	MarkerScore	Macrophages	0.013	0.0365	0.0192	137
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	MarkerScore	NK cells	0.0386	0.1471	0.0612	136
+human_881e0e6b_prostate_gland	prostate gland	Homo sapiens	MarkerScore	T cells	0.1487	0.1102	0.1265	2460

@@ -1,7 +1,20 @@
-dataset_id	tissue	organism	n_donors	n_batches	n_cells	n_cell_types	best_method	harmony_ari	scanorama_ari	scvi_ari	decision_tree_prediction	prediction_correct
-98219f72-0f9a-4de9-a859-c81834f24ab1	embryo	Homo sapiens	2	2	166085	17						
-64267fb5-7b70-4705-a13b-cc38966c22a8	brain	Homo sapiens	2	2	163714	2						
-9ec34295-ab16-47e2-af33-b884143e520b	brain	Homo sapiens	2	2	49110	12						
-37a17b78-4864-4a42-b67b-31c00962795a	brain	Homo sapiens	1042	1042	4140453	25						
-3faad104-2ab8-4434-816d-474d8d2641db	blood	Homo sapiens	981	981	1248980	29						
-c838aec3-03ef-4398-b882-0e3912abfff0	blood	Homo sapiens	625	625	1265624	32						
+dataset_id_short	scanorama_ari	scvi_ari	bbknn_ari	edge_type	n_donors	best_method
+16023185	0.314	0.424	0.37			scvi
+19053a82	0.346	0.445	0.45			bbknn
+37a17b78	0.015	0.937				scvi
+3c364ffe	0.484	0.75	0.739			scvi
+3faad104	0.001	0.516	0.486			scvi
+65badd7a	0.443	0.896	0.689			scvi
+6725ee8e	0.195	0.219	0.188			scvi
+67b6b9ac	0.014	0.636				scvi
+72955cdb	0.24	0.512	0.368			scvi
+842c6f5d	0.244	0.737	0.554			scvi
+9f222629	0.03	0.319				scvi
+a12ccb9b	0.239	0.675	0.509			scvi
+d6505c89	0.411	0.83	0.652			scvi
+e22482ee	0.016	0.101	0.024			scvi
+edc8d3fe	0.238	0.468				scvi
+98219f72	0.005		0.293	few_donors	2.0	bbknn
+64267fb5	0.001		0.15	few_donors	2.0	bbknn
+9ec34295	0.074		0.318	few_donors	2.0	bbknn
+c838aec3	0.0			many_donors	625.0	scanorama

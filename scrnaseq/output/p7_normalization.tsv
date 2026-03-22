@@ -1,49 +1,49 @@
 dataset_id	tissue	organism	method	mean_marker_auc	silhouette_score	hvg_jaccard_vs_lognorm	runtime_seconds
-fd072bc3-2dfb-46f8-b4e3-467cb3223182	skin of body	Homo sapiens	log_normalize	0.891	0.3484	1.0	1.44
-fd072bc3-2dfb-46f8-b4e3-467cb3223182	skin of body	Homo sapiens	sctransform	0.8898	0.282	1.0	69.52
-fd072bc3-2dfb-46f8-b4e3-467cb3223182	skin of body	Homo sapiens	scran	0.8906	0.3851	1.0	92.57
-e84f2780-51e8-4cfa-8aa0-13bbfef677c7	liver	Homo sapiens	log_normalize	0.8101	0.249	1.0	0.03
-e84f2780-51e8-4cfa-8aa0-13bbfef677c7	liver	Homo sapiens	sctransform	0.7924	0.2325	1.0	62.81
-e84f2780-51e8-4cfa-8aa0-13bbfef677c7	liver	Homo sapiens	scran	0.8067	0.2034	1.0	89.3
-fd072bc3-2dfb-46f8-b4e3-467cb3223182	yolk sac	Homo sapiens	log_normalize	0.854	0.5644	1.0	0.06
-fd072bc3-2dfb-46f8-b4e3-467cb3223182	yolk sac	Homo sapiens	sctransform	0.8449	0.4682	1.0	60.95
-fd072bc3-2dfb-46f8-b4e3-467cb3223182	yolk sac	Homo sapiens	scran	0.8542	0.6153	1.0	93.74
-9f222629-9e39-47d0-b83f-e08d610c7479	lung	Homo sapiens	log_normalize	0.8586	0.2254	1.0	0.04
-9f222629-9e39-47d0-b83f-e08d610c7479	lung	Homo sapiens	sctransform	0.8509	0.1644	1.0	81.01
-9f222629-9e39-47d0-b83f-e08d610c7479	lung	Homo sapiens	scran	0.8583	0.1338	1.0	110.92
-67b6b9ac-b841-42ce-b2d4-ed2ec12327bd	lymph node	Homo sapiens	log_normalize	0.7408	0.2511	1.0	0.06
-67b6b9ac-b841-42ce-b2d4-ed2ec12327bd	lymph node	Homo sapiens	sctransform	0.7327	0.1666	1.0	85.66
-67b6b9ac-b841-42ce-b2d4-ed2ec12327bd	lymph node	Homo sapiens	scran	0.7414	0.177	1.0	117.9
-1a9f3b38-b86d-416d-bbdc-9058ad3ff42d	eye	Homo sapiens	log_normalize	0.6692	0.2341	1.0	0.04
-1a9f3b38-b86d-416d-bbdc-9058ad3ff42d	eye	Homo sapiens	sctransform	0.6571	0.2136	1.0	75.87
-1a9f3b38-b86d-416d-bbdc-9058ad3ff42d	eye	Homo sapiens	scran	0.6692	0.2075	1.0	105.88
-842c6f5d-4a94-4eef-8510-8c792d1124bc	breast	Homo sapiens	log_normalize	0.8804	0.3647	1.0	0.04
-842c6f5d-4a94-4eef-8510-8c792d1124bc	breast	Homo sapiens	sctransform	0.8744	0.3023	1.0	63.78
-842c6f5d-4a94-4eef-8510-8c792d1124bc	breast	Homo sapiens	scran	0.8804	0.3404	1.0	101.11
-29244e1d-02e6-4133-b411-516ef7474638	endocrine gland	Homo sapiens	log_normalize	0.8782	0.3199	1.0	0.04
-29244e1d-02e6-4133-b411-516ef7474638	endocrine gland	Homo sapiens	sctransform	0.8684	0.0145	1.0	59.4
-29244e1d-02e6-4133-b411-516ef7474638	endocrine gland	Homo sapiens	scran	0.8785	0.4361	1.0	90.71
-dcfd4feb-18a3-4b30-81d7-1b0c544a8ab3	embryo	Mus musculus	log_normalize		0.2765	1.0	0.04
-dcfd4feb-18a3-4b30-81d7-1b0c544a8ab3	embryo	Mus musculus	sctransform		0.2553	1.0	69.84
-dcfd4feb-18a3-4b30-81d7-1b0c544a8ab3	embryo	Mus musculus	scran		0.2338	1.0	101.73
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	liver	Mus musculus	log_normalize		0.6632	1.0	0.04
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	liver	Mus musculus	sctransform		0.64	1.0	50.36
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	liver	Mus musculus	scran		0.5605	1.0	78.08
-6c6b4c47-096d-4084-97e7-714ee10c556c	exocrine gland	Mus musculus	log_normalize		0.4363	1.0	0.04
-6c6b4c47-096d-4084-97e7-714ee10c556c	exocrine gland	Mus musculus	sctransform		0.2757	1.0	50.71
-6c6b4c47-096d-4084-97e7-714ee10c556c	exocrine gland	Mus musculus	scran		0.4322	1.0	83.6
-89840cec-5734-455d-b68e-34d27650e148	lung	Mus musculus	log_normalize		0.3705	1.0	0.08
-89840cec-5734-455d-b68e-34d27650e148	lung	Mus musculus	sctransform		0.3789	1.0	68.01
-89840cec-5734-455d-b68e-34d27650e148	lung	Mus musculus	scran		0.3246	1.0	99.19
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	blood	Mus musculus	log_normalize		0.4114	1.0	0.06
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	blood	Mus musculus	sctransform		0.3838	1.0	52.12
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	blood	Mus musculus	scran		0.425	1.0	88.11
-4c4cfb38-c2af-4524-8ef8-bbcf1b6e2670	forelimb	Mus musculus	log_normalize		0.4744	1.0	0.1
-4c4cfb38-c2af-4524-8ef8-bbcf1b6e2670	forelimb	Mus musculus	sctransform		0.4878	1.0	63.26
-4c4cfb38-c2af-4524-8ef8-bbcf1b6e2670	forelimb	Mus musculus	scran		0.4992	1.0	99.52
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	heart	Mus musculus	log_normalize		0.4195	1.0	0.11
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	heart	Mus musculus	sctransform		0.4077	1.0	61.51
-7b6bab5a-f9c4-4a56-9ed4-3b9079b14867	heart	Mus musculus	scran		0.3637	1.0	95.97
-e056b20b-bb29-40c8-afd4-03124cf828a8	brain	Mus musculus	log_normalize		0.4801	1.0	0.06
-e056b20b-bb29-40c8-afd4-03124cf828a8	brain	Mus musculus	sctransform		0.3213	1.0	59.28
-e056b20b-bb29-40c8-afd4-03124cf828a8	brain	Mus musculus	scran		0.464	1.0	90.38
+human_1a2e3350_bone_marrow	bone marrow	Homo sapiens	log_normalize	0.8406	0.2438	1.0	0.21
+human_1a2e3350_bone_marrow	bone marrow	Homo sapiens	sctransform	0.8409	0.2382		13.52
+human_1a2e3350_bone_marrow	bone marrow	Homo sapiens	scran	0.8412	0.2422		14.44
+human_1d89d081_liver	liver	Homo sapiens	log_normalize	0.7834	0.2769	1.0	0.36
+human_1d89d081_liver	liver	Homo sapiens	sctransform	0.7803	0.2715		14.43
+human_1d89d081_liver	liver	Homo sapiens	scran	0.783	0.2587		27.28
+human_8f3e7fcf_uterus	uterus	Homo sapiens	log_normalize	0.5105	-0.0387	1.0	0.8
+human_8f3e7fcf_uterus	uterus	Homo sapiens	sctransform	0.5109	-0.0476		24.98
+human_8f3e7fcf_uterus	uterus	Homo sapiens	scran	0.5111	-0.0404		65.76
+human_9ea768a2_kidney	kidney	Homo sapiens	log_normalize	0.7553	0.2321	1.0	0.19
+human_9ea768a2_kidney	kidney	Homo sapiens	sctransform	0.7488	0.24		11.1
+human_9ea768a2_kidney	kidney	Homo sapiens	scran	0.7542	0.2182		19.84
+human_acd544d0_musculature	musculature	Homo sapiens	log_normalize	0.6441	0.1963	1.0	0.6
+human_acd544d0_musculature	musculature	Homo sapiens	sctransform	0.6419	0.1902		18.57
+human_acd544d0_musculature	musculature	Homo sapiens	scran	0.6448	0.2004		33.38
+human_bdd109f1_skeletal_system	skeletal system	Homo sapiens	log_normalize	0.7335	0.2175	1.0	0.02
+human_bdd109f1_skeletal_system	skeletal system	Homo sapiens	sctransform	0.7281	0.2189		3.24
+human_bdd109f1_skeletal_system	skeletal system	Homo sapiens	scran	0.7327	0.2242		2.12
+human_e04daea4_lung	lung	Homo sapiens	log_normalize	0.8675	0.2572	1.0	0.32
+human_e04daea4_lung	lung	Homo sapiens	sctransform	0.8883	0.2278		10.59
+human_e04daea4_lung	lung	Homo sapiens	scran	0.8688	0.2526		19.69
+human_fbdd8c17_exocrine_gland	exocrine gland	Homo sapiens	log_normalize	0.7741	0.0997	1.0	0.1
+human_fbdd8c17_exocrine_gland	exocrine gland	Homo sapiens	sctransform	0.7732	0.0441		11.03
+human_fbdd8c17_exocrine_gland	exocrine gland	Homo sapiens	scran	0.774	0.1114		24.05
+mouse_2a262b59_urethra	urethra	Mus musculus	log_normalize		0.1582	1.0	0.43
+mouse_2a262b59_urethra	urethra	Mus musculus	sctransform		0.1242		15.09
+mouse_2a262b59_urethra	urethra	Mus musculus	scran		0.1605		26.63
+mouse_42bb7f78_kidney	kidney	Mus musculus	log_normalize		-0.1311	1.0	0.32
+mouse_42bb7f78_kidney	kidney	Mus musculus	sctransform		-0.1108		18.41
+mouse_42bb7f78_kidney	kidney	Mus musculus	scran		-0.1415		61.01
+mouse_48b37086_musculature	musculature	Mus musculus	log_normalize		-0.0646	1.0	0.57
+mouse_48b37086_musculature	musculature	Mus musculus	sctransform		-0.0589		17.63
+mouse_48b37086_musculature	musculature	Mus musculus	scran		-0.0609		47.32
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	log_normalize		0.0603	1.0	0.73
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	sctransform		0.0261		24.95
+mouse_4c4cfb38_forelimb	forelimb	Mus musculus	scran		0.0766		68.28
+mouse_7b6bab5a_blood	blood	Mus musculus	log_normalize		0.107	1.0	0.68
+mouse_7b6bab5a_blood	blood	Mus musculus	sctransform		0.1119		21.84
+mouse_7b6bab5a_blood	blood	Mus musculus	scran		0.0944		58.86
+mouse_89840cec_lung	lung	Mus musculus	log_normalize		-0.1155	1.0	0.79
+mouse_89840cec_lung	lung	Mus musculus	sctransform		-0.0646		23.74
+mouse_89840cec_lung	lung	Mus musculus	scran		-0.0403		62.0
+mouse_98e5ea9f_heart	heart	Mus musculus	log_normalize		-0.0307	1.0	0.68
+mouse_98e5ea9f_heart	heart	Mus musculus	sctransform		-0.0352		20.68
+mouse_98e5ea9f_heart	heart	Mus musculus	scran		-0.0478		67.86
+mouse_e056b20b_brain	brain	Mus musculus	log_normalize		-0.0152	1.0	0.65
+mouse_e056b20b_brain	brain	Mus musculus	sctransform		0.0027		20.14
+mouse_e056b20b_brain	brain	Mus musculus	scran		-0.019		63.86
