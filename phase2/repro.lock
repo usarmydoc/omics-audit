@@ -169,6 +169,125 @@
       "sha256": "4c4c9a35219fc58e78597c045715040bd7744faee5afe98234acbf11401b2e3a",
       "size_bytes": 8089
     },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/CP2_report.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp2_report",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "47b68d950e6e3911a9141d25ad720a781dcea6474c113a74cda10736d7a2bb09",
+      "size_bytes": 3181
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/R_session_info.txt": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "81ffb7d94f2e4ba9ecace53b258643cc8416f0caa4624c6da5576d76075d6d6d",
+      "size_bytes": 1853
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_kegg_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "4cff4d1312b7198de066d0916d31aa2be2296573b267e7bf485e2fab1510864c",
+      "size_bytes": 1234551
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_kegg_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "c8c1f0d5c65a02fdc3a0674e05ba720488ac7bb0352c5816ddc281d538009f64",
+      "size_bytes": 699008
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_reactome_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "d94b0bcfcc57f489e0091400c52da2b25df478a0ca45433195fd1d79e9dd1de7",
+      "size_bytes": 11843272
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_reactome_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "06cb5e2a1a6c73549349836e48e2fd61856b8b26fed5c2c3c45995b1387694e6",
+      "size_bytes": 4828544
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_wikipathways_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "c844286fb0e9c13c3160a270d54963c87c01bd87e27447ce0cbaa945e2a489d2",
+      "size_bytes": 4306845
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_wikipathways_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "92f01cbe8aafc039122e3c64f50666b864f8dd4a0581ab232a34f71ddd8961c0",
+      "size_bytes": 2498206
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c5_go_bp_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "fdd0a63ff4dd8db2b3a1b7c3a4835bc269e6865cf80e06aabdf7bf9ba07c74ab",
+      "size_bytes": 59782270
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c5_go_bp_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "fafcb1cb74998f082656fe0c709a37e9ec5ea63f63968c81befd99a0de5daf91",
+      "size_bytes": 24752282
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_hallmark_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "4a872dd319e75a2992199de28942723cc8344a090be3abb86e14e0d4b20f067f",
+      "size_bytes": 557624
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_hallmark_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "7bd02d65a51c08d3f95bef41019171ea14b2899d70c69de2b26dd55156b79d5a",
+      "size_bytes": 591040
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/python_session_info.txt": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "21f722feea85103378889105472950f8f85e5d463808f14d334e30ce3094d0a8",
+      "size_bytes": 294
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/reactome_db_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "9cf9a4761a628b8cc660dc3436c133d692565d1e12aa507bb31094b1e2a859a6",
+      "size_bytes": 10034135
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/reactome_db_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "0b7406d30960c43ddc3b16b7c4ff7bfd6dfb5405ab684c3b4bdabf2c9ba045ef",
+      "size_bytes": 5689770
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/wikipathways-20260510-gmt-Homo_sapiens.gmt": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "ef2cb6dce69107b0f95daa0544ee5a35c888fe073d10ad8915f406b6aecc9500",
+      "size_bytes": 340454
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/wikipathways-20260510-gmt-Mus_musculus.gmt": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_database_cache",
+      "registered_at": "2026-05-16T18:21:32",
+      "sha256": "8705258b54ddbe97d65e51ae681f5dc03b36cfaaf7da796fe22cda6d360dd6e6",
+      "size_bytes": 93819
+    },
     "/mnt/nvme1/omics-audit/phase2/audit1_main/datasets/CP1_report.md": {
       "environment_id": "464cdbd07774154b",
       "kind": "audit1_main_cp1_report",

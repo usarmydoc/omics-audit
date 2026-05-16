@@ -1,0 +1,14 @@
+# Python environment for Audit 1 main CP2
+# Captured: 2026-05-16T18:21:30
+
+Python: 3.12.9
+Platform: Linux-6.17.0-23-generic-x86_64-with-glibc2.39
+
+## Key audit packages:
+  gseapy: 1.1.13
+  goatools: 1.6.5
+  mygene: 3.2.2
+  biothings_client: 0.5.0
+  pandas: 2.3.3
+  numpy: 2.4.0
+  scipy: 1.17.1
