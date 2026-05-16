@@ -1,0 +1,27 @@
+dataset_short	tissue	cell_type	nebula_sig	muscat_pb_sig	muscat_mm_dream_sig	nebula_n	muscat_pb_n	muscat_mm_dream_n	muscat_mm_pct_sig	nebula_inflation_vs_pb	muscat_mm_inflation_vs_pb	jaccard_top100_nebula_vs_pb	jaccard_top100_mm_vs_pb	spearman_log2fc_nebula_vs_pb	spearman_log2fc_mm_vs_pb
+16023185	?	?	9721	2216	8693	10000	9960	10000	86.93	4.387	3.923	0.0101	0.1905	0.7203	0.4968
+19053a82	?	?	746	96	536	9702	3991	10000	5.36	7.771	5.583	0.0929	0.1834	0.5845	0.4942
+218acb0f	blood/systemic lupus erythematosus	CD4-positive, alpha-beta T cell	1318	621	594	9482	1190	10000	5.94	2.122	0.957	0.2739	0.4815	0.9947	0.9511
+37a17b78	brain/Lewy body dementia; Parkinson disease; amyotrophic lateral sclerosis	oligodendrocyte	130	222	185	10000	3062	10000	1.85	0.586	0.833	0.227	0.4286	0.9162	0.8826
+49e4ffcc	pancreas/endocrine pancreas disorder; type 1 diabetes mellitus; type 2 diabetes mellitus	type B pancreatic cell	2074	2832	1020	9999	9877	9999	10.2	0.732	0.36	0.1905	0.1628	0.9825	0.9171
+4a5b00e0	?	?	255	413	5	10000	6693	10000	0.05	0.617	0.012	0.2048	0.1905	0.9584	0.7726
+5c97eeeb	brain/atherosclerosis; atherosclerosis || tardive dyskinesia || schizoaffective bipolar disorder; bipolar I disorder	oligodendrocyte	116	349	93	10000	6049	10000	0.93	0.332	0.266	0.4085	0.5504	0.9777	0.9044
+5d6d404a	nervous system/peripheral neuropathy	trigeminal neuron	11	36	0	10000	9644	10000	0.0	0.306	0.0	0.5385	0.005	0.8986	0.8503
+5e57cd50	?	?	0	1	0	10000	8781	10000	0.0	0.0	0.0	0.005	0.0	0.9471	0.832
+67b6b9ac	?	?	1240	840	2783	10000	5280	10000	27.83	1.476	3.313	0.3514	0.1696	0.9423	0.8003
+6a270451	?	?	506	6	347	9999	2817	9998	3.47	84.333	57.833	0.0753	0.0582	0.6037	0.4412
+6f7fd0f1	brain/dementia	L2/3-6 intratelencephalic projecting glutamatergic neuron	3333	1016	1973	10000	10000	10000	19.73	3.281	1.942	0.3423	0.2195	0.9769	0.6757
+7b6bab5a	blood/myocardial infarction	granulocyte	232	0	0	9948	7445	9998	0.0	232.0	0.0	0.005	0.0	0.9147	0.5457
+9dbab10c	blood/COVID-19	CD8-positive, alpha-beta T cell	1637	989	912	10000	5669	10000	9.12	1.655	0.922	0.227	0.1976	0.9857	0.9137
+9f222629	lung/COVID-19; chronic obstructive pulmonary disease; chronic rhinitis	unknown	4079	2082	1218	10000	3694	10000	12.18	1.959	0.585	0.0526	0.1696	0.7699	0.7279
+a19d1667	?	?	429	698	7733	10000	1666	10000	77.33	0.615	11.079	0.2195	0.0582	0.9537	0.9276
+a48343a2	musculature/lesion of sciatic nerve; neuromuscular junction disease; toxin-mediated infectious botulism	type IIb muscle cell	5412	3702	5947	10000	9987	10000	59.47	1.462	1.606	0.3793	0.1561	0.9989	0.8564
+b2dd6bc9	skin of body/injury	skin fibroblast	40	301	3	10000	9919	10000	0.03	0.133	0.01	0.25	0.0417	0.9589	0.864
+b617ee1b	?	?	4417	515	8867	9991	8565	9980	88.85	8.577	17.217	0.0101	0.005	-0.107	0.0536
+b6f472f1	nervous system/peripheral neuropathy	sensory neuron of dorsal root ganglion	8641	3439	1256	10000	8438	10000	12.56	2.513	0.365	0.1834	0.0989	0.901	0.4869
+c2876b1b	brain/dementia	L2/3-6 intratelencephalic projecting glutamatergic neuron	1750	2890	3021	10000	10000	10000	30.21	0.606	1.045	0.3793	0.1905	0.9865	0.6224
+c7775e88	?	?	1605	755	9667	10000	4320	10000	96.67	2.126	12.804	0.2579	0.0417	0.9779	0.7696
+d3cb449b	brain/Parkinson disease	oligodendrocyte	1970	2012	1460	10000	9377	10000	14.6	0.979	0.726	0.2739	0.2579	0.9942	0.8922
+d9f3a82c	?	?	2726	1352	252	10000	3962	10000	2.52	2.016	0.186	0.1236	0.3333	0.9695	0.8529
+ebc2e1ff	blood/COVID-19; influenza	CD4-positive, alpha-beta T cell	2635	1205	167	10000	5115	10000	1.67	2.187	0.139	0.1765	0.25	0.9892	0.8605
+f14bc322	lung/anthracosis; hypersensitivity pneumonitis; interstitial lung disease	pulmonary alveolar type 2 cell	1998	2422	1657	10000	6938	10000	16.57	0.825	0.684	0.4388	0.4388	0.9827	0.8818

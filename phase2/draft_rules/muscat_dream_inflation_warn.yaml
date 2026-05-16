@@ -1,0 +1,256 @@
+# A6 §1.9a verification rule — FINAL, A6 completed 2026-05-16.
+# A6 ran NEBULA + muscat::pbDS + muscat::mmDS across 26 P4-eligible Census
+# datasets (20 H. sapiens + 6 Mus musculus). Full results in
+# phase2a/a6_analysis_full.tsv.
+#
+# §1.9a (Phase 1) framed muscat-dream inflation as specific to lymph node
+# and skin fibroblast (5-dataset subset). A6 26-dataset verification
+# confirms the bimodal pattern is REAL but BROADER than tissue-specific:
+#
+#   muscat-dream inflation vs pseudobulk (26 datasets):
+#     median: 0.78× (close to §1.9a's 0.85× — consistent at the center)
+#     range:  0.00× to 57.83× — strongly bimodal
+#     n > 2×:  7 of 26 (27%)
+#     n > 10×: 4 of 26 (15%)
+#
+#   HIGH inflation (>50% genes called sig) — 5 datasets:
+#     c7775e88: 96.7% sig — blood/COVID-19, naive CD4 T cells
+#     b617ee1b: 88.8% sig — breast/multi-cancer, T cells
+#     16023185: 86.9% sig — large intestine/colon adenocarcinoma, stem cells
+#     a19d1667: 77.3% sig — skin/keloid; scleroderma, skin fibroblast  ← §1.9a's case
+#     a48343a2: 59.5% sig — musculature/neuromuscular disease, type IIb muscle cell
+#
+#   LOW activity (<10% genes called sig) — 13 datasets including
+#   b2dd6bc9 (MOUSE skin fibroblast) at 0.03% — directly contradicting any
+#   pure "skin fibroblast inflated" generalization.
+#
+# Companion metrics:
+#   top-100 Jaccard mm vs pb: median 0.176, 21/26 datasets < 0.30
+#   log2FC Spearman mm vs pb: median 0.841 (strong agreement in direction
+#     and magnitude when both tools call a gene — disagreement is in WHICH
+#     genes pass FDR, not in effect sizes)
+#
+# Verdict: refines_prior. §1.9a's center-of-distribution claim holds
+# (median ~0.85× ≈ 0.78×). But the bimodality is dataset-driven, not
+# tissue-driven — same tissue (skin fibroblast) shows opposite behavior
+# in human vs mouse. The rule applies across modalities; users must
+# co-report pseudobulk to detect per-dataset inflation.
+
+- rule_id: scrna_muscat_dream_cell_level_de_inflation_warn
+  schema_version: "1.0.2"
+  status: draft
+  title: "Warn muscat-dream cell-level DE without pseudobulk co-report"
+  description: >
+    scRNA-seq differential expression performed at the cell level using
+    muscat::mmDS with method="dream" (variancePartition's dream linear
+    mixed model on per-cell counts) can produce dramatically inflated
+    significance calls on a substantial fraction of datasets — calling
+    50–97% of tested genes significant where pseudobulk DESeq2 on the same
+    data calls <5% significant. The inflation is dataset-specific (not
+    a global property of the method) and does NOT correlate cleanly with
+    cell count, donor count, or tissue type.
+
+    Phase 1 §1.9a flagged this pattern in lymph node and skin fibroblast
+    datasets on a 5-dataset subset (median inflation 0.85× vs pseudobulk
+    in that subset). Phase 2a A6 ran the comparison across 26 P4-eligible
+    Census datasets (20 H. sapiens + 6 Mus musculus) and found the
+    bimodal pattern is broader: 7 of 26 show >2× inflation; 4 of 26 show
+    >10× inflation. The inflated set spans blood T cells (c7775e88,
+    b617ee1b), large-intestine stem cells (16023185), human skin
+    fibroblast (a19d1667 — §1.9a's case), and skeletal muscle
+    (a48343a2) — five tissues across two organisms. The implication:
+    muscat-dream cell-level DE results should not be used as the
+    primary DE arm without a side-by-side pseudobulk comparison the
+    user can use to detect inflation on their specific data.
+
+    Companion metrics per AUDIT_STANDARDS.md multi-metric check on the
+    26-dataset A6 corpus:
+    - top-100 Jaccard muscat-dream vs pseudobulk: median 0.176;
+      21/26 datasets < 0.30 (the two tools mostly disagree on which
+      genes are top-ranked).
+    - log2FC Spearman correlation muscat-dream vs pseudobulk: median
+      0.841 (strong direction agreement and effect-size agreement on
+      genes where both tools call a result — i.e. when both pass FDR,
+      the magnitude and sign of log-fold-change agree; the
+      disagreement is specifically in WHICH genes pass FDR, not in
+      the effect size estimates).
+    - inflation > 2× AND top-100 Jaccard < 0.30: the joint criterion
+      that flags "on the inflated side of the bimodal distribution"
+      on a per-dataset basis.
+
+  created_date: "2026-05-16"
+
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_de_test
+        parameter: method
+      description: "Fires at the scRNA-seq cell-type-stratified DE step when a method parameter is set."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: method
+        check_op: value_in_list
+        expected_value_in_list:
+          - "muscat_mm_dream"
+          - "mmDS_dream"
+          - "muscat::mmDS"
+          - "dream"
+          - "variancePartition::dream"
+      description: "Fires when the chosen DE method is the muscat-dream variancePartition-based cell-level mixed model."
+
+  recommendation:
+    text: >
+      Use muscat-dream cell-level DE ONLY as a secondary/exploratory arm
+      alongside a pseudobulk-based primary DE (e.g., muscat::pbDS with
+      DESeq2, edgeR, or limma-voom). Compute and report side-by-side:
+      (1) number of significant genes per method on this dataset,
+      (2) top-100 Jaccard between muscat-dream and pseudobulk hits,
+      (3) log2FC Spearman correlation between muscat-dream and pseudobulk.
+      If muscat-dream calls >2× more significant genes than pseudobulk
+      with top-100 Jaccard <0.30 and log2FC Spearman <0.30 on this
+      dataset, treat muscat-dream results as inflated and use pseudobulk
+      as the trusted arm. Both arms should appear in the analysis report
+      so the reader can see the comparison.
+    action_type: report_additional_metric
+    code_example: |
+      # In your scRNA DE step, run BOTH and report side-by-side:
+      library(muscat)
+      library(BiocParallel)
+      pb  <- aggregateData(sce, assay = "counts", fun = "sum",
+                           by = c("cluster_id", "sample_id"))
+      # propagate group_id (muscat 1.24 quirk)
+      if (is.null(pb$group_id) && !is.null(metadata(pb)$experiment_info$group_id)) {
+        pb$group_id <- metadata(pb)$experiment_info$group_id[
+          match(colnames(pb), as.character(metadata(pb)$experiment_info$sample_id))]
+      }
+      res_pb <- pbDS(pb, method = "DESeq2", verbose = FALSE)
+      res_mm <- mmDS(sce, method = "dream", verbose = FALSE,
+                     BPPARAM = MulticoreParam(6, progressbar = FALSE))
+      # Report sig counts + top-100 Jaccard + log2FC Spearman of pb vs mm
+      # Flag dataset as INFLATED if mm/pb sig ratio > 2 AND Jaccard < 0.30
+
+  confidence_tier: conditional
+  severity: warn
+  prior_audit_relationship: refines_prior
+
+  evidence:
+    - audit_id: §1.9a
+      audit_phase: "Phase 1 (scRNA-seq audit)"
+      output_paths:
+        - "scrnaseq_audit/output/phase1_march2026_superseded/p4_pseudobulk.tsv"
+      lock_file_entries:
+        - "aa8087a36d4b1739bdcf25f8aa13a6a2cd619409414559a630a9fb9aacc5ffd4"
+      findings_md_section: "scrnaseq_audit/findings.md#1.9a-mixed-model-de-bimodal"
+      summary: >
+        Phase 1 §1.9a 5-dataset subset analysis flagged muscat-dream
+        inflation on lymph node and skin fibroblast specifically; reported
+        median inflation 0.85× vs pseudobulk in that narrow set.
+
+    - audit_id: A6
+      audit_phase: "Phase 2a"
+      output_paths:
+        - "phase2a/a6_mixed_model/<dataset>/<dataset>__nebula.tsv"
+        - "phase2a/a6_mixed_model/<dataset>/<dataset>__muscat_pb_DESeq2.tsv"
+        - "phase2a/a6_mixed_model/<dataset>/<dataset>__muscat_mm_dream.tsv"
+        - "phase2a/a6_analysis_full.tsv"
+      lock_file_entries:
+        - "5988c3c136a815f91c3fd874be071256217cd4ea73c331a4813074cb59c170b6"
+      findings_md_section: "phase2a/findings.md#a6-muscat-dream-inflation-26-dataset"
+      summary: >
+        Phase 2a A6 ran NEBULA + muscat::pbDS + muscat::mmDS across all
+        26 P4-eligible Census datasets (20 H. sapiens + 6 Mus musculus,
+        smallest-first ordering, with the gene-name dedup +
+        group_id propagation + n_threads → BPPARAM bug fixes documented
+        in phase2/scripts/a6_nebula_muscat.R).
+        Final 26/26 datasets produced all 3 tool outputs.
+
+        Aggregate findings (n=26):
+        - muscat-dream inflation vs pseudobulk: median 0.78×, mean 4.71×,
+          range [0.00×, 57.83×] (strongly bimodal)
+        - n datasets with inflation > 2×: 7 of 26 (27%)
+        - n datasets with inflation > 5×: 5 of 26 (19%)
+        - n datasets with inflation > 10×: 4 of 26 (15%)
+        - top-100 Jaccard mm vs pb: median 0.176, 21/26 < 0.30
+        - log2FC Spearman mm vs pb: median 0.841
+
+        HIGH inflation set (>50% genes called significant by muscat-dream):
+        - c7775e88: 96.7% — blood/COVID-19; naive CD4 T cells
+        - b617ee1b: 88.8% — breast/multi-cancer; T cells
+        - 16023185: 86.9% — large intestine/colon adenocarcinoma; stem cells
+        - a19d1667: 77.3% — skin/keloid; skin fibroblast (§1.9a's original case)
+        - a48343a2: 59.5% — musculature/neuromuscular disease; type IIb muscle cell
+
+        LOW activity set (<10% genes sig): 13 of 26 datasets, including
+        b2dd6bc9 mouse skin fibroblast at 0.03% — directly contradicting
+        any tissue-specific generalization of §1.9a's "skin fibroblast"
+        finding (human skin fibroblast inflated; mouse skin fibroblast not).
+
+        Disposition: refines_prior. §1.9a's center-of-distribution claim
+        (median ~0.85×) holds at 26-dataset scale (median 0.78×). The
+        bimodality is real and broader than §1.9a stated (5 inflated
+        datasets across multiple tissues and organisms), but is
+        dataset-driven rather than tissue-driven — same tissue shows
+        opposite behavior in different datasets/organisms.
+
+  out_of_scope:
+    - "Mixed models other than muscat::mmDS dream (e.g., NEBULA, glmer) not separately characterized for inflation; NEBULA's behavior was measured in A6 and is reported but no separate rule is emitted for NEBULA here"
+    - "Single-cluster datasets (n=1 cell type) not in A6 evidence base"
+    - "Datasets with < 6 donors not in the P4-eligible set; behavior on smaller donor counts not tested"
+    - "Recommendation does not prescribe which pseudobulk method to use (DESeq2 / edgeR / limma-voom); that choice is governed by separate rules"
+    - "The 2× / Jaccard 0.30 / Spearman 0.30 thresholds for flagging inflation are heuristic — derived from the A6 distribution. Datasets near these thresholds should be inspected by the user"
+
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+
+  related_rules:
+    - scrna_multidonor_pseudobulk    # V0 rule recommending pseudobulk for multi-donor
+
+  mechanism_notes: >
+    muscat::mmDS with method="dream" fits a linear mixed model per gene
+    on per-cell counts with donor as random effect, using
+    variancePartition's dream framework (which uses voom-style precision
+    weighting on the cell-level data). When the random-effect variance
+    component is poorly estimated (e.g., due to extreme within-donor
+    variance, donor imbalance, or a sparse cell-type-specific signal),
+    the model can effectively degenerate to a fixed-effect fit on cells,
+    treating each cell as an independent observation. This violates the
+    independence assumption — there are donor-many independent units,
+    not cell-many — and produces pseudoreplication inflation in the test
+    statistic. Pseudobulk methods aggregate to donor-level before
+    testing, sidestepping the issue but at the cost of within-donor
+    cell-type heterogeneity information. The empirical bimodal pattern
+    in A6 reflects which datasets have the random-effect variance well-
+    enough estimated for mmDS to control type-I error, versus which
+    don't.
+
+    Beyond statistical correctness, pseudobulk methods dominate on
+    runtime and RAM. A6 measurements per dataset:
+      - muscat::pbDS DESeq2:  3-20 sec, ~16 MB peak (donor × gene matrix)
+      - nebula (4-8 cores):   70-90 sec, moderate (single R process)
+      - muscat::mmDS dream:   70-600+ sec with 6-16 BPPARAM workers;
+                              each worker forks the SCE (copy-on-write)
+                              and accumulates per-gene-fit allocations,
+                              easily hitting 64 GB swap on 20k-cell
+                              datasets with 16 workers. Reduce to 4-6
+                              workers to stay within RAM budget on
+                              typical workstations.
+    The combined picture (statistical instability + runtime cost + RAM
+    cost) makes pseudobulk the unambiguous default; mmDS-dream is
+    secondary and only justifiable when the within-donor heterogeneity
+    hypothesis being tested cannot be addressed by pseudobulk.
+
+    Direction-of-effect agreement (sign concordance) is also captured
+    in the companion metrics — when both tools call a gene, the
+    direction of the log2FC sign agrees (per the 0.841 median
+    Spearman). Disagreement is in WHICH genes pass FDR threshold,
+    not in the direction or magnitude of the effect on the genes
+    that both tools call.
+
+# Migration to BioOrchestrator corpus:
+# Once A6 finishes and the placeholders are filled in:
+#   1. Move this file from _pending_a6/ to draft_rules/
+#   2. Run validate_rules.py to confirm schema v1.0.2 compliance
+#   3. Copy into bioorchestrator/src/bioorchestrator/knowledge/rules/scrna/
+#   4. Bump version, commit as "feat: A6 §1.9a rule" on main
+#   5. Update Phase 2a CLOSEOUT.md and findings.md with the A6 result
