@@ -303,6 +303,2660 @@
       "sha256": "569bf5978c4aff2e12a79724a4d904ccabb546cc540849b85147e608ebd38f94",
       "size_bytes": 39027
     },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/E1_findings.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_metric",
+      "registered_at": "2026-05-16T18:44:38",
+      "sha256": "a3ac93b0bd5247b6ad4ca071d26f805ef046e618d565f4bfc5f4c07f67cba87d",
+      "size_bytes": 3094
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/e1_run_summary.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_run_summary",
+      "n_runs": 375,
+      "registered_at": "2026-05-16T18:44:10",
+      "sha256": "3afdb32544d2a2ccfb2badc42bbcf72fb047b86412b21af6e0b1bcfdc9d9377b",
+      "size_bytes": 28057
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/per_input_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_metric",
+      "registered_at": "2026-05-16T18:44:38",
+      "sha256": "8306d23ebaf93ce13b73d5ec93c785ef0c29c2abc43a790ca7587cc0d9872b4b",
+      "size_bytes": 66670
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/per_stratum_bootstrap.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_metric",
+      "registered_at": "2026-05-16T18:44:38",
+      "sha256": "a23467e53ced4aa82cb1d0a245be892d83db6dd2e0440a628a3e65561fadd673",
+      "size_bytes": 3859
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__16023185_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "35de179df84bbf380776ae222303a863192911eafaaf5d89b1f61333a5f8dbcb",
+      "size_bytes": 19581
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__16023185_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "bc5f982f2a9f17a4f7f6838cdff611f6a778df19f0eb967139c4803fc17bc17f",
+      "size_bytes": 21000
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__16023185_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "1ed1f7883c228a535ec6f6d3f92ca13f620f66c46d8a53ffd477fd6a4e1d0d49",
+      "size_bytes": 19438
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__16023185_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "b8314dd2a44e5e3c1b54aa7189e67ab7db63c77352933863638998011801c45e",
+      "size_bytes": 40633
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__16023185_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "e9704764bda2cb4de78b4f3dba85b00f9678e1307b2520adc230a6e8faacd913",
+      "size_bytes": 28197
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__16023185_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "ecf9a83c9e4e5a4d72390a0236846f27ac03f3e21b24d995399d35a3c45bd935",
+      "size_bytes": 40409
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__19053a82_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "06134a4581423d797dc7776a2264d565a0e488e46780ae332d48b896b7a1a17f",
+      "size_bytes": 4926
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__19053a82_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "db091c12918dc2a0cf92971bcfec16b2ae2888e46f2666bc5e144bc12c417434",
+      "size_bytes": 16318
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__19053a82_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "7a9a3afd303ea1fb1003547548cef8e0a2ac35d960cb9f13fd6e207dbeedb2c7",
+      "size_bytes": 4861
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__19053a82_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "6ea652712ab874fa035ae30fe6f7e2e47ee34d03079b3ab0fbe5962444808129",
+      "size_bytes": 32872
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__19053a82_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "8d8fe43db30ca6db6e07b350b8c8b092db6ecdd3c1f3a2d9da52d9112df5c720",
+      "size_bytes": 17463
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__19053a82_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "522f61091363a0a19f388df9f06b4d39242f3bf3d091bd319bdbd5192ac0a4c5",
+      "size_bytes": 32709
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__218acb0f_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "942db64a22d7c67f070e88301dd5b901c4e2a2b8bba4809b3a7e3e2f024410e6",
+      "size_bytes": 17415
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__218acb0f_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "c7c8aca87785753b26d20426df2a48441b7d0bedac5a778ac7256a8b1e3296a3",
+      "size_bytes": 15431
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__218acb0f_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "3d7ed3b3042ed3d762c8295c55e33c83662852628c201da1f830e9ad0b80ab7b",
+      "size_bytes": 17328
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__218acb0f_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "3d865ee56ed57a89c1e2b290c7d9bad50b4c3115c2731294fa0dfe06538f2842",
+      "size_bytes": 19852
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__218acb0f_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "09a430b624bb4ca8e123a1509b3260a08e6e96dc6003eaed90c2bd9f2da4c001",
+      "size_bytes": 15601
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__218acb0f_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "15d4c2d879d1b6c22079e76290ebc0cab570e858608194a586a978827ef2234e",
+      "size_bytes": 19743
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__37a17b78_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "e35c6721fc633b5b469be5301b4e0677e819cf5bcaa9130b4af89888d3f6cc75",
+      "size_bytes": 10507
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__37a17b78_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "bb4a677dfe9c55bc42b7baafe029efaed4806678667650f8065def6c0603be7a",
+      "size_bytes": 13265
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__37a17b78_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "267e8ec6b4ffd769877c5fff0680bf569538a57c79ab8a6b2e5d99d1cbe9888d",
+      "size_bytes": 10386
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__37a17b78_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "89258a5f93a5445a33056ae3ba370c3d36df65074a9b84694f0fde7096c704ab",
+      "size_bytes": 13886
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__37a17b78_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "09993481eb541d6737521a06b53722ed28d95b2d231c7c4bd3ac4b434bbe2b03",
+      "size_bytes": 14282
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__37a17b78_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "6cba837b7d16f9f69a5c2067caa353ae8cdd696766c6b99ebf37a2aace5ec2a9",
+      "size_bytes": 13767
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__49e4ffcc_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__49e4ffcc_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__49e4ffcc_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "f8c252fab21d3578688d7e09e8ccf362d74c7634828b31c468612af82beef3ee",
+      "size_bytes": 22243
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__49e4ffcc_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__49e4ffcc_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__49e4ffcc_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "1c106debb5f12f34b3b3650bde69f1508b30c35b711de06060556678a28e0973",
+      "size_bytes": 34636
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__4a5b00e0_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "9662d2bdb1bc3a325264e35bf4d6df2dfff9b7ed5dae7ae5bd7c6100f1bc4af3",
+      "size_bytes": 12988
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__4a5b00e0_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "2d4935f233db3637b3a5f340a999a796fe36235e901ea6cff99ca3f6123fff71",
+      "size_bytes": 19402
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__4a5b00e0_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "d53b43ac6eca83be3a6dcca2d737d38a91bb5cd4991e269e3369840dd40948ce",
+      "size_bytes": 12883
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__4a5b00e0_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "f18ba4baf352f71c4ea8c8cbc9ca376c3b142db0ddf3320782b86b7076420755",
+      "size_bytes": 28420
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__4a5b00e0_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "a99b1d97ef3bf184ac5f929c8b26695203067cf60a9b0c864c0c85d637690a6c",
+      "size_bytes": 17355
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__4a5b00e0_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "01d6ec67023b0e8e94f6572f2a672150bb2f65edad89706a14ba478fb9939a40",
+      "size_bytes": 28341
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5c97eeeb_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "5746d3bc4b1f9419578f5effc22df3591c8731c32d98ceb843498fdfafb2577e",
+      "size_bytes": 9684
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5c97eeeb_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "acc006e2ed15f0d01b994b0b947f79608ef633ee2179a65d82004795af45c31a",
+      "size_bytes": 16036
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5c97eeeb_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "fe64d33f38f873496fb84d69b2a5691a2fec7d7bd56ac04d4aa73b615911f46e",
+      "size_bytes": 9564
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5c97eeeb_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "0306c7b908b537be1c11e4ecddceaeeac9c9262c240e7ac8f9f1b49614d2bc44",
+      "size_bytes": 16203
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5c97eeeb_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "20cf23e5b690b8e060b2032963dcf5c2144ab175b53da3e75ab446848f4623f6",
+      "size_bytes": 14629
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5c97eeeb_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "f224f5d7704d5bf651513ab899cdfa23d4304ebf3767c586b947178955aca9ac",
+      "size_bytes": 16123
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5d6d404a_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5d6d404a_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5d6d404a_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "916900b25d5d1c5d5e9190fabf67d1e36f4440b339b12d47f26463aba84d6062",
+      "size_bytes": 30446
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5e57cd50_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5e57cd50_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:55",
+      "sha256": "fdf79fbbe5e95e3e54825cfb08f87f414c0f36a22b15d0b2b1020e735499c0ed",
+      "size_bytes": 16125
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5e57cd50_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5e57cd50_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c29f1a1e30dd611dbe285249edd24d2cd5ae84fab27adf274337f4e14e72080a",
+      "size_bytes": 20777
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5e57cd50_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "86a8262a22006776ffcffda6256d5c96ebbf6399e2381d2aea16f0b247a3b4c9",
+      "size_bytes": 16449
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__5e57cd50_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b129dabc280b35ce7a7cce0b307b9d895ec7109a7413f659f912ce635dac65b4",
+      "size_bytes": 20586
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__67b6b9ac_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2990f202b7f149e9b9479365048560ced9d30c31f9962a80558ebb40d85880be",
+      "size_bytes": 11899
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__67b6b9ac_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cbb870b00c3fb5e427cdb7a677b7e4663dc71c209b6a9d46fe34bb881e866057",
+      "size_bytes": 17468
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__67b6b9ac_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "352160f4f0d38ec4f6df71eedf49966d980827c9548c1f6c72edf247409fe13b",
+      "size_bytes": 11762
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__67b6b9ac_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cfae611bf37cbd685c9cdc655d0bfd283ab30c2b90bd0e2d7a06940b267d850f",
+      "size_bytes": 27547
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__67b6b9ac_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c81f29d9fce9f4b710fba7e1c11ae496d55aaf364dab999192e0d5294835b98e",
+      "size_bytes": 15047
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__67b6b9ac_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "365a08b98a307fa3ae9d3000440d85f8d7e91f28574721ec6802aeb6096d0a5e",
+      "size_bytes": 27423
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6a270451_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6a270451_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b11ac67c923d6db2263cab449f5e4a354dba5b8023bf47d2b19ca8730685d407",
+      "size_bytes": 16824
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6a270451_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6a270451_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1e4e43ec63e615b949359b78a8bcd714aeeb8c76a607ff9c624abf1fbf12cbb0",
+      "size_bytes": 15209
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6a270451_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b95178249c40b05e70fa6cc1c56bb5db80917a731e03a2d4dfca384c559deafe",
+      "size_bytes": 16427
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6a270451_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "33e59d10d08621acf3f266b4d12647490c43df16c3f22be6c283a7123f5ede2c",
+      "size_bytes": 15098
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6f7fd0f1_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e0da9428b91cc15c5848fcc0b2a823322c03583400a1148482c33a69dbf66c1b",
+      "size_bytes": 14285
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6f7fd0f1_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3b141cb55b2871e38f53e8f2b05f2d1b24bf372bdaf92247f2676bddef2b645c",
+      "size_bytes": 16597
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6f7fd0f1_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "684035ea71861e07775e7da372e5abe690a276ab6029e742c262ceba73a528ae",
+      "size_bytes": 14129
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6f7fd0f1_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "22ad6666ba9b050b91846d58b0fe8d43dfc6d9c0fc22fe37ea57a352726211c4",
+      "size_bytes": 26171
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6f7fd0f1_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1eafd6c13bb32f0f056ad173d9a618f788aace8ec92f5a5f6c3607a787c9274b",
+      "size_bytes": 13286
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__6f7fd0f1_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9621a8cad1aee1d2bf19b61e65ce9e7e5c38edf638c0d5f56712a33471a7e99c",
+      "size_bytes": 26012
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__7b6bab5a_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e0c705d64e62e0f2f706602eb9c20c93e41ded33dfd3c77a7362442961b5073f",
+      "size_bytes": 31204
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__7b6bab5a_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d30ad60893cc7d5a6409eb60ec19a7d7300108bd2426b5771b46096c6cf0dc56",
+      "size_bytes": 14858
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__7b6bab5a_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5a5355607637cf580a2deec45ed9617457c75e52e70814e25f1a08db50f68820",
+      "size_bytes": 31077
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9dbab10c_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "76e05d394e4f9d3b558bd2d6b165333a8ef22b4c929129d01df10da7a3a99aa6",
+      "size_bytes": 25890
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9dbab10c_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "23a87109fa72e54805d34ac496097bab80ec77cbe76fb5d4b542672126726d0b",
+      "size_bytes": 21163
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9dbab10c_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "acca2aa7906cac22534a99c78b1ebcb3cd9056993a22b043ad13dac4fa39c7b6",
+      "size_bytes": 25714
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9dbab10c_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "67a9059b242f7ec6029bfad9bbdae44ef40f4d2534296ec288ff44fa2f5fe756",
+      "size_bytes": 28200
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9dbab10c_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b44233040a8aa0662c7d9faf26dda0f35c9355c73f678c1b966e8c174239372e",
+      "size_bytes": 14837
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9dbab10c_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "438ac3811a9fb2abdeed2be385c0730f730d99145ffa3ccc0429843ea53843f4",
+      "size_bytes": 28074
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9f222629_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "279c23b41bee243aa686891bb28ca688e4dd769be6c54e248228e67ee113b562",
+      "size_bytes": 21780
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9f222629_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "733a55728170bbc3330611879a7c77f12a20a2075ab4bd6a166db778f48d0245",
+      "size_bytes": 20022
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9f222629_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "02599e0dde84569f95f91fd64a6db0ec38b33b1c5b1d82dffeec92cba8380c84",
+      "size_bytes": 21653
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9f222629_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a47eeff497773a40c968d6bdaa051c36d342b4574a2dfaddb9fdd77b5c6183da",
+      "size_bytes": 37881
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9f222629_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e282022278806adaa07ad146b6a3a24e5065fce5b9b42c418a4a69d5797b17ca",
+      "size_bytes": 16233
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__9f222629_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "51be7c0682f81e2ce2cc0c3574b4646089c3bd9e8f6bd86131ee0d7ca790b49c",
+      "size_bytes": 37698
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a19d1667_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0ed6554bba7737cc2b663bebefa8c75355cf418c4ca7e44c5ff52bc0dc2c3b35",
+      "size_bytes": 18804
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a19d1667_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b73f635e505048b645de871287c4740f7388ffe1d5795aa59d4da91f0f49a586",
+      "size_bytes": 18221
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a19d1667_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "45ce5b37ab980141346f8bdb16fcd93de20d5abe15385a0918edf5c84f5ffd89",
+      "size_bytes": 18690
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a19d1667_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "79b95e95cfd802fdb43408ccc905d9bbdeaa9da42b831ec1474166079650b6c1",
+      "size_bytes": 39750
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a19d1667_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "794bf3b153fd05180eccff0675ced3552aef3af6be108ee8573e2a11eaaa175f",
+      "size_bytes": 20885
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a19d1667_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "998f57a660686f0d739ee0418ba78f203206fa494520fb19f5d42cd076739394",
+      "size_bytes": 39529
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a48343a2_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0183219a3b7e388d4ce451a3f0ee7408d991905e5b345817f23236de58834b70",
+      "size_bytes": 21735
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a48343a2_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d685624b990b081112d51442b8fc21290b8294255d585b4ac53c14a9bec30b7a",
+      "size_bytes": 17511
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a48343a2_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2fcf327d5e34e772ea68e5e0a888f2fe00649fadb3af33595462acf6b1cdbf5b",
+      "size_bytes": 21609
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a48343a2_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "db5090bb33fa3ae2a524df881bb88b3def40e9573f459b6dd0faa215d3ad245c",
+      "size_bytes": 32205
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a48343a2_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d4722847ebdb40a6e4ad040c66721cd3cb1bde351a0a767c85226c35c728252e",
+      "size_bytes": 15077
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__a48343a2_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "97d54dcdabdb99c286bf7714770043bab7df631e35584a3f17e4cf7c98da9df7",
+      "size_bytes": 32011
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b2dd6bc9_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b2dd6bc9_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b2dd6bc9_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d62353a2e9b21e409b1a4af4eae18a5ae4db90e9a356f66d17df04ee9de65e15",
+      "size_bytes": 20362
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b2dd6bc9_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b2dd6bc9_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4442c751ed9f78f4de03c58ad94ca8ff5e13c4e41c937dd42fe2784a01f2beb0",
+      "size_bytes": 118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b2dd6bc9_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b50aa7342b02923d7f9ffde135d5cadcdc9e324648803ba73a183773812963c0",
+      "size_bytes": 36973
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b617ee1b_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2d1060fcbe7b9d33d45518a3e62db1131af3ff00dc1032db8305bc258a460ff9",
+      "size_bytes": 7845
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b617ee1b_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "205782e6af6fc36afa6c649ae18a3904d7c950acc4ef75543c6a45cac08ad48e",
+      "size_bytes": 19553
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b617ee1b_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f3aa9aa36cbd0e93c8a14c6aa0f3f7ce7b72323ec86005d9a89a60488f221f8c",
+      "size_bytes": 7763
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b617ee1b_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4fdb2a91b55da81e0695e462de97b7f745579121cdd8e6690d3978daeb5ceecc",
+      "size_bytes": 41232
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b617ee1b_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8ddd6fef2358342420774d9c3418408322407efa7f892bffdf0c25a91deba6a2",
+      "size_bytes": 17832
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b617ee1b_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "de7d9db8741176298e065d04f18a06666da4b040a7d5db95bbd6ee27def6d67e",
+      "size_bytes": 40994
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b6f472f1_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5f58ab9ff27ea2057760ae884d4ea32067d19a026bee36cb513221cc1abc92af",
+      "size_bytes": 23546
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b6f472f1_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9313f0359bff34364d8c27731d39e7ea283c59d199abe67fcd20225c8dc3b31a",
+      "size_bytes": 16522
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b6f472f1_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3e47a7e4c85b64205c5b0b9bc8f76f06caa68c16a06e208de027f8cb32ec013f",
+      "size_bytes": 23379
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b6f472f1_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "041ceb7fc38d6348317515a07562a1345816049647f1321a6b767c7f5bfd0bfa",
+      "size_bytes": 37110
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b6f472f1_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2f1b666cbeed1f1fb0a7e8998f6de208d8900cde5aad1e0658e14b36f3500f4e",
+      "size_bytes": 23883
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__b6f472f1_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7f693b5e5988d61333e3e568cdbca88e3b764748e0182060fbd077b6112d9643",
+      "size_bytes": 36876
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c2876b1b_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a3c4118182f716796eb7818449874190926269ad0a786579e19dc99faf90e449",
+      "size_bytes": 16664
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c2876b1b_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4cc52f09b2ffc16e1cf62c032d97f2f38f6685cb888fd4484fae493bcd45236b",
+      "size_bytes": 16129
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c2876b1b_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f1e400aa1557e9c07bfccea81ad1b609c528431f38fd717414002503cbbe1a12",
+      "size_bytes": 16512
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c2876b1b_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "394101dce16465f6d7a98d5bb6fa72c2d794312c0223c820d70e650d46a88758",
+      "size_bytes": 26699
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c2876b1b_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a278fda136b2549d87ff07ebf96ec46e17cbae3ffa1ce2943aa903f68419ecea",
+      "size_bytes": 13436
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c2876b1b_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "48c26b1cdff6cf65b700527e8a958bfadf10d0e4f9af75ba84a7e79862a792fe",
+      "size_bytes": 26522
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c7775e88_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4786023c7731b4ebc9e3702b01fc45f74e638a4a0f40173aac79690701d58ee9",
+      "size_bytes": 15852
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c7775e88_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9b628d9837f690a95f24245ca9e36151b8da7ca7cb7948bdfa8fc2c048e7016c",
+      "size_bytes": 17493
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c7775e88_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "75667d825a9d935c2f45fcbce7c48df37d2bd81d9d747308120c3b93228e6cd1",
+      "size_bytes": 15738
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c7775e88_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0670e0343ba3cd92c2384b3fb55ea878856f3547c3668451914eb3a5bc3fb01f",
+      "size_bytes": 29476
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c7775e88_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ed8eca76279eae1c2f6d33cedc420e11a6fe11a79f390c3c04f494dc4f460c7b",
+      "size_bytes": 14813
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__c7775e88_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d266b6c016a77c2346235f77a9c5d0135e197d8fafea2c0ecce95406e5ab34a8",
+      "size_bytes": 29299
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d3cb449b_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "eb5aa22dab0a51592044c2bc741f775ac8d5b2a29c309453296e477e4d396984",
+      "size_bytes": 25448
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d3cb449b_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8c9cee70ca6f34606d43365dadc07028494aa025a74653fa208f863ffe67f184",
+      "size_bytes": 12924
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d3cb449b_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "60068a3d556f0bffc9d4ca31c82f280c495f120e3a11d36e0395fc5ff0cf5795",
+      "size_bytes": 25304
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d9f3a82c_pseudobulk__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1ac54d9dcd58009d6b3683ddab4939e30a40c95243a2134f7954ec7ba9e9fe26",
+      "size_bytes": 18524
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d9f3a82c_pseudobulk__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "22ae47e2e86398b8a50043b18cfbc08ebc85fcee2d84e88d6fd5c070948bae04",
+      "size_bytes": 18274
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d9f3a82c_pseudobulk__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "06ea61acfd7b6c574394add926f6bcaf25b0d69e4ee0c8be3b2b89b492b58a48",
+      "size_bytes": 18414
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d9f3a82c_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2a6828162bd5ea7626f727f9ec090864f378460ea837750ea5b915474ea05d6c",
+      "size_bytes": 31759
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d9f3a82c_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b2967345b5d808f9e015a61643e15667ecf4c7c7104638b5251c8d7ddfcb05ba",
+      "size_bytes": 16585
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__d9f3a82c_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3cadbf92dc6bad61d29b37ed2d668c0cea651da7a40982e7f978760b214ba69c",
+      "size_bytes": 31643
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__ebc2e1ff_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0cfa0df8abe6e8d1a4fa3711899ade2b02fadb321294c5f4391bccdff834ac93",
+      "size_bytes": 26789
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__ebc2e1ff_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "06881fec7e7f23b3349ddaa15f03eeb6c003c67bd4c63d35fbaa085083fa7e5a",
+      "size_bytes": 15653
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__ebc2e1ff_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ce5cd7943329ecca52d1763ede79b6181ba70ee43e2a1764c890c264b2bc7b66",
+      "size_bytes": 26699
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__f14bc322_wilcoxon__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "78b6c35c561555c81d9077b65acb86500d3688849302d47658610580f6a91cc3",
+      "size_bytes": 34105
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__f14bc322_wilcoxon__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a0510f2b7c59d52416184dbbc681a3e5ecbbd9d3865574b219311969802cc9e8",
+      "size_bytes": 16110
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/census_scrna__f14bc322_wilcoxon__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a58fd3d9f483768b896fb8e2851d701fb4cc42545ddc190962792dd73f4a58bc",
+      "size_bytes": 34005
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "095ea2870f5ed7bf49fffb7ba0a4d1b09f274be668e418cf5d5bba39c12170fd",
+      "size_bytes": 91336
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1168a2637762d81603052afdacbf75e08cc110342c8594f43720cd099c85573f",
+      "size_bytes": 47441
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "fd63079abb938567ba99d015fca16c1ad94ac80b72d2a5853c32ce5a1597d103",
+      "size_bytes": 91142
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4e7690a4623b674d88909552ab7ee00a6cab7dfeecbb34a2357b986139512a8e",
+      "size_bytes": 90326
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "85e82a5f03dd167f7a6d74f2967e3ae05ea439cba7d5a1265686a373cbd53a88",
+      "size_bytes": 48703
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2463c637fb406d07cf5569036366506dc3d4ccad8bd5240fc4af9091fb1c804e",
+      "size_bytes": 90157
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "36aaade8fd1d5aa22b43e3dba8cfd2f89996c4d3122272e219ff285c7644e843",
+      "size_bytes": 87186
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "acd377523accd3f993548dd7629a7ac9abebb51958459bee557f0bf3e217e75a",
+      "size_bytes": 46381
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_adipose_subcutaneous_vs_adipose_visceral_omentum_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "70e229d3314f9e2f689589be4208a1be0a5f68b33678c197a27026e64583529b",
+      "size_bytes": 87026
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "81a35d4b4c43e8595d9692d1bf20e66da234f5443ed10e32e99b2dbd9ec70e6b",
+      "size_bytes": 116667
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2fd8de80f6f34066a89003ad98585c4eb6bcea05c28a79a64394689a7435317b",
+      "size_bytes": 43901
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2f9fc55f818438671d734e10b5e0b1b5fd9c0c1b42675971c93a48cfdb7504a2",
+      "size_bytes": 116425
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "16679f9b6cd57f4086b28a54a68d82cf4949216fcefae09061da1d7c8915a1f5",
+      "size_bytes": 115619
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "282d5787554747ba1be30782ad445c1d4df9104b73987b2417cbe111f5e0b501",
+      "size_bytes": 52427
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "580ed521660cc9b96dd4fb5c106cbbdc1d4f6547657451f731df61cd8a844d76",
+      "size_bytes": 115396
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "de82fa7f9c014544619f98bf35cee80de9400f08250861dc4a5f2ea25620a1ea",
+      "size_bytes": 115861
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f902668d0494f38ef962b8eb28c8a64476fc3b9b3c7525e23f906ceea33c3dea",
+      "size_bytes": 51503
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_brain_cortex_vs_muscle_skeletal_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a445f4e8b5c2ef9f8fce14d6931d2876d2061f76b456b966c29a43e7681a72f0",
+      "size_bytes": 115595
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "58f964501ede4df668040865870e68144aa8baad6e05d12b4b3d27daf1b4b9bd",
+      "size_bytes": 115986
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3fb125823266329e5bd6672ec6c63ab290f5b36d167584592e349e011611341b",
+      "size_bytes": 47612
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d0f9faeb26e3cf376118686f3bdab0cdbc976c25e560e23f084948c1733f32fa",
+      "size_bytes": 115821
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7ae7638d8d910d6ffa09b9277c9c54d5033d29b96d2485c5ef7a3f08ff7eae13",
+      "size_bytes": 116296
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "290e6b967a0090c85cd32cbcccc259a74a8586c73bc9b55c56aafa3cc220b11d",
+      "size_bytes": 52616
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d18e484f3d788cd0906ceae4fd6d7b239cc492136c1675d588945cb959823e25",
+      "size_bytes": 116106
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a57c0442212b69f693745f063723e9f89c5e7d81f17c2924f381b41d3b224b5c",
+      "size_bytes": 114995
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "93edc259fa6cc64e76d4e303c1fa18d852453588af08a0b41a07f0eb6bb118a9",
+      "size_bytes": 50203
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_esophagus_mucosa_vs_esophagus_muscularis_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "24f209d180010457e655fe4022d844c71655763e2d25f83195e1d77026617fd0",
+      "size_bytes": 114789
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6ab8a0eaf076c6a2f5605a5e27c89e618274b009bf6181346f4234ca1abc012d",
+      "size_bytes": 114166
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "72b9baec773b2421259dc14797e3366e9bfb9952fb76334629dc1fa3b2dcf380",
+      "size_bytes": 43773
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "edd883d15122bc71eeda5d378f19421c44c5ddcbf27c70f7524332ae24b0db72",
+      "size_bytes": 113987
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "30c0aa461f68752b6ad8169192230beaf48f6b5df64a660b68741fbdf81c872a",
+      "size_bytes": 113446
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d8f7d1b67e4a2f505bc47ac0c3c68466c235fd191b4ede312b51ad8d2fce5ec5",
+      "size_bytes": 50168
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cad412bc19b0c6aa1cfe5af5c6e112a76d6f66a90ad1b7f192296a9f5434c21a",
+      "size_bytes": 113248
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e9496703dc85f3c04a71a74349f7bf6e1f5263a4027cced98f1afc11bb4340d4",
+      "size_bytes": 113141
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "751dad223732ca7a9947314a0afe11db9a4a9b3c04f9c8f178f1465e76fb2044",
+      "size_bytes": 50841
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_heart_left_ventricle_vs_lung_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "878476aac7ad8d7e12c57c57ffa6848f6bc0a141c183b0fd883903743cf86070",
+      "size_bytes": 112967
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d74ef6e989acdca9d9f353e842008198408a8e9cafa0ae19edee6602b4f20ee0",
+      "size_bytes": 111737
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7f94b961505019a4a23ba15ddf0b2cb87af8740a69ae3dea2119d4373505d030",
+      "size_bytes": 40492
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a602917f8c51e4644c1d6ca65b46893d699795253072b0e1914d26d7e5bf4ee8",
+      "size_bytes": 111538
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7d95630e7dcfb83257da0fb0aaed16a6f5ad23b215dc0ead27a663528a7d0d02",
+      "size_bytes": 111010
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6292d6fda402eb3247655e62fe542200ec0ddcbb3d462dbb3ec5cbdfbc976be5",
+      "size_bytes": 46230
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "89705477756f8598aa98609b0c9c900e09d9cb2cc887dfcbbcf05eed9bb569f6",
+      "size_bytes": 110816
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5326b88f2ccf8f4023165a439aa1b40bf71fb5ed3d989156d5151ef309af2932",
+      "size_bytes": 111756
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "fb5471119cf8851e6e742fafe1a1f1b803949d7c7c58348a02ab43510b51d3bd",
+      "size_bytes": 45588
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_liver_vs_kidney_cortex_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c64f6d87a710221e17c59e0dc3234f5ea3addd1eaeae4ab96020338375ee1828",
+      "size_bytes": 111576
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8a2fb8f62dd1ceecc245ae0f681edf456c2bb77007ba86104531651b2e155ff7",
+      "size_bytes": 109227
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "672bef5ca491cfa3b2df9a6abef4cc4a603ed1bd6719dc956c8cdbdde32fbadc",
+      "size_bytes": 40708
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "45b0ccdbb91782dd6e232e7f17fb4172b9122f8293502c242733e0d44bfa8206",
+      "size_bytes": 109031
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0f76425bdbd67df4288ed3bb11480bf5e48c1b0b96ee9668cfa531946f4e90fa",
+      "size_bytes": 109689
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4a96643ebf8b856adce41f7fa967039d2bb6c349c5bb414890497218a37cb5f4",
+      "size_bytes": 46861
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d2f070f3e4d6d435c4af7cc3548e788066e528634fbc960172731a9f7491f03f",
+      "size_bytes": 109482
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d7ca0cd1798623f01582aced21130d5963010dac96a4df27f5194b298d8f3d8c",
+      "size_bytes": 109434
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3497a56b3446570713c73914141a12cbcec8d91a2d3256be7875c00c43e5997e",
+      "size_bytes": 49384
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_pituitary_vs_thyroid_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d0de2074c0f06720e7f1ec1c67c62060b253b48263bf46a5af46264b44602eb6",
+      "size_bytes": 109233
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a4619b9c90161730af1bc3117558aefc378abccc9b5a0674a671a2680b5c623e",
+      "size_bytes": 51704
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8235dbcd386edfdc0a867f1e2768a2a21abff9586603611cd07db8de42f1bcdb",
+      "size_bytes": 43194
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c1636621ed16440035fc9eefbedc02f530e9e2384c18a5d509848c4d64e053e1",
+      "size_bytes": 51548
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9c8d022950e0be9cd8a85852e500415c53390a3dd1a19a008600fa14e7f43695",
+      "size_bytes": 51394
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "90c703aa0c4cda866463e80113acc27bb9738410376fba7d8802e80452734e24",
+      "size_bytes": 43919
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "903014a41ac8ab085f112cf5eccdfa5a554b917b210b18c8cab1c4214569211f",
+      "size_bytes": 51228
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f261d09d905dca15a0f89c6f5b8bd0e95cc6396834ca72f8730ba845f8e4a3e3",
+      "size_bytes": 48812
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c2112f6de6914ccb2e317a9fd561b0e3f281d0a435d7b08494f4deadecebfb65",
+      "size_bytes": 45626
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_skin_sun_exposed_lower_leg_vs_skin_not_sun_exposed_suprapubic_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cec05da52b534e7bdc9f2987a1a74ddb5b01c4a4bace75bcd7867cf859e092f5",
+      "size_bytes": 48641
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a92bebae00120559d0a8b5a4f2ba431e8c8a82421a0c325f4127597ea378cb8c",
+      "size_bytes": 103761
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "38a2f16c7017c2840981c93b4ee507d246174d082ce126eab2d213f2db733ba1",
+      "size_bytes": 45703
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4c083ec25982b22665f9bd48d0b2e7aa14f59b1ea6d116c0326b8808b435bb75",
+      "size_bytes": 103579
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "793b04bb8009ea27d43d756e46b1eae8874d980e124c3ac271d05f35ba350d2a",
+      "size_bytes": 103764
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6502151351a94dcdb7bc6a9b103b81bbbab82174bd147589ce049ba0b0648a22",
+      "size_bytes": 49781
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "aeae30f5d6a2abc924a3e669e107e4903e62a81cb2330d880e61a702cfcad18e",
+      "size_bytes": 103586
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7d2838c8da60d6446544b45f1511849097a305da1c589377ab8378d0a8e49ca9",
+      "size_bytes": 102491
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f7f0dc78993439cb288e13162b2366e69d2f42e8b30b8b908abed48a4137bbf7",
+      "size_bytes": 51011
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_stomach_vs_small_intestine_terminal_ileum_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6c1b10439da954bfb1dd6e0d39d1bd3abbca91d136a47a62f09d96883a75cac5",
+      "size_bytes": 102297
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7befb2c432f6f341bc78bd69949f0edb5d273d9c4e955fed0ab2c8b63e367f3e",
+      "size_bytes": 117729
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ec5d24cef64756f56792202910c83282efbbe124fb6a8d5db373c5f9fdfe422f",
+      "size_bytes": 46821
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d7b64af03baa435accc0b202c9b978810a40b439f1e32b2e187cfc82285647f3",
+      "size_bytes": 117497
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "180cfdf3240f6800d48dc88b8c6fdd465271930aace4a4ba593652e65a2242ee",
+      "size_bytes": 119258
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "fccfcdfcabe4a5f85e8fe2d96e3aecd9e4d944243eee459d5d4f0a926ed42ee2",
+      "size_bytes": 59385
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ef8a6c1588d0241401fe6c5965f163c8eca9efe710125fa62e55cca2ca736a5b",
+      "size_bytes": 118990
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a5d8cb655237cd82b965b074cbc3bd65bf068ab2449e9916be32360a94e6b7e7",
+      "size_bytes": 117953
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7fe5272e68fa309ecd7e2fbf8bab0aa07bccbfabba921bd92945883afa90d2b4",
+      "size_bytes": 56906
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_testis_vs_ovary_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9e8ee1f6d45aeea6dfb1dcc4eeafaeaa9b688ea6ee61a8e92d39f5c52feaac6b",
+      "size_bytes": 117726
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "88237f525f4fc3963fc121e2eae7ef4857044616cdb318a6da0907fbce5ac927",
+      "size_bytes": 114673
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2d56dacb9bbc72281891c2ceaf8a6935adc56f1ea947d1246247ade1593b7268",
+      "size_bytes": 42817
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "835bbd6362b80b721da2c1e11fb3024d925fa026bbe9a62a0c3f30bed93167d9",
+      "size_bytes": 114463
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "bdb5b3d6d4a7a880e9eaabb3c501d9a4d26a4c5065e9643f59720bc114166794",
+      "size_bytes": 113582
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9e8f13b240ccb2fb9e45c46b8149e35cf66b50f99c6aa104e7ae30cae2806842",
+      "size_bytes": 48982
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e71c1b47e85f447fcca6bc09c61bedebc7ebffd93f2444b8bf460b8088aa5e08",
+      "size_bytes": 113364
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a718f8ccc6a867545d78571f38efd9874ad7c372b91ba42705bbb700f287e9b3",
+      "size_bytes": 112621
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "53aad7ec6f4667e745e31ffc9135c8703d1ba4fa7a2735b20d63dbe9b80e07b5",
+      "size_bytes": 46057
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/gtex_tissue_pair__GTEx_whole_blood_vs_spleen_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "999b4935bcf93ff9a711939b0a6743043cbf4996e7ad3a095b54ebb521ba74e2",
+      "size_bytes": 112436
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0dd709192036e3863be7fc4e6cb4bec22b0137e19a17ab76882ef3edf7b7cc31",
+      "size_bytes": 32098
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "bb0bfb1a54c8e1ee8e7668d6b450f6622c6d2c7e437ccdd8d304921a387967d5",
+      "size_bytes": 21241
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1797a68f9e02518a7841c6109a0826230ff0fb051391f2f57a47d4b2e1e26c6e",
+      "size_bytes": 31952
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6ce6082cd7a50eb99d6d9ea15a911bab1cf40e99369b0a411fd75daab13aac05",
+      "size_bytes": 31639
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "511b682a71be929b096c5c0015203b70b1e915635337cef2d9e6af0b8d100eba",
+      "size_bytes": 21741
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ea182ed852e59a3deca292224e3d7c6a7489170357dab35332be42d6e6edd51f",
+      "size_bytes": 31478
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8801fbf19f8f20bb1f8647d4fa820b2224941ba25e81fc135284f7a7d4a1275a",
+      "size_bytes": 29981
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "56703da0a2cea9cbaf6bbd48fe336194923f6fb0ecab5236efaf71d0c5e5d5c1",
+      "size_bytes": 22533
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BLCA_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "373bf2c27ba17ad7e1380c7a2156df048eb7de871ea3735149582f2ea86ec228",
+      "size_bytes": 29845
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cb33251bd8361acfb621381780a09b7968a62208e201ae225ccd7290dfe73acc",
+      "size_bytes": 41537
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5aa0ac35eedc05855034cf20af903eb598d8da2771edbf22e08f970641706c74",
+      "size_bytes": 21867
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "963b2487896d07b58063ec6b8f7d9aaabda9ba00cae77be1c14727f67d5b4a62",
+      "size_bytes": 41355
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "67f859f48579645407bea33b531a643d47f1de460c19abc6813553386a7eb3eb",
+      "size_bytes": 41967
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "995a06a89ea35b453318fb29eba1fca88244d0fae0471469dce20c4137f3eb81",
+      "size_bytes": 23466
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "17ccf8464f2c2dce3167cac3d695dfdfdbd3c292fec91e93493b442295abb089",
+      "size_bytes": 41793
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4a21d92d9a9a471fa38b410e05ff3de281f274c71f7a96f6c6c29fca14d0f103",
+      "size_bytes": 40725
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "41103a092cd5eec6381389f997d5145a5c7a0b3f0815db2fe337e6070452e3fd",
+      "size_bytes": 23288
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__BRCA_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "449311a8de6f47c70451388196493a080a54a531f8541bb981a44dbb6e5882d8",
+      "size_bytes": 40593
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6cc60bb6f66e25b1c766d6254b3edc797f19a430c09d678931764861d2db55c9",
+      "size_bytes": 42168
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f47e278dca5ad352438165019a6a5e9d54364219d731b8133c8c3a229c967859",
+      "size_bytes": 21349
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d61bfdefd4a151f1b3132029712e884583148cbdbeed38cbfc7816c39e72cb53",
+      "size_bytes": 41988
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e6fe9e129a3e91ebf5844935c0721097b85f2297b09ef05970b567a955ffd17b",
+      "size_bytes": 41979
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cd3ab3ab899b2cf2bc5b65ba16901c14fcbfe9a46faf3915c80473224f798f49",
+      "size_bytes": 22782
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "431a55c90e8e03c301b7578cd26a4efc44304e60f21d96d22053cf6d91fe4a8c",
+      "size_bytes": 41795
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1a237bf0d0f7ec571444bd9ed617545255a6796444624b9046ce877dabe4af49",
+      "size_bytes": 42007
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a18343f42ff8f05b6af63c1f29d078a32e851c33ce5dc0dddbbb7d1f47fd05c7",
+      "size_bytes": 23847
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__COAD_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5d0006cd7f5a47a013bb3f39252e30efd85e9c8498db9cf8a67da8b1286450a6",
+      "size_bytes": 41844
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "95a0f678f54f8a691ef4839ddf4f9aaf3b37734fa98c1f76cc515cdcc331183e",
+      "size_bytes": 30350
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "900b32a18798d2a58785b917a3a7a8c204a9dc98a59a0332ca2e696de62342ad",
+      "size_bytes": 23233
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "fbe14c9e1704e9a36dd77d77adf8ab2ed9c3f394bf73a5c160d66056026eafda",
+      "size_bytes": 30223
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3fc02fc673f27287d34390b68a41f5d6093bde3f83e58246872eb2a91eaf0f7e",
+      "size_bytes": 29847
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7740317e46698e38318bd4c7a71ad92c6d4b9f67dfc5b15d64c1fb79863784c6",
+      "size_bytes": 23498
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "00d25b44e338b5d64e3462dcc20a2dc6bc7fc5f884d3e8f05701d55cf9a53bc3",
+      "size_bytes": 29729
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ff4034fb3f70399b45e6a96ce4dc7a6aefb119c92059b3fcc86e56a070e73946",
+      "size_bytes": 26779
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2e3804a18561b94648e07d77a50fbbc608e026aab90ce9d6cd481146fda28aa2",
+      "size_bytes": 24024
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__ESCA_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b092f8c567c83c31c1e09ad23b9ad42fbfc33fe261ef6234d6bd4bb4c5a11846",
+      "size_bytes": 26684
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b09a736b2219bd94b9294d62b80f45a9d067351ed91ab4e2ec3f1e43dc61d646",
+      "size_bytes": 38136
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "493c2879dcef3934751096ee71129b3bb174fc7c419b3d7ffa3d6b96228d5ecb",
+      "size_bytes": 22394
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "59e7330108fe1853cef93491961e479c26f5f8c2ba6fccea45469c237d4de361",
+      "size_bytes": 38028
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "140d0ef5a6c5c521163f94ffa148093eaa6629dedaeda7719c9b3d9463a2f22e",
+      "size_bytes": 38095
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b0c635a40d718351140e036191d9fae999ac26495d61532d74c5a95eae0eeb50",
+      "size_bytes": 23856
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ae89cb49f0d961cdaa30694a59e1ff9eb62371e6938cedb455f3122149163a66",
+      "size_bytes": 37976
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f6e773bacb99d9328a4c45d1d744f2aa5fdcc18b118283476947e2b1a0b3a6a4",
+      "size_bytes": 35665
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "7cc84c1f91a75d7e0fadb5fbc014fb431417b65d12f17a9f07585f2430c77fe1",
+      "size_bytes": 23047
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__HNSC_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "00bc40b35a38afef26b94d84eeb0df8ad3b4c2bc1bd0e46322c44b803644785e",
+      "size_bytes": 35553
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "255092dfefcc4298f05c1743e4c36957d5ba14216d3155109bc1c59cc667339d",
+      "size_bytes": 40126
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d5dceaa2d67ac7a01bedeb07c9ac911ec026ffefc953f9b2b2282015eb72ab2d",
+      "size_bytes": 19587
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9dc54d062abf9c1d2a92699c51bec03e338d4969dfc916e72cad270f06c3df79",
+      "size_bytes": 39956
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ea61630843af1bc2425960eb48240c972a5cf861d00846298f1c0039e8606890",
+      "size_bytes": 39831
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c82ab367f82e5b1a3bd2900b2b762d0fe3ec03451478b1206f6d3463d8aba303",
+      "size_bytes": 20773
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e287fa075293d67f922e489bd55cf23ec02e990f61b143791212d6e1a1914212",
+      "size_bytes": 39644
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "378fcabf2958b52536452edf3196914cb228e87489ab9623629421f4e0852b07",
+      "size_bytes": 39850
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b7ca6e5c5c979e506e051618e8d9be6d4e06e301d40ccc81b6fc15384a0321b9",
+      "size_bytes": 21969
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KICH_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8a38bc833cd3b04de9af29a193f6c35c8b9ba4e90452037c942fb53046b8b016",
+      "size_bytes": 39667
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "989cc31f3c41f384cc813cfad847b2c0ed563b9dbd0f2b873954af9690b45848",
+      "size_bytes": 43498
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c1ff3ca07b758edc082aeb8597858059e26250a28a2f32948479924f7766d91d",
+      "size_bytes": 22239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "266524bb7f418f6342d31781f4831061fdda2971b03d2111fca5b12f1692aa60",
+      "size_bytes": 43287
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "41287ca4f05653dffa4484af807c92a5892e5e91844ccefd3973cbadddf43a79",
+      "size_bytes": 43197
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "faba57246e6f8ec9fd60d09281f116204c78256627c3dc3587c16d1e95887160",
+      "size_bytes": 24219
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "222e321bb6cbc48ae349fb4be89945911f8a9cc79f17d2d7c144b29feea7c720",
+      "size_bytes": 43010
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "26655f61c8500e57a7135b8fa8a7d07dd10052927bc1af382cf10fc0b48d1ce8",
+      "size_bytes": 43307
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "559a76b103c8f6ab99dc04ac460c999aaf90f7cf49037d2ac8413def0011c41e",
+      "size_bytes": 23248
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRC_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "80a09aad86ddd4cb13ce1afdfe9f98ab048761bdf589754ca2e496c419fbbd88",
+      "size_bytes": 43112
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e4e91d7221812a0b07053e4fbce98d741617081bdd2b5942c29f4ed8e5ee30ec",
+      "size_bytes": 38284
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1c4653097eed88ef31aed35bdb8fcc6d6d1909e46b03293223744f9331ff40d6",
+      "size_bytes": 20583
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "03f74f7fe4f6bbfac21709915b742d79038249b9ca599d5c254c1c703fed43fb",
+      "size_bytes": 38082
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d736112541ea768590a4cc0ebd614082f8a1919a8d9a35c2d69ea979baa495e3",
+      "size_bytes": 38247
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e1808720af3471af1b51660e9924f5c7fb4122b074112d9abe079d99aecaeb0e",
+      "size_bytes": 21603
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "faf97a82299c3d5e269a310f5791de448ca66b88b2b55cbb936b8f03543266f7",
+      "size_bytes": 38083
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "da7b5d90a3fda613d7260211be1e1da024f17f281d32bbb2843e77810941e068",
+      "size_bytes": 37263
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "eb407e9afc98b12440e94c37f96f2f60507b27cb44e0c6fb7f66afb6cd81be45",
+      "size_bytes": 21895
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__KIRP_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f27aa2ebb93b0204192ba0af2e17f314646a53a36a333ddd6b4343b7f3689e86",
+      "size_bytes": 37103
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "38d52fb332258d6b64a8abe22bf289338ea49fdd6a8b720501b6d174cce6cbd2",
+      "size_bytes": 39218
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "dbca4caad07e6d7b56260be792d3c99fa708311dc982323a05688311935437f6",
+      "size_bytes": 21031
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ba209af8b5285ab02fa25d969e12cd24f4d6b1bcc30d4d35a9cd4b5d5e68a104",
+      "size_bytes": 39031
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "bbc179079d3471e5caf1b987a2c748d436ac99f500836b2df12916475009159c",
+      "size_bytes": 39270
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "56a1ab984ac483daa18d274feafd035317cdb28611b552730d6e46aa3d56c55a",
+      "size_bytes": 21382
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "94b66271513247666d8c228bfddefa1cd1cfcbfb044830f8b27e1899ea99dc36",
+      "size_bytes": 39118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "8282d2dedd860ace06354aae67f1a722f49ad80dd16ba2f49d25d6cfc4eb49ff",
+      "size_bytes": 37754
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f4022f5c81b5450d129c7c61fbd3852a8f3c8101cf0a1a19c0a334013574090f",
+      "size_bytes": 24286
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LIHC_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cb1281c8c90b103f162b7da4d1e393ba1ca2d1c17ac3635f606880f013f48265",
+      "size_bytes": 37592
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ece7238debc5b3835ac93c8b9c52a9e956392272baa52999f198879104ee22c0",
+      "size_bytes": 42048
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c741218e774641a9a950dce4a751c1a5050109a6527d04fbdef983476dbd496e",
+      "size_bytes": 21131
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f3209b3b04c0018a1a3309716accb420b7fed187995473d806147ab08c46bbeb",
+      "size_bytes": 41875
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "86e8114a80df6ac7df3b89f15e77ad19447de5da76f4c42c428a218910c9ee05",
+      "size_bytes": 41940
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "558baf289c3bbf055cfaa6b8d2d251139b84fd9ff4bf56d248a2c948ca31a89b",
+      "size_bytes": 22059
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "63423be51a993ff2efb59003017e62ae327681950ceb0fd6f251527f97983c86",
+      "size_bytes": 41756
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6152fe6a7b02d7b42bc69c5770202a9e57d89c8fd5e94f891b6c69bf3f161040",
+      "size_bytes": 40272
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2de939958dffacf04b64da3b9c1e61301db9531ea35397f7033e5580537081ac",
+      "size_bytes": 24403
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUAD_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f1968b9aa9229e2e7071154490cc6a9225fe28fb915bc6eb7b1a0b414cf2bd02",
+      "size_bytes": 40125
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5cab3211eca26ffa85e8ea9f10f8a856a92755dd90910dec47246db1e786beef",
+      "size_bytes": 43984
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "cda22c2813d8a6782ecfadc389c528a377564c9bcbc60a935507e08359e7c761",
+      "size_bytes": 22101
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "732aa136ec666cbc90b0bcb50244ac66efbf046a4ccba4b960669005103abfbb",
+      "size_bytes": 43787
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f0dfabb03cbe6361c4b69371f4a61aa10655127ffe3836cc63edadbe76e649c0",
+      "size_bytes": 43917
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "365951e070014033705a1d019849997ca435eb77a1916b583727e806e29858ac",
+      "size_bytes": 24288
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "989f327a844541f226579e9128670545911f88dd476c2173a1ff3c4be34f4965",
+      "size_bytes": 43727
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "71f6ec28ece3e7bc79f6d3cf160e0f8e67cb8db167454e53aa0c703577603f47",
+      "size_bytes": 44232
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4f9efa83d90ceffaba0d000ccce8c9ee72849b80e2c9db1b73f51308973a7971",
+      "size_bytes": 25299
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__LUSC_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "9a1ef1f85574084b672a196747b934172ab1a509f2e5cf531bea040ff8b4255f",
+      "size_bytes": 44062
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "38b5b7d38eb8ee8a213271c146aa7b55965e7f3aaad8f0d72e26bc3005881ebf",
+      "size_bytes": 36342
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "6607ea84bb04a3736b22a28a3997368f441fa568dcacf20a13bac6a2aae0b5de",
+      "size_bytes": 23554
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "97ca75579e79da40f632f65ce63799b967e75b8f14d030b655ae12deab2ce7a1",
+      "size_bytes": 36168
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0f84ddd95d60ba7f4277be07b5f1e06dd9439d9c84149d7781ffba7ef4851367",
+      "size_bytes": 36395
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "2d8b46de62f767ec26d5e78e683a841116ec1a01c110ccf9d1bd8892f078bea5",
+      "size_bytes": 24407
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "74c2ab66e944dc324d852fc619b804937485a471fa16b40e0715214a7755ee2b",
+      "size_bytes": 36230
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "1f6bdb5fa9a82fde3b3f2720bb630634030365e82abe65ca8cae4509e4b9c13d",
+      "size_bytes": 35527
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "fecdcc2d6f5566f374efee2978609232b65eb28c235744c640c5f16e3b699967",
+      "size_bytes": 23688
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__PRAD_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "839815cb668c6974b2802b603cf38d678c7ae2e81e63f17a1aa79fd54befd176",
+      "size_bytes": 35364
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "da3444225c1b2a78fb42ca8f08f1f398501550c16daf2a01ee6b132132175325",
+      "size_bytes": 34435
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "13fbce6061cdbdfd95e740226e6f1abdd6ff747173aada2c7e8e19ee763f019c",
+      "size_bytes": 20953
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b768edefd141b73bf78025fad77799fc7bb7a00d1cca5d711b45e71663448084",
+      "size_bytes": 34260
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0e650b56da4d80df8b180e43bbf659c817e54b40804ab88e2144a4e82c764baf",
+      "size_bytes": 34375
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f737a6596211292c70ac8e7c55c8100074d52316ad1225f471ce2ed10cb48e9c",
+      "size_bytes": 22591
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "56b4f08f49e67345a0527673c0ad40dc39f3029cc9f3e69fcb5149946ed578a9",
+      "size_bytes": 34202
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a993994b503721f78e425f2d63345cbf4c30bbd799b780b2d73bffb411947564",
+      "size_bytes": 33708
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "429c46b0c622f93225da1a3039ff38597ed2032432696d902ee0f88947f910c2",
+      "size_bytes": 22953
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__READ_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4af36f18c563082588cf9d5f6707a5d3c909642be47ded3f2b8b10e4a6787818",
+      "size_bytes": 33583
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "11b9412b0fa665fe1690055738f39d48280a7db9969bb7838d1cccf85530dd75",
+      "size_bytes": 36317
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "64ee083702415744a125a623b9e26024b52476c0e074d02f6034983a651c4d33",
+      "size_bytes": 22588
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "4b6f74e2e1ea8c145cf7a0c5b7c373ad2ec953cfa6fa80bf4141a14ad7cbfe94",
+      "size_bytes": 36174
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d49126b644941f9b7f15ed995ace78eae3b606d20852024683982f3bcef02a07",
+      "size_bytes": 36372
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b62af27791b0b6f517edaafb68fbf06563cf45e9a92c0d4bea0899fc8ed00d1f",
+      "size_bytes": 23758
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "55b03acd03ebb613cf209fc1198bd7256489614c7db5e6d048f8081d904263c8",
+      "size_bytes": 36218
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "21046798bab201b1c3845e5b1843059ebd58d81e7490d7737c183af637cc630e",
+      "size_bytes": 33564
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "485522672d64dfa6eb7c8cbbae3d5b188c2648b4596c8b24782bceb97e1f7d3f",
+      "size_bytes": 23330
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__STAD_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "06f87ea5a316511481a034df36fb7548e4a1b18492d3c04206bffaece871ccab",
+      "size_bytes": 33424
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "3adb659898e6369f2ea3bee4e3e587a5096377834b252cc9a09d85e7a6d2203f",
+      "size_bytes": 38356
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "417e8d82d99bfb511d70fcc4bb116bc16159175a9772f00a4e51fbb600861b58",
+      "size_bytes": 20157
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "c3f170f81607a5ef527ed115820af673c5d09d1cec86ccbb9191f35ce1794dfd",
+      "size_bytes": 38214
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "928e6bbb337e2895c1d7fc0c24d196cf64950d7a061d1d0e8663c9d6bf42e1f3",
+      "size_bytes": 38001
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "be7ffc773ff5f18e507a79873d4fb751c287c42eea26c8353c6439ae2e53e524",
+      "size_bytes": 21338
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ee4ecba0ebeb66b9818ea6597f91938986600b63c3426c047aced978aabdfd04",
+      "size_bytes": 37854
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "92f7bc3e9abe118630e8b48a686de42bd9d446626624315dae61f8bbf36f1f46",
+      "size_bytes": 37907
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "e25f13330d2c6964edb81179447dc3d9d273da64ab66f6d53558b9c04102d8d5",
+      "size_bytes": 21667
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__THCA_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a42d712e800bc96c6258b0c6cd4f28f7ebc06da8585b592dcb6c02d3b24c9424",
+      "size_bytes": 37781
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_DESeq2__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "5308c0b4ab8b3e13dacd41f38e4cabbbbca56f1f196f2d0bb7f6d8800b663d85",
+      "size_bytes": 40504
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_DESeq2__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "d5c6bbb0708249494bb289b7cced8d8e91eecf0ebfc9fcafec6231ccf50237c8",
+      "size_bytes": 22445
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_DESeq2__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "b6e520c3c30b4af8424dc3a0c16bc74fbd573eff647993687e67b4aad26ca71a",
+      "size_bytes": 40357
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_edgeR__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "03bd21126ea0aefd2a28ac56cb0de06fe3bb0a57cdad66198f8b1eb7ed4235bf",
+      "size_bytes": 40319
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_edgeR__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "f567aa3a21dc8ba7d1e24530bea138f1a2544e6d0f24e98e8a6363cb0585ce0d",
+      "size_bytes": 23289
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_edgeR__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "29120087b4fafe7b97d757f5e20cddf5758ce43ee2922ff9c8647d1e6a79e6a9",
+      "size_bytes": 40190
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_limma__clusterProfiler_ORA.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "a16c765e27e0ef97c19656e503cfa61fdf5657476067301b9c6a933302813ead",
+      "size_bytes": 38992
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_limma__fgsea.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "0e9da55fea808dc553aafb4e6965a71713805e6c00307faa4bb170617d8fb769",
+      "size_bytes": 22180
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e1/runs/tcga_cancer__UCEC_limma__gseapy_enrichr.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e1_per_tool_run",
+      "registered_at": "2026-05-16T18:45:56",
+      "sha256": "ed86b443e34519af23b15fd34a2699921fff1806e830850a5620e9714d4fd669",
+      "size_bytes": 38862
+    },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
       "kind": "documentation_v2_closeout",

@@ -4,7 +4,7 @@
 |---|---|---|
 | CP1 Input inventory + verification | ✓ complete | 2026-05-16 |
 | CP2 Environment setup | ✓ complete | 2026-05-16 |
-| CP3 E1 Tool agreement | pending | — |
+| CP3 E1 Tool agreement | ✓ complete | 2026-05-16 |
 | CP4 E2 Database choice | pending | — |
 | CP5 E3 Background gene set | pending | — |
 | CP6 E4 Multiple testing | pending | — |
@@ -40,3 +40,19 @@
 - `CP2_report.md` — environment summary + Known issues
 - All registered in `~/omics-audit/phase2/repro.lock` (16 cache files +
   CP2_report.md)
+
+## CP3 summary
+- 3 tools (fgsea, gseapy.enrichr, clusterProfiler ORA) × 125 inputs × 1 database (Hallmark) = 375 runs in 8.6 min
+- 14 empty outputs from low-sig inputs (e.g., 5e57cd50 with 1 sig gene)
+- 354 pairwise comparisons (after dropping 7 incomplete inputs)
+- 9 strata = 3 input categories × 3 tool pairs; bootstrap B=1000
+- Headline finding: ORA tools agree with each other (Spearman ~0.93, direction ~0.86); GSEA-vs-ORA disagrees fundamentally (Spearman ~0.30-0.44, direction ~0.50 = coin flip). Pattern holds across TCGA / Census / GTEx.
+
+## CP3 deliverables
+- `e1/runs/<input_id>__<tool>.tsv` (375 per-tool enrichment outputs)
+- `e1/e1_run_summary.tsv` (timing + status)
+- `e1/per_input_metrics.tsv` (354 input × tool-pair × metric rows)
+- `e1/per_stratum_bootstrap.tsv` (9 strata with 95% bootstrap CIs)
+- `e1/E1_findings.md`
+- E1b queued in DEFERRED.md as a separate future audit
+- All hash-registered in `~/omics-audit/phase2/repro.lock`
