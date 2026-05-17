@@ -39,7 +39,7 @@
 - rule_id: scrna_muscat_dream_cell_level_de_inflation_warn
   schema_version: "1.0.2"
   status: draft
-  title: "Warn muscat-dream cell-level DE without pseudobulk co-report"
+  title: "muscat-dream cell-level DE: pseudobulk-anchored, use pb when inflated"
   description: >
     scRNA-seq differential expression performed at the cell level using
     muscat::mmDS with method="dream" (variancePartition's dream linear

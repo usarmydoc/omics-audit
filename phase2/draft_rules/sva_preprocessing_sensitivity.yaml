@@ -1,0 +1,106 @@
+- rule_id: sva_preprocessing_choice_documented
+  schema_version: "1.0.2"
+  status: draft
+  title: "Require explicit SVA preprocessing variant when SVA-family batch correction used"
+  description: >
+    Pipeline uses SVA-family batch correction without documenting which
+    preprocessing variant is being applied (SVA on log-CPM vs svaseq on
+    raw counts). Phase 2a A7 refines the prior B4 audit's "batch
+    correction alters ~80% of DEG lists" finding: ComBat and limma
+    are preprocessing-robust under method-native preprocessing
+    (deg_stability delta < 0.05), but SVA is not — svaseq on raw counts
+    yields 43% DEG change vs 72% for SVA on log-CPM. Direction agreement
+    and log2FC correlation companion metrics also reported in evidence
+    per the standards-required multi-metric check.
+  created_date: "2026-05-16"
+  trigger_conditions:
+    - condition_type: tool_invocation
+      parameters:
+        tool_pattern: "^(sva|SVA|svaseq)$"
+        match_type: regex
+      description: "Fires when batch correction step invokes SVA, sva, or svaseq."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: sva_preprocessing_variant
+        expected_value: present
+        check_op: parameter_missing
+      description: "Fires when the pipeline does not declare which SVA preprocessing variant is being used."
+  recommendation:
+    text: >
+      Document the SVA preprocessing variant explicitly. The rule does
+      NOT pick sides between SVA and svaseq — both are defensible — but
+      the choice MUST be documented because it materially changes
+      results (per Phase 2a A7, top-100 Jaccard between SVA-on-log-CPM
+      and svaseq-on-raw-counts is only 0.358 across 15 TCGA cancers;
+      log2FC Pearson and direction agreement also reported in evidence).
+      For count-based downstream DE (DESeq2, edgeR): document use of
+      svaseq with raw counts, OR document justification for using SVA
+      on log-CPM despite the count-native path being available.
+      For log-expression-based downstream DE (limma topTable): SVA on
+      log-CPM is appropriate.
+    action_type: require_documentation
+    code_example: |
+      # In the pipeline config, add an explicit declaration:
+      batch_correction:
+        method: svaseq          # or 'sva'
+        preprocessing_variant: raw_counts   # or 'log_cpm'
+        justification: "Downstream DE uses DESeq2; native count-level path preferred."
+  confidence_tier: flag_and_warn
+  severity: warn
+  prior_audit_relationship: refines_prior
+  evidence:
+    - audit_id: B4
+      audit_phase: "Phase 1"
+      output_paths:
+        - "bulk_audit/output/b4_batch_correction.tsv"
+      lock_file_entries:
+        - "88ad1fd940062b038ba8e57d79fe53d4575580ec68a774804a572be8e9360bab"
+      findings_md_section: "phase1_references.md#b4-batch-correction-published"
+      summary: >
+        Phase 1 B4: applied ComBat, limma::removeBatchEffect, and SVA all
+        on log-CPM to 16 TCGA contrasts; reported deg_stability ≈ 0.10-0.30
+        (i.e. ~70-90% of DEGs change when batch correction is applied).
+        The reported result was preprocessing-uniform — log-CPM in for all
+        three methods — without testing whether each method's native
+        preprocessing would change the conclusion.
+    - audit_id: A7
+      audit_phase: "Phase 2a"
+      output_paths:
+        - "phase2a/b4_native_compare.tsv"
+        - "phase2a/findings.md"
+      lock_file_entries:
+        - "d0ce8554763d1a7d6ceea9345d5d3e7a2e30c3f9dc7d68b5ceef14971f0ab06b"
+        - "9e3d2b548f9cc27cebb6aa945911d61ceec0ab01bc66b5e57570bf17fb138131"
+      findings_md_section: "phase2a/findings.md#top-level-finding-3"
+      summary: >
+        Phase 2a A7: re-ran B4's 16 TCGA cancers under method-native
+        preprocessing. ComBat (default log-CPM vs ComBat-Seq raw counts):
+        deg_stability delta 0.023 — finding preprocessing-robust. limma
+        (removeBatchEffect on log-CPM vs voom-transformed): delta 0.049
+        — preprocessing-robust. SVA (log-CPM vs svaseq raw counts):
+        delta 0.285 — finding is preprocessing-dependent. Top-100 Jaccard
+        between SVA default and svaseq native variants is only 0.358;
+        direction agreement and log2FC magnitude correlation captured in
+        the per-cancer per-variant DEG TSVs cited in this rule's
+        b4_native/ outputs.
+  out_of_scope:
+    - "Not tested for non-TCGA bulk RNA-seq cohorts (cohort biology may shift the preprocessing-dependence magnitude)"
+    - "ComBat-Seq parameter sweeps not done (used package defaults)"
+    - "svaseq num.sv method='be' used uniformly; alternative SV-count methods (leek) not tested"
+    - "Rule fires on tool name match; does not currently inspect SV-count outputs to flag silent-failure cases (e.g., n.sv=0 with no warning)"
+    - "Recommendation does NOT pick SVA vs svaseq; both are defensible. Rule is about awareness of preprocessing-dependence, not about picking sides"
+  applicability:
+    modalities: ["bulk_RNA-seq"]
+    organisms: ["human", "mouse", "rat", "all"]
+  related_rules: []
+  mechanism_notes: >
+    Plausible mechanism (per A7 inspection of method internals, not
+    isolated experimentally): SVA on log-CPM appears to be more
+    aggressive at removing surrogate variable signal than svaseq on
+    raw counts because the negative-binomial likelihood in svaseq
+    constrains adjustment magnitude in a way that log-CPM doesn't.
+    The number of significant surrogate variables detected also
+    differs: SVA-on-log-CPM commonly detects 10-20 SVs while
+    svaseq-on-raw-counts detects 0-5 for the same input. Kept as a
+    hedged hypothesis; the rule's recommendation stands on the
+    empirical observation regardless of mechanism.

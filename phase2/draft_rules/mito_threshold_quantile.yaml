@@ -1,0 +1,79 @@
+- rule_id: mito_threshold_compute_from_data
+  schema_version: "1.0.2"
+  status: draft
+  title: "Compute mitochondrial threshold from working dataset, not fixed default"
+  description: >
+    The 20% mitochondrial threshold is tissue-dependent. Per-tissue
+    thresholds cannot currently be encoded due to insufficient per-tissue
+    sample size in the P1 audit. Compute the 95th percentile of mitochondrial
+    fraction in the working dataset; fall back to 20% only when the dataset
+    has fewer than 100 cells.
+  created_date: "2026-05-16"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_qc_filtering
+        parameter: mito_threshold
+      description: "Fires when a scRNA-seq QC step applies a mitochondrial fraction threshold."
+  recommendation:
+    text: >
+      Compute the 95th percentile of mitochondrial fraction across the
+      working dataset; use that as the cell-filtering threshold. Fall back
+      to 20% only when the working dataset has fewer than 100 cells
+      (insufficient for stable percentile estimation). Clamp the computed
+      threshold to a sane range (5%-50%) to handle edge cases where the
+      data distribution is degenerate.
+    action_type: compute_from_data
+    code_example: |
+      import numpy as np
+      if adata.n_obs >= 100:
+          threshold = float(np.percentile(adata.obs['pct_counts_mt'], 95))
+          threshold = max(5.0, min(threshold, 50.0))
+      else:
+          threshold = 20.0
+      keep_cells = adata.obs['pct_counts_mt'] < threshold
+  confidence_tier: conditional
+  severity: warn
+  prior_audit_relationship: refines_prior
+  evidence:
+    - audit_id: P1
+      audit_phase: "Phase 1"
+      output_paths:
+        - "scrnaseq_audit/output/p1_mito_threshold.tsv"
+      lock_file_entries:
+        - "a6c46d15c86623ce59f6a8061c5fef5004cd1f9d1f5f10eba5937674141000a8"
+      findings_md_section: "phase1_references.md#p1-mito-threshold"
+      summary: >
+        20% threshold removes 0% of cells in many gut/liver datasets and
+        much more than expected in brain/blood datasets — establishes that
+        a universal threshold is suboptimal and tissue-specific values
+        would be needed if data were available.
+    - audit_id: A3
+      audit_phase: "Phase 2a"
+      output_paths:
+        - "phase2a/p1_per_tissue_thresholds.tsv"
+      lock_file_entries:
+        - "4d614ce49c8b2d115d1b57c129213a320ed46f5754eb49b3c67eb89403ac71e4"
+      findings_md_section: "phase2a/findings.md#a3-per-tissue-mito-threshold-reframed-to-quantile-on-data"
+      summary: >
+        P1's 60 dataset-tissue rows are split across 42 tissues with no
+        tissue having n>=3 datasets; per-tissue table is not deployable.
+        Reframes the rule from per-tissue lookup to quantile-on-data,
+        which adapts to the user's working dataset without requiring
+        the absent per-tissue evidence.
+  out_of_scope:
+    - "Not tested for non-RNA modalities"
+    - "Not tested for tissues outside CELLxGENE Census coverage"
+    - "Not validated on synthetic data"
+    - "Quantile choice (95th) not itself optimized; chosen as a permissive default that retains most cells while filtering an obvious tail"
+    - "Fallback trigger threshold (100 cells) not itself optimized; chosen as a heuristic floor for stable percentile estimation"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules: []
+  mechanism_notes: >
+    Per-cell mitochondrial fraction distribution is shaped by tissue
+    metabolism (high in liver/gut/heart/kidney; low in brain/blood/immune)
+    and by sample preparation quality (high in stressed cells regardless
+    of tissue). Per-dataset quantile captures both signals empirically
+    without requiring the rule to encode either.

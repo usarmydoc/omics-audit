@@ -1,0 +1,23 @@
+- id: bulk_deg_bioc_release_transition_info
+  schema_version: "legacy_pre_v1.0.0"
+  status: pending_engine_support
+  pending_reason: "Requires condition_type: analysis_context with multi-run history access; BioOrchestrator's L3 engine is single-run as of 2026-05-16. Held until engine adds support."
+  type: conditional
+  level: info
+  prior_audit_relationship: extends_prior
+  related_prior_audits:
+  - B1
+  description: "Analysis history shows a Bioconductor release-line transition (e.g.\
+    \ 3.21 \u2192 3.22 \u2192 3.23), or a comparison is being made across results\
+    \ generated under different release lines.\n"
+  condition:
+    context: pipeline_history
+    field: bioc_release_lines
+    check: count_distinct_gt
+    value: 1
+  action: info
+  message: "This analysis spans multiple Bioconductor release lines. Recent release-line\
+    \ transitions tested in Phase 2 Audit 1 (Bioc 3.21 \u2192 3.22) introduced only\
+    \ noise-level drift in DEG ranking (top-100 Jaccard >0.95), but ranking metrics\
+    \ may shift slightly. Use shared direction + log2FC magnitude as the more robust\
+    \ cross-version comparison signal.\nEmpirical basis: /mnt/nvme1/omics-audit/phase2/version_sensitivity/findings.md\n"

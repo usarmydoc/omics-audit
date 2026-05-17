@@ -1,0 +1,165 @@
+# Audit 1 main E4 (CP6) rule — drafted 2026-05-16.
+# False-confidence gap = n_sig(none) − n_sig(BH) is non-zero in 116/120
+# inputs across all 3 input strata. Median 2-4 extra pathways called
+# significant when no MT correction is applied — i.e., false positives.
+# Reporting uncorrected p-values from pathway enrichment is wrong.
+
+- rule_id: pathway_no_uncorrected_pvalues_reject
+  schema_version: "1.0.2"
+  status: draft
+  title: "Reject pathway-enrichment results without multiple-testing correction"
+  description: >
+    Pathway-enrichment results reported at raw p < 0.05 without any
+    multiple-testing correction inflate the call set by a median of 2-4
+    pathways per input across all 3 strata (TCGA +2 [+1, +2.5], GTEx +3
+    [+2, +3], Census +4 [+3, +5], all 95% bootstrap CIs from B=1000).
+    The false-confidence gap (n_sig(none) − n_sig(BH)) is non-zero in
+    116 of 120 inputs — essentially every dataset has at least one
+    pathway that crosses raw p < 0.05 but fails any standard correction.
+    These are by definition false positives at the published
+    family-wise / false-discovery rate.
+
+    This rule's intent is hard-reject: pathway-enrichment results
+    reported at raw-p significance, without ANY multiple-testing
+    correction at the pathway-test family level, are not publishable
+    as "significant." The companion rule
+    `pathway_mt_correction_method_info` covers WHICH correction to
+    apply (BH default, Bonferroni or Holm for FWER, BY for arbitrary
+    dependence) — the present rule covers THAT a correction is applied
+    at all.
+
+  created_date: "2026-05-16"
+
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: pathway_enrichment
+      description: "Fires at the pathway-enrichment step regardless of tool/paradigm."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: multiple_testing_correction
+        check_op: value_in_list
+        expected_value_in_list:
+          - "none"
+          - "None"
+          - null
+          - "raw"
+          - "uncorrected"
+          - "pvalue"
+          - "p_value"
+      description: >
+        Fires when the MT correction is explicitly disabled or absent.
+        Most tools (fgsea, clusterProfiler::enricher, gseapy.enrichr)
+        default to BH, so this rule typically fires only when the user
+        has manually overridden the default to no correction, or when
+        the published output reports raw p-values rather than padj.
+
+  recommendation:
+    text: >
+      Apply a multiple-testing correction to pathway-enrichment p-values
+      at the pathway-test family level (i.e., across all pathways tested
+      within one input × tool × database combination). Benjamini-Hochberg
+      (BH) is the standard default and the choice made by fgsea,
+      clusterProfiler::enricher, and gseapy.enrichr out of the box.
+      Reporting uncorrected p < 0.05 as "significant" pathways
+      misrepresents the false-positive rate of the call set —
+      empirically, in 116 of 120 inputs across TCGA/GTEx/Census, raw-p
+      filtering picks up 2-4 pathways that any standard correction
+      would drop. If the analysis tool's output includes a padj /
+      p.adjust / q-value / FDR column, use that. If only raw p-values
+      are present, apply BH correction via R's p.adjust(p,
+      method="BH") or Python's statsmodels.stats.multitest.multipletests
+      before thresholding.
+    action_type: replace_parameter
+    code_example: |
+      # WRONG — uncorrected raw p threshold
+      # sig_pathways <- results[pvalue < 0.05]
+
+      # RIGHT — BH-corrected at family level
+      # fgsea returns padj column by default (BH-corrected)
+      sig_pathways <- results[padj < 0.05]
+
+      # Or, if only raw p-values are present:
+      results$padj <- p.adjust(results$p_value, method = "BH")
+      sig_pathways <- results[padj < 0.05]
+
+      # Python equivalent
+      # from statsmodels.stats.multitest import multipletests
+      # _, padj, _, _ = multipletests(results["p_value"], method="fdr_bh")
+      # sig = results[padj < 0.05]
+
+  confidence_tier: hard_default
+  severity: reject
+  prior_audit_relationship: novel
+
+  evidence:
+    - audit_id: E4
+      audit_phase: "Audit 1 main (CP6)"
+      output_paths:
+        - "phase2/audit1_main/e4/runs/<input_id>__<mt_method>.tsv"
+        - "phase2/audit1_main/e4/per_input_per_mt_metrics.tsv"
+        - "phase2/audit1_main/e4/per_category_watchpoint.tsv"
+        - "phase2/audit1_main/e4/per_stratum_bootstrap.tsv"
+        - "phase2/audit1_main/e4/E4_findings.md"
+      lock_file_entries:
+        - "85d1b7b2857a85b1cf153319df843a71520d9cba230538c2e5f88d3acb67592e"
+        - "983d5bd4b8a4d009647049c157f33745bbac2c11ab95a5962d6f2c0b6733361c"
+      findings_md_section: "phase2/audit1_main/e4/E4_findings.md"
+      summary: >
+        E4 held tool = fgsea, database = MSigDB Hallmark, varied 5 MT
+        corrections (none, bonferroni, holm, BH, BY) × 125 DEG inputs =
+        625 runs. n_datasets = 125 across 16 TCGA cancer types + 47
+        Census single-cell datasets + 30 GTEx tissue-pair comparisons;
+        n_tissues > 30. Bootstrap dataset-level B=1000.
+
+        False-confidence gap (n_sig(none) − n_sig(BH)) by category:
+        - TCGA   (n=48):  +2 [+1, +2.5]
+        - GTEx   (n=30):  +3 [+2, +3]
+        - Census (n=42):  +4 [+3, +5]
+
+        Prevalence: 116 of 120 inputs (96.7%) have a non-zero
+        false-confidence gap — meaning essentially every real dataset
+        has at least one pathway that crosses raw p < 0.05 but fails
+        any standard correction.
+
+        Per-MT n_sig medians (showing that uncorrected is the outlier):
+        - none:       24 (median); 21.6 (mean); range 1-45
+        - BH:         19.5 / 18.4 / 0-45
+        - BY:         16 / 14.3 / 0-45
+        - holm:       13 / 12.9 / 0-45
+        - bonferroni: 13 / 12.3 / 0-41
+
+        Direction unanimous across all 3 categories: uncorrected always
+        inflates relative to any correction.
+
+  out_of_scope:
+    - "Single-pathway hypothesis tests (n_pathways = 1), where MT correction at the pathway-family level is degenerate. Not encountered in MSigDB-based workflows."
+    - "Per-gene MT correction within a DEG analysis is a separate concern handled upstream; this rule applies to the pathway-enrichment family."
+    - "Custom analyses where MT correction is performed at a different family level (e.g., across databases jointly, or hierarchically). The rule applies to the per-database within-tool family which is the standard published configuration."
+
+  applicability:
+    modalities: ["bulk_rnaseq", "scRNA-seq_DEG_lists"]
+    organisms: ["human", "mouse"]
+
+  related_rules:
+    - pathway_mt_correction_method_info       # which correction to apply
+
+  mechanism_notes: >
+    Pathway-enrichment tests evaluate dozens (Hallmark) to thousands
+    (C5 GO:BP) of pathways per input. Without correction, the expected
+    number of false positives at α=0.05 is 0.05 × n_pathways — for
+    Hallmark, ~2.5 false positives expected purely by chance per input,
+    which is consistent with the +2 to +4 false-confidence gap E4
+    measured. The empirical gap is not driven by tool, database, or
+    biology — it is a direct consequence of the multiple-testing
+    arithmetic, which is why the finding is uniform across strata.
+
+    BH (Benjamini-Hochberg) controls the false-discovery rate at the
+    chosen α — the expected fraction of false positives among called
+    pathways. Bonferroni and Holm control the family-wise error rate —
+    the probability of any false positive at all. BY controls FDR under
+    arbitrary dependence (more conservative than BH when pathway tests
+    are correlated, which they are when gene sets overlap). The choice
+    among them is downstream (covered by
+    `pathway_mt_correction_method_info`); the choice TO correct is
+    upstream and not optional for publication.

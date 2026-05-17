@@ -1,0 +1,167 @@
+# Audit 1 main E1 (CP3) rule — drafted 2026-05-16.
+# E1 finding: tools within a paradigm (ORA × ORA) agree closely on the same
+# DEG inputs (Spearman ρ ~0.93, direction concordance ~0.86); tools across
+# paradigms (GSEA × ORA) disagree fundamentally (ρ ~0.30-0.44, direction
+# concordance ~0.50 = coin flip). Pattern holds across all 3 input strata
+# (TCGA / Census / GTEx).
+
+- rule_id: pathway_tool_paradigm_choice_warn
+  schema_version: "1.0.2"
+  status: draft
+  title: "Pathway-tool paradigm choice (GSEA vs ORA) dominates agreement"
+  description: >
+    For pathway enrichment, the choice of paradigm (GSEA-family vs
+    over-representation analysis / ORA) is a much stronger driver of
+    inter-tool agreement than the choice of tool within a paradigm. On
+    the same 125 DEG inputs and the same MSigDB Hallmark database,
+    tool pairs within a paradigm (gseapy.enrichr ↔ clusterProfiler::enricher,
+    both ORA) reach Spearman ρ ≈ 0.93 on -log10 padj across pathways and
+    direction concordance ≈ 0.86 on shared significant pathways. Tool pairs
+    across paradigms (fgsea GSEA ↔ either ORA tool) reach Spearman ρ
+    ≈ 0.30-0.44 and direction concordance ≈ 0.50 — indistinguishable
+    from chance. This holds uniformly across TCGA bulk, GTEx bulk, and
+    Census single-cell strata.
+
+    Practical implication: pick your paradigm first, on biological
+    grounds (rank-the-full-list vs cut-the-significant-set); the choice
+    of specific tool within that paradigm is comparatively
+    inconsequential. Reporting results from a single paradigm without
+    acknowledging the cross-paradigm disagreement misrepresents how
+    method-dependent the call set is.
+
+  created_date: "2026-05-16"
+
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: pathway_enrichment
+      description: "Fires at the pathway-enrichment step regardless of paradigm."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: enrichment_paradigm
+        check_op: value_in_list
+        expected_value_in_list:
+          - "GSEA"
+          - "fgsea"
+          - "GSEA-family"
+          - "ORA"
+          - "hypergeometric"
+          - "enrichr"
+          - "clusterProfiler::enricher"
+      description: >
+        Fires when a paradigm is detectable from the tool choice. Covers
+        both common spellings: explicit paradigm tag (GSEA/ORA) or specific
+        tool name that implies a paradigm.
+
+  recommendation:
+    text: >
+      Select pathway-enrichment paradigm (GSEA vs ORA) on biological grounds:
+      GSEA-family methods use the full ranked gene list (rank statistic from
+      log2FC × -log10 p) and are appropriate when continuous effect-size
+      information is meaningful; ORA methods cut to a foreground set
+      (typically padj < 0.05) and test over-representation against a
+      background, appropriate when the foreground set is biologically
+      well-defined. Within a chosen paradigm, the specific tool choice
+      (fgsea vs GSEA-py; gseapy.enrichr vs clusterProfiler::enricher) has
+      small effect on the call set. When publishing pathway results,
+      either (a) report only one paradigm with explicit justification
+      against the other, or (b) report both paradigms side-by-side with
+      Spearman ρ and direction concordance on shared pathways so the
+      reader can see the paradigm-dependence empirically.
+    action_type: require_documentation
+    code_example: |
+      # Reporting both paradigms — Python sketch
+      import gseapy
+      import subprocess
+      # ORA via gseapy.enrichr
+      ora = gseapy.enrich(gene_list=sig_genes, gene_sets=hallmark_gmt,
+                          background=universe).results
+      # GSEA via fgsea (R subprocess)
+      subprocess.run(["Rscript", "fgsea_helper.R", deg_tsv, hallmark_tsv,
+                      "ranked_stats.tsv"])
+      # Compare: Spearman ρ across pathway -log10 padj, direction
+      # concordance on pathways significant in BOTH
+      from scipy.stats import spearmanr
+      merged = ora.merge(gsea, on="pathway", suffixes=("_ora", "_gsea"))
+      rho, _ = spearmanr(-np.log10(merged.padj_ora),
+                          -np.log10(merged.padj_gsea))
+      sig_both = merged[(merged.padj_ora < 0.05) & (merged.padj_gsea < 0.05)]
+      direction = (np.sign(sig_both.NES_gsea) ==
+                   np.sign(sig_both.log2_OR_ora)).mean()
+      print(f"cross-paradigm rho={rho:.2f}, direction concordance={direction:.2f}")
+
+  confidence_tier: hard_default
+  severity: warn
+  prior_audit_relationship: novel
+
+  evidence:
+    - audit_id: E1
+      audit_phase: "Audit 1 main (CP3)"
+      output_paths:
+        - "phase2/audit1_main/e1/runs/<input_id>__<tool>.tsv"
+        - "phase2/audit1_main/e1/per_input_metrics.tsv"
+        - "phase2/audit1_main/e1/per_stratum_bootstrap.tsv"
+        - "phase2/audit1_main/e1/E1_findings.md"
+      lock_file_entries:
+        - "a3ac93b0bd5247b6ad4ca071d26f805ef046e618d565f4bfc5f4c07f67cba87d"
+        - "a23467e53ced4aa82cb1d0a245be892d83db6dd2e0440a628a3e65561fadd673"
+      findings_md_section: "phase2/audit1_main/e1/E1_findings.md"
+      summary: >
+        3 tools (fgsea, gseapy.enrichr, clusterProfiler::enricher) × 125
+        DEG inputs × 1 database (MSigDB Hallmark, 50 pathways) = 375 runs.
+        n_datasets = 125 distinct DEG inputs covering 16 TCGA cancer types,
+        47 Census single-cell datasets, and 30 GTEx tissue-pair comparisons.
+        n_tissues spanned ≥30 (TCGA cancer sites + GTEx tissue catalog +
+        Census tissue field; well above the hard_default tier's ≥3-tissue
+        floor). 354 per-input pairwise comparisons after dropping low-sig
+        empty inputs. Bootstrap dataset-level B=1000 stratified by
+        input_category × tool-pair (9 strata).
+
+        Median Spearman ρ on -log10 padj across 50 pathways:
+        - ORA × ORA (gseapy ↔ clusterProfiler): TCGA 0.93, Census 0.93, GTEx 0.94
+        - GSEA × ORA (fgsea ↔ gseapy):         TCGA 0.30, Census 0.44, GTEx 0.33
+        - GSEA × ORA (fgsea ↔ clusterProfiler): TCGA 0.32, Census 0.42, GTEx 0.36
+
+        Median direction concordance on shared significant pathways:
+        - ORA × ORA: 0.86 across strata
+        - GSEA × ORA: 0.50 across strata (indistinguishable from chance)
+
+        Pattern uniform across all 3 input strata — paradigm-split is not
+        a stratum-specific artifact.
+
+  out_of_scope:
+    - "Tool agreement within the GSEA paradigm (only fgsea tested in E1). The within-GSEA pair gseapy.GSEA + fgsea is deferred to a follow-on sub-audit."
+    - "Expression-matrix-input tools (GSVA, EGSEA, camera) not in E1's scope. Queued as separate audit E1b in DEFERRED.md."
+    - "Databases other than MSigDB Hallmark not tested in E1 (database choice is E2/E2b's question)."
+    - "Background gene set held at each tool's default in E1 — variation in background is E3's question."
+
+  applicability:
+    modalities: ["bulk_rnaseq", "scRNA-seq_DEG_lists"]
+    organisms: ["human", "mouse"]
+
+  mechanism_notes: >
+    GSEA and ORA test fundamentally different null hypotheses against
+    different data structures. GSEA-family methods use the full ranked
+    gene list and a Kolmogorov-Smirnov-style running enrichment statistic
+    that asks: "are pathway members concentrated at the extremes of the
+    ranked list?" ORA methods discard the rank information, cut to a
+    foreground set (typically padj < α), and apply a hypergeometric test
+    asking: "is pathway-member presence in the foreground higher than
+    expected given the background frequency?" When pathway-member genes
+    are spread along the ranked list rather than concentrated, GSEA can
+    call the pathway significant while ORA cannot (no foreground
+    enrichment). When the foreground set is small and pathway members
+    happen to dominate it, ORA calls significance where GSEA would not
+    (no rank concentration). These mechanisms produce systematically
+    different call sets on the same data, which is what E1 observed.
+
+    Direction concordance ≈ 0.50 across paradigms is the more concerning
+    half of the finding: when both paradigms DO call a pathway
+    significant, they disagree on the direction (up vs down) of
+    regulation half the time. This is consistent with NES (GSEA) and
+    log2 odds ratio (ORA) measuring different quantities — NES captures
+    where in the ranked list the pathway concentrates (always signed by
+    rank direction), whereas log2 OR captures whether the pathway is
+    over-represented in the foreground (signed by over- vs
+    under-representation, which can flip when the foreground is large or
+    when the pathway is universally expressed).

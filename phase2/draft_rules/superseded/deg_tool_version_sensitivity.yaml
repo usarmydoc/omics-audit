@@ -1,0 +1,36 @@
+- id: bulk_deg_tool_version_pin
+  schema_version: "legacy_pre_v1.0.0"
+  type: conditional
+  prior_audit_relationship: extends_prior
+  related_prior_audits:
+  - B1
+  status: superseded_by_bioc_version_sensitivity_v2
+  description: "Bulk DEG audit metrics (top-100 Jaccard between tools, n_significant_DEGs)\
+    \ are sensitive to R / Bioconductor / edgeR / limma versions. Empirical: DESeq2-vs-edgeR\
+    \ top-100 Jaccard shifted 0.43 \u2192 0.37 (BRCA), 0.67 \u2192 0.32 (LUAD) between\
+    \ Bioconductor 3.20-rc and Bioconductor 3.22 \u2014 same code, same inputs, only\
+    \ edgeR version differed (4.4.x \u2192 4.8.2, +300-400 DEGs per cancer). DESeq2\
+    \ (pyDESeq2 native) was byte-identical across the two environments.\n"
+  condition:
+    context: steps
+    field: step_type
+    check: contains_any
+    values:
+    - differential_expression
+  required:
+    scope: parameters
+    parameter_exists: bioconductor_version_pin
+  action: flag
+  message: 'Bulk DEG pipeline does not pin Bioconductor / R package versions. Top-100
+    DEG agreement between tools varies by 0.15-0.30 Jaccard across Bioconductor releases.
+    If DEG-list overlap is used as a quality signal (e.g. "require concordance between
+    DESeq2 and edgeR before reporting"), the concordance threshold is meaningless
+    without a pinned environment. Recommend pinning Bioconductor release in the lockfile.
+
+    '
+  empirical_source:
+    audit: B1 regen 2026-05-15
+    n_cancers: 16
+    paths:
+    - phase2/per_gene_degs/b1_tcga/
+    - phase2/diagnostic/phase1_vs_regen_per_cancer.tsv

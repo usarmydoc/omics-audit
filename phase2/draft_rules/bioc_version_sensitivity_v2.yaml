@@ -1,0 +1,112 @@
+- rule_id: bulk_deg_bioc_version_warn
+  schema_version: "1.0.2"
+  status: draft
+  title: "Warn when bulk DEG pipeline uses old Bioc / edgeR / limma or has no version pin"
+  description: >
+    Bulk DEG audit metrics (top-100 Jaccard between tools, n_significant
+    DEGs) are sensitive to R / Bioconductor / edgeR / limma versions.
+    Phase 2 Step 5b found the Bioc 3.21 → 3.22 transition itself is stable
+    (top-100 Jaccard 0.978 for edgeR, 0.954 for limma; direction agreement
+    1.000; log2FC Pearson ≈ 0.9999) but a historical transition before
+    3.21 produced ~0.30 Jaccard drift on identical inputs. Rule fires when
+    pipeline runs older Bioc / tool versions OR has no explicit version
+    pin. Companion metrics (direction agreement, log2FC correlation) were
+    measured and reported in evidence[1] per the standards-required
+    multi-metric companion check.
+  created_date: "2026-05-16"
+  trigger_conditions:
+    - condition_type: tool_version_constraint
+      parameters:
+        tool: bioconductor
+        comparator: lt
+        threshold_version: "3.21"
+      description: "Fires when Bioconductor version is older than 3.21 (the lower bound of the Step 5b stability envelope)."
+    - condition_type: tool_version_constraint
+      parameters:
+        tool: edgeR
+        comparator: lt
+        threshold_version: "4.6.3"
+      description: "Fires when edgeR version is older than 4.6.3."
+    - condition_type: tool_version_constraint
+      parameters:
+        tool: limma
+        comparator: lt
+        threshold_version: "3.64.3"
+      description: "Fires when limma version is older than 3.64.3."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: version_pin_present
+        expected_value: true
+        check_op: not_equal
+      description: "Fires when pipeline has no explicit Bioconductor / edgeR / limma version pin."
+  recommendation:
+    text: >
+      Pin edgeR and limma versions via renv() or
+      BiocManager::install(version=) for any longitudinal analysis or for
+      results you intend to compare across runs separated in time.
+      Phase 2 Step 5b showed Bioc 3.21 → 3.22 is stable, but earlier
+      transitions (~0.30 Jaccard drift) are not reproducible from the
+      current Bioc archive (only the latest patch per release line is
+      retained). Pinning a Bioc release in your lockfile makes future
+      runs reproducible regardless of what happens upstream.
+    action_type: pin_version
+    code_example: |
+      # In an renv-managed project:
+      # renv.lock entries pin BiocVersion + edgeR + limma to specific patches.
+      # Or with BiocManager:
+      BiocManager::install(version = "3.22")
+      BiocManager::install(c("edgeR", "limma"), update = FALSE, ask = FALSE)
+  confidence_tier: flag_and_warn
+  severity: warn
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: B1
+      audit_phase: "Phase 1"
+      output_paths:
+        - "bulk_audit/output/phase1_march2026_superseded/b1_deg_tool_agreement.tsv"
+      lock_file_entries:
+        - "9f1db35f656cb38678d9d7171f8a006e6335afd57f01c144a57396f73e677c45"
+      findings_md_section: "phase1_references.md#b1-deg-tool-agreement-published"
+      summary: >
+        Phase 1 published B1 summary: DESeq2-vs-edgeR top-100 Jaccard ≈ 0.52
+        across 16 TCGA cancers in March 2026. Phase 2 reproduction on same
+        cached inputs produced Jaccard ≈ 0.31 — the ~0.30 drift this rule
+        warns about.
+    - audit_id: "Step 5b"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "phase2/version_sensitivity/edger_results.tsv"
+        - "phase2/version_sensitivity/limma_results.tsv"
+        - "phase2/version_sensitivity/findings.md"
+      lock_file_entries:
+        - "f4761ac13fb1bb9ada4a6a3425f296b4c887c018a60d873dd3a5ed034ecca43e"
+        - "cb70176ee0d337749378c199141fae9ea0ad8fddd70e34463ecc8e838cd8e1c7"
+        - "a339fbc2fd016136054ca47af943df82c9f8f9093bee16cca9d395a0ed173d8a"
+      findings_md_section: "phase2/version_sensitivity/findings.md"
+      summary: >
+        Bioc 3.21 → 3.22 edgeR transition: top-100 Jaccard mean 0.978
+        (range 0.92-1.00). Limma transition: 0.954 (0.89-1.00). Direction
+        agreement 1.000. Same R version (4.5.3). Establishes the lower
+        bound of the stability envelope at Bioc 3.21; the historical
+        ~0.30 drift originated before 3.21 (unreproducible per archive
+        policy).
+  out_of_scope:
+    - "Bioc < 3.21 not directly characterized (older R required; would confound)"
+    - "Patch-level drift within a Bioc release line not characterized (Bioc archive retains only latest patch per release line)"
+    - "Bioc > 3.22 not yet released (audit refresh needed when 3.23 ships)"
+    - "Non-bulk-DE pipelines not directly tested; rule scope is bulk RNA-seq DE"
+    - "Mechanism attribution (adaptive-span default flip) is a hedged candidate per NEWS-file review, not experimentally isolated"
+  applicability:
+    modalities: ["bulk_RNA-seq"]
+    organisms: ["human", "mouse", "rat", "all"]
+  related_rules: []
+  mechanism_notes: >
+    Leading candidate per NEWS-file review (not isolated experimentally):
+    edgeR 4.8.0 flipped voomLmFit's `adaptive.span` default from FALSE to
+    TRUE; limma 3.66.0 flipped voom's `adaptive.span` similarly and added a
+    `span` argument to eBayes / squeezeVar. These change variance/dispersion
+    smoothing bandwidth selection, which propagates to slightly different
+    shrunk variances → slightly reordered padj. To confirm, would need to
+    run Bioc 3.22 with `adaptive.span = FALSE` explicitly and check whether
+    drift collapses. Kept as a hedged hypothesis; the rule's recommendation
+    stands on the empirical observation regardless of mechanism.

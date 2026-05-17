@@ -1,0 +1,190 @@
+# Audit 1 main E3 (CP5) rule — drafted 2026-05-16.
+# Restricting the ORA background gene set (dataset_tested, protein_coding,
+# tissue_specific) NEVER inflates n_sig and almost always deflates it.
+# CP::enricher's default (universe=NULL) is the right choice for ORA
+# unless there is a specific biological reason to restrict.
+
+- rule_id: pathway_ora_background_default_info
+  schema_version: "1.0.2"
+  status: draft
+  title: "ORA background should default to tool's universe=NULL"
+  description: >
+    For ORA pathway enrichment (clusterProfiler::enricher, gseapy.enrichr,
+    and similar hypergeometric methods), restricting the background gene
+    set (universe) below the tool's default — to the dataset-tested gene
+    set, to protein-coding genes only, or to tissue-expressed genes only
+    — produces uniform deflation of significant pathway counts and never
+    inflates them. In 0 of 115 attempted (input × tissue-specific
+    background) runs did n_sig exceed the default-universe baseline. Across
+    all 3 input strata (TCGA, GTEx, Census), every alternative background
+    deflates median n_sig vs the all-annotated default with 95% bootstrap
+    CI excluding zero.
+
+    The intuition that a tissue-specific or expressed-only background
+    "helps" pathway inference by removing irrelevant genes turns out to
+    be wrong for ORA. A smaller universe raises the *baseline* hit-rate
+    in the hypergeometric test, which makes it harder for any individual
+    pathway to clear significance. Genes outside the restricted universe
+    that ARE in the foreground get dropped from both numerator and
+    denominator, shrinking the foreground proportionally and reducing the
+    test's power.
+
+  created_date: "2026-05-16"
+
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: pathway_enrichment
+      description: "Fires at the pathway-enrichment step when an ORA tool is selected."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: enrichment_tool
+        check_op: value_in_list
+        expected_value_in_list:
+          - "ORA"
+          - "hypergeometric"
+          - "enrichr"
+          - "gseapy.enrich"
+          - "gseapy.enrichr"
+          - "clusterProfiler::enricher"
+          - "enricher"
+      description: "Fires when the chosen enrichment tool is an ORA-family method."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: background
+        check_op: value_not_in_list
+        expected_value_in_list:
+          - "default"
+          - "NULL"
+          - null
+          - "all_annotated"
+          - "tool_default"
+      description: >
+        Fires when a non-default background / universe is being specified.
+        Default (NULL / all-annotated / TERM2GENE-union) is the recommended
+        choice; this rule's recommendation is to revert to default unless
+        a specific biological reason justifies the restriction.
+
+  recommendation:
+    text: >
+      Use the tool's default universe (clusterProfiler::enricher with
+      universe=NULL; gseapy.enrich with background=None) unless you have
+      a specific biological reason to restrict. Default = the union of
+      genes appearing in the pathway database (TERM2GENE union), which is
+      the universe under which the database's published p-value
+      distributions were validated. Acceptable reasons to restrict
+      include: (1) the input DEG list was generated on a specific
+      gene-filter (e.g., protein-coding only), in which case the
+      universe should match — but use the actual gene filter applied
+      upstream, not a re-applied filter; (2) the comparison is
+      explicitly tissue-restricted (e.g., comparing two cell types within
+      one tissue and ALL genes truly absent from that tissue must be
+      excluded). Tissue-specific restriction via TPM>1 in a reference
+      atlas (GTEx) systematically deflated n_sig in 48/48 TCGA inputs in
+      E3 with 95% bootstrap CI [−5, −4], so this is not a reliable
+      "improvement" over default.
+    action_type: replace_parameter
+    code_example: |
+      # Recommended (default universe) — Python clusterProfiler analog via gseapy
+      import gseapy
+      results = gseapy.enrich(
+          gene_list=sig_genes,
+          gene_sets="MSigDB_Hallmark_2020",
+          background=None,    # default: gene universe = TERM2GENE union
+      )
+      # Recommended (default universe) — R clusterProfiler
+      # library(clusterProfiler)
+      # enricher(gene = sig_genes,
+      #          TERM2GENE = t2g,
+      #          universe = NULL,   # default: TERM2GENE gene union
+      #          minGSSize = 5, maxGSSize = 500,
+      #          pAdjustMethod = "BH")
+
+  confidence_tier: hard_default
+  severity: info
+  prior_audit_relationship: novel
+
+  evidence:
+    - audit_id: E3
+      audit_phase: "Audit 1 main (CP5)"
+      output_paths:
+        - "phase2/audit1_main/e3/runs/<input_id>__<background>.tsv"
+        - "phase2/audit1_main/e3/per_input_per_bg_metrics.tsv"
+        - "phase2/audit1_main/e3/per_input_bg_pair_metrics.tsv"
+        - "phase2/audit1_main/e3/per_stratum_bootstrap.tsv"
+        - "phase2/audit1_main/e3/per_category_watchpoint.tsv"
+        - "phase2/audit1_main/e3/E3_findings.md"
+      lock_file_entries:
+        - "c2de72e18ad9211612dd24880c7bb437694407db69b0f89219b470361721ab79"
+        - "176dde5e43c8c93ddf8cc55e8dac1d366043d75eb0678761fac73c3d5694be0e"
+      findings_md_section: "phase2/audit1_main/e3/E3_findings.md"
+      summary: >
+        E3 held tool = clusterProfiler::enricher, database = MSigDB Hallmark.
+        Varied background across 4 definitions × 125 DEG inputs = 488 runs
+        (12 skipped: 8 Census with un-mapped tissue, 4 mouse +
+        tissue_specific where no mouse GTEx reference exists).
+        n_datasets = 125 across 16 TCGA cancer types + 47 Census single-cell
+        datasets + 30 GTEx tissue-pair comparisons; n_tissues > 30. Bootstrap
+        dataset-level B=1000, stratified by input_category (3 strata) ×
+        background-pair (6 pairs).
+
+        Per-background n_sig (median across all inputs):
+        - all_annotated (CP default):    5
+        - protein_coding:                 5 (≈ no-op for Hallmark)
+        - dataset_tested:                 2
+        - tissue_specific (GTEx TPM>1):   0
+
+        Signed delta vs all_annotated, by category (95% CI):
+        - TCGA × tissue_specific:    48/48 deflate, median −4 [−5, −4]
+        - GTEx × tissue_specific:    22/30 deflate, median −3 [−4, −1.5]
+        - Census × tissue_specific:  26/37 deflate, median −3 [−6, −1]
+        - TCGA × dataset_tested:     33/48 deflate, median −1 [−2, −1]
+        - GTEx × dataset_tested:     20/30 deflate, median −2 [−3, −0.5]
+        - Census × dataset_tested:   32/40 deflate, median −5 [−7, −2]
+        - All × protein_coding:      ≈ all_annotated (median delta 0 [0, 0])
+
+        Direction is unanimous across categories: non-default background
+        never inflates. 0 of 115 attempted tissue-specific runs produced
+        n_sig > all_annotated baseline.
+
+  out_of_scope:
+    - "GSEA-family tools (fgsea, gseapy.GSEA). GSEA uses the full ranked stat list rather than a foreground/background split, so the 'universe' concept does not apply in the same way."
+    - "Databases other than Hallmark. Background sensitivity may differ for databases that include non-coding-gene pathways (some C5 GO categories, lncRNA-focused MSigDB collections)."
+    - "Mouse data restricted by GTEx-tissue-specific background. No mouse GTEx reference exists; the analog (Tabula Muris bulk reference) was not tested."
+    - "Custom user-defined gene-set databases where the natural background is the database's own gene union (the default universe=NULL handles this correctly)."
+    - "Cases where the upstream DEG analysis was performed on a specific gene filter (e.g., protein-coding only). The universe SHOULD match the upstream filter — but use the actual upstream filter, not a re-applied one, to avoid double-filtering."
+
+  applicability:
+    modalities: ["bulk_rnaseq", "scRNA-seq_DEG_lists"]
+    organisms: ["human", "mouse"]
+
+  related_rules:
+    - pathway_tool_paradigm_choice_warn       # paradigm-level upstream choice
+    - pathway_database_choice_warn            # database-level upstream choice
+
+  mechanism_notes: >
+    ORA tests a hypergeometric / Fisher's-exact contingency table per
+    pathway: (foreground ∩ pathway) vs (foreground ∩ ¬pathway) vs
+    (background ∩ pathway) vs (background ∩ ¬pathway). The p-value
+    depends on the expected hit rate, which is set by
+    (pathway-genes-in-universe) / (universe-size). A smaller universe
+    raises this baseline rate, so the foreground has to clear a higher
+    bar to call enrichment.
+
+    Genes that are in the foreground but NOT in the restricted universe
+    are dropped from both the foreground count and the pathway-membership
+    count. This shrinks the effective foreground proportionally — if
+    half the foreground was non-tissue-expressed, you've halved the
+    test's signal while only marginally reducing the background. The
+    net effect is power loss, which manifests as deflated n_sig.
+
+    The empirical asymmetry (deflation never reverses to inflation) is
+    consistent with the math: there is no mechanism by which restricting
+    the universe can increase a hypergeometric test statistic for a
+    pathway whose foreground hit rate was already above background. The
+    intuition that "restricting to expressed genes makes the test more
+    biologically appropriate" assumes that the dropped genes were noise;
+    in practice, foreground sig genes are often expressed in the tissue
+    of interest by definition (they were called DEG), so dropping them
+    via a TPM>1 filter in an atlas tissue creates a foreground/background
+    mismatch that hurts more than it helps.

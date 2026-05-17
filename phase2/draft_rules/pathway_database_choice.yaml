@@ -1,0 +1,223 @@
+# Audit 1 main E2 (CP4) + E2b (pre-CP7 companion) rule — drafted 2026-05-16.
+# Database choice within MSigDB produces 24-124× variation in n_sig and
+# 0.05-0.43 cross-database leading-edge / hit-gene Jaccard, in BOTH GSEA
+# and ORA paradigms. ORA is more sensitive than GSEA on the same inputs.
+
+- rule_id: pathway_database_choice_warn
+  schema_version: "1.0.2"
+  status: draft
+  title: "MSigDB collection choice substantially shifts the pathway call set"
+  description: >
+    The choice of pathway collection within MSigDB (Hallmark vs C2 KEGG vs
+    C2 Reactome vs C2 WikiPathways vs C5 GO:BP) produces 24× variation in
+    n_sig pathways for GSEA-family methods and 124× variation for ORA-family
+    methods on the same 125 DEG inputs — ORA's database-choice sensitivity
+    is roughly 5× larger than GSEA's. Concretely: fgsea (GSEA) median n_sig
+    spans Hallmark=20 to C5 GO:BP=476; clusterProfiler::enricher (ORA,
+    universe=NULL) spans Hallmark=5 to C5 GO:BP=622. Cross-database
+    agreement on the *genes driving* significant pathways (leading-edge
+    gene Jaccard for GSEA; hit-gene Jaccard for ORA) ranges 0.05-0.43
+    across pairs, with ORA consistently producing the lower Jaccard on
+    identical inputs (e.g., TCGA Hallmark × C5 GO:BP: 0.071 ORA vs 0.207
+    GSEA — ORA agrees on roughly one-third as many driver genes as GSEA
+    does between the same two databases).
+
+    The effect is tool-agnostic in *direction* — same ordering, same
+    pattern across TCGA bulk, GTEx bulk, and Census single-cell — but
+    ORA users face the more amplified version of the rule. It is not
+    safe to assume that "pathway significance" is a
+    tool-and-database-independent biological property; database choice
+    contributes more variance than tool choice within a paradigm, and
+    that variance is larger still for ORA than for GSEA.
+
+  created_date: "2026-05-16"
+
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: pathway_enrichment
+      description: "Fires at the pathway-enrichment step regardless of paradigm."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: database
+        check_op: value_in_list
+        expected_value_in_list:
+          - "MSigDB"
+          - "msigdb"
+          - "hallmark"
+          - "MSigDB:H"
+          - "MSigDB:C2:KEGG"
+          - "c2_kegg"
+          - "MSigDB:C2:Reactome"
+          - "c2_reactome"
+          - "MSigDB:C2:WikiPathways"
+          - "c2_wikipathways"
+          - "MSigDB:C5:GO:BP"
+          - "c5_go_bp"
+          - "GO:BP"
+      description: >
+        Fires when a single MSigDB collection is being used. Reactome.db
+        full extract, GO via biomaRt, KEGG via KEGGREST etc. fall
+        outside MSigDB-collection scope and have their own database-choice
+        considerations.
+
+  recommendation:
+    text: >
+      Choose the pathway database on biological grounds matching your
+      question: Hallmark for broad biological-process summaries (50 curated
+      gene sets), C2:KEGG for canonical metabolic + signaling pathways,
+      C2:Reactome for hierarchical reaction-level pathway detail,
+      C2:WikiPathways for community-curated disease-and-process pathways,
+      C5:GO:BP for fine-grained biological-process annotation. Do NOT pick
+      a database by which one produces the most significant pathways for
+      your data — that decision is downstream of the biological question.
+      When publishing pathway enrichment results, either (a) use a
+      pre-specified single database with documented justification, or
+      (b) run multiple databases and report n_sig + leading-edge gene
+      Jaccard across them so the reader can see the
+      database-dependence empirically. For ORA users specifically, the
+      database-choice sensitivity is amplified (see mechanism_notes);
+      reporting only one ORA database without cross-database comparison
+      hides this sensitivity.
+    action_type: require_documentation
+    code_example: |
+      # Multi-database fgsea reporting — R sketch
+      library(fgsea)
+      library(msigdbr)
+      dbs <- list(
+        hallmark    = msigdbr(species = "Homo sapiens", collection = "H"),
+        kegg        = msigdbr(species = "Homo sapiens", collection = "C2", subcollection = "CP:KEGG_LEGACY"),
+        reactome    = msigdbr(species = "Homo sapiens", collection = "C2", subcollection = "CP:REACTOME"),
+        wp          = msigdbr(species = "Homo sapiens", collection = "C2", subcollection = "CP:WIKIPATHWAYS"),
+        go_bp       = msigdbr(species = "Homo sapiens", collection = "C5", subcollection = "GO:BP")
+      )
+      results <- lapply(dbs, function(db) {
+        pathways <- split(db$gene_symbol, db$gs_name)
+        fgsea(pathways = pathways, stats = ranks, minSize = 5, maxSize = 500)
+      })
+      # Report n_sig per database, then sig-gene Jaccard across pairs
+      sig_genes <- lapply(results, function(r) {
+        unlist(r[padj < 0.05, leadingEdge])
+      })
+      # Jaccard table across all pairs
+
+  confidence_tier: hard_default
+  severity: warn
+  prior_audit_relationship: novel
+
+  evidence:
+    - audit_id: E2
+      audit_phase: "Audit 1 main (CP4)"
+      output_paths:
+        - "phase2/audit1_main/e2/runs/<input_id>__<database>.tsv"
+        - "phase2/audit1_main/e2/per_input_per_db_metrics.tsv"
+        - "phase2/audit1_main/e2/per_input_db_pair_metrics.tsv"
+        - "phase2/audit1_main/e2/per_stratum_bootstrap.tsv"
+        - "phase2/audit1_main/e2/E2_findings.md"
+      lock_file_entries:
+        - "cc2a1fbb05b7f426a31118c065a4cdbc88c32e612240b39d596302d2dc3b7c3b"
+        - "64387c617bb2b1d96426386b14caf26bbb7e4f8580e48f6c9ff741712419d2e5"
+      findings_md_section: "phase2/audit1_main/e2/E2_findings.md"
+      summary: >
+        E2 held tool = fgsea (GSEA), varied 5 MSigDB databases × 125 DEG
+        inputs = 625 runs. n_datasets = 125 across 16 TCGA cancer types +
+        47 Census single-cell datasets + 30 GTEx tissue-pair comparisons;
+        n_tissues > 30 (well above hard_default tier's ≥3 floor).
+        Bootstrap dataset-level B=1000, stratified by input_category ×
+        database-pair (30 strata).
+
+        Median n_sig per database (across all 125 inputs):
+        - hallmark: 20    (50 pathways tested)
+        - c2_kegg: 36     (186 pathways)
+        - c2_wikipathways: 76 (925 pathways)
+        - c2_reactome: 195 (1839 pathways)
+        - c5_go_bp: 476   (7538 pathways)
+        Max/min ratio = 24×.
+
+        Median leading-edge gene Jaccard across database pairs (TCGA stratum):
+        0.184 (hallmark × c5_go_bp) — 0.398 (c2_reactome × c5_go_bp).
+        Range across all strata: 0.078 — 0.434.
+
+        Within-database redundancy (mean pairwise gene-set Jaccard,
+        sampled): 0.003 (c5_go_bp) — 0.016 (c2_kegg) — small, meaning
+        cross-database differences are not driven by within-database
+        pathway overlap.
+
+    - audit_id: E2b
+      audit_phase: "Audit 1 main (pre-CP7 companion)"
+      output_paths:
+        - "phase2/audit1_main/e2b/runs/<input_id>__<database>.tsv"
+        - "phase2/audit1_main/e2b/per_input_per_db_metrics.tsv"
+        - "phase2/audit1_main/e2b/per_input_db_pair_metrics.tsv"
+        - "phase2/audit1_main/e2b/per_stratum_bootstrap.tsv"
+        - "phase2/audit1_main/e2b/E2b_findings.md"
+      lock_file_entries:
+        - "dab761d4b683267c9825b283bab159144968e6b9f7054cbda5fe5e77a5e8b537"
+        - "db6a13e1bd6fc96e31e5c89a4ce425a82486962c76965491b51aba3ed53ecbe4"
+      findings_md_section: "phase2/audit1_main/e2b/E2b_findings.md"
+      summary: >
+        E2b held tool = clusterProfiler::enricher (ORA, universe=NULL per
+        CP5), varied same 5 MSigDB databases × same 125 DEG inputs = 625
+        runs. Companion to E2: answers whether database-choice effect is
+        GSEA-specific or transfers to ORA.
+
+        Result: effect transfers AND is more pronounced. Median n_sig per
+        database under ORA:
+        - hallmark: 5  (vs GSEA 20)
+        - c2_kegg: 18  (vs GSEA 36)
+        - c2_wikipathways: 17 (vs GSEA 76)
+        - c2_reactome: 131 (vs GSEA 195)
+        - c5_go_bp: 622 (vs GSEA 476)
+        Max/min ratio = 124×, 5× wider than GSEA's 24×.
+
+        Cross-database sig-hit-gene Jaccard is consistently LOWER in ORA
+        than GSEA on identical inputs (TCGA stratum):
+        - hallmark × c5_go_bp:   0.071 ORA vs 0.207 GSEA
+        - hallmark × c2_kegg:    0.105 ORA vs 0.212 GSEA
+        - c2_kegg × c2_reactome: 0.160 ORA vs 0.277 GSEA
+
+        Pattern uniform across all 3 input strata. ORA amplifies the
+        database-choice effect rather than mitigating it.
+
+  out_of_scope:
+    - "Databases outside MSigDB (reactome.db full extract, KEGG via KEGGREST direct, GO via biomaRt direct). Cached in CP2 but not exercised by E2/E2b."
+    - "Fresh-2026 WikiPathways GMT vs MSigDB-snapshot WikiPathways comparison — that's a database-freshness question, not a database-choice question. Cached in CP2, deferred to a separate sub-audit."
+    - "Database choice for non-MSigDB-format inputs (e.g., disease-specific custom gene sets) — outside the E2/E2b evidence base."
+    - "Tool-within-paradigm variation in database sensitivity (only fgsea was tested as GSEA-family in E2; only clusterProfiler::enricher as ORA in E2b). gseapy.GSEA and gseapy.enrichr likely show similar patterns but were not formally measured."
+
+  applicability:
+    modalities: ["bulk_rnaseq", "scRNA-seq_DEG_lists"]
+    organisms: ["human", "mouse"]
+
+  related_rules:
+    - pathway_tool_paradigm_choice_warn   # paradigm is upstream of database
+
+  mechanism_notes: >
+    Different MSigDB collections answer different biological questions
+    with different granularities. Hallmark (50 pathways) covers broad
+    biological processes; C5:GO:BP (7,538 pathways) covers fine-grained
+    annotation including many small, redundant, hierarchical sets. A
+    "significant pathway count" comparison across these collections is
+    therefore not comparing like with like — C5 has more chances to be
+    significant simply because it tests more hypotheses, even after
+    multiple-testing correction within each database.
+
+    The leading-edge / hit-gene Jaccard metric is the more robust
+    cross-database comparison: it asks whether the *genes driving*
+    significance overlap between databases. Empirically these overlap
+    only weakly (0.05-0.43), meaning each database captures
+    substantially different gene-level signals from the same input.
+    This is consistent with each database's pathway definitions
+    encoding different prior biological knowledge — KEGG and Reactome
+    decompose metabolism and signaling at different granularities;
+    Hallmark and GO:BP use entirely different organizing principles.
+
+    The ORA-specific amplification (124× vs 24× range) reflects ORA's
+    hypergeometric sensitivity to gene-set boundary perturbations. A
+    gene that's in pathway X under database A but not under database B
+    can flip a hypergeometric significance call. GSEA's rank-based
+    statistic is more robust to such single-gene membership shifts
+    because it integrates the rank position across the full pathway,
+    not just the contingency-table count. Practically, ORA users
+    should treat single-database results with even more caution than
+    GSEA users.

@@ -1,0 +1,201 @@
+# Audit 1 main E4 (CP6) rule — drafted 2026-05-16.
+# Companion to pathway_no_uncorrected_pvalues_reject. Once a correction IS
+# being applied, the choice among BH / BY / Holm / Bonferroni shifts the
+# call set by 2-8 pathways median. BH (tools' default) is appropriate for
+# exploratory FDR work; Bonferroni or Holm for confirmatory FWER work;
+# BY when pathway tests are correlated.
+
+- rule_id: pathway_mt_correction_method_info
+  schema_version: "1.0.2"
+  status: draft
+  title: "MT correction method choice: BH default, Bonferroni for FWER"
+  description: >
+    Once a multiple-testing correction is being applied to pathway-
+    enrichment p-values (per the companion rule
+    `pathway_no_uncorrected_pvalues_reject`), the choice among
+    Benjamini-Hochberg (BH), Benjamini-Yekutieli (BY), Holm-Bonferroni,
+    and classical Bonferroni shifts the n_sig call set by a median of
+    2-8 pathways. Permissiveness ordering observed uniformly across all
+    3 input strata (TCGA, GTEx, Census): BH > BY > Holm ≈ Bonferroni.
+
+    Median deltas vs BH (the fgsea / clusterProfiler default):
+    - BY:         −2 to −5 (FDR under arbitrary dependence)
+    - Holm:       −7 to −7.5 (FWER, step-down)
+    - Bonferroni: −2 to −8 (FWER, classical; bigger delta in TCGA/GTEx
+                  bulk than Census single-cell)
+
+    All cross-method Spearman ρ on -log10 padj = 1.0 — corrections are
+    monotonic re-scalings that preserve pathway ranking. Substantive
+    variation is only at the α threshold (set membership), never in
+    the order of which pathway is "most enriched."
+
+  created_date: "2026-05-16"
+
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: pathway_enrichment
+      description: "Fires at the pathway-enrichment step."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: multiple_testing_correction
+        check_op: value_in_list
+        expected_value_in_list:
+          - "BH"
+          - "fdr_bh"
+          - "FDR"
+          - "fdr"
+          - "BY"
+          - "fdr_by"
+          - "bonferroni"
+          - "Bonferroni"
+          - "holm"
+          - "Holm"
+      description: >
+        Fires when a non-default MT method is being applied OR when
+        documenting which one was used. The rule's recommendation
+        provides decision guidance, not enforcement of a specific choice.
+
+  recommendation:
+    text: >
+      Default to BH (Benjamini-Hochberg) for exploratory pathway-enrichment
+      work — controls FDR at α, which is the standard published frame for
+      pathway analysis. This is also fgsea's, clusterProfiler::enricher's,
+      and gseapy.enrichr's built-in default and the most permissive of the
+      standard corrections. Use Bonferroni or Holm when the analysis is
+      confirmatory / single-hypothesis-style (FWER control needed). Use BY
+      when pathway tests are known to be correlated (overlapping gene
+      sets, e.g., C5 GO:BP hierarchical pathways) — BY controls FDR
+      under arbitrary dependence. Across E4's 625 runs the choice between
+      corrections shifted n_sig by 2-8 pathways median (95% CI excludes
+      zero in most strata); since all corrections preserve pathway
+      ranking exactly (Spearman ρ = 1.0), the choice does not affect
+      "which pathway is most enriched," only "how many pathways clear
+      α=0.05."
+    action_type: require_documentation
+    code_example: |
+      # BH default (recommended for exploratory FDR work)
+      # R/fgsea — already the default
+      results <- fgsea(pathways = pathways, stats = ranks)
+      # padj column is BH-corrected by default
+
+      # Bonferroni (FWER, confirmatory)
+      results$padj_bonferroni <- p.adjust(results$pval, method = "bonferroni")
+
+      # Holm (FWER, step-down)
+      results$padj_holm <- p.adjust(results$pval, method = "holm")
+
+      # BY (FDR under arbitrary dependence — use for correlated pathways
+      # like C5 GO:BP where parent-child relationships create dependence)
+      results$padj_by <- p.adjust(results$pval, method = "BY")
+
+      # Python via statsmodels
+      # from statsmodels.stats.multitest import multipletests
+      # _, padj_bh, _, _ = multipletests(pvals, method="fdr_bh")
+      # _, padj_by, _, _ = multipletests(pvals, method="fdr_by")
+      # _, padj_bf, _, _ = multipletests(pvals, method="bonferroni")
+      # _, padj_h,  _, _ = multipletests(pvals, method="holm")
+
+  confidence_tier: hard_default
+  severity: info
+  prior_audit_relationship: novel
+
+  evidence:
+    - audit_id: E4
+      audit_phase: "Audit 1 main (CP6)"
+      output_paths:
+        - "phase2/audit1_main/e4/runs/<input_id>__<mt_method>.tsv"
+        - "phase2/audit1_main/e4/per_input_per_mt_metrics.tsv"
+        - "phase2/audit1_main/e4/per_input_mt_pair_metrics.tsv"
+        - "phase2/audit1_main/e4/per_mt_burden.tsv"
+        - "phase2/audit1_main/e4/per_stratum_bootstrap.tsv"
+        - "phase2/audit1_main/e4/per_category_watchpoint.tsv"
+        - "phase2/audit1_main/e4/E4_findings.md"
+      lock_file_entries:
+        - "85d1b7b2857a85b1cf153319df843a71520d9cba230538c2e5f88d3acb67592e"
+        - "983d5bd4b8a4d009647049c157f33745bbac2c11ab95a5962d6f2c0b6733361c"
+      findings_md_section: "phase2/audit1_main/e4/E4_findings.md"
+      summary: >
+        E4 held tool = fgsea, database = MSigDB Hallmark, varied 5 MT
+        corrections (none, bonferroni, holm, BH, BY) × 125 DEG inputs =
+        625 runs (pure Python via statsmodels.multipletests on E1's
+        preserved raw fgsea p-values). n_datasets = 125 across 16 TCGA
+        cancer types + 47 Census single-cell datasets + 30 GTEx
+        tissue-pair comparisons; n_tissues > 30. Bootstrap dataset-level
+        B=1000 stratified by input_category × MT-pair (90 strata: 3
+        categories × 10 pairs × 3 metrics).
+
+        Per-MT n_sig medians: none=24, BH=19.5, BY=16, holm=13,
+        bonferroni=13. Permissiveness ordering uniform across strata:
+        none > BH > BY > holm ≈ bonferroni.
+
+        Per-category signed n_sig delta vs BH (default), 95% bootstrap CI:
+        - TCGA × bonferroni: −8 [−9, −7]  (48/48 inputs deflate)
+        - TCGA × holm:       −7 [−8, −6]  (48/48 deflate)
+        - TCGA × BY:         −4 [−6, −4]  (47/48 deflate)
+        - GTEx × bonferroni: −8 [−9, −7]  (30/30 deflate)
+        - GTEx × holm:       −7.5 [−8, −6] (29/30 deflate)
+        - GTEx × BY:         −5 [−6, −3.5] (27/30 deflate)
+        - Census × bonferroni: −2 [−4, 0]  (26/42 deflate, 16 unchanged)
+        - Census × holm:       −2 [−4, 0]  (26/42 deflate)
+        - Census × BY:         −2 [−3.5, −1] (32/42 deflate)
+
+        Census × FWER methods (bonferroni, holm) deflate less than
+        TCGA/GTEx because Census's GSEA p-distribution is bimodal —
+        fewer marginally-significant pathways near α to be cut.
+
+        All pairwise Spearman ρ on -log10 padj = 1.0: corrections are
+        monotonic re-scalings, ranking is preserved exactly. Only set
+        membership at α=0.05 differs across methods.
+
+        Design decision (documented in E4_findings.md): Storey adaptive
+        q-value was in the initial 5-correction slate, replaced by Holm
+        so the FWER family is represented by more than Bonferroni alone.
+        Storey queued as a separate sub-audit (E4b) in DEFERRED.md.
+
+  out_of_scope:
+    - "Storey q-value (adaptive FDR). Replaced by Holm in CP6 design; queued as E4b in DEFERRED.md for empirical magnitude on real pathway inputs."
+    - "Per-test-statistic-family corrections (e.g., correcting separately by NES sign, by pathway category). Not standard practice and not in E4's evidence base."
+    - "Adjustments to α other than 0.05. E4 evaluated at α=0.05 throughout; sensitivity to α was not tested but is expected to scale roughly linearly with the relative FDR control strength."
+    - "Database-specific MT correction recommendations. E4 used MSigDB Hallmark (50 pathways); correction behavior on much larger databases (e.g., C5 GO:BP with 7538 pathways) was not separately characterized — Bonferroni and Holm become very conservative when m is large."
+
+  applicability:
+    modalities: ["bulk_rnaseq", "scRNA-seq_DEG_lists"]
+    organisms: ["human", "mouse"]
+
+  related_rules:
+    - pathway_no_uncorrected_pvalues_reject   # upstream choice TO correct
+    - pathway_database_choice_warn            # database size affects MT severity
+
+  mechanism_notes: >
+    The four standard corrections answer different statistical questions
+    and have different conservatism profiles:
+
+    - BH (Benjamini-Hochberg) controls the FALSE DISCOVERY RATE — the
+      expected fraction of false positives among called pathways. Most
+      permissive of the standard corrections. Default for exploratory
+      analysis where some false positives are acceptable in exchange
+      for power.
+
+    - BY (Benjamini-Yekutieli) controls FDR under arbitrary dependence
+      among test statistics. More conservative than BH (BY p-values are
+      BH p-values × log(m), roughly). Use when pathway tests are
+      correlated, e.g., overlapping gene sets in C5 GO:BP's hierarchical
+      structure.
+
+    - Holm-Bonferroni controls the FAMILY-WISE ERROR RATE — probability
+      of any false positive at all. Step-down: ranks p-values, applies
+      Bonferroni at the smallest, then progressively relaxed Bonferroni
+      at each next rank. Uniformly more powerful than classical
+      Bonferroni; no reason to use Bonferroni when Holm is available
+      except for transparency / simplicity.
+
+    - Bonferroni classical: padj = min(1, p × m). Simplest, most
+      conservative, useful when explicit FWER control under any
+      dependence is required.
+
+    All four are monotonic transformations of the raw p-vector, so they
+    preserve ranking exactly. The only way to change the order of "most
+    significant pathway" is to change p-values themselves (different
+    tool, different test statistic, different gene-set definitions),
+    not the correction method.
