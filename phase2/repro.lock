@@ -7583,10 +7583,10 @@
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/local_fastq_summary.md": {
       "environment_id": "464cdbd07774154b",
-      "kind": "audit3_cp0_local_fastq_summary",
-      "registered_at": "2026-05-17T08:17:31",
-      "sha256": "a308273115596df63b9560992f55df44541e0edcc134bd19aea0ed548d4e6d86",
-      "size_bytes": 4557
+      "kind": "audit3_cp0_local_fastq_summary_v2",
+      "registered_at": "2026-05-17T08:22:00",
+      "sha256": "6c9d6912ab82241583495b3b4a498c852558eb2265b7a33ec4034c8fca9f0f1c",
+      "size_bytes": 8650
     },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",

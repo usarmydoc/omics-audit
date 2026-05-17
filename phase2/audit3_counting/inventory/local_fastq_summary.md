@@ -92,10 +92,79 @@ by Audit 3.
 - Zero BAM-only candidate datasets (the 18 BAMs found are all R-package
   test fixtures, not biological data).
 
+## Addendum (2026-05-17) — deeper scan for accessions + references
+
+User-requested follow-up scan to catch anything CP1 might re-download or
+CP2 might rebuild unnecessarily. Patterns:
+
+- Accession-prefixed directories: `GSE*`, `GSM*`, `SRR*`, `ERR*`, `DRR*`,
+  `PRJNA*`, `PRJEB*`, `PRJDB*`, `E-MTAB-*`, `E-PROT-*`, `E-GEOD-*`
+- Archive formats: `*.sra`, `*.tar`, `*.tar.gz`, `*.tgz`, multi-part
+  FASTQs (`*.fastq.gz.[0-9]+`)
+- Reference + index files: `*.fa.gz`, `*.fasta.gz`, `*.gtf.gz`, `*.gff.gz`,
+  `gencode.*.annotation.gtf*`, `genome.fa`, `*.primary_assembly.fa*`,
+  `refdata-gex-*` / `refdata-cellranger-*` dirs, STAR index files
+  (`SAindex`, `Genome`), salmon/kallisto index files (`*.idx`,
+  `t2g.txt`), `gencode*` / `GRCh3{7,8}*` / `GRCm3{8,9}*` /
+  `hg{19,38}*` / `mm{10,39}*` directories.
+
+### Reusable artifacts found
+
+| Path | Size (approx) | Audit 3 relevance |
+|---|---:|---|
+| `/mnt/nvme2/refs/mm39/GRCm39.primary_assembly.genome.fa.gz`     | ~830 MB | **CP2 reuse** — saves Gencode mouse genome download |
+| `/mnt/nvme2/refs/mm39/gencode.vM34.primary_assembly.annotation.gtf{,.gz}` | ~1.4 GB | **CP2 reuse** — paired GTF for the same |
+| `/mnt/nvme2/refs/mm39/gencode.vM34.transcripts.fa.gz`           | varies | **CP2 reuse** — transcriptome FASTA (alevin-fry / kallisto input) |
+| `/mnt/nvme2/refs/mm39/salmon_index/`                            | varies | **CP2 reuse** — pre-built salmon index (alevin-fry compatible) |
+| `/mnt/nvme2/refs/mm39/star_index_sjdb150/`                      | ~25 GB | **CP2 reuse** — pre-built STAR index (sjdb=150; valid if any mouse dataset uses 150 nt reads) |
+
+If any Audit 3 datasets are mouse, the mm39 reference set above is the
+starting point for CP2's reference building. Verify `gencode.vM34` is
+acceptable for the audit (current GENCODE Mouse release at time of writing
+is vM34) and that `sjdb=150` matches the dataset's read length before
+reusing the STAR index. Otherwise rebuild from the cached FASTA + GTF.
+
+### Not reusable (verified contents)
+
+GSE RAW archives surfaced but inspected with `tar tf` to confirm they
+contain processed count matrices, NOT raw FASTQs. Cannot substitute for
+Audit 3 FASTQ downloads:
+
+| Archive | Contents | Notes |
+|---|---|---|
+| `/mnt/nvme1/omics-audit/phase2a/gse96583/GSE96583_RAW.tar`   | `*_barcodes.tsv.gz`, `*_*.mtx.gz`/`*.mat.gz` (10 entries) | Kang et al. PBMC IFN-β. Chemistry is 10x Chromium 3' v1 — **out of Audit 3 scope** anyway (v2/v3/5p_v2/multiome only). |
+| `/home/ross/scrna_GSE145197/data/raw/GSE145197_RAW.tar`      | `*_UMI_tab_*.txt.gz` (10 entries) | Droin 2021 mouse liver circadian. Processed UMI tables, not FASTQ. |
+| `/mnt/nvme1/omics-audit/scrnaseq/projects/p2_doublet_audit_followup/data/GSE108313_RAW.tar` | `*_Hashtag-*`/`*-RNA.umi.txt.gz` etc. (6 entries) | Stoeckius hashtag/multiplexed; processed UMI files, not FASTQ. |
+| `/mnt/nvme2/liver_scvi/data_raw/GSE216584_RAW.tar`           | `*_*_RSEC_MolsPerCell.csv.gz` (22 entries) | Hautz 2023 NMP liver. BD Rhapsody chemistry — **out of Audit 3 scope** (10x only). |
+
+### Not relevant
+
+The deeper scan also surfaced ~80 false positives: Windows graphics
+driver cache (`D3DSCache/*.idx`), Java/Adobe cache (`AppData/Local/...`),
+EMBOSS test database (`entrynam.idx`), small R/Bioconductor `extdata`
+FASTAs (`someORF.fa.gz`, `dm3_upstream2000.fa.gz`), and megahit/SPAdes
+test data. Not enumerated in the inventory TSV; all confidently skip.
+
+### Storage budget verification
+
+| Resource (max projection) | Size |
+|---|---:|
+| FASTQ working set (≥8 datasets × 50-200 GB) | 0.4-1.6 TB |
+| Tool references (4 × 10-30 GB; minus mm39 reuse) | 0.04-0.12 TB |
+| STARsolo temp files (transient, per-dataset) | ~0.1 TB |
+| Tool installations (CellRanger + STAR + salmon + kallisto) | ~0.02 TB |
+| **Total max projected** | **~1.85 TB** |
+| **Free across nvme drives + `/`** | **~7.1 TB** |
+| **Headroom** | **~3.8×** |
+
+Phased download-and-delete batching NOT required at this scale. Proceed
+to CP1 with all-at-once download budget.
+
 ## Deliverables
 
 - `inventory/local_fastq_inventory.tsv` (68 rows × 12 cols, one row per
-  discovered file)
-- `inventory/local_fastq_summary.md` (this file)
+  discovered file from the primary FASTQ/BAM scan)
+- `inventory/local_fastq_summary.md` (this file, including deeper-scan
+  addendum)
 - `inventory/_build_inventory.py` (the script that produced the TSV;
   re-runnable if the scan is repeated)
