@@ -7567,6 +7567,13 @@
       "sha256": "983d5bd4b8a4d009647049c157f33745bbac2c11ab95a5962d6f2c0b6733361c",
       "size_bytes": 7292
     },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/DEFERRED.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp1_v2_DEFERRED",
+      "registered_at": "2026-05-17T09:09:35",
+      "sha256": "2c602aae70cfe7b180829099625e5ea0a3f4e47aa4c23108236f2777fda5551c",
+      "size_bytes": 4458
+    },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/_build_inventory.py": {
       "environment_id": "464cdbd07774154b",
       "kind": "audit3_cp0__build_inventory",
@@ -7574,19 +7581,26 @@
       "sha256": "75ae6d736b7c6198b0410337ecf4a3bfd355c19b187eceb29505dde75b2bd072",
       "size_bytes": 4250
     },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/_rebuild_audit3_inputs.py": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp1_v2__rebuild_audit3_inputs",
+      "registered_at": "2026-05-17T09:09:35",
+      "sha256": "d5212ec8ddb50db437bca280871ce253c64007052f5880bfbaccea6b8af89878",
+      "size_bytes": 12751
+    },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/audit3_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
-      "kind": "audit3_cp1_audit3_inputs",
-      "registered_at": "2026-05-17T08:26:49",
-      "sha256": "6b15fadfcfba12c8802ec80307cd60317b970cdad7474fc0acd38e9659fe2fd0",
-      "size_bytes": 4543
+      "kind": "audit3_cp1_v2_audit3_inputs",
+      "registered_at": "2026-05-17T09:09:35",
+      "sha256": "117b654a64a1140098ab314bd66e989e85b935c4d49eeb5dc50b5f3672c5226c",
+      "size_bytes": 4663
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/feasibility.md": {
       "environment_id": "464cdbd07774154b",
-      "kind": "audit3_cp1_feasibility",
-      "registered_at": "2026-05-17T08:26:49",
-      "sha256": "2a9ea48a907dbc688977d0ee9a334ccc8c2cdadf962bc98f528659190af67ebc",
-      "size_bytes": 8167
+      "kind": "audit3_cp1_v2_feasibility",
+      "registered_at": "2026-05-17T09:09:35",
+      "sha256": "1fc5eb8fe8e58dfef71433e097397843e760c213210f092b416db21ceaafba88",
+      "size_bytes": 9790
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/local_fastq_inventory.tsv": {
       "environment_id": "464cdbd07774154b",

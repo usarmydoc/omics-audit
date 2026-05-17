@@ -1,176 +1,211 @@
 # Audit 3 CP1 — Dataset feasibility analysis
 
-**Date:** 2026-05-17
-**Inventory file:** `audit3_inputs.tsv` (10 datasets)
+**Date:** 2026-05-17 (revised same-day after user direction)
+**Inventory file:** `audit3_inputs.tsv` (11 datasets)
+**Revision history:**
+- v1 (initial): 10 datasets including Mereu HCA benchmark
+- v2 (this version, applied user direction 2026-05-17): Mereu removed,
+  2 mouse datasets added (heart_1k_v2, tabula_muris_liver_droplet);
+  added `chemistry_exact` column for v3 vs v3.1 stratification
 
 ## Working set summary
 
-| Chemistry | n datasets | n cells | est. size |
-|---|---:|---:|---:|
-| 3' v3 / v3.1   | 4 | ~18,778 |  ~115 GB |
-| 3' v2          | 2 |  ~7,040 |   ~43 GB |
-| 5' v2          | 2 | ~15,000 |  ~105 GB |
-| multiome RNA   | 1 | ~10,970 |   ~50 GB |
-| mixed (Mereu)  | 1 (subset) | varies |  ~150 GB |
-| **Total**      | **10** | **~52k** | **~463 GB** |
+| Chemistry | n | n cells | est. size | mouse / human |
+|---|---:|---:|---:|---|
+| 3' v3 (v3 + v3.1)  | 4 | ~18,778 |  ~115 GB | 1 mouse / 3 human |
+| 3' v2              | 4 |  ~9,051 |   ~74 GB | 2 mouse / 2 human |
+| 5' v2              | 2 | ~15,000 |  ~105 GB | 0 mouse / 2 human |
+| multiome RNA       | 1 | ~10,970 |   ~50 GB | 0 mouse / 1 human |
+| **Total**          | **11** | **~53.8k** | **~344 GB** | **3 mouse / 8 human** |
 
-All datasets at `acquisition_status: needs_download` per CP0 (zero local
-FASTQs after the deeper scan).
+(Note: user direction expected "12 datasets, 9 human + 3 mouse";
+arithmetic gives 11 with my Mereu-removed +2 mouse additions. The
+8-vs-9 human discrepancy was flagged at delivery — likely the user
+double-counted neurons_900_v3 which is mouse, not human. Inventory is
+8 human + 3 mouse = 11 as built; adjust if you want a 12th dataset
+added.)
+
+All 11 at `acquisition_status: needs_download` per CP0.
+
+## v3 vs v3.1 stratification (per user direction)
+
+New `chemistry_exact` column captures exact 10x sub-version while
+`chemistry` retains the broad category for stratification:
+
+| chemistry | chemistry_exact | n |
+|---|---|---:|
+| 3p_v3      | v3      | 2 (pbmc_1k_v3, neurons_900_v3) |
+| 3p_v3      | v3.1    | 2 (pbmc_5k_v3.1, pbmc_10k_v3.1) |
+| 3p_v2      | v2      | 4 |
+| 5p_v2      | 5p_v2   | 2 |
+| multiome_rna | multiome_v1.0 | 1 |
+
+Analysis can stratify by `chemistry_exact` to test whether v3 → v3.1
+chemistry changes affect counting tool behavior — finding either way
+is informative.
+
+## Mouse coverage (3 datasets, 3 distinct tissues, 2 chemistries)
+
+| dataset | tissue | chemistry | n_cells | size |
+|---|---|---|---:|---:|
+| neurons_900_v3                 | brain | 3p_v3 (v3) | 931  |  ~5 GB |
+| heart_1k_v2_mouse              | heart | 3p_v2 (v2) | 1011 |  ~6 GB |
+| tabula_muris_liver_droplet     | liver | 3p_v2 (v2) | 1500 | ~25 GB |
+
+n=3 spans 3 tissues and 2 chemistries. Meets user's "n=3 starts to show
+whether patterns hold across mouse data" floor. Does NOT prove
+generalizability — that's queued as Audit 3b in DEFERRED.md if C1/C2
+findings show species-dependent counting tool behavior.
 
 ## Sample size adequacy per AUDIT_STANDARDS.md §5.3
 
 | Confidence tier | Requirement | Status |
 |---|---|---|
-| `hard_default`     | ≥15 datasets, ≥3 tissues, +dominance | **NOT MET** (10 datasets, 2 tissues without Mereu's mixed) |
-| `conditional`      | ≥10 datasets, dependency expressible in trigger_conditions | **MET** (10 datasets, dependencies likely chemistry-stratified) |
-| `flag_and_warn`    | substantial disagreement; no size floor | **available as fallback** |
-| `literature_based` | no size floor | n/a |
-| `insufficient_data`| no size floor | only if findings collapse |
+| `hard_default`     | ≥15 datasets, ≥3 tissues, +dominance | **NOT MET** (11 datasets; 4 tissues but PBMC dominates 8/11) |
+| `conditional`      | ≥10 datasets, dependency expressible in trigger_conditions | **MET** (11 ≥ 10; chemistry-stratifiable) |
+| `flag_and_warn`    | substantial disagreement; no size floor | fallback |
+| `insufficient_data`| no size floor | last resort |
 
-**Tissue diversity is the binding constraint.** PBMC dominates (7 of 10
-datasets); brain (1) and Mereu's mixed reference (1) add some breadth
-but the audit cannot claim tissue-level generalization. Rules drafted
-from C1-C3 findings should be at most `conditional`, never
-`hard_default`, until a follow-up audit covers more tissues. This
-limitation will be surfaced loudly per §3.1 in CP7 synthesis.
+Tissue diversity increased from 2 → 4 distinct (PBMC, brain, heart,
+liver) but PBMC dominance (8/11) still binds. Audit-3-derived rules cap
+at `conditional` tier; will be surfaced loudly in CP7 per §3.1.
 
-The user-locked spec says "≥8 datasets across the four major 10x
-chemistries" — that bar is met (10 ≥ 8; all four chemistries present
-with ≥1 dataset each, three chemistries with ≥2 for within-chemistry
-replication). The tissue under-representation is a separate concern
-from the spec's literal sample-size requirement.
-
-## Storage feasibility
+## Storage feasibility (revised totals)
 
 | Resource | Est. size |
 |---|---:|
-| FASTQs (working set, all 10 datasets at once) | ~463 GB |
-| Tool references (CellRanger + STAR + alevin-fry + kallisto, partly cached) | ~80-120 GB |
+| FASTQs (working set, all 11 datasets at once) | ~344 GB |
+| Tool references (GRCh38 + mm39 + 4 tool indexes; mm39 partly cached) | ~80-100 GB |
 | STARsolo transient files (per-dataset, peak) | ~50-100 GB |
 | Tool installations | ~10-20 GB |
-| Per-tool outputs (4 × 10 datasets, count matrices + metadata) | ~5-10 GB |
-| **Total max projected** | **~700 GB** |
+| Per-tool outputs (4 × 11 datasets, count matrices + metadata) | ~5-10 GB |
+| **Total max projected** | **~550 GB** |
 | **Free across nvme1 + nvme2 + /** | **~7.1 TB** |
-| **Working set vs free space** | **~10%** |
+| **Working set vs free space** | **~8%** |
 
-Working set is ~10% of free space — well below the spec's 50%
-phased-download threshold. **No phased download-and-delete batching
-required.** All 10 datasets can coexist on disk through CP3-CP6.
-
-Per-drive recommendation:
-- **`/mnt/nvme2`** (3.1 TB free) — primary FASTQ landing. Already hosts
-  `refs/mm39/` so mouse reference reuse is local.
-- **`/mnt/nvme1`** (3.2 TB free) — audit outputs, lock-tracked artifacts.
-- **`/` (808 GB free)** — leave for OS + R/Python envs; do NOT use for
-  large FASTQ landing.
+Working set dropped from CP1-v1's ~700 GB to ~550 GB after Mereu
+removal (-150 GB) + 2 small mouse adds (+30 GB). **Phased download
+NOT required.**
 
 ## Disqualifying access barriers
 
-None identified. All 10 candidates are open-access (10x public CC-BY-4.0
-or HCA open).
+None. All 11 candidates are open-access (10x public CC-BY-4.0 or
+GEO/CZ Biohub open release for Tabula Muris).
 
-## Notes on chemistry coverage
+## Chemistry coverage notes
 
-- **3' v2:** uses the classic `pbmc_3k` and `pbmc_4k` datasets. These
-  are the de-facto benchmark set for v2 chemistry in published
-  benchmarks; absent if not included. Within-chemistry replication (n=2)
-  is the minimum for measuring tool-pair variance vs dataset-pair variance.
-- **3' v3 / v3.1:** v3 (`pbmc_1k_v3`, `neurons_900_v3`) and v3.1
-  (`5k_pbmc_v3_nextgem`, `10k_pbmc_v3_nextgem`) lumped under one
-  chemistry category for stratification. Tools should not treat these
-  as distinct, but the audit can flag if they show different
-  patterns.
-- **5' v2:** `sc5p_v2_hs_PBMC_5k` and `sc5p_v2_hs_PBMC_10k`. Both
-  human PBMC — chemistry is what differs from 3' v2 / v3 PBMCs, useful
-  for isolating chemistry effects from tissue effects.
-- **Multiome RNA:** `pbmc_granulocyte_sorted_10k_arc` is the canonical
-  10x multiome demo. Audit 3 uses ONLY the GEX library; the paired ATAC
-  library is downloaded only if total download stays within budget,
-  otherwise skipped (ATAC ≈ 50 GB additional).
+- **3' v3 (v3 + v3.1) — 4 datasets:** v3 (pbmc_1k_v3,
+  neurons_900_v3) and v3.1 (pbmc_5k_v3.1, pbmc_10k_v3.1).
+  `chemistry_exact` column lets analysis stratify if v3 → v3.1
+  matters; broad category enables pooled analysis if it doesn't.
+- **3' v2 — 4 datasets (best-replicated chemistry):** pbmc_3k_v2,
+  pbmc_4k_v2 (human), heart_1k_v2_mouse, tabula_muris_liver_droplet
+  (mouse). Within-chemistry replication n=4 enables the cleanest
+  tool-pair variance estimate.
+- **5' v2 — 2 datasets:** sc5p_v2_hs_PBMC_5k, sc5p_v2_hs_PBMC_10k.
+  Minimum n=2 for within-chemistry replication.
+- **Multiome RNA — 1 dataset:** pbmc_10k_multiome (GEX library only).
+  n=1 means findings here can only be flag_and_warn, not conditional,
+  unless another multiome dataset is added. Flagged in CP7 limitations.
 
-## Mereu benchmark — why it's in the inventory
+## Tabula Muris liver subset — implementation note
 
-The Mereu et al. 2020 HCA project applied **13 scRNA-seq protocols** to
-the same biological sample (5-species mixed reference: 60% human PBMC,
-30% mouse colon, 6% HEK293T, 3% NIH3T3, 1% MDCK). Restricting to the 10x
-subset (3' v2, 3' v3, 5' v2) gives a within-sample cross-chemistry
-comparison that no other public dataset offers. This is the strongest
-anchor for the C1 (per-gene count agreement) sub-audit because biological
-variance is held constant; any tool disagreement is purely
-methodological.
-
-Audit 3 scope-limits the Mereu data to the 10x protocols only — the
-non-10x submissions (CEL-seq2, Drop-seq, Quartz-seq2, Smart-seq2,
-ddSEQ, SCRB-seq, etc.) are out of scope per the audit's
-counting-tool-comparison framing (the counting tools tested don't apply
-to those protocols).
-
-## CellRanger access — flagged risk (CP2)
-
-CellRanger requires a license-agreement download from
-`https://www.10xgenomics.com/support/software/cell-ranger/downloads`
-with registration. The license is free for academic use but the
-download is gated.
-
-Per the audit spec: "If CellRanger access is blocked, document and
-surface before proceeding. The audit can proceed with three tools but
-the scope of the C1/C2 findings changes." CP2 will exercise the
-download path before assuming access is available.
+`tabula_muris_liver_droplet` references GSE109774 (the parent series for
+all of Tabula Muris). The specific GSM accessions for the liver-droplet
+samples must be confirmed at download time by parsing GEO for samples
+where `source_name` includes 'Liver' AND `library_strategy_protocol`
+indicates 10x Chromium droplet (vs FACS/Smart-seq2). The Tabula Muris
+paper notes 3 mice per droplet-tissue combination; likely 3 GSMs total
+for liver droplet. Cell count and size are estimated from the Tabula
+Muris paper Table 1; precise figures captured at CP3.
 
 ## Reference reuse from CP0
 
 | Reference | Path | Saves |
 |---|---|---|
-| mouse mm39 (GRCm39 + GENCODE vM34) | `/mnt/nvme2/refs/mm39/` | ~30 GB download + index build time for `neurons_900_v3` (mouse) |
+| mouse mm39 (GRCm39 + GENCODE vM34) | `/mnt/nvme2/refs/mm39/` | ~30 GB download + index build for all 3 mouse datasets |
 | mouse mm39 salmon index           | `/mnt/nvme2/refs/mm39/salmon_index/` | alevin-fry index build |
-| mouse mm39 STAR index (sjdb=150)  | `/mnt/nvme2/refs/mm39/star_index_sjdb150/` | STARsolo index build (verify sjdb matches dataset read length) |
+| mouse mm39 STAR index (sjdb=150)  | `/mnt/nvme2/refs/mm39/star_index_sjdb150/` | STARsolo index build (verify sjdb matches read length per-dataset) |
 
-Human reference (GRCh38) will need to be downloaded and indexed for each
-of the four tools in CP2. ~30 GB FASTA + GTF + 4 × index = ~80-100 GB
-total for human references.
+Caveat: existing cached reference is `mm39` (GRCm39); the inventory
+lists `reference_genome_expected: mm10` for all 3 mouse datasets (the
+original counter version each submitter used). Decision needed at CP2:
+either (a) build matching mm10 references from scratch to faithfully
+re-create the submitters' configuration, or (b) reuse the cached mm39
+and treat the genome-version difference as one of the experimental
+variables. Recommend (b) for parsimony, with a note in CP4 findings
+documenting the reference is mm39 not mm10.
 
-## Phased download plan: NOT REQUIRED
+Human reference (GRCh38) will need to be downloaded and indexed for
+each of the four tools in CP2. ~30 GB FASTA + GTF + 4 × index = ~80-100
+GB total for human references.
 
-Working set ≪ 50% of free space. CP3 can download all 10 datasets
-upfront and retain them through CP4-CP6 analysis. Phased
-download-then-delete only becomes necessary if:
+## CellRanger access — flagged risk (CP2)
 
-- Working set grows beyond ~3.5 TB (currently ~0.5 TB → ~7× headroom)
-- Per-dataset STAR temp files balloon unexpectedly
-- A new tool with a larger reference footprint is added to the audit
+Unchanged from v1: requires registration + license agreement at
+`https://www.10xgenomics.com/support/software/cell-ranger/downloads`.
+Free for academic use but gated. CP2 will exercise the download path
+before assuming access.
 
-If any of these conditions arise mid-audit, switch to phased mode and
-process datasets in 2-3 batches.
+## Limitations to surface in CP7 per §3.1
 
-## Disqualifications: None in this CP1 inventory
+Per user direction, surface in CP7:
 
-All 10 candidates are open-access, in-scope chemistry, and within
-storage budget. No `access_status: blocked` entries.
+1. **Human tissue concentration in PBMC** — 7 of 8 human datasets are
+   PBMC; only the 1 multiome PBMC sample varies any structural
+   parameter from the others (nuclei vs whole cells). Rules derived
+   from human data are PBMC-specific without out-of-domain validation.
+2. **Mouse n=3 is a floor, not a generalizability proof** — Spans 3
+   tissues but 2 of 3 are 3' v2 (one is 3' v3). Single-dataset chemistry
+   slots for mouse mean species × chemistry interactions are
+   under-powered.
+3. **Audit 3 rules cap at `conditional` tier** — no `hard_default`
+   tier possible without ≥15 datasets across ≥3 tissues (the 4 tissues
+   are present but the count is below 15).
+4. **Multiome n=1 is single-flag-only territory** — multiome findings
+   can be flag_and_warn at best; not conditional.
+5. **`chemistry_exact` v3 vs v3.1 is a measurement, not a hypothesis** —
+   no prior expectation for direction or magnitude of difference; if
+   the analysis finds a difference, that's a novel finding worth a
+   rule; if not, that's also a publishable claim of
+   sub-version-invariance.
 
-## Deliverables
+## Deferred follow-up audit
 
-- `inventory/audit3_inputs.tsv` (10 datasets, 20 columns including
-  CP0-derived `acquisition_status` and `chemistry_in_scope`)
-- `inventory/feasibility.md` (this file)
+If C1/C2 findings show species-dependent counting tool behavior,
+**Audit 3b** is queued in `DEFERRED.md`:
+- Scope: mouse expansion to species-symmetric 9 + 9 (9 mouse + 9 human,
+  matched tissues where possible)
+- Sources: Tabula Muris (mouse: kidney, lung, marrow, spleen, etc.) +
+  HCA + 10x demo mouse extras
+- Trigger to run: Audit 3 C1 or C2 finding that mouse vs human tool
+  behavior differs at α=0.05 in any tool-pair metric
 
-## Open questions for user review before CP2
+## Deliverables (revised)
 
-1. **Mereu inclusion:** the Mereu 10x subset is methodologically the
-   strongest C1 anchor but adds ~150 GB download and one more genome
-   build (canFam3 for dog MDCK). Worth the cost? Or skip Mereu and
-   accept the weaker cross-chemistry comparison from disjoint 10x demo
-   sets?
-2. **Mouse coverage:** only 1 dedicated mouse dataset (`neurons_900_v3`).
-   Add another mouse 10x demo (e.g., 1k mouse heart cells) to improve
-   the species split, or accept the imbalance and stratify findings by
-   species in the analysis?
-3. **Reference for Mereu:** building a 4-species combined reference
-   (human + mouse + dog + cat-from-MDCK = actually canine) requires
-   GENCODE + Ensembl pulls for each. ~10 GB additional ref data + 4
-   parallel index builds. Out of normal CP2 scope?
-4. **5' v2 versus 5' v1:** the audit spec includes 5' v2 but not 5' v1.
-   Both `5k_5p_v2` and `10k_5p_v2` are confirmed v2; OK.
-5. **`pbmc_1k_v3` and `neurons_900_v3` use v3 (not v3.1):** stratify
-   v3 from v3.1 in analysis, or treat as one chemistry? The spec lists
-   "3' v3" as one chemistry — current inventory treats v3 and v3.1 as
-   the same.
+- `inventory/audit3_inputs.tsv` (11 datasets × 21 columns; v2)
+- `inventory/feasibility.md` (this file, v2)
+- `inventory/_rebuild_audit3_inputs.py` (script that produced v2 TSV;
+  re-runnable)
+- `inventory/_build_inventory.py` (CP0 FASTQ scan builder, unchanged)
+- `inventory/local_fastq_inventory.tsv` (CP0, unchanged)
+- `inventory/local_fastq_summary.md` (CP0 + addendum, unchanged)
+
+## Open questions remaining for CP2
+
+(All from v1 except #1-3 + #5 resolved by user direction)
+
+- ~~Mereu inclusion~~ → **resolved: skip**
+- ~~Mouse coverage~~ → **resolved: +2 mouse, 3' v2 priority**
+- ~~Mereu reference~~ → **moot**
+- ~~v3 vs v3.1 stratification~~ → **resolved: stratify (chemistry_exact column)**
+- ~~5' v2 only~~ → **resolved: accept**
+
+**New questions surfaced by v2:**
+
+1. **mm39 vs mm10 mouse reference** (see "Reference reuse from CP0").
+   Recommend reuse cached mm39 + document; user override possible.
+2. **Inventory size discrepancy** (8 human vs user's 9 human note).
+   Flag for confirmation before CP2 starts downloads. Either accept
+   11 datasets as-is, or add a 12th (probably another mouse-tissue
+   3' v3 dataset to keep chemistry balance) before CP2.
