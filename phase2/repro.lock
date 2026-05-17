@@ -7567,12 +7567,54 @@
       "sha256": "983d5bd4b8a4d009647049c157f33745bbac2c11ab95a5962d6f2c0b6733361c",
       "size_bytes": 7292
     },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/CP2_report.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_CP2_report",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "ea6a088173ea9f1a51670fc084b1f192b6537a8ba02de2344ec40b5e2d9354bd",
+      "size_bytes": 9071
+    },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/DEFERRED.md": {
       "environment_id": "464cdbd07774154b",
-      "kind": "audit3_cp1_v2_DEFERRED",
-      "registered_at": "2026-05-17T09:09:35",
-      "sha256": "2c602aae70cfe7b180829099625e5ea0a3f4e47aa4c23108236f2777fda5551c",
-      "size_bytes": 4458
+      "kind": "audit3_cp2_DEFERRED",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "0d01d2923737dd65e021ef758541e7f674ff513d9f2c5dc5158a57d57a35c83d",
+      "size_bytes": 6532
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/logs/build_human_refs.log": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_build_human_refs",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "637c03c200afaf7cff04dda7fd183f462c6e85da55824c4c5ebeb6a9848ffaae",
+      "size_bytes": 1352
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/logs/build_mouse_refs.log": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_build_mouse_refs",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "3394e6ce8c32501796b9607889b6c37aed6652d3bba649f6f85077011009d19a",
+      "size_bytes": 139271
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/logs/smoke_test.log": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_smoke_test",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "fedfd60e53e7a6df90b0681f96afe5ed31c55519af97e999a5b3d8f9707540c0",
+      "size_bytes": 2535
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/tool_configurations.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_tool_configurations",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "b2aa088302a2bf3f430fa8fb7c334711bcc0cb49ea8c0093df8d076724578c5a",
+      "size_bytes": 4868
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/tool_versions.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_tool_versions",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "7dfebd928cd56ca04e3073582f8811a9c0e1497edbd76042bfa689b0267a6a45",
+      "size_bytes": 1101
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/_build_inventory.py": {
       "environment_id": "464cdbd07774154b",
@@ -7615,6 +7657,27 @@
       "registered_at": "2026-05-17T08:22:00",
       "sha256": "6c9d6912ab82241583495b3b4a498c852558eb2265b7a33ec4034c8fca9f0f1c",
       "size_bytes": 8650
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/build_human_refs.sh": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_build_human_refs",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "70d976d9323456359460ff3989deb9912fc364e12bbd302eafb3123907b2cec3",
+      "size_bytes": 3954
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/build_mouse_refs.sh": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_build_mouse_refs",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "c7b43b52bef9f02031ffef45c53a700382e2cbe78faa914bde6f7181347684d5",
+      "size_bytes": 2598
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/smoke_test_pbmc_1k.sh": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_smoke_test_pbmc_1k",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "d9a897c5ee883de8264af95336097ce7f0dc8ca6802ba66b29d0b3f3269a377b",
+      "size_bytes": 6137
     },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
@@ -12609,6 +12672,83 @@
       "registered_at": "2026-05-16T08:20:44",
       "sha256": "818cf65db077b189f605b0b0a51540a3bc2d19c6f93177f6bb5cfe66e0bf919e",
       "size_bytes": 18871
+    },
+    "/mnt/nvme2/refs/GRCh38_gencode45/GRCh38.primary_assembly.genome.fa.gz": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_GRCh38_fasta_gz",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "993af7ca2ce274f835352dbb227dbe7dbb8323304ffb972206d1d32f4f226c74",
+      "size_bytes": 844691642
+    },
+    "/mnt/nvme2/refs/GRCh38_gencode45/gencode.v45.primary_assembly.annotation.gtf.gz": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_GRCh38_gtf_gz",
+      "registered_at": "2026-05-17T10:11:57",
+      "sha256": "ce683e6c7f2ddbc049560fdad41520704e06247cf0f88d9a8b9c363e26540669",
+      "size_bytes": 49779090
+    },
+    "/mnt/nvme2/refs/GRCh38_gencode45/kb_index/index.idx": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_kallisto_human_idx",
+      "registered_at": "2026-05-17T10:11:58",
+      "sha256": "8f537e147bf8dcbec452049fff835c65103b648fcfd13d3f69102f5a840cb5af",
+      "size_bytes": 464204888
+    },
+    "/mnt/nvme2/refs/GRCh38_gencode45/salmon_splici_index/info.json": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_salmon_human_info",
+      "registered_at": "2026-05-17T10:11:58",
+      "sha256": "594f8e0715fca39114e1012d6584ff63048cbb51ee29e6f5870357b0e259fc28",
+      "size_bytes": 1047
+    },
+    "/mnt/nvme2/refs/GRCh38_gencode45/salmon_splici_index/t2g_3col.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_salmon_human_t2g",
+      "registered_at": "2026-05-17T10:11:58",
+      "sha256": "08dca0b159154bc4dcdfcdd4b847e487f3b167ef8d85391637824bb9304a7095",
+      "size_bytes": 13060093
+    },
+    "/mnt/nvme2/refs/GRCh38_gencode45/star_index_sjdb90/SAindex": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_star_human_SAindex",
+      "registered_at": "2026-05-17T10:11:58",
+      "sha256": "dcdbcd8a46b8d70a85e71d4232619e5be9f9280271ef30f22d89daa570d682e2",
+      "size_bytes": 1565873619
+    },
+    "/mnt/nvme2/refs/mm39/kb_index/index.idx": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_kallisto_mouse_idx",
+      "registered_at": "2026-05-17T10:12:00",
+      "sha256": "3852be1fbe7e1d6ccabb580a57671ef94ef5926f2292a43b6fbfaf6f83a9728f",
+      "size_bytes": 253104048
+    },
+    "/mnt/nvme2/refs/mm39/salmon_splici_index/info.json": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_salmon_mouse_info",
+      "registered_at": "2026-05-17T10:12:00",
+      "sha256": "94284fd59807c05e56542741c01cb4b290c9d60ad0b3df512df94c9affaaecb6",
+      "size_bytes": 1034
+    },
+    "/mnt/nvme2/refs/mm39/salmon_splici_index/t2g_3col.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_salmon_mouse_t2g",
+      "registered_at": "2026-05-17T10:12:00",
+      "sha256": "dc555aa75a52cc99c04e73c3034bf36bfb02e4badabd843f156e40a1ecc1304c",
+      "size_bytes": 10128337
+    },
+    "/mnt/nvme2/refs/mm39/star_index_sjdb150/SAindex": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_star_mouse_SAindex",
+      "registered_at": "2026-05-17T10:12:00",
+      "sha256": "1ee56458ea65a97dd2a42ac6ad23ff68d4dad4629ffae9e947521de5762ae6ea",
+      "size_bytes": 1565873619
+    },
+    "/mnt/nvme2/refs/whitelists/3M-february-2018.txt.gz": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp2_ref_whitelist_v3",
+      "registered_at": "2026-05-17T10:12:01",
+      "sha256": "6f5c08bd6c0c63e7cd4f62bc5ec47024baaf6b230524f313799b9f5431df7b37",
+      "size_bytes": 18350152
     }
   }
 }

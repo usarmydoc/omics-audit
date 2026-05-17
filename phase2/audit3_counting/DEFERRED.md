@@ -8,6 +8,47 @@ starts.
 
 ## Queued future audits (real audits, scoped, sized — NOT acted on here)
 
+### Audit 3c — CellRanger re-test if/when user obtains license
+
+**Queued during:** CP2 user direction (2026-05-17) — user opted not to
+register for CellRanger access. Audit 3 proceeds with 3 binaries / 4
+tool configurations (STARsolo-default, STARsolo-CR-mimic, alevin-fry,
+kallisto-bustools). STARsolo-CR-mimic partially fills the gap by
+exercising the STAR-authors' documented Cell-Ranger-compatible flag set,
+but is not a substitute for running CellRanger itself.
+
+**Trigger to run:** user obtains a CellRanger license + completes the
+gated download from the 10x portal. Optional secondary trigger:
+Audit 3 findings show STARsolo-CR-mimic deviates substantially from
+the other tools, in which case running the actual CellRanger to
+adjudicate becomes more valuable.
+
+**Why this is its own audit, not part of Audit 3:**
+Adding CellRanger now would block CP2 indefinitely on the user
+performing a manual registration step they have declined. Continuing
+without it preserves audit momentum, and the 3-binary/4-config
+comparison is itself publishable. A subsequent CellRanger-only sub-audit
+can compare CellRanger's output to the existing 4 configs without
+re-running the others (count matrices already produced).
+
+**Proposed Audit 3c scope (locked at audit time, not now):**
+
+- **Tool:** CellRanger (latest version available at audit time)
+- **Datasets:** same 11 as Audit 3 (or representative subset if time-constrained)
+- **Reference:** same GRCh38 + mm39 builds Audit 3 used (re-formatted
+  to CellRanger's reference format via `cellranger mkref` if needed)
+- **Metrics:** per-gene Spearman correlation between CellRanger counts and
+  each of Audit 3's 4 configs; barcode-call Jaccard with each. Tests:
+  - Does STARsolo-CR-mimic actually match CellRanger?
+  - How far apart are CellRanger and the open-source alternatives?
+- **Estimated effort:** 1 week (data already counted by 4 configs;
+  CellRanger is the only new pipeline + the comparison metrics)
+
+**Sequencing:** Audit 3c runs only after Audit 3 is fully complete and
+only when CellRanger is available.
+
+---
+
 ### Audit 3b — Mouse expansion to species-symmetric working set
 
 **Queued during:** CP1 user direction (2026-05-17).

@@ -1,0 +1,29 @@
+# Audit 3 CP2 — Tool versions and install paths
+# Captured: 2026-05-17T09:14:05-05:00
+# Conda env: audit3_counting at /home/ross/miniforge3/envs/audit3_counting
+
+## Counting tools
+
+tool	version	binary_path
+STAR	2.7.11b	/home/ross/miniforge3/envs/audit3_counting/bin/STAR
+salmon	1.10.3	/home/ross/miniforge3/envs/audit3_counting/bin/salmon
+alevin-fry	0.10.0	/home/ross/miniforge3/envs/audit3_counting/bin/alevin-fry
+kallisto	0.50.1	/home/ross/miniforge3/envs/audit3_counting/bin/kallisto
+bustools	0.43.2	/home/ross/miniforge3/envs/audit3_counting/bin/bustools
+kb-python	0.28.2	/home/ross/miniforge3/envs/audit3_counting/bin/kb
+samtools	1.20	/home/ross/miniforge3/envs/audit3_counting/bin/samtools
+
+## CellRanger
+Status: SKIPPED per user direction 2026-05-17 — registration not pursued.
+Audit 3 proceeds with 3 tools (STARsolo, alevin-fry, kallisto-bustools).
+Audit 3c queued in DEFERRED.md for CellRanger re-test if user obtains license later.
+
+## Python orchestration dependencies
+scanpy=1.11.5
+anndata=0.11.4
+pyroe=0.9.2
+numpy=1.26.4
+pandas=1.5.3
+scipy=1.17.1
+pyranges=0.0.120
+setuptools=80.10.2
