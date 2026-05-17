@@ -1,0 +1,85 @@
+# Pipeline step name registry — canonical names for rule trigger_conditions
+# with condition_type=pipeline_step.
+#
+# Adopted at schema v1.0.3 (2026-05-17). Rules using condition_type=pipeline_step
+# reference these names verbatim in their parameters.step field. New step names
+# must be added here BEFORE being used in rules; validate_rules.py warns on
+# unknown names (informational, not blocking) by default. Pass --strict-steps
+# to promote unknown step names from warning to error.
+#
+# Why a registry: free-text step names were the v1.0.2 default. As the rule
+# corpus grows, naming drift becomes a real risk — two rules using slightly
+# different spellings for the same step will both fire on different inputs and
+# the user won't be able to tell why. The registry enforces a single canonical
+# spelling per logical pipeline step.
+
+schema_version: "1.0.3"
+registered_at: "2026-05-17"
+
+steps:
+  - name: pathway_enrichment
+    description: >
+      Pathway enrichment step. Covers both over-representation analysis (ORA)
+      and gene-set enrichment analysis (GSEA) paradigms. Operates on either
+      DEG lists (gseapy.enrichr, clusterProfiler::enricher, fgsea) or
+      expression matrices (GSVA, EGSEA, camera — currently in DEFERRED.md
+      as E1b).
+    modalities: [bulk_rnaseq, "scRNA-seq_DEG_lists", cross_modal]
+    parameters_used:
+      - enrichment_paradigm      # "GSEA" | "ORA"
+      - enrichment_tool          # tool name (fgsea, gseapy.enrichr, etc.)
+      - database                 # MSigDB collection or other pathway database
+      - background               # universe / background gene set (ORA only)
+      - multiple_testing_correction
+    referenced_by_rules:
+      - pathway_tool_paradigm_choice_warn
+      - pathway_database_choice_warn
+      - pathway_ora_background_default_info
+      - pathway_no_uncorrected_pvalues_reject
+      - pathway_mt_correction_method_info
+    first_referenced_in: "Audit 1 main / 2026-05-16"
+
+  - name: scrnaseq_qc_filtering
+    description: >
+      scRNA-seq quality control / cell filtering step. Includes mitochondrial
+      fraction thresholding, library size bounds, gene count bounds, doublet
+      removal.
+    modalities: ["scRNA-seq"]
+    parameters_used:
+      - mito_threshold
+      - min_counts
+      - max_counts
+      - n_genes_threshold
+    referenced_by_rules:
+      - mito_threshold_compute_from_data
+    first_referenced_in: "Phase 2a Rule 7 / 2026-05-15"
+
+  - name: scrnaseq_clustering_resolution_selection
+    description: >
+      scRNA-seq clustering resolution choice via selection metric (ARI,
+      homogeneity, completeness, silhouette, V-measure, etc.). Decides
+      which Leiden / Louvain resolution to keep across a sweep.
+    modalities: ["scRNA-seq"]
+    parameters_used:
+      - selection_metric         # "ari" | "homogeneity" | "completeness" | "v_measure" | "silhouette"
+      - resolution               # numeric value being evaluated
+      - algorithm                # "leiden" | "louvain"
+    referenced_by_rules:
+      - clustering_selection_metric_choice
+      - clustering_homogeneity_or_completeness_alone_error
+    first_referenced_in: "Phase 2a Rules 3, 4 / 2026-05-15"
+
+  - name: scrnaseq_de_test
+    description: >
+      scRNA-seq differential expression test. Covers pseudobulk methods
+      (muscat::pbDS with DESeq2 / edgeR / limma-voom), cell-level mixed
+      models (muscat::mmDS dream, NEBULA, MAST), and per-cell Wilcoxon /
+      t-test approaches.
+    modalities: ["scRNA-seq"]
+    parameters_used:
+      - method                   # tool / method name
+      - random_effect            # donor / sample / batch
+      - aggregation_function     # for pseudobulk (sum, mean, etc.)
+    referenced_by_rules:
+      - scrna_muscat_dream_cell_level_de_inflation_warn
+    first_referenced_in: "Phase 2a A6 / 2026-05-16"
