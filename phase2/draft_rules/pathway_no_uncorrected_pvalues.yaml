@@ -5,7 +5,7 @@
 # Reporting uncorrected p-values from pathway enrichment is wrong.
 
 - rule_id: pathway_no_uncorrected_pvalues_reject
-  schema_version: "1.0.2"
+  schema_version: "1.0.3"
   status: draft
   title: "Reject pathway-enrichment results without multiple-testing correction"
   description: >

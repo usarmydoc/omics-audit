@@ -37,7 +37,7 @@
 # co-report pseudobulk to detect per-dataset inflation.
 
 - rule_id: scrna_muscat_dream_cell_level_de_inflation_warn
-  schema_version: "1.0.2"
+  schema_version: "1.0.3"
   status: draft
   title: "muscat-dream cell-level DE: pseudobulk-anchored, use pb when inflated"
   description: >

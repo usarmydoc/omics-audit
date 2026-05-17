@@ -5,7 +5,7 @@
 # unless there is a specific biological reason to restrict.
 
 - rule_id: pathway_ora_background_default_info
-  schema_version: "1.0.2"
+  schema_version: "1.0.3"
   status: draft
   title: "ORA background should default to tool's universe=NULL"
   description: >

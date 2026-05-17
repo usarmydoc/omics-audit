@@ -4,7 +4,7 @@
 # and ORA paradigms. ORA is more sensitive than GSEA on the same inputs.
 
 - rule_id: pathway_database_choice_warn
-  schema_version: "1.0.2"
+  schema_version: "1.0.3"
   status: draft
   title: "MSigDB collection choice substantially shifts the pathway call set"
   description: >

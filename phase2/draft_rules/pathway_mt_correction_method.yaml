@@ -6,7 +6,7 @@
 # BY when pathway tests are correlated.
 
 - rule_id: pathway_mt_correction_method_info
-  schema_version: "1.0.2"
+  schema_version: "1.0.3"
   status: draft
   title: "MT correction method choice: BH default, Bonferroni for FWER"
   description: >

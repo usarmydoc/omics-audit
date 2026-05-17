@@ -6,7 +6,7 @@
 # (TCGA / Census / GTEx).
 
 - rule_id: pathway_tool_paradigm_choice_warn
-  schema_version: "1.0.2"
+  schema_version: "1.0.3"
   status: draft
   title: "Pathway-tool paradigm choice (GSEA vs ORA) dominates agreement"
   description: >
