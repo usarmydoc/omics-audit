@@ -7632,10 +7632,10 @@
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/audit3_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
-      "kind": "audit3_cp1_v2_audit3_inputs",
-      "registered_at": "2026-05-17T09:09:35",
-      "sha256": "117b654a64a1140098ab314bd66e989e85b935c4d49eeb5dc50b5f3672c5226c",
-      "size_bytes": 4663
+      "kind": "audit3_scraper_audit3_inputs",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "da4f1ff766bdf612da01186f5735e9d98fb5e6d292d64bdf3c2159498c1f943d",
+      "size_bytes": 10146
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/feasibility.md": {
       "environment_id": "464cdbd07774154b",
@@ -7657,6 +7657,13 @@
       "registered_at": "2026-05-17T08:22:00",
       "sha256": "6c9d6912ab82241583495b3b4a498c852558eb2265b7a33ec4034c8fca9f0f1c",
       "size_bytes": 8650
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/scraper_discoveries.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_scraper_discoveries",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "98207b529688807e3596a428af89d980fea7c55a2f06ce8baf56070c114fbbdf",
+      "size_bytes": 61996
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/build_human_refs.sh": {
       "environment_id": "464cdbd07774154b",
@@ -12672,6 +12679,48 @@
       "registered_at": "2026-05-16T08:20:44",
       "sha256": "818cf65db077b189f605b0b0a51540a3bc2d19c6f93177f6bb5cfe66e0bf919e",
       "size_bytes": 18871
+    },
+    "/mnt/nvme1/omics-audit/tools/gse_scraper/A_human_brain.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_A_human_brain",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "b215a2f8424dc58132021bda6b8577c99c7c99dec78616a115ab0a55d9bf6d0b",
+      "size_bytes": 13715
+    },
+    "/mnt/nvme1/omics-audit/tools/gse_scraper/B_human_heart.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_B_human_heart",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "5fa7c207dd5227d661ab5a0878a49ae78a9f90e18d4cb1ef8740a43dfb0712fd",
+      "size_bytes": 14822
+    },
+    "/mnt/nvme1/omics-audit/tools/gse_scraper/C_human_lung.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_C_human_lung",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "e231b1e1d7b03c694021ed3114f2e20bb5ca4e5e3ca9ad008de582a270c64482",
+      "size_bytes": 13360
+    },
+    "/mnt/nvme1/omics-audit/tools/gse_scraper/D_mouse_other.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_D_mouse_other",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "9b1d58da256282a8a29ee903f916283d516f7c3ee436b3a63973441c427169f4",
+      "size_bytes": 14411
+    },
+    "/mnt/nvme1/omics-audit/tools/gse_scraper/deepdive_gse.py": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_deepdive_gse",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "1dd3960a30a81f28757b5efb23e5c5a2dbd3a29644c03bc415388b6823f21e83",
+      "size_bytes": 5586
+    },
+    "/mnt/nvme1/omics-audit/tools/gse_scraper/gse_scraper.py": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_scraper_gse_scraper",
+      "registered_at": "2026-05-17T12:24:27",
+      "sha256": "c2a93f0bce07c07901a1286843f230d710cbb9ee0bb33c8afe2e9a8cff51dbbd",
+      "size_bytes": 13366
     },
     "/mnt/nvme2/refs/GRCh38_gencode45/GRCh38.primary_assembly.genome.fa.gz": {
       "environment_id": "464cdbd07774154b",

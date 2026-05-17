@@ -8,6 +8,85 @@ starts.
 
 ## Queued future audits (real audits, scoped, sized — NOT acted on here)
 
+### Audit 3e — 5' v2 chemistry sub-audit if 10x access acquired
+
+**Queued during:** CP3 user direction (2026-05-17) — both 5' v2 datasets
+in the CP1 inventory (`sc5p_v2_hs_PBMC_5k`, `sc5p_v2_hs_PBMC_10k`) were
+dropped because their FASTQ tarball URLs are not findable via public
+URL probing. The 10x catalog pages are JavaScript-rendered SPAs and
+the download links are gated behind an authenticated session.
+
+**Trigger to run:** user obtains 10x credentials (same trigger as
+Audit 3c for CellRanger). At that point all the FASTQ download URLs
+for current 10x datasets become accessible.
+
+**Proposed Audit 3e scope:**
+
+- **Datasets:** `sc5p_v2_hs_PBMC_5k` + `sc5p_v2_hs_PBMC_10k` (the two
+  Audit 3 5' v2 candidates), plus optionally a 5' v2 mouse demo if
+  one exists at that point
+- **Tools:** same 4 configurations as Audit 3 (STARsolo default,
+  STARsolo CR-mimic, alevin-fry, kb count). 5' v2 chemistry needs
+  different STARsolo parameters than 3' (R1 still has CB+UMI but
+  R2 represents the 5' end of the mRNA — reverse orientation)
+- **Reference:** GRCh38 + GENCODE v45 from Audit 3 CP2
+- **Whitelist:** 737K-august-2016 (same as 3' v2; already downloaded)
+- **Metrics:** same as C1 + C2; if 5' v2 results differ qualitatively
+  from 3' results, that's the headline finding
+- **Estimated effort:** 3-4 days (data acquisition + processing +
+  metrics + findings; all tools already installed and validated)
+
+**Sequencing:** Audit 3e runs only after Audit 3 is fully complete
+and only when 10x credentials become available.
+
+---
+
+### Audit 3d — Multiome chemistry sub-audit if credentials acquired
+
+**Queued during:** CP3 user direction (2026-05-17) — `pbmc_10k_multiome`
+dataset (slot for `chemistry: multiome_rna`) dropped from the CP3
+working set because the 737K-arc-v1 cell-barcode whitelist required by
+all 4 counting tools is gated behind 10x's cellranger-arc tarball,
+which is not publicly downloadable without a 10x account. Half-
+processing the dataset (e.g., STARsolo only with `--soloCBwhitelist
+None`) would produce asymmetric coverage and contaminate the C1/C2
+cross-tool comparison.
+
+**Trigger to run:** either —
+- User obtains 10x credentials and pulls cellranger-arc (which bundles
+  the 737K-arc-v1.txt whitelist), OR
+- C1/C2 findings on 3' and 5' chemistries surface a multiome-specific
+  question worth pursuing
+
+**Why this is its own audit, not part of Audit 3:**
+Per CP1 feasibility, multiome was already n=1 / flag_and_warn-only
+territory — adding it after-the-fact via a 3d sub-audit doesn't lose
+anything the main audit was relying on. Multiome is also somewhat
+distinct from 3'/5' single-cell because the protocol couples GEX with
+ATAC, which means even after the counting comparison there's a
+multimodal-integration question separable from pure counting-tool
+comparison.
+
+**Proposed Audit 3d scope (locked at audit time, not now):**
+
+- **Dataset(s):** `pbmc_10k_multiome` (the original Audit 3 dataset)
+  + 1-2 more multiome datasets from 10x demo for n=2-3 chemistry
+  replication
+- **Tools:** same 4 configurations as Audit 3 (STARsolo default,
+  STARsolo CR-mimic, alevin-fry, kb count)
+- **Reference:** GRCh38 + GENCODE v45 from Audit 3 CP2; no new
+  reference build needed
+- **Whitelist:** 737K-arc-v1.txt from cellranger-arc bundle
+- **Metrics:** same as C1 + C2 + C3; new C4 if multimodal-integration
+  question arises
+- **Estimated effort:** 1 week (data acquisition + processing +
+  metrics + findings; tool installs already in place from CP2)
+
+**Sequencing:** Audit 3d runs only after Audit 3 is fully complete
+and only if a trigger fires.
+
+---
+
 ### Audit 3c — CellRanger re-test if/when user obtains license
 
 **Queued during:** CP2 user direction (2026-05-17) — user opted not to
