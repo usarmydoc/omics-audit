@@ -143,10 +143,10 @@
     },
     "/mnt/nvme1/omics-audit/phase2/MIGRATION_NOTES.md": {
       "environment_id": "464cdbd07774154b",
-      "kind": "v102_final_dispositions",
-      "registered_at": "2026-05-16T09:04:59",
-      "sha256": "a28ce45c7f2f18a23ae778fcb85c923ab9e99b5c9882990a264cc2736a9b4536",
-      "size_bytes": 11691
+      "kind": "phase2_migration_notes_triaged_2026_05_17",
+      "registered_at": "2026-05-17T07:11:11",
+      "sha256": "a67c6f01a71ca2a6edb97308ab1636abd338f50123d156d18b54c79870e9c045",
+      "size_bytes": 12643
     },
     "/mnt/nvme1/omics-audit/phase2/PHASE2_FULL_SUMMARY.md": {
       "environment_id": "464cdbd07774154b",
@@ -176,12 +176,61 @@
       "sha256": "47b68d950e6e3911a9141d25ad720a781dcea6474c113a74cda10736d7a2bb09",
       "size_bytes": 3181
     },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/CP7_synthesis.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_CP7_synthesis",
+      "registered_at": "2026-05-16T23:06:22",
+      "sha256": "c4591b7bb02ae131da1cb42fc86ecb4b78c5424b72de65305847df0eea203f76",
+      "size_bytes": 8393
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/DEFERRED.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_DEFERRED_triaged_2026_05_17",
+      "registered_at": "2026-05-17T07:10:12",
+      "sha256": "9008235090e8b9d869e8078b38638e25dc6c788e06d5ce2cd9e33490dcb3039a",
+      "size_bytes": 4477
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/STATUS.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_STATUS",
+      "registered_at": "2026-05-16T23:06:22",
+      "sha256": "915aab43934b580256c83a248d38eb37b473f9966b1f87baa616999aadddbacb",
+      "size_bytes": 10210
+    },
     "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/R_session_info.txt": {
       "environment_id": "464cdbd07774154b",
       "kind": "audit1_main_database_cache",
       "registered_at": "2026-05-16T18:21:32",
       "sha256": "81ffb7d94f2e4ba9ecace53b258643cc8416f0caa4624c6da5576d76075d6d6d",
       "size_bytes": 1853
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/backgrounds/GTEx_v10_gene_median_tpm.gct.gz": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_GTEx_v10_gene_median_tpm.gct",
+      "registered_at": "2026-05-16T20:34:20",
+      "sha256": "b951fd32aae5cad48435026e07225860596a411a75efd0519e00f330b7a98294",
+      "size_bytes": 8846936
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/backgrounds/gtex_v10_tissue_median_tpm.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_gtex_v10_tissue_median_tpm",
+      "registered_at": "2026-05-16T20:34:20",
+      "sha256": "521f613e66a6c33738323fcf27bb9926ebeea2422bd253bca851d79709832bf7",
+      "size_bytes": 22812250
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/backgrounds/protein_coding_human.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_protein_coding_human",
+      "registered_at": "2026-05-16T20:34:20",
+      "sha256": "4c5c5981c3286bd2badf3f38469984cad67df41e61f36dc557200d36d47f58f4",
+      "size_bytes": 586452
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/backgrounds/protein_coding_mouse.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_protein_coding_mouse",
+      "registered_at": "2026-05-16T20:34:20",
+      "sha256": "67b51284f2fe4b9febfd0c481b8a9defc5ce1e428fd18318d3fe32eb33310829",
+      "size_bytes": 798817
     },
     "/mnt/nvme1/omics-audit/phase2/audit1_main/databases/msigdb_c2_kegg_human.tsv": {
       "environment_id": "464cdbd07774154b",
@@ -7375,6 +7424,170 @@
       "sha256": "020b650e0688ab003dfc268b3365f4f1e0864bd6d8d8446ee1592963fd56ce79",
       "size_bytes": 21827
     },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e2b/E2b_findings.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e2b_metric",
+      "registered_at": "2026-05-16T21:29:26",
+      "sha256": "dab761d4b683267c9825b283bab159144968e6b9f7054cbda5fe5e77a5e8b537",
+      "size_bytes": 4396
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e2b/e2b_run_summary.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e2b_run_summary",
+      "n_runs": 625,
+      "registered_at": "2026-05-16T21:29:00",
+      "sha256": "3ea1f14aabd24e93be37186a487c321dca89ea39fce593c761b5af2e67cc04d3",
+      "size_bytes": 45688
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e2b/per_database_within_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e2b_metric",
+      "registered_at": "2026-05-16T21:29:26",
+      "sha256": "379b233f83aec707f04cb28b026e3c85eb559ba2ecf9221a53e7382344bee101",
+      "size_bytes": 420
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e2b/per_input_db_pair_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e2b_metric",
+      "registered_at": "2026-05-16T21:29:26",
+      "sha256": "83ca63c2fe469c946a5f806584d33c1064da39a54fe3574bf10de638c5dfb14e",
+      "size_bytes": 120967
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e2b/per_input_per_db_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e2b_metric",
+      "registered_at": "2026-05-16T21:29:26",
+      "sha256": "970c67ecfa1382ccc58e2254699f90b79ff2ec68b5a80d912cae9b090503d55f",
+      "size_bytes": 58579
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e2b/per_stratum_bootstrap.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e2b_metric",
+      "registered_at": "2026-05-16T21:29:26",
+      "sha256": "db6a13e1bd6fc96e31e5c89a4ce425a82486962c76965491b51aba3ed53ecbe4",
+      "size_bytes": 2570
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/E3_findings.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_E3_findings",
+      "registered_at": "2026-05-16T20:34:20",
+      "sha256": "c2de72e18ad9211612dd24880c7bb437694407db69b0f89219b470361721ab79",
+      "size_bytes": 6260
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/e3_run_summary.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e3_run_summary",
+      "n_runs": 488,
+      "registered_at": "2026-05-16T20:32:08",
+      "sha256": "18bb063e7c624a613b1b437c0b9c7da6d1f6d25f91a4e34b9e81c81d49755bb7",
+      "size_bytes": 37182
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/per_background_burden.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e3_per_background_burden",
+      "registered_at": "2026-05-16T20:32:48",
+      "sha256": "a920b389c79accc4fe04a694f690d2bf9900d850c78b2e2f4974e02b4f303230",
+      "size_bytes": 261
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/per_category_watchpoint.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e3_per_category_watchpoint",
+      "registered_at": "2026-05-16T20:32:48",
+      "sha256": "ccca0307262c8153be1ba57a54f38fa782153fd83d891f828d42561db93271e2",
+      "size_bytes": 591
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/per_input_bg_pair_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e3_per_input_bg_pair_metrics",
+      "registered_at": "2026-05-16T20:32:48",
+      "sha256": "03d204089ddc7920942826a0eee883bd05add135a429f0d7de2eae141d635d64",
+      "size_bytes": 82680
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/per_input_per_bg_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e3_per_input_per_bg_metrics",
+      "registered_at": "2026-05-16T20:32:48",
+      "sha256": "996322e0e046eb6652e38da7de8de8cdafdd13f2789d60d89afd241ee7f7854f",
+      "size_bytes": 36829
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e3/per_stratum_bootstrap.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e3_per_stratum_bootstrap",
+      "registered_at": "2026-05-16T20:32:48",
+      "sha256": "176dde5e43c8c93ddf8cc55e8dac1d366043d75eb0678761fac73c3d5694be0e",
+      "size_bytes": 5125
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/E4_findings.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_E4_findings",
+      "registered_at": "2026-05-16T20:40:37",
+      "sha256": "85d1b7b2857a85b1cf153319df843a71520d9cba230538c2e5f88d3acb67592e",
+      "size_bytes": 7143
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/e4_run_summary.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e4_run_summary",
+      "n_runs": 625,
+      "registered_at": "2026-05-16T20:36:57",
+      "sha256": "0bafb2271c8eab5d4ee3f29a193d7ed31dab0158bba7e4d561d13e9a4cc83a91",
+      "size_bytes": 36477
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/per_category_watchpoint.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e4_per_category_watchpoint",
+      "registered_at": "2026-05-16T20:37:05",
+      "sha256": "1f9762e5b7385a27c0ac5eb4ba05b9ae88f1d9d1fcb0c5f5cf56d419b89ec6c0",
+      "size_bytes": 850
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/per_input_mt_pair_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e4_per_input_mt_pair_metrics",
+      "registered_at": "2026-05-16T20:37:05",
+      "sha256": "1e6243183304f2c628a2c70f877fb521ba8b8fdeaa1dd6abc44219b432ac5cb2",
+      "size_bytes": 127964
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/per_input_per_mt_metrics.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e4_per_input_per_mt_metrics",
+      "registered_at": "2026-05-16T20:37:05",
+      "sha256": "1ae3758a382ba24c827e295508fdfe11f8733195d9882b46db28ee0f550eac0f",
+      "size_bytes": 40400
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/per_mt_burden.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e4_per_mt_burden",
+      "registered_at": "2026-05-16T20:37:05",
+      "sha256": "fc4492c4e79010ca93b60dd47f7566e1039f82af804c183a64f353d2b8636bc5",
+      "size_bytes": 271
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit1_main/e4/per_stratum_bootstrap.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_e4_per_stratum_bootstrap",
+      "registered_at": "2026-05-16T20:37:05",
+      "sha256": "983d5bd4b8a4d009647049c157f33745bbac2c11ab95a5962d6f2c0b6733361c",
+      "size_bytes": 7292
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/_build_inventory.py": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp0__build_inventory",
+      "registered_at": "2026-05-17T08:17:31",
+      "sha256": "75ae6d736b7c6198b0410337ecf4a3bfd355c19b187eceb29505dde75b2bd072",
+      "size_bytes": 4250
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/local_fastq_inventory.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp0_local_fastq_inventory",
+      "registered_at": "2026-05-17T08:17:31",
+      "sha256": "7e636c71a3dba08ec10834832940baf10ff6349938ffa658991affc156c5b358",
+      "size_bytes": 16622
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/local_fastq_summary.md": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp0_local_fastq_summary",
+      "registered_at": "2026-05-17T08:17:31",
+      "sha256": "a308273115596df63b9560992f55df44541e0edcc134bd19aea0ed548d4e6d86",
+      "size_bytes": 4557
+    },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
       "kind": "documentation_v2_closeout",
@@ -7419,10 +7632,45 @@
     },
     "/mnt/nvme1/omics-audit/phase2/draft_rules/muscat_dream_inflation_warn.yaml": {
       "environment_id": "464cdbd07774154b",
-      "kind": "phase2_draft_rule",
-      "registered_at": "2026-05-16T17:58:54",
-      "sha256": "89f6d920d281465bdee5b3758a636af93246d8bb801e0db7174d8fe95b863a9c",
-      "size_bytes": 13752
+      "kind": "audit1_main_cp7_revision_muscat_dream_inflation_warn",
+      "registered_at": "2026-05-16T23:12:08",
+      "sha256": "9e31dbae37853d86940b61ea87c9fe54350a4e6fb848fd443620e1893ed6e215",
+      "size_bytes": 13761
+    },
+    "/mnt/nvme1/omics-audit/phase2/draft_rules/pathway_database_choice.yaml": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_revision_pathway_database_choice",
+      "registered_at": "2026-05-16T23:12:08",
+      "sha256": "913339537503b4f069f66cf51e6e2a2030b03fbccb11cc2598c86caf411720c4",
+      "size_bytes": 11329
+    },
+    "/mnt/nvme1/omics-audit/phase2/draft_rules/pathway_mt_correction_method.yaml": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_pathway_mt_correction_method",
+      "registered_at": "2026-05-16T23:06:22",
+      "sha256": "766047ee0df8b571afd6059f3003ff31d4be169c8f8912149811e0b482b2603a",
+      "size_bytes": 10068
+    },
+    "/mnt/nvme1/omics-audit/phase2/draft_rules/pathway_no_uncorrected_pvalues.yaml": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_pathway_no_uncorrected_pvalues",
+      "registered_at": "2026-05-16T23:06:22",
+      "sha256": "2c4816596e7bfd824a48a49fde99a6e795ee561c8d35ca1bf4951d17d047372e",
+      "size_bytes": 7931
+    },
+    "/mnt/nvme1/omics-audit/phase2/draft_rules/pathway_ora_background_default.yaml": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_pathway_ora_background_default",
+      "registered_at": "2026-05-16T23:06:22",
+      "sha256": "0729b06d915d30fe1330a4d7607ca804c2985e206af40a53af9b656bfa136bd6",
+      "size_bytes": 9931
+    },
+    "/mnt/nvme1/omics-audit/phase2/draft_rules/pathway_tool_paradigm_choice.yaml": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit1_main_cp7_pathway_tool_paradigm_choice",
+      "registered_at": "2026-05-16T23:06:22",
+      "sha256": "d2784967f66e7c0d01abd2a20e11986f95393312e87fdfa0a814596519b98017",
+      "size_bytes": 8705
     },
     "/mnt/nvme1/omics-audit/phase2/draft_rules/pending_engine_support/bioc_release_transition_info.yaml": {
       "environment_id": "464cdbd07774154b",
