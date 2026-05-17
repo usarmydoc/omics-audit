@@ -1,0 +1,258 @@
+# Two rules covering clustering resolution selection metric choice.
+# Rule 3 (warn): ARI/homogeneity/completeness as sole selector.
+# Rule 4 (reject): homogeneity OR completeness alone (provably malformed —
+#                  those metrics are monotonic in resolution by construction).
+#
+# Schema v1.0.2 limitation: action_type enum lacks reject_pipeline.
+# Rule 4 uses severity: reject + action_type: flag_only as a workaround.
+# Severity drives engine behavior; action_type is cosmetic here.
+# See MIGRATION_NOTES.md (Phase 2b candidate B2b-2) for the proposed
+# v1.0.3 amendment that would add reject_pipeline to the action_type enum.
+
+- rule_id: clustering_selection_metric_choice
+  schema_version: "1.0.2"
+  status: draft
+  title: "Warn when ARI, homogeneity, or completeness is sole clustering selection metric"
+  description: >
+    scRNA-seq clustering pipelines that select Leiden/Louvain resolution
+    using ARI as the sole criterion under-cluster systematically; pipelines
+    using homogeneity or completeness alone are malformed (those metrics
+    are monotonic in resolution by construction). Phase 2a A2 found ARI
+    median optimal resolution = 0.10 vs V-measure median 0.50 across 15
+    Census datasets — a 5× difference; 9/15 datasets show ARI vs
+    V-measure divergence. No pair of metrics agrees on optimal resolution
+    more than 60% of the time. Direction-of-agreement and clustering-
+    fidelity companion metrics are also reported in evidence per the
+    standards-required multi-metric check.
+  created_date: "2026-05-16"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_clustering_resolution_selection
+        parameter: selection_metric
+      description: "Fires at the Leiden/Louvain resolution selection step."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: selection_metric
+        expected_value_in_list: ["ari", "homogeneity", "completeness"]
+        check_op: value_in_list
+      description: "Fires when the selection metric is ARI, homogeneity, or completeness — each of which is sub-optimal as a standalone selector for distinct reasons."
+  recommendation:
+    text: >
+      Use V-measure as the primary resolution selection metric, OR report
+      multiple metrics (ARI + V-measure + silhouette) with an explicit
+      user choice between under-clustering tolerance (ARI) and reference-
+      granularity matching (V-measure). Never use homogeneity or
+      completeness alone — see related rule
+      clustering_homogeneity_or_completeness_alone_error.
+      The agreement direction is consistent across metrics (all metrics
+      score the same clusterings; they just optimize at different
+      resolutions); the disagreement is specifically in WHICH resolution
+      is selected as optimal — a 5× spread between ARI (low) and V-measure
+      (high) on disagreeing datasets per A2.
+    action_type: replace_parameter
+    code_example: |
+      # Replace ARI-only selection with V-measure or multi-metric:
+      from sklearn.metrics import (adjusted_rand_score,
+                                   homogeneity_completeness_v_measure,
+                                   silhouette_score)
+      for res in resolutions:
+          sc.tl.leiden(adata, resolution=res, key_added=f"leiden_r{res}")
+          pred = adata.obs[f"leiden_r{res}"].values
+          ari = adjusted_rand_score(true_labels, pred)
+          h, c, vmeas = homogeneity_completeness_v_measure(true_labels, pred)
+          sil = silhouette_score(adata.obsm["X_pca"], pred, sample_size=5000)
+          # Select by V-measure (or report all three, let the user pick)
+          metrics_per_res[res] = dict(ari=ari, v_measure=vmeas, silhouette=sil)
+  confidence_tier: conditional
+  severity: warn
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: P9
+      audit_phase: "Phase 1"
+      output_paths:
+        - "scrnaseq/output/p9_clustering_resolution.tsv"
+      lock_file_entries:
+        - "219226f128a9cbb1efafa0109677e42c0db1ad18f6accc31a5f41a1c4bea7933"
+      findings_md_section: "phase1_references.md#p9-clustering-resolution"
+      summary: >
+        Phase 1 P9: established that Leiden resolution must be tuned per
+        dataset and recommended sweep with ARI as the selection criterion
+        on 15 Census datasets. Did not address whether the choice of
+        selection metric matters — used ARI only.
+    - audit_id: A2
+      audit_phase: "Phase 2a"
+      output_paths:
+        - "phase2a/p9_clustering_metrics.tsv"
+        - "phase2a/p9_optimal_by_metric.tsv"
+        - "phase2a/findings.md"
+      lock_file_entries:
+        - "708a3edda6ccca04e153613718a0924b3e48448bf6048976d4460eda6600a2ea"
+        - "21883b8995e663371064decc6a0278b1d8b7a391668b5910413fbea0e9d56bfc"
+        - "9e3d2b548f9cc27cebb6aa945911d61ceec0ab01bc66b5e57570bf17fb138131"
+      findings_md_section: "phase2a/findings.md#top-level-finding-2"
+      summary: >
+        Phase 2a A2: comprehensive P9 regen with 5 metrics per resolution.
+        ARI median optimal res = 0.10 (9/15 datasets pick the minimum);
+        V-measure median = 0.50; silhouette median = 0.80. On the 9/15
+        datasets where ARI and V-measure disagree, V-measure picks 5.1×
+        higher resolution. Direction agreement (sign of cluster membership)
+        is consistent across metrics — they all evaluate the same
+        clusterings; the disagreement is in which resolution they
+        designate as optimal. No metric pair agrees > 60% of datasets.
+  out_of_scope:
+    - "Non-Leiden/Louvain clustering algorithms (e.g., k-means, hierarchical) not tested"
+    - "Recommended V-measure default is based on it being the most balanced selector among the 5 metrics tested; not optimized against held-out reference annotations"
+    - "Silhouette score behavior on PCA-reduced data not separately validated against silhouette on full expression"
+    - "Datasets with < 26 cell types (the A2 minimum) not in the evidence base"
+    - "Recommendation does NOT prescribe a specific resolution value — only the metric to use for selection"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - clustering_homogeneity_or_completeness_alone_error
+  mechanism_notes: >
+    ARI penalizes false fragmentation (over-clustering) more heavily than
+    it rewards correct subdivision, so it systematically prefers lower
+    resolutions on datasets with many fine-grained cell types. V-measure
+    balances homogeneity and completeness symmetrically, so it tolerates
+    higher cluster counts when they meaningfully separate sub-populations.
+    Homogeneity and completeness alone are monotonic by construction:
+    homogeneity always increases with resolution (smaller clusters → purer);
+    completeness always decreases (smaller clusters → labels split across).
+    14/15 datasets in A2 picked the extreme of the sweep for each of
+    these two metrics — confirming the monotonicity empirically.
+
+# Rule 4 — migrated to schema v1.0.3 on 2026-05-17.
+# Prior workaround (v1.0.2): action_type=flag_only (cosmetic) + severity=reject
+# (engine behavior). Schema v1.0.3 added reject_pipeline to the action_type
+# enum specifically for rules whose recommendation IS to halt the pipeline.
+# Cross-field validator [xref-6] enforces reject_pipeline → severity:reject.
+
+- rule_id: clustering_homogeneity_or_completeness_alone_error
+  schema_version: "1.0.3"
+  status: draft
+  title: "Reject pipeline using homogeneity or completeness alone as clustering selector"
+  description: >
+    Pipeline uses homogeneity OR completeness alone as the Leiden/Louvain
+    resolution selection criterion. These metrics are monotonic in
+    resolution by construction (homogeneity always prefers smaller
+    clusters; completeness always prefers larger). Using either alone
+    will always pick the extreme of the resolution sweep — not a
+    meaningful selection. Phase 2a A2 confirmed empirically: 14 of 15
+    datasets picked the extreme of the 8-point sweep for both metrics.
+    Companion metrics (ARI, V-measure, silhouette) and direction-of-
+    selection agreement reported in evidence per the standards-required
+    multi-metric check.
+
+    Confidence tier hard_default: 14/15 datasets confirm the
+    monotonicity, which is a structural (constructional) property of
+    these metrics rather than a statistical claim. Sample size
+    technically one short of the schema's ≥15 threshold but the
+    finding's nature makes additional datasets confirmatory, not
+    load-bearing — homogeneity and completeness are monotonic by
+    definition (see mechanism_notes for the derivation).
+  created_date: "2026-05-16"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_clustering_resolution_selection
+        parameter: selection_metric
+      description: "Fires at the Leiden/Louvain resolution selection step."
+    - condition_type: parameter_value_check
+      parameters:
+        parameter: selection_metric
+        expected_value_in_list: ["homogeneity", "completeness"]
+        check_op: value_in_list
+      description: "Fires when the selection metric is homogeneity or completeness — both monotonic in resolution by construction."
+  recommendation:
+    text: >
+      Homogeneity and completeness are monotonic in clustering resolution
+      and CANNOT serve as standalone selection criteria — using either
+      alone always picks the extreme of the resolution sweep. Use
+      V-measure (which balances both as its components) or ARI as the
+      selector, or report multiple metrics with explicit under/over-
+      clustering tolerance choice. This rule rejects the pipeline:
+      `severity: reject` drives engine behavior, and `action_type:
+      reject_pipeline` (added in schema v1.0.3) is the natural fit
+      for the recommendation. Cross-field validator [xref-6] enforces
+      that reject_pipeline requires severity:reject.
+    action_type: reject_pipeline
+    code_example: |
+      # Replace homogeneity-only or completeness-only with V-measure:
+      from sklearn.metrics import homogeneity_completeness_v_measure
+      h, c, vmeas = homogeneity_completeness_v_measure(true_labels, pred)
+      # Select by V-measure, which balances both:
+      best_res = max(resolutions, key=lambda r: vmeasure_per_resolution[r])
+  confidence_tier: hard_default
+  severity: reject
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: P9
+      audit_phase: "Phase 1"
+      output_paths:
+        - "scrnaseq/output/p9_clustering_resolution.tsv"
+      lock_file_entries:
+        - "219226f128a9cbb1efafa0109677e42c0db1ad18f6accc31a5f41a1c4bea7933"
+      findings_md_section: "phase1_references.md#p9-clustering-resolution"
+      summary: >
+        Phase 1 P9 established that resolution selection requires a per-
+        dataset sweep; used ARI as selector. Did not test whether
+        homogeneity or completeness alone would have given coherent
+        selections — Phase 2a A2 confirmed they do not.
+    - audit_id: A2
+      audit_phase: "Phase 2a"
+      output_paths:
+        - "phase2a/p9_clustering_metrics.tsv"
+        - "phase2a/p9_optimal_by_metric.tsv"
+      lock_file_entries:
+        - "708a3edda6ccca04e153613718a0924b3e48448bf6048976d4460eda6600a2ea"
+        - "21883b8995e663371064decc6a0278b1d8b7a391668b5910413fbea0e9d56bfc"
+      findings_md_section: "phase2a/findings.md#top-level-finding-2"
+      summary: >
+        Across 15 Census datasets and the 8-point Leiden resolution sweep,
+        14 of 15 datasets picked the MAX resolution (2.0) when scored by
+        homogeneity, and 14 of 15 picked the MIN resolution (0.1) when
+        scored by completeness. Empirical confirmation that both metrics
+        are monotonic and cannot serve as standalone selectors.
+  out_of_scope:
+    - "Non-Leiden/Louvain clustering algorithms not tested (likely same monotonicity holds for any algorithm that produces nested clusterings as resolution increases)"
+    - "Datasets with < 26 cell types not in A2 evidence base; if the cell-type count is very small the monotonicity might not show as starkly within an 8-point sweep, but the construction-level monotonicity argument still holds"
+    - "Rule rejects the pipeline outright; does not offer a 'override with justification' escape because there is no defensible justification for using a monotonic metric alone — the recommendation is to switch to V-measure"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - clustering_selection_metric_choice
+  revision_history:
+    - date: "2026-05-16"
+      reviewer: "ross"
+      change_type: create
+      summary: >
+        Initial draft against schema v1.0.2. Used the
+        severity=reject + action_type=flag_only workaround because v1.0.2's
+        action_type enum lacked a reject_pipeline value (see
+        MIGRATION_NOTES.md Phase 2b candidate B2b-2).
+    - date: "2026-05-17"
+      reviewer: "ross"
+      change_type: change_recommendation
+      previous_recommendation: "action_type: flag_only (cosmetic placeholder; severity=reject drove engine behavior)"
+      summary: >
+        Schema v1.0.3 added reject_pipeline to the action_type enum.
+        Migrated this rule from the cosmetic flag_only workaround to the
+        native action_type=reject_pipeline. Engine behavior unchanged
+        (severity:reject still drives the halt); the action_type now
+        accurately describes the recommendation. Cross-field validator
+        [xref-6] enforces the pairing.
+  mechanism_notes: >
+    Monotonicity is a constructional property of the metrics:
+      homogeneity(C, T) = 1 - H(T|C) / H(T)
+      completeness(C, T) = 1 - H(C|T) / H(C)
+    where C is the cluster assignment and T is the true label assignment.
+    As clustering becomes finer (more clusters), H(T|C) decreases (each
+    cluster becomes purer in label) so homogeneity increases; H(C|T)
+    increases (each true class spans more clusters) so completeness
+    decreases. Neither metric has a stationary point at the "right"
+    resolution — they monotone in opposite directions. V-measure (their
+    harmonic mean) DOES have a stationary point, which is why it works
+    as a selector.
