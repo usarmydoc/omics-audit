@@ -1,0 +1,2 @@
+pathway_id	pathway_name	database	tool	input_id	comparison_id	p_value	padj	NES	log2_odds_ratio	gene_set_size	hit_genes
+KEGG_COMPLEMENT_AND_COAGULATION_CASCADES	KEGG_COMPLEMENT_AND_COAGULATION_CASCADES	c2_kegg	fgsea	census_scrna__b2dd6bc9_wilcoxon	census_scrna__b2dd6bc9_wilcoxon	0.443076923076923	0.443076923076923	-1.14634818951015	NA	5	F5;C7

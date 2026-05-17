@@ -5,7 +5,7 @@
 | CP1 Input inventory + verification | ✓ complete | 2026-05-16 |
 | CP2 Environment setup | ✓ complete | 2026-05-16 |
 | CP3 E1 Tool agreement | ✓ complete | 2026-05-16 |
-| CP4 E2 Database choice | pending | — |
+| CP4 E2 Database choice | ✓ complete | 2026-05-16 |
 | CP5 E3 Background gene set | pending | — |
 | CP6 E4 Multiple testing | pending | — |
 | CP7 Findings synthesis + rules | pending | — |
@@ -56,3 +56,22 @@
 - `e1/E1_findings.md`
 - E1b queued in DEFERRED.md as a separate future audit
 - All hash-registered in `~/omics-audit/phase2/repro.lock`
+
+## CP4 summary
+- fgsea held constant; 5 MSigDB databases × 125 inputs = 625 runs in 23.8 min
+- 21 empty outputs (same low-sig inputs that produced empty in CP3)
+- Within-database redundancy low (0.003-0.016 mean pairwise Jaccard) — not a confound
+- Significant pathway count varies 24× across databases (Hallmark 20 → C5 GO:BP 476)
+- Leading-edge gene Jaccard between database pairs: 0.08-0.43 across strata
+- Pattern uniform across TCGA / Census / GTEx — database choice is a major effect
+- Watchpoint: GSEA-only finding; ORA-companion run worth considering before CP7
+
+## CP4 deliverables
+- `e2/runs/<input_id>__<database>.tsv` (625 enrichment outputs)
+- `e2/e2_run_summary.tsv`
+- `e2/per_input_per_db_metrics.tsv` (604 rows)
+- `e2/per_input_db_pair_metrics.tsv` (1202 rows)
+- `e2/per_database_within_metrics.tsv` (5 rows)
+- `e2/per_stratum_bootstrap.tsv` (30 strata)
+- `e2/E2_findings.md`
+- All hash-registered
