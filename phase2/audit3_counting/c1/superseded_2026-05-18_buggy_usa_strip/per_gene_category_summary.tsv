@@ -1,0 +1,217 @@
+dataset_id	chemistry	species	tissue_class	tool_a	tool_b	category	n	fold_into_other	log2_median	log2_p05	log2_p95	log2_iqr	pct_A_higher	pct_B_higher
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	star_cr_mimic	pseudogene	15222	False	0.0	0.0	1.0	0.0	0.08645381684404152	0.006832216528708448
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	star_cr_mimic	overlapping	33160	False	0.0	-0.08246216019197299	0.0	0.009721714744458876	0.030850422195416165	0.25817249698431843
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	star_cr_mimic	other	14822	False	0.0	-0.07661087329872526	0.0	0.0	0.01814869788152746	0.2206180002698691
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	alevin_fry	mitochondrial	37	True						
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	alevin_fry	pseudogene	15222	False	0.0	0.0	2.807354922057604	0.0	0.165746945210879	0.00039416633819471815
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	alevin_fry	overlapping	33160	False	0.0	0.0	8.016808287686555	3.169925001442312	0.4807599517490953	0.010826296743063932
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	alevin_fry	other	14822	False	0.0	0.0	7.876516946564999	2.584962500721156	0.40102550263122383	0.00607205505329915
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	kb_count	mitochondrial	37	True						
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	kb_count	pseudogene	15222	False	0.0	-1.0	1.0	0.0	0.06648272237550913	0.09164367363027197
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	kb_count	overlapping	33160	False	0.0	-0.8073549220576042	0.013995710924901112	0.0749638886333165	0.05235223160434258	0.35708685162846804
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_default	kb_count	other	14822	False	0.0	-0.5849625007211563	0.0	0.05853804909387082	0.03879368506274457	0.3015112670354878
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	pseudogene	15222	False	0.0	0.0	2.0	0.0	0.13894363421363815	0.00039416633819471815
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	overlapping	33160	False	0.0	0.0	8.044530608996231	3.169925001442312	0.48317249698431847	0.009318455971049458
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	other	14822	False	0.0	0.0	7.918863237274595	2.584962500721156	0.4031169882606936	0.005667251383079206
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	kb_count	pseudogene	15222	False	0.0	-1.0	0.0	0.0	0.036920247010905266	0.10826435422414926
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	kb_count	overlapping	33160	False	0.0	-0.84799690655495	0.07131847336258319	0.0397598861090611	0.08413751507840772	0.319059107358263
+10x_pbmc_1k_v3	3p_v3	human	PBMC	star_cr_mimic	kb_count	other	14822	False	0.0	-0.5849625007211563	0.03435995024513885	0.01795538689640234	0.06733234381325057	0.26534880582917286
+10x_pbmc_1k_v3	3p_v3	human	PBMC	alevin_fry	kb_count	mitochondrial	111	False	-6.321928094887363	-17.399871797721627	-1.792481250360578	10.865088836552891	0.0	0.972972972972973
+10x_pbmc_1k_v3	3p_v3	human	PBMC	alevin_fry	kb_count	pseudogene	45666	False	0.0	-2.807354922057604	0.0	0.0	0.0	0.17704638023912758
+10x_pbmc_1k_v3	3p_v3	human	PBMC	alevin_fry	kb_count	overlapping	99480	False	-0.262149859407266	-8.087462841250339	0.0	3.2624249880307694	0.004975874547647768	0.5136308805790109
+10x_pbmc_1k_v3	3p_v3	human	PBMC	alevin_fry	kb_count	other	44466	False	0.0	-7.9600019320680815	0.0	2.807354922057604	0.004048036702199434	0.43037376872216976
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	pseudogene	15222	False	0.0	0.0	3.169925001442312	0.0	0.1864406779661017	0.0024306924188674285
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	overlapping	33160	False	0.0	0.0	0.2630344058337938	0.041492990030494205	0.3439987937273824	0.027261761158021713
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	other	14822	False	0.0	0.0	0.13124453327825272	0.023340439629844577	0.27108352449062206	0.02820132235865605
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	alevin_fry	mitochondrial	37	True						
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	alevin_fry	pseudogene	15222	False	0.0	0.0	4.807354922057604	0.0	0.24661673893049535	0.00045986072789383785
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	alevin_fry	overlapping	33160	False	0.7489588856767193	0.0	8.851749041416058	3.9068905956085187	0.5290108564535585	0.008232810615199034
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	alevin_fry	other	14822	False	0.0	0.0	8.744665494944622	3.321928094887362	0.43954931858048846	0.005667251383079206
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	kb_count	mitochondrial	37	True						
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	kb_count	pseudogene	15222	False	0.0	-2.584962500721156	1.0	0.0	0.08665090001313888	0.1908422020759427
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	kb_count	overlapping	33160	False	0.0	-1.0	0.0	0.09651200284107128	0.04529553679131484	0.4289806996381182
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_default	kb_count	other	14822	False	0.0	-1.0	0.0	0.08236545237806878	0.03373363918499528	0.36547024693023883
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	pseudogene	15222	False	0.0	0.0	2.584962500721156	0.0	0.15760084088818815	0.0006569438969911969
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	overlapping	33160	False	0.41503749927884376	0.0	8.794415866350105	3.807354922057604	0.5171290711700844	0.010193003618817854
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	other	14822	False	0.0	0.0	8.693486957499326	3.2479275134435857	0.43590608554850896	0.006206989610039131
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	pseudogene	15222	False	0.0	-4.392317422778761	0.0	0.08156047532178964	0.015372487189594008	0.2516095125476284
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	overlapping	33160	False	0.0	-1.0	0.0	0.1614634226941162	0.03151387213510253	0.46601326899879375
+10x_pbmc_4k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	other	14822	False	0.0	-1.0	0.0	0.13459648219425546	0.02651464039940629	0.3909054108757253
+10x_pbmc_4k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	mitochondrial	111	False	-7.9600019320680815	-16.782017235973207	-3.5221970596792267	10.13499247522743	0.0	1.0
+10x_pbmc_4k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	pseudogene	45666	False	0.0	-5.857980995127572	0.0	1.0	6.569438969911969e-05	0.29608461437393246
+10x_pbmc_4k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	overlapping	99480	False	-1.0	-8.94251450533924	0.0	4.087462841250339	0.0031061519903498192	0.5747889022919179
+10x_pbmc_4k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	other	44466	False	0.0	-8.832890014164741	0.0	3.584962500721156	0.003170962083389556	0.4885305626771016
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	pseudogene	15222	False	0.0	0.0	0.7369655941662062	0.0	0.07692813033766917	0.012284850873735383
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	overlapping	33160	False	0.0	-0.10241527820692002	0.0	0.022367813028454427	0.03769601930036188	0.3193003618817853
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	other	14822	False	0.0	-0.08858833985303644	0.0	0.014135536594061329	0.02064498718121711	0.26932937525300227
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	mitochondrial	37	True						
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	pseudogene	15222	False	0.0	0.0	3.321928094887362	0.0	0.2004335829720142	0.00026277755879647877
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	overlapping	33160	False	1.0	0.0	9.278449458220482	3.913402341767397	0.5520506634499397	0.009951749095295536
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	other	14822	False	0.0	0.0	9.123905533169795	3.321928094887362	0.4550667926055863	0.00728646606395898
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	kb_count	mitochondrial	37	True						
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	kb_count	pseudogene	15222	False	0.0	-1.0	0.5507315907815747	0.0	0.06444619629483642	0.0957167257916174
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	kb_count	overlapping	33160	False	0.0	-0.8073549220576042	0.10691520391651187	0.04178212152466451	0.09433051869722557	0.36652593486127866
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_default	kb_count	other	14822	False	0.0	-1.0	0.04506177267378294	0.030588319833422896	0.06692754014303064	0.31257590068816626
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	pseudogene	15222	False	0.0	0.0	2.807354922057604	0.0	0.18059387728288004	0.00032847194849559846
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	overlapping	33160	False	1.0	0.0	9.309646683913266	3.9791418310379236	0.5557901085645356	0.008956574185765983
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	other	14822	False	0.0	0.0	9.154818109052105	3.321928094887362	0.45945216569963565	0.006746727836999055
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	pseudogene	15222	False	0.0	-1.0	0.0	0.0	0.04013927210616213	0.10944685323873342
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	overlapping	33160	False	0.0	-0.7369655941662062	0.15200309344505006	0.006219296313943847	0.18498190591073582	0.26761158021712905
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	other	14822	False	0.0	-0.9067068127013485	0.11003209275039258	0.0	0.15382539468357848	0.21947105653757928
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	mitochondrial	111	False	-11.027905996569885	-18.29626506634669	-5.447408881653972	7.348686272441043	0.0	1.0
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	pseudogene	45666	False	0.0	-3.1699250014423126	0.0	0.0	0.0	0.2141637104191302
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	overlapping	99480	False	-1.0	-9.312882955284355	0.0	4.054750075696765	0.00551869722557298	0.5819059107358263
+10x_pbmc_5k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	other	44466	False	0.0	-9.157346935362844	0.0	3.4395796835416355	0.005127513156119282	0.4874510862231818
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	pseudogene	15222	False	0.0	0.0	1.1154772174199359	0.0	0.14722112731572723	0.02765733806332939
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	overlapping	33160	False	0.0	-0.07038932789139801	0.028951373696128987	0.010601982067769763	0.0764475271411339	0.33091073582629676
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	star_cr_mimic	other	14822	False	0.0	-0.06140054466414325	0.0	0.006028065887409681	0.04378626366212387	0.2805964107407907
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	mitochondrial	37	True						
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	pseudogene	15222	False	0.0	0.0	5.283528483591275	1.0	0.3258441729076337	0.0011824990145841545
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	overlapping	33160	False	1.4204889723928056	0.0	10.08620255583846	4.727920454563199	0.6224668275030156	0.013178528347406513
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	alevin_fry	other	14822	False	0.5971974299461777	0.0	10.125655578516717	4.0866459127918615	0.514505464849548	0.010457428147348536
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	kb_count	mitochondrial	37	True						
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	kb_count	pseudogene	15222	False	0.0	-1.502500340529183	1.0	0.0	0.1074103271580607	0.17402443831296807
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	kb_count	overlapping	33160	False	0.0	-1.0	0.09953567355091437	0.056930212183021606	0.09574788902291918	0.4631785283474065
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_default	kb_count	other	14822	False	0.0	-1.0	0.05246741989413548	0.04439848010557196	0.07090810956686007	0.3969099986506544
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	pseudogene	15222	False	0.0	0.0	4.807354922057604	1.0	0.2995007226382867	0.0011824990145841545
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	overlapping	33160	False	1.4915311380469614	0.0	10.10204127782237	4.7433963486311335	0.6246682750301568	0.01275633293124246
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	alevin_fry	other	14822	False	0.8202089494929319	0.0	10.14204319297607	4.087462841250339	0.5189583052219674	0.010052624477128593
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	pseudogene	15222	False	0.0	-1.7650023841530007	0.41503749927884376	0.0	0.07160688477204047	0.19734594665615557
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	overlapping	33160	False	0.0	-1.0	0.10962449117449823	0.04182017569462706	0.11945114595898673	0.4351628468033776
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	star_cr_mimic	kb_count	other	14822	False	0.0	-1.0	0.07400058144377676	0.029146345659516508	0.09411685332613683	0.36830387262177844
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	mitochondrial	111	False	-9.131856960608793	-19.899130605203204	-4.428990497563786	11.670581759508824	0.0	1.0
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	pseudogene	45666	False	0.0	-5.247927513443585	0.0	1.5849625007211563	0.00019708316909735908	0.3462094337143608
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	overlapping	99480	False	-1.5849625007211563	-10.139615273317503	0.0	4.832890014164742	0.006755126658624849	0.661670687575392
+10x_pbmc_10k_v3.1	3p_v3	human	PBMC	alevin_fry	kb_count	other	44466	False	-1.0	-10.16635141174251	0.0	4.169925001442312	0.00607205505329915	0.5611253542032114
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	pseudogene	15222	False	0.0	0.0	3.426264754702098	0.0	0.22158717645513074	0.005978189462619892
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	overlapping	33160	False	0.0	0.0	0.41503749927884376	0.06460908142307654	0.3403498190591074	0.03841978287092883
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	star_cr_mimic	other	14822	False	0.0	0.0	0.22239242133644804	0.03355255971102643	0.26696802051005264	0.03737687221697477
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	alevin_fry	mitochondrial	37	True						
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	alevin_fry	pseudogene	15222	False	0.0	0.0	5.2074769474195755	1.0	0.28031796084614374	0.0005912495072920772
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	alevin_fry	overlapping	33160	False	0.561878887608115	0.0	8.303780748177102	3.5764238359396243	0.5140832328106152	0.007358262967430639
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	alevin_fry	other	14822	False	0.0	0.0	7.965784284662087	2.9552933613585446	0.4230198353798408	0.005262447712859263
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	kb_count	mitochondrial	37	True						
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	kb_count	pseudogene	15222	False	0.0	-3.0	1.0	0.0	0.09893575088687426	0.21961634476415715
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	kb_count	overlapping	33160	False	0.0	-1.3219280948873622	0.0	0.13468131485469978	0.04122436670687575	0.44324487334137513
+10x_t_3k_v2	3p_v2	human	PBMC	star_default	kb_count	other	14822	False	0.0	-1.3219280948873622	0.0	0.1069152039165119	0.0292807988125759	0.3772095533666172
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	pseudogene	15222	False	0.0	0.0	2.807354922057604	0.0	0.1858494284588096	0.0009854158454867955
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	overlapping	33160	False	0.1531656199181719	0.0	8.20945336562895	3.4392395100825555	0.5029553679131483	0.008805790108564535
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	alevin_fry	other	14822	False	0.0	0.0	7.86418614465428	2.807354922057604	0.4190392659560113	0.005397382269599244
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	pseudogene	15222	False	0.0	-4.754887502163468	0.0	1.0	0.017868873998160558	0.2905005912495073
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	overlapping	33160	False	0.0	-1.5849625007211563	0.0	0.24327115101236385	0.0255729794933655	0.48151387213510255
+10x_t_3k_v2	3p_v2	human	PBMC	star_cr_mimic	kb_count	other	14822	False	0.0	-1.5849625007211563	0.0	0.1924969012599073	0.02307380920253677	0.4023073809202537
+10x_t_3k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	mitochondrial	111	False	-7.149747119504682	-16.482098081177753	-2.584962500721156	10.14824958272208	0.0	1.0
+10x_t_3k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	pseudogene	45666	False	0.0	-6.442943495848728	0.0	1.5849625007211563	0.0	0.33799763500197083
+10x_t_3k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	overlapping	99480	False	-1.0	-8.43066133546409	0.0	3.807354922057604	0.0022919179734620025	0.5732509047044632
+10x_t_3k_v2	3p_v2	human	PBMC	alevin_fry	kb_count	other	44466	False	0.0	-8.071462362556625	0.0	3.321928094887362	0.0027661584131696126	0.4884630953987316
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	pseudogene	13755	False	0.0	0.0	1.0	0.0	0.09327517266448564	0.012431842966194111
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	overlapping	22540	False	0.0	-0.05075397194312633	0.0	0.013336566593031455	0.03992901508429459	0.31339840283939663
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	other	20848	False	0.0	-0.04711521117263628	0.0	0.0025673621389652435	0.01721987720644666	0.2512471220260936
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	alevin_fry	mitochondrial	37	True						
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	alevin_fry	pseudogene	13755	False	0.0	0.0	3.584962500721156	0.0	0.20334423845874228	0.0004362050163576881
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	alevin_fry	overlapping	22540	False	1.0	0.0	7.228818690495881	3.700439718141092	0.584826974267968	0.007630878438331854
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	alevin_fry	other	20848	False	0.0	0.0	7.360406654544227	2.8369329525631644	0.4293457405986186	0.006187643898695318
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	kb_count	mitochondrial	37	True						
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	kb_count	pseudogene	13755	False	0.0	-1.0	1.584962500721156	0.0	0.10207197382769902	0.08644129407488187
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	kb_count	overlapping	22540	False	0.0	-0.298802018885849	0.0	0.030190907384035365	0.04986690328305235	0.39401064773735583
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_default	kb_count	other	20848	False	0.0	-0.22239242133644802	0.0	0.017813776359156548	0.03803722179585572	0.2924021488871834
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	pseudogene	13755	False	0.0	0.0	3.0	0.0	0.1776808433296983	0.0004362050163576881
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	overlapping	22540	False	1.0	0.0	7.2384047393250786	3.700439718141092	0.585581188997338	0.007231588287488908
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	other	20848	False	0.0	0.0	7.381824093976849	2.8744691179161412	0.43040099769762086	0.006091711435149655
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	pseudogene	13755	False	0.0	-1.0	1.0	0.0	0.07858960378044348	0.10381679389312977
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	overlapping	22540	False	0.0	-0.3219280948873623	0.037002147028964684	0.010416615945338312	0.1318988464951198	0.30301685891748004
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	other	20848	False	0.0	-0.22239242133644802	0.032033567992165564	0.0	0.1170376055257099	0.2074539524174981
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	mitochondrial	111	False	-4.0	-16.438959209479904	0.0	8.658211482751796	0.0	0.918918918918919
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	pseudogene	41265	False	0.0	-3.0	0.0	0.0	0.00021810250817884405	0.191130498000727
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	overlapping	67620	False	-1.0	-7.266926926244324	0.0	3.7885567320772804	0.004702750665483584	0.6024401064773736
+10x_neuron_1k_v3	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	other	62544	False	0.0	-7.417852514885898	0.0	3.0	0.0037413660782808903	0.45121834228702995
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	star_cr_mimic	pseudogene	15222	False	0.0	-0.09953567355091439	0.5405683813627028	0.0	0.1357246091183813	0.08520562343975824
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	star_cr_mimic	overlapping	33160	False	0.0	-0.15200309344504997	0.0	0.03534527814430418	0.0402291917973462	0.4779855247285887
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	star_cr_mimic	other	14822	False	0.0	-0.12046273487017022	0.0	0.029515792684152137	0.02280394008905681	0.39670759681554446
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	alevin_fry	mitochondrial	37	True						
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	alevin_fry	pseudogene	15222	False	0.0	0.0	6.475733430966398	2.321928094887362	0.41453159900144526	0.0030876363158586257
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	alevin_fry	overlapping	33160	False	2.1044004667963696	0.0	12.243783903573501	5.882643049361842	0.6962907117008444	0.013540410132689988
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	alevin_fry	other	14822	False	1.2121633361157595	0.0	12.25675415424231	5.117556702448761	0.5866954527054379	0.01099716637430846
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	kb_count	mitochondrial	37	True						
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	kb_count	pseudogene	15222	False	0.0	-1.8562193111600447	1.0	0.0	0.1277098935750887	0.23597424779923795
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	kb_count	overlapping	33160	False	0.0	-1.0	0.11547721741993587	0.04934874050051186	0.1310012062726176	0.4914354644149578
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_default	kb_count	other	14822	False	0.0	-1.0	0.070389327891398	0.03457380659961106	0.09587100256375658	0.41836459317231145
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	alevin_fry	pseudogene	15222	False	0.0	0.0	6.303780748177103	2.321928094887362	0.4143345158323479	0.003284719484955985
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	alevin_fry	overlapping	33160	False	2.2158441882532527	0.0	12.285134864692985	5.906890595608519	0.7026537997587454	0.011942098914354644
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	alevin_fry	other	14822	False	1.4150374992788437	0.0	12.2938881387294	5.169925001442312	0.592632573201997	0.009580353528538659
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	kb_count	pseudogene	15222	False	0.0	-2.0	1.0	0.0	0.12317698068584942	0.23341216660097228
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	kb_count	overlapping	33160	False	0.0	-0.84799690655495	0.16992500144231235	0.017102057224963833	0.32973462002412546	0.28262967430639324
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	star_cr_mimic	kb_count	other	14822	False	0.0	-1.0	0.12149859257275178	0.00507285042797534	0.28032654162731074	0.22176494400215896
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	alevin_fry	kb_count	mitochondrial	111	False	-11.968306794430799	-21.725743892937963	-6.812968549769231	10.47458005542136	0.0	1.0
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	alevin_fry	kb_count	pseudogene	45666	False	0.0	-6.442943495848728	0.0	2.584962500721156	0.0005912495072920772	0.45283142819603206
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	alevin_fry	kb_count	overlapping	99480	False	-2.321928094887362	-12.270886593093174	0.0	5.967035698443171	0.0075392038600723766	0.7263872135102534
+gse287209_human_lung_organoid	3p_v3	human	non-PBMC	alevin_fry	kb_count	other	44466	False	-1.5849625007211563	-12.277287400130357	0.0	5.20945336562895	0.00721899878558899	0.6204965591688031
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	pseudogene	13755	False	0.0	0.0	1.5762877902533514	0.029628893808912475	0.25561613958560525	0.01955652490003635
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	overlapping	22540	False	0.0	-0.04655011841258075	0.022367813028454506	0.005879958375193151	0.10088731144631766	0.40638864241348716
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	other	20848	False	0.0	-0.035623909730721375	0.0011895942100213852	0.003353728406475601	0.05492133537989256	0.3229566385264774
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	alevin_fry	mitochondrial	37	True						
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	alevin_fry	pseudogene	13755	False	0.0	0.0	6.95767270266943	2.321928094887362	0.3912031988367866	0.0023991275899672847
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	alevin_fry	overlapping	22540	False	2.209913461523185	0.0	8.51175265376738	4.643856189774724	0.7299023957409051	0.012377994676131323
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	alevin_fry	other	20848	False	1.0	0.0	8.090748959424927	4.087462841250339	0.5715176515732924	0.011895625479662318
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	kb_count	mitochondrial	37	True						
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	kb_count	pseudogene	13755	False	0.0	-2.045698528875803	2.321928094887362	0.0	0.15405307161032353	0.22798982188295167
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	kb_count	overlapping	22540	False	-0.017915011521622545	-0.7004397181410922	0.04463800272369332	0.04412504805273663	0.0761756876663709	0.5687666370896185
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_default	kb_count	other	20848	False	0.0	-1.0	0.007566280859192749	0.03394733192333771	0.05472947045280123	0.4537125863392172
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	pseudogene	13755	False	0.0	0.0	6.247927513443585	1.584962500721156	0.3603053435114504	0.002762631770265358
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	overlapping	22540	False	2.222392421336448	0.0	8.49727332148754	4.643856189774724	0.7331854480922804	0.011490683229813664
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	other	20848	False	1.0	0.0	8.088845300698821	4.09136401558404	0.5754508825786646	0.011511895625479662
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	pseudogene	13755	False	0.0	-2.6205841423234832	1.141853394658459	0.14463176936105987	0.10010905125408942	0.2695019992729916
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	overlapping	22540	False	-0.012373734856305219	-0.663256466662539	0.05424997106586631	0.035301613322640195	0.08850931677018634	0.5530612244897959
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	other	20848	False	0.0	-1.0	0.024518933301254535	0.02592930865180839	0.06772831926323868	0.43726016884113583
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	mitochondrial	111	False	-7.6293566200796095	-19.23252532761002	-4.612000837099052	8.328444786543269	0.0	1.0
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	pseudogene	41265	False	0.0	-6.765524960254231	0.0	2.321928094887362	0.0005816066884769174	0.4059614685568884
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	overlapping	67620	False	-2.321928094887362	-8.562242424221072	0.0	4.699871963034569	0.006965394853593611	0.7521295474711623
+gse325955_mouse_kidney_E18_5	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	other	62544	False	-1.5481005974469508	-8.191069413896383	0.0	4.253091679579276	0.005899846508058327	0.6054297774366846
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	mitochondrial	37	True						
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	pseudogene	13755	False	0.0	-0.2630344058337938	0.9744385384655931	0.0	0.24180298073427844	0.0891312250090876
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	overlapping	22540	False	-0.008713025993941824	-0.13750352374993496	0.018877886831895573	0.029590589174712113	0.06694764862466726	0.5332298136645963
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	star_cr_mimic	other	20848	False	0.0	-0.15200309344504997	0.0	0.027922886920128558	0.033192632386799696	0.4390349194167306
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	alevin_fry	mitochondrial	37	True						
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	alevin_fry	pseudogene	13755	False	0.0	0.0	7.918243736629826	3.169925001442312	0.467175572519084	0.0059614685568884045
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	alevin_fry	overlapping	22540	False	2.321928094887362	0.0	9.308679556745247	4.492110639270787	0.7641969831410825	0.017080745341614908
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	alevin_fry	other	20848	False	1.584962500721156	0.0	7.843730664968172	4.115477217419936	0.6396776669224866	0.016644282425172678
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	kb_count	mitochondrial	37	True						
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	kb_count	pseudogene	13755	False	0.0	-2.523722761747983	2.4856249542106736	0.12726557227557575	0.1662668120683388	0.28178844056706653
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	kb_count	overlapping	22540	False	-0.01844031933213359	-1.0	0.034797000317978076	0.054709429347166064	0.08141082519964507	0.6098047914818101
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_default	kb_count	other	20848	False	-0.0003525569367286772	-1.0	0.013533906156645048	0.0415192694382669	0.06014965464313123	0.5000959324635457
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	mitochondrial	37	True						
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	pseudogene	13755	False	0.0	0.0	7.51252483495618	2.807354922057604	0.47022900763358777	0.0055979643765903305
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	overlapping	22540	False	2.3264601734077424	0.0	9.357661882403294	4.438057375274809	0.7712954747116237	0.01557231588287489
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	alevin_fry	other	20848	False	1.584962500721156	0.0	7.902173779309489	4.1653001826873375	0.6499904067536454	0.014581734458940905
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	mitochondrial	37	True						
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	pseudogene	13755	False	0.0	-2.670176695964671	1.9676711005323029	0.2895066171949848	0.14496546710287167	0.296982915303526
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	overlapping	22540	False	0.0	-0.8954435095656806	0.07800251200127316	0.024068884259968695	0.27622005323868676	0.40479148181011537
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	star_cr_mimic	kb_count	other	20848	False	0.0	-1.0	0.07400058144377676	0.007167955352923509	0.2556600153491942	0.29710283960092093
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	mitochondrial	111	False	-12.988152097690541	-23.894209728717833	-9.291704846959078	7.744232560988435	0.0	1.0
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	pseudogene	41265	False	0.0	-7.839203788096944	0.0	3.321928094887362	0.0012359142130134496	0.497928026172301
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	overlapping	67620	False	-2.502500340529183	-9.443512123678211	0.0	4.33005780368045	0.008828748890860692	0.7888198757763976
+gse288156_mouse_intestine_scrna	3p_v3	mouse	non-PBMC	alevin_fry	kb_count	other	62544	False	-1.8448646501262425	-8.043613228924833	0.0	4.315058829815554	0.007578664620107444	0.6719109746738297

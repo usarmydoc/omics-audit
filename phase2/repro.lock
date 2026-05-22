@@ -83,8 +83,93 @@
         "r_svn_revision": "89597",
         "r_version": "R version 4.5.3 (2026-03-11)"
       }
+    },
+    "dd59a1a614f6e3cf": {
+      "captured_at": "2026-05-18T18:15:45-0500",
+      "hostname": "ross-MS-7E70",
+      "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+      "python_packages": {
+        "anndata": "0.11.4",
+        "cellxgene_census": null,
+        "numpy": "1.26.4",
+        "pandas": "1.5.3",
+        "pydeseq2": null,
+        "scanpy": "1.11.5",
+        "scipy": "1.17.1",
+        "scrublet": null,
+        "tiledbsoma": null
+      },
+      "python_version": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+      "r": {
+        "bioconductor_version": "3.22",
+        "captured_at": "2026-05-18T18:15:46-0500",
+        "packages": {
+          "Biobase": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:41 UTC; unix",
+            "date": "2025-10-29",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/Biobase",
+            "repository": "Bioconductor 3.22",
+            "version": "2.70.0"
+          },
+          "BiocGenerics": {
+            "built": "R 4.5.3; ; 2026-05-02 18:06:34 UTC; unix",
+            "date": "2025-10-29",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/BiocGenerics",
+            "repository": "Bioconductor 3.22",
+            "version": "0.56.0"
+          },
+          "Matrix": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 'Wed, 08 Apr 2026 00:59:51 +0000'; unix",
+            "date": "2026-03-20",
+            "installed": true,
+            "library": "/usr/lib/R/library/Matrix",
+            "repository": "CRAN",
+            "version": "1.7.5"
+          },
+          "S4Vectors": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:30 UTC; unix",
+            "date": "2026-04-05",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/S4Vectors",
+            "repository": "Bioconductor 3.22",
+            "version": "0.48.1"
+          },
+          "edgeR": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:38 UTC; unix",
+            "date": "2025-12-23",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/edgeR",
+            "repository": "Bioconductor 3.22",
+            "version": "4.8.2"
+          },
+          "limma": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:06:53 UTC; unix",
+            "date": "2025-10-21",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/limma",
+            "repository": "Bioconductor 3.22",
+            "version": "3.66.0"
+          },
+          "statmod": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:06:01 UTC; unix",
+            "date": "2025-10-08",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/statmod",
+            "repository": "CRAN",
+            "version": "1.5.1"
+          }
+        },
+        "r_arch": "x86_64",
+        "r_platform": "x86_64-pc-linux-gnu",
+        "r_svn_revision": "89597",
+        "r_version": "R version 4.5.3 (2026-03-11)"
+      }
     }
   },
+  "repro_schema_version": "1.0",
+  "repro_version": "0.1.0",
   "schema_version": "phase2-1.0",
   "stale_outputs": {
     "/mnt/nvme1/omics-audit/phase2/draft_rules/deg_tool_version_sensitivity.yaml": {
@@ -7574,12 +7659,116 @@
       "sha256": "ea6a088173ea9f1a51670fc084b1f192b6537a8ba02de2344ec40b5e2d9354bd",
       "size_bytes": 9071
     },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/CP4_HANDOFF.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_cp4_handoff",
+      "registered_at": "2026-05-18T21:03:26",
+      "sha256": "afa6c960cc85e7ced57068190e752a3fbf44e8f6d72139919edc181d7e1c3dcc",
+      "size_bytes": 9242
+    },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/DEFERRED.md": {
-      "environment_id": "464cdbd07774154b",
-      "kind": "audit3_cp2_DEFERRED",
-      "registered_at": "2026-05-17T10:11:57",
-      "sha256": "0d01d2923737dd65e021ef758541e7f674ff513d9f2c5dc5158a57d57a35c83d",
-      "size_bytes": 6532
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_deferred",
+      "registered_at": "2026-05-18T21:03:26",
+      "sha256": "938d800a289fd5800a5db2f90d4daebe3b73cfbb3a95fe2df1fbce549f8acb4c",
+      "size_bytes": 16293
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/C1_findings.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "gap_fix": "cp4_2026-05-25",
+      "kind": "audit3_c1_findings_corrected",
+      "registered_at": "2026-05-22T18:02:19",
+      "sha256": "7f433ca967c07912f4f9c9ddf8e9f4add4505b9703863a83f0494f5633f83a1b",
+      "size_bytes": 10378
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/CP4_verification_report.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_cp4_verification_report",
+      "notes": "Read-only CP4 verification + CP5 scope recommendation. No CP4 outputs modified.",
+      "registered_at": "2026-05-22T17:53:42",
+      "sha256": "45ee48cbcefdcb110e69381eadd2704584307b98e3b7817f5ad5aecd7edd0994",
+      "size_bytes": 11574
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/per_dataset_metrics.tsv": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_per_dataset_metrics",
+      "n_rows": 54,
+      "registered_at": "2026-05-18T20:34:29",
+      "sha256": "859c93539d586023c8e407680470fd03ad9f55d99a8c19d08ef1525c5ea40723",
+      "size_bytes": 16396
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/per_gene_category_summary.tsv": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_per_gene_category_summary",
+      "n_rows": 216,
+      "registered_at": "2026-05-18T20:34:29",
+      "sha256": "9f29d08c27a8b43add1a744032072dbd01cd8a9ca1c833cd87ae4113c3d5827d",
+      "size_bytes": 32877
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/per_stratum_bootstrap.tsv": {
+      "B": 1000,
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_per_stratum_bootstrap",
+      "n_rows": 48,
+      "registered_at": "2026-05-18T20:34:29",
+      "sha256": "c2ed1a52a77cb5968a5e490813c9232d46d4739e9f33b2b8a09a4e7340f55f31",
+      "size_bytes": 4806
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/tool_failure_modes.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "gap_fix": "cp4_2026-05-25",
+      "kind": "audit3_c1_tool_failure_modes",
+      "registered_at": "2026-05-22T18:02:19",
+      "sha256": "9413c0d92c5583c246b4441cfc5baaba12d5070e5de81a5c5cb5c812e1c8e4d4",
+      "size_bytes": 3421
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/verification_pbmc_1k_v3_buggy_vs_fixed.tsv": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_verification_pbmc1k_buggy_vs_fixed",
+      "n_rows": 6,
+      "notes": "Side-by-side per-pair comparison demonstrating USA-strip bug fix on pbmc_1k_v3.",
+      "registered_at": "2026-05-18T21:01:46",
+      "sha256": "a94f5d8744d51315a65a794eb4f5b55b1a428989ff085b660d9adaf08ec7e59b",
+      "size_bytes": 1783
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/verify_1779151834/C1_findings.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_findings_stub",
+      "registered_at": "2026-05-18T19:51:04",
+      "sha256": "9d23327380c15cfc7fa8b4f8d296001060d4aa6333a870e25a51ba73b659f954",
+      "size_bytes": 3712
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/verify_1779151834/per_dataset_metrics.tsv": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_per_dataset_metrics",
+      "n_rows": 6,
+      "registered_at": "2026-05-18T19:51:04",
+      "sha256": "14d7d0820fbde868b829ab553b1a81d132d149d92dccf19909299659647b93a2",
+      "size_bytes": 1965
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/verify_1779151834/per_gene_category_summary.tsv": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_per_gene_category_summary",
+      "n_rows": 24,
+      "registered_at": "2026-05-18T19:51:04",
+      "sha256": "3976aa2bf1fae3fc5dfd2bf4b3eb6d3e9c7d0b6eef43ca8f70a01fddd37c6828",
+      "size_bytes": 3509
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/verify_1779151834/per_stratum_bootstrap.tsv": {
+      "B": 1000,
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_per_stratum_bootstrap",
+      "n_rows": 24,
+      "registered_at": "2026-05-18T19:51:04",
+      "sha256": "04411e47a6225a27d38c0b36ed11cb2adb820c9f9acde2540c60e80a07df6767",
+      "size_bytes": 2434
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/verify_1779151834/tool_failure_modes.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_c1_tool_failure_modes",
+      "registered_at": "2026-05-18T19:51:04",
+      "sha256": "fcab5ff9f0555160a69433cea17e6bbdf0501fbe8dc4ce476095ed2aed28ea56",
+      "size_bytes": 437
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/logs/build_human_refs.log": {
       "environment_id": "464cdbd07774154b",
@@ -7632,10 +7821,10 @@
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/audit3_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
-      "kind": "audit3_scraper_audit3_inputs",
-      "registered_at": "2026-05-17T12:24:27",
-      "sha256": "da4f1ff766bdf612da01186f5735e9d98fb5e6d292d64bdf3c2159498c1f943d",
-      "size_bytes": 10146
+      "kind": "audit3_cp3_tm_replacement_audit3_inputs",
+      "registered_at": "2026-05-17T18:43:21",
+      "sha256": "b9b705fa8b534c82e575fe06c7d39d768033f4c26a287bdae4e4d62c8bf4de22",
+      "size_bytes": 11945
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/feasibility.md": {
       "environment_id": "464cdbd07774154b",
@@ -7658,6 +7847,13 @@
       "sha256": "6c9d6912ab82241583495b3b4a498c852558eb2265b7a33ec4034c8fca9f0f1c",
       "size_bytes": 8650
     },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/read_structure_verification.tsv": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp3_tm_replacement_read_structure_verification",
+      "registered_at": "2026-05-17T18:43:21",
+      "sha256": "0773baed2745dbfc7f333f4e02ba334e7e51e5d8860fa0271ee2dc7d6593bb63",
+      "size_bytes": 2066
+    },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/inventory/scraper_discoveries.tsv": {
       "environment_id": "464cdbd07774154b",
       "kind": "audit3_scraper_scraper_discoveries",
@@ -7678,6 +7874,35 @@
       "registered_at": "2026-05-17T10:11:57",
       "sha256": "c7b43b52bef9f02031ffef45c53a700382e2cbe78faa914bde6f7181347684d5",
       "size_bytes": 2598
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/cp3_orchestrate.sh": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp3_tm_replacement_cp3_orchestrate",
+      "registered_at": "2026-05-17T18:43:21",
+      "sha256": "85d9721e9eeead4190a58367033ce03f97ac2189fad932c63fa2a6f120499c9d",
+      "size_bytes": 4066
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/cp4_c1_per_gene_agreement.py": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "kind": "audit3_cp4_analysis_script",
+      "notes": "CP4 analysis script \u2014 includes USA-suffix fix (post-bug). Buggy original not separately archived because git would handle that; we relied on superseded outputs + this final script.",
+      "registered_at": "2026-05-18T21:04:07",
+      "sha256": "cc018ab33a645c7a5c3cb4e04dd7f185c0cd3936435e5a7044e811f5933bb6ed",
+      "size_bytes": 28501
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/download_one_dataset.sh": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp3_tm_replacement_download_one_dataset",
+      "registered_at": "2026-05-17T18:43:21",
+      "sha256": "de0d6aed4a52b465a2eef50687f80e633454c2714d580713cd7e48852dbc9808",
+      "size_bytes": 7312
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/process_one_dataset.sh": {
+      "environment_id": "464cdbd07774154b",
+      "kind": "audit3_cp3_tm_replacement_process_one_dataset",
+      "registered_at": "2026-05-17T18:43:21",
+      "sha256": "1dc279a90ff445e11059a423940ba523842295abd4b7d42693b92401d756d5d4",
+      "size_bytes": 11565
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/scripts/smoke_test_pbmc_1k.sh": {
       "environment_id": "464cdbd07774154b",
@@ -12651,6 +12876,14 @@
       "registered_at": "2026-05-16T08:35:51",
       "sha256": "e779a9ff6915789bb034942ffecb4e04c58c482851279733aeaa9550e562cb1d",
       "size_bytes": 12417
+    },
+    "/mnt/nvme1/omics-audit/standards/PENDING_AMENDMENTS.md": {
+      "environment_id": "dd59a1a614f6e3cf",
+      "gap_fix": "cp4_2026-05-25",
+      "kind": "standards_pending_amendments",
+      "registered_at": "2026-05-22T18:02:19",
+      "sha256": "31a04dfa03071341ba5482532868f7f440639ebe6a192f0778764beb90e33f00",
+      "size_bytes": 1712
     },
     "/mnt/nvme1/omics-audit/standards/RECONNAISSANCE_2026-05-16.md": {
       "environment_id": "464cdbd07774154b",
