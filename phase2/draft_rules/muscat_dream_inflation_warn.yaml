@@ -1,3 +1,4 @@
+# xref: Extends Heumos 2023 / Squair 2021 — pseudobulk preferred over cell-level DE; this rule quantifies the cell-level inflation across 26 datasets. See standards/reference_literature/heumos_2023_index.md.
 # A6 §1.9a verification rule — FINAL, A6 completed 2026-05-16.
 # A6 ran NEBULA + muscat::pbDS + muscat::mmDS across 26 P4-eligible Census
 # datasets (20 H. sapiens + 6 Mus musculus). Full results in

@@ -1,3 +1,4 @@
+# xref: Extends Heumos 2023 / Holland 2020 — gene-set (database) choice matters more than statistical method; this rule quantifies 24-124x variation across MSigDB collections. See standards/reference_literature/heumos_2023_index.md.
 # Audit 1 main E2 (CP4) + E2b (pre-CP7 companion) rule — drafted 2026-05-16.
 # Database choice within MSigDB produces 24-124× variation in n_sig and
 # 0.05-0.43 cross-database leading-edge / hit-gene Jaccard, in BOTH GSEA

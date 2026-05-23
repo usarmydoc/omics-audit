@@ -1,3 +1,4 @@
+# xref: Extends Heumos 2023 cell-calling guidance — Heumos does not empirically differentiate among knee/EmptyDrops methods; this rule benchmarks the permissiveness chain. See standards/reference_literature/heumos_2023_index.md.
 - rule_id: scrna_cell_calling_permissiveness_chain
   schema_version: "1.0.3"
   status: draft
