@@ -10,6 +10,15 @@ exists in the audit corpus. Lafzi 2018 reviewed counting tools but did
 not benchmark cross-tool agreement on identical FASTQs. This audit
 contributes new empirical evidence on inter-tool count agreement.
 
+> **Follow-up note (2026-05-22, from CP5/C2):** C2 regenerated alevin-fry
+> with knee-point cell calling (Deliverable C). Recomputing this C1 metric —
+> per-gene Spearman, alevin-fry **knee-filtered** matrices vs STARsolo — gives
+> 0.976 (pbmc_1k_v3), 0.981 (gse287209 lung), 0.971 (gse288156 intestine),
+> consistent with the ~0.96 reported here for the CP3 `--unfiltered-pl`
+> matrices. **The C1 count-convergence finding is unchanged by alevin-fry's
+> cell-calling configuration.** No rewrite needed; this note records the
+> confirmation per CP5 Step 6.
+
 > **Important note on supersession.** A first pass of this analysis
 > (preserved at `superseded_2026-05-18_buggy_usa_strip/`) contained a
 > bug in the alevin-fry gene-ID handling: `strip_version()` collapsed

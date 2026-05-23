@@ -99,13 +99,18 @@ fi
 # Find R1 + R2 files. Concatenate multi-lane via comma-separated paths for STAR.
 case "$DATASET_ID" in
   10x_pbmc_1k_v3)             FQ_DIR="$FASTQ_ROOT/pbmc_1k_v3/pbmc_1k_v3_fastqs" ;;
-  10x_t_3k_v2)                FQ_DIR="$FASTQ_ROOT/t_3k_v2/t_3k_fastqs" ;;
-  10x_pbmc_4k_v2)             FQ_DIR="$FASTQ_ROOT/pbmc_4k/pbmc4k_fastqs" ;;
+  10x_t_3k_v2)                FQ_DIR="$FASTQ_ROOT/t_3k_v2/fastqs" ;;
+  10x_pbmc_4k_v2)             FQ_DIR="$FASTQ_ROOT/pbmc_4k/fastqs" ;;
   10x_pbmc_5k_v3.1)           FQ_DIR="$FASTQ_ROOT/pbmc_5k_v3_1/Chromium_3p_GEX_Human_PBMC_fastqs" ;;
   10x_pbmc_10k_v3.1)          FQ_DIR="$FASTQ_ROOT/pbmc_10k_v3_1/10k_PBMC_3p_nextgem_Chromium_Controller_fastqs" ;;
   10x_neuron_1k_v3)           FQ_DIR="$FASTQ_ROOT/neuron_1k_v3/neuron_1k_v3_fastqs" ;;
   tabula_muris_liver_droplet) FQ_DIR="$FASTQ_ROOT/tabula_muris_liver" ;;
   tabula_muris_heart_droplet) FQ_DIR="$FASTQ_ROOT/tabula_muris_heart" ;;
+  # Scraper additions 2026-05-17 (SRA fasterq-dump output: SRR*_1.fastq.gz + SRR*_2.fastq.gz)
+  gse287209_human_lung_organoid)  FQ_DIR="$FASTQ_ROOT/gse287209_lung_organoid" ;;
+  gse325955_mouse_kidney_E18_5)   FQ_DIR="$FASTQ_ROOT/gse325955_kidney_E18_5" ;;
+  # Replacement for failed Tabula Muris (added after read-structure verification)
+  gse288156_mouse_intestine_scrna) FQ_DIR="$FASTQ_ROOT/gse288156_intestine" ;;
   *) echo "ERROR: no FQ_DIR mapping for $DATASET_ID" >&2; exit 1 ;;
 esac
 
@@ -116,10 +121,21 @@ if [[ ! -d "$FQ_DIR" ]]; then
   if [[ -d "$parent" ]]; then FQ_DIR="$parent"; fi
 fi
 
-# Use nullglob to make non-matching globs expand to empty (not error under pipefail)
+# R1/R2 globs — per-dataset overrides for non-default layouts
 shopt -s nullglob
-R1_FILES=( "$FQ_DIR"/*_R1_*.fastq.gz "$FQ_DIR"/*_1.fastq.gz )
-R2_FILES=( "$FQ_DIR"/*_R2_*.fastq.gz "$FQ_DIR"/*_2.fastq.gz )
+case "$DATASET_ID" in
+  gse325955_mouse_kidney_E18_5|gse288156_mouse_intestine_scrna)
+    # SRA 4-file layout: _1, _2 are 10 bp sample indices (i7/i5); _3 is 28 bp CB+UMI; _4 is 90 bp transcript
+    # Verified via 1000-read sample on first SRR (see read_structure_verification.tsv)
+    R1_FILES=( "$FQ_DIR"/*_3.fastq.gz )
+    R2_FILES=( "$FQ_DIR"/*_4.fastq.gz )
+    ;;
+  *)
+    # Default: 10x demo naming (*_R1_*) OR standard SRA fasterq-dump output (*_1)
+    R1_FILES=( "$FQ_DIR"/*_R1_*.fastq.gz "$FQ_DIR"/*_1.fastq.gz )
+    R2_FILES=( "$FQ_DIR"/*_R2_*.fastq.gz "$FQ_DIR"/*_2.fastq.gz )
+    ;;
+esac
 shopt -u nullglob
 # Dedupe + comma-join
 R1_LIST=$(printf "%s\n" "${R1_FILES[@]}" | sort -u | grep -v '^$' | tr '\n' ',' | sed 's/,$//')

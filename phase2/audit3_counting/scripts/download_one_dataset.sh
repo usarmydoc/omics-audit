@@ -22,11 +22,11 @@ case "$DATASET_ID" in
   10x_t_3k_v2)
     DEST="$FASTQ_ROOT/t_3k_v2"
     URL="https://cf.10xgenomics.com/samples/cell-exp/2.1.0/t_3k/t_3k_fastqs.tar"
-    EXPECT="t_3k_fastqs" ;;
+    EXPECT="fastqs" ;;
   10x_pbmc_4k_v2)
     DEST="$FASTQ_ROOT/pbmc_4k"
     URL="https://cf.10xgenomics.com/samples/cell-exp/2.1.0/pbmc4k/pbmc4k_fastqs.tar"
-    EXPECT="pbmc4k_fastqs" ;;
+    EXPECT="fastqs" ;;
   10x_pbmc_5k_v3.1)
     DEST="$FASTQ_ROOT/pbmc_5k_v3_1"
     URL="https://cf.10xgenomics.com/samples/cell-exp/7.0.1/SC3pv3_GEX_Human_PBMC/SC3pv3_GEX_Human_PBMC_fastqs.tar"
@@ -45,11 +45,62 @@ case "$DATASET_ID" in
     # Handled via the SRA branch below
     ;;
 
+  # ---- SRA datasets (scraper additions 2026-05-17) ----
+  gse287209_human_lung_organoid)
+    # Human lung organoid, 3' v3, Dost et al. PMID 41992061
+    # 3 GSMs (GSM8741358-60) → SRX27375400/01/02, ~31 GB total
+    DEST="$FASTQ_ROOT/gse287209_lung_organoid"
+    SRX_LIST=(SRX27375400 SRX27375401 SRX27375402)
+    ;;
+  gse325955_mouse_kidney_E18_5)
+    # Mouse kidney E18.5 scRNA subset, Finer et al.
+    # 4 GSMs (GSM9617755-58) → SRX32649381-84, ~46 GB total
+    DEST="$FASTQ_ROOT/gse325955_kidney_E18_5"
+    SRX_LIST=(SRX32649381 SRX32649382 SRX32649383 SRX32649384)
+    ;;
+  gse288156_mouse_intestine_scrna)
+    # Mouse intestine scRNA, Lassila et al. — replaces failed Tabula Muris
+    # 5 scRNA GSMs (GSM8760147-51) → SRX27491077/79/80/81/82 → 10 SRRs, ~104 GB total
+    # Read structure VERIFIED via 1000-read sample 2026-05-17: 4-file layout
+    # (10/10/28/90 bp, _3=CB+UMI, _4=transcript). 9 ATAC samples in GSE288156 SKIPPED.
+    DEST="$FASTQ_ROOT/gse288156_intestine"
+    SRX_LIST=(SRX27491077 SRX27491079 SRX27491080 SRX27491081 SRX27491082)
+    ;;
+
   *)
     echo "ERROR: no acquisition mapping for $DATASET_ID" >&2
     exit 1
     ;;
 esac
+
+# ---- Generic SRX list SRA branch (scraper-added datasets) ----
+if [[ -n "${SRX_LIST:-}" ]]; then
+  mkdir -p "$DEST"; cd "$DEST"
+  echo "[$(date -Iseconds)] $DATASET_ID — SRA pull from ${#SRX_LIST[@]} SRX accessions"
+  for SRX in "${SRX_LIST[@]}"; do
+    SRRS=$(esearch -db sra -query "$SRX" 2>/dev/null | \
+           efetch -format runinfo 2>/dev/null | \
+           tail -n +2 | cut -d, -f1 | grep -E '^[SDE]RR' || true)
+    if [[ -z "$SRRS" ]]; then
+      echo "  $SRX → NO SRRs"; continue
+    fi
+    for SRR in $SRRS; do
+      echo "  $SRX → $SRR"
+      if ls "${SRR}"_*.fastq.gz >/dev/null 2>&1; then
+        echo "    already extracted, skipping"; continue
+      fi
+      if [[ ! -d "$SRR" ]]; then
+        prefetch "$SRR" --max-size u 2>&1 | tail -2
+      fi
+      fasterq-dump --threads 12 --split-files --include-technical "$SRR" 2>&1 | tail -2
+      gzip "${SRR}"_*.fastq 2>/dev/null || true
+      rm -rf "$SRR"
+    done
+  done
+  echo "[$(date -Iseconds)] $DATASET_ID SRA extraction complete:"
+  ls -lh *.fastq.gz 2>/dev/null | head -10
+  exit 0
+fi
 
 # ---- SRA branch ----
 if [[ "$DATASET_ID" == "tabula_muris_liver_droplet" ]] || \
