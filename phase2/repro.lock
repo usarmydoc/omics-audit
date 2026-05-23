@@ -285,9 +285,9 @@
     "/mnt/nvme1/omics-audit/AUDIT_INDEX.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit_index",
-      "registered_at": "2026-05-23T08:43:19",
-      "sha256": "6d4f82cc37b89676ed795ddfc48d6a75823e109863732706b133ecb25922780f",
-      "size_bytes": 2602
+      "registered_at": "2026-05-23T08:49:07",
+      "sha256": "c206f2bde05c3fa19ca473f6ae646083c40c6aa9ddd1cb3aa23c999daa6ad054",
+      "size_bytes": 3083
     },
     "/mnt/nvme1/omics-audit/bulk_audit/output/b4_batch_correction.tsv": {
       "environment_id": "464cdbd07774154b",
@@ -7745,9 +7745,16 @@
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/AUDIT3_SYNTHESIS.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit3_synthesis",
-      "registered_at": "2026-05-23T08:43:19",
-      "sha256": "5338a90fbcd9dcc527afbd2faac53b4003b7949724618753366a13ed85fbaadf",
-      "size_bytes": 5765
+      "registered_at": "2026-05-23T08:49:07",
+      "sha256": "fae323577d4e9d95c475e5ece6c8ca34fc3204c99bfa26aba27ae212676e13de",
+      "size_bytes": 5813
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/BIOORCHESTRATOR_INTEGRATION_NOTES.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_bo_integration_notes",
+      "registered_at": "2026-05-23T08:49:07",
+      "sha256": "f58170494ae3c04a47bae1c3093c4c020574f3ec1fcf4e1d3acaa873a0b369fe",
+      "size_bytes": 3463
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/CP2_report.md": {
       "environment_id": "464cdbd07774154b",
@@ -7766,16 +7773,23 @@
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/DEFERRED.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit3_deferred",
-      "registered_at": "2026-05-23T08:43:19",
-      "sha256": "1ffbc66b5ab2066d1020033626957c0093ae62a5675e4de4942bdda77f5f89e6",
-      "size_bytes": 17490
+      "registered_at": "2026-05-23T08:49:07",
+      "sha256": "da02aab4a19dadd60fc39aca36b88995107d2f99b7890a6abbb9ee1ef59a68ac",
+      "size_bytes": 18028
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/FINAL_LOCK_VERIFICATION.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_final_lock_verification",
+      "registered_at": "2026-05-23T08:49:07",
+      "sha256": "c3a4d5aed3d1d282b84115430a170794ed00acc47cbe0771f855c82a18d524a6",
+      "size_bytes": 2138
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/STATUS.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit3_status",
-      "registered_at": "2026-05-23T08:43:19",
-      "sha256": "c950960c88705bfd747bd0e1412703adcb40516f6382c04ccd7ad291d7a04742",
-      "size_bytes": 5422
+      "registered_at": "2026-05-23T08:49:07",
+      "sha256": "d33f93cf07e9e31358c46a6659a28313b895959fe716d560dc6e186359226348",
+      "size_bytes": 6259
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/C1_findings.md": {
       "environment_id": "0d16e5eee33da990",

@@ -8,14 +8,22 @@ starts.
 
 ## CP8 closeout state (2026-05-23) — final triage
 
-Audit 3 closed. Deferred follow-up audits, all captured below with triggers:
-- **3c** — CellRanger re-test (needs 10x license)
-- **3d** — multiome chemistry (gated 737K-arc-v1 whitelist)
-- **3e** — 5' v2 chemistry (gated FASTQ URLs)
-- **3f** — Tabula Muris re-pull (GSE109774 SRA submission gap; alt-source needed)
-- **3g** (alevin-fry knee follow-up) — **RESOLVED in-audit** by CP5 Deliverable C;
-  not a future audit (see "Resolved in-audit" section below).
-None block Audit 3 completion. Each runs only on its stated trigger.
+Audit 3 closed. Deferred follow-up audits, each with scope + trigger +
+bounded/open-ended classification:
+- **3c** — CellRanger re-test on the existing 9 datasets. **BOUNDED.**
+  Trigger: 10x CellRanger license obtained. (count matrices already exist for
+  the other 4 configs; 3c only adds CellRanger + comparison.)
+- **3d** — multiome chemistry, ~1-3 datasets. **BOUNDED.** Trigger: gated
+  737K-arc-v1 whitelist access (10x account).
+- **3e** — 5' v2 chemistry, the 2 CP1 candidate datasets. **BOUNDED.**
+  Trigger: gated FASTQ URL access (10x account).
+- **3f** — Tabula Muris liver+heart re-pull from an alternative source.
+  **BOUNDED** (specific GSMs known). Trigger: alt source hosting CB+UMI reads
+  (HCA BAMs via bamtofastq, or CZ Biohub direct FASTQs).
+- **3g** (alevin-fry native knee cell-calling) — **RESOLVED in-audit** by
+  CP5 Deliverable C; not a future audit (see "Resolved in-audit" section below).
+None block Audit 3 completion. All four open follow-ups are bounded (no
+open-ended "comprehensive X" audits queued). Each runs only on its trigger.
 
 ---
 

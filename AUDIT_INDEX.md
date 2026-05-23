@@ -15,6 +15,14 @@ Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
 
 ## Audit 3 — at a glance
 
+**Audit ID:** Audit 3 (scRNA-seq counting tools). **Status:** COMPLETE / CLOSED.
+**Work window:** 2026-05-16 → 2026-05-23.
+**Checkpoints:** CP0 (env) · CP1 (inventory) · CP2 (refs/installs) · CP3
+(acquisition + 4-tool counting) · CP4/C1 (count agreement) · CP5/C2
+(cell-calling agreement) · CP6/C3 (biological propagation) · CP7 (4 rules) ·
+CP8 (synthesis + closeout) — **all complete.**
+**Standards amendment contributed:** §5.3.2 equivalence-finding tier criteria.
+
 **Arc:** counts converge (C1, ρ~0.96) → native cell-callers nest STAR ⊂
 alevin-fry ⊂ kb (C2; uniform caller → Jaccard 0.99) → on high-ambient tissue
 the caller choice changes downstream biology (C3; washes out on clean tissue).

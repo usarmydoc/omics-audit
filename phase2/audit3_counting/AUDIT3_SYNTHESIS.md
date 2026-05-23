@@ -1,98 +1,109 @@
-# Audit 3 — scRNA-seq counting tools: synthesis
+# Audit 3 — scRNA-seq Counting Tools
 
 _Closed: 2026-05-23. Canonical drive `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`._
 _prior_audit_relationship: novel — first systematic audit of scRNA-seq counting-tool agreement in the corpus._
 
-## The question
+## Question
 
-Phase 1 audits treated the count matrix as fixed input. In practice the matrix
-depends on which tool counted the reads. Audit 3 closed that loop: do
-STARsolo, alevin-fry, and kb-python (kallisto|bustools) — at default settings,
-on identical 10x FASTQs — produce the same counts, the same cells, and the
-same biology? (CellRanger gated → Audit 3c; 5' v2 gated → Audit 3e; multiome
-gated → Audit 3d.)
+Do scRNA-seq counting tools (STARsolo default, STARsolo CR-mimic, alevin-fry,
+kb_count) produce equivalent outputs at default settings, and does any
+disagreement propagate to biological conclusions?
 
-Working set: **9 datasets**, 2 chemistries (3' v2 / v3), human + mouse, PBMC
-+ T-cells + brain + lung + kidney + intestine. 4 tool configurations
-(STARsolo default, STARsolo CR-mimic, alevin-fry, kb-python).
+## Working set
 
-## The arc: counts agree → cells nest → biology diverges (on hard tissue)
+9 datasets, 2 chemistries (3' v2, 3' v3), human + mouse, tissues PBMC /
+T-cells / neuron / lung / kidney / intestine. 4 tool configurations.
+CellRanger excluded (gated → Audit 3c). 5' v2 dropped (URLs gated → 3e).
+Multiome dropped (whitelist gated → 3d). Tabula Muris dropped (SRA submission
+gap → 3f).
 
-**C1 — counts converge.** Cross-tool per-gene Spearman ~0.96 (9 datasets,
-overlapping bootstrap CIs, chemistry-independent). Per-cell UMI ranking
-agrees 0.93–0.97. *Counting-tool choice is low-risk for count-level analysis.*
-(One methodological scar: a first-pass bug — not collapsing alevin-fry's
-splici S/U/A buckets — produced a spurious "alevin-fry is the outlier" at
-ρ~0.58; fixed by summing S+A. The corrected finding is convergence. This is
-why §3.5 below was proposed.)
+## Finding 1: Counts converge
 
-**C2 — cells form a permissiveness chain.** Native cell-callers nest
-**STARsolo ⊂ alevin-fry ⊂ kb-python**, universal across 9/9 datasets
-(containment 0.99–1.00). Negligible on clean data (cell-set Jaccard ~0.95+),
-but up to **3× cell-count spread on high-ambient intestine** (22K / 42K / 67K),
-the extra cells being low-UMI ambient barcodes. Crucially: applying **one
-caller (EmptyDrops_CR) uniformly to every tool's raw counts** collapses the
-divergence — mean Jaccard 0.88 (native) → **0.99 (uniform)**, 94% of
-cross-tool cell-calling divergence removed, even on intestine (0.33 → 0.99).
-*The disagreement is in the cell-calling algorithm, not the counts.*
+Per-gene Spearman ~0.96 across all tool pairs, 9 datasets, both chemistries;
+dataset-level bootstrap CIs overlap; chemistry-independent. Per-cell UMI
+ranking agrees 0.93–0.97. Counting-tool choice is low-risk for count-level
+analysis. (A first-pass bug — not collapsing alevin-fry's splici S/U/A buckets
+— produced a spurious ρ~0.58 "outlier"; fixed by summing S+A. Corrected
+finding is convergence.) **Rule:**
+`scrna_counting_tool_per_gene_count_convergence` (hard_default, info).
+Detail: `c1/C1_findings.md`.
 
-**C3 — biology diverges on high-ambient tissue, washes out on clean tissue.**
-Running a held-constant scanpy pipeline (QC → scDblFinder → scry-deviance HVG
-→ PCA → Leiden → markers → CellTypist) per tool: on **intestine**, the four
-native callers yield different clustering (ARI 0.61), different markers
-(Jaccard 0.48), and different annotations (label agreement 0.34 STAR-vs-kb) —
-*for the cells all tools agree are real*. On the **clean PBMC control** the
-same comparison gives ARI 0.88 / markers 0.89 / labels 0.93. The contested
-low-UMI cells survive standard QC (median 2,086 genes), so QC does not rescue
-it. *On high-ambient tissue, counting-tool choice (via its cell-caller
-default) cascades into biological conclusions.*
+## Finding 2: Cell-callers form a permissiveness chain
 
-## The four rules (CP7, all hard_default under §5.3.2, all `novel`)
+Native cell-callers nest universally: **STARsolo ⊂ alevin-fry ⊂ kb_count
+bustools-knee** (9/9 datasets, containment 0.99–1.00). Negligible on clean
+data (~0.95+ cell-set Jaccard); on high-ambient data a 3× cell-count spread
+(intestine: 22K / 42K / 67K). Sanity check: kb's extra barcodes are low-UMI
+ambient (median 3,414 vs 23,582 for jointly-called; 100% below the 10th
+percentile of jointly-called cells). Companion: per-cell UMI Spearman 0.999 on
+jointly-called cells (divergence confined to the calling boundary). **Rule:**
+`scrna_cell_calling_permissiveness_chain` (hard_default on direction,
+flag_and_warn on magnitude). Detail: `c2/C2_findings.md`.
 
-| rule | severity | what it tells the user |
-|---|---|---|
-| `scrna_counting_tool_per_gene_count_convergence` | info | reassurance: pick a counter on operational grounds; counts agree (~0.96) |
-| `scrna_cell_calling_permissiveness_chain` | warn | awareness: native callers nest STAR⊂alevin⊂kb; benign on clean data, 3× on high-ambient (magnitude flag_and_warn, n=1) |
-| `scrna_uniform_cell_caller_eliminates_disagreement` | warn | **action**: pin the caller (uniform EmptyDrops_CR), not the counter → Jaccard 0.99 |
-| `scrna_cell_calling_biological_propagation_high_ambient` | warn | stakes: on high-ambient tissue, caller choice changes the biology you publish (existence hard_default; generalization flag_and_warn, n=1) |
+## Finding 3: Uniform caller eliminates divergence
 
-One-line takeaway the rules encode: **counting-tool choice matters less than
-discourse assumes; cell-calling algorithm + parameters matter more; the
-reproducibility lever is pinning the caller with documented parameters,
-especially on high-ambient tissue.**
+Applying EmptyDrops_CR uniformly to all 4 tools' raw counts collapses
+cross-tool cell-set Jaccard from ~0.88 mean (native) to ~0.99 mean (uniform)
+— a 94% reduction in divergence — including intestine (0.326 native → 0.987
+uniform). Because the caller runs on each tool's raw counts, this isolates the
+divergence to the calling algorithm, not the counts (which already agree,
+Finding 1). **Rule:** `scrna_uniform_cell_caller_eliminates_disagreement`
+(hard_default, warn) — the actionable recommendation. Detail:
+`c2/C2_findings.md`, `c2/b_common_caller_4tool/`.
 
-## Honest limitations (carried into the rules per §3.1)
+## Finding 4: Biological propagation on high-ambient tissue
 
-- **n=9 datasets** — below the §5.3.1 selection-audit floors; tiered under the
-  new §5.3.2 equivalence criteria (≥8). The amendment exists *because* this
-  audit surfaced the gap.
-- **High-ambient propagation rests on n=1** (intestine) + n=1 clean control.
-  Existence is solid (non-overlapping contrast CIs); generalization is
-  flag_and_warn pending more high-ambient tissues.
-- 5' v2, CellRanger, multiome excluded (gated) → Audits 3e / 3c / 3d.
-- Whether intestine's contested cells are real rare types vs ambient artifact
-  is unresolved.
+Native cell-calling differences cascade to clustering, marker genes, and
+cell-type annotation on high-ambient tissue. Intestine: ARI 0.60–0.65, marker
+Jaccard 0.47–0.49, annotation agreement 0.34 (STAR vs kb). Clean PBMC control:
+ARI 0.86–0.89, marker Jaccard 0.87–0.91, annotation agreement 0.90–0.97.
+21,476 contested cells survive QC on intestine (median 2,086 genes/cell) vs 79
+on PBMC. The clean-control contrast (non-overlapping bootstrap ARI CIs)
+establishes ambient burden as the driver. **Rule:**
+`scrna_cell_calling_biological_propagation_high_ambient` (hard_default on
+existence, flag_and_warn on generalization). Detail: `c3/C3_findings.md`.
 
-## Standards contributions
+## Synthesis
 
-- **§5.3.2 equivalence-finding tier criteria** (adopted) — tier boundaries for
-  agreement/convergence audits, which §5.3.1 (tool-selection) could not express.
-- **Clean-control-for-stress-test** closeout-amendment candidate (queued) —
-  from C3's PBMC-vs-intestine design.
-- **§3.5 "bootstrap CIs reflect sampling variance, not correctness"** candidate
-  (queued for batched pass) — from C1's tight-CIs-on-buggy-data episode.
-- 2 pipeline_step registry names: `scrnaseq_counting`, `scrnaseq_cell_calling`.
+The arc: counting tools agree on counts (Finding 1) → cell-calling
+implementations diverge in permissiveness (Finding 2) → that divergence
+propagates to biological conclusions on high-ambient tissue (Finding 4) →
+a uniform downstream caller eliminates the divergence (Finding 3, the fix).
 
-## Deferred follow-ups (see DEFERRED.md)
+**Counting-tool choice matters less than current bioinformatics discourse
+suggests. Cell-calling algorithm choice matters more than discourse suggests,
+and the magnitude is tissue-dependent. The path to reproducibility is pinning
+the downstream cell-caller (EmptyDrops_CR with documented parameters), not
+pinning the counting tool.**
 
-- **3c** CellRanger (needs license) · **3d** multiome (gated whitelist) ·
-  **3e** 5' v2 (gated FASTQ) · **3f** Tabula Muris re-pull (SRA submission gap).
-- **3g** (alevin-fry knee follow-up) — RESOLVED in-audit by CP5 Deliverable C.
+## Methodological observations queued
 
-## Provenance
+- **§3.5 candidate** — "bootstrap CIs reflect sampling variance, not
+  correctness" (from the CP4 USA-mode bug: tight CIs on misconfigured data).
+  Disposition pending (CP8 Step 5; see PENDING_AMENDMENTS.md).
+- **§5.3.2** — equivalence-finding tier criteria. ADOPTED (this audit forced it).
+- **Clean-control-for-stress-test** — the CP6 PBMC-alongside-intestine pattern,
+  as a closeout-amendment candidate. Queued.
+- **Intermediate-file retention** — CP5 needed alevin-fry rad files that had
+  been cleaned; future audits should retain (or cheaply regenerate) the
+  intermediates a downstream checkpoint may depend on.
+- **Normalized vs raw for expression tests** — CP6 surfaced that audit prompts
+  should state normalized-matrix vs raw-count explicitly for Wilcoxon-type
+  tests (we used log-normalized, documented).
 
-All Audit 3 outputs hash-registered in `phase2/repro.lock` (91 entries,
-verify 91/91, 0 drift at close). Superseded buggy CP4 outputs retained under
-`c1/superseded_2026-05-18_buggy_usa_strip/` per §1.5. Native runtimes
-throughout (scry / scDblFinder / EmptyDrops_CR via Rscript subprocess; no
-rpy2). BioOrchestrator integration deferred to the next batched update.
+## Limitations
+
+- 3 chemistries collapsed to 2 (5' v2 URLs gated).
+- 3 binaries / 4 configs (CellRanger gated → Audit 3c).
+- Mouse n=3 (Tabula Muris failed: SRA submission gap).
+- High-ambient propagation rests on **n=1 tissue** (intestine); the clean
+  control establishes the effect exists, but generalization needs replication.
+- 9 datasets total; PBMC-dominant (5/9).
+
+## Audits queued in DEFERRED.md
+
+- **Audit 3c** — CellRanger re-test on existing datasets (bounded). Trigger: 10x license.
+- **Audit 3d** — multiome chemistry (bounded). Trigger: gated 737K-arc-v1 whitelist access.
+- **Audit 3e** — 5' v2 chemistry (bounded). Trigger: gated FASTQ URL access.
+- **Audit 3f** — Tabula Muris re-pull from alternative source (bounded). Trigger: alt source with CB+UMI.
+- **Audit 3g** — RESOLVED in CP5 Deliverable C (alevin-fry native knee cell-calling); not a future audit.

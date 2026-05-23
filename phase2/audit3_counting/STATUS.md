@@ -2,6 +2,20 @@
 
 Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
 
+## AUDIT STATUS: CLOSED (2026-05-23)
+
+- **Checkpoints:** CP0–CP8 all complete (work window 2026-05-16 → 2026-05-23).
+- **Datasets:** 9 (2 chemistries: 3' v2/v3; tissues: PBMC, T-cells, neuron,
+  lung, kidney, intestine; human + mouse).
+- **Tools:** 4 configs (STARsolo default, STARsolo CR-mimic, alevin-fry, kb-python).
+- **Rules contributed:** 4 (all hard_default, §5.3.2 equivalence-tiered, novel).
+- **Standards contributed:** §5.3.2 equivalence-finding tier criteria (adopted);
+  §3.5 + clean-control candidates (queued).
+- **Lock:** 92 entries, 0 drift, 0 missing (`FINAL_LOCK_VERIFICATION.md`).
+- **Synthesis:** `AUDIT3_SYNTHESIS.md`. **BO hand-off:** `BIOORCHESTRATOR_INTEGRATION_NOTES.md`.
+- **Outstanding decision:** §3.5 amendment adopt-now vs queue (CP8 Step 5) —
+  awaiting explicit user input; currently queued.
+
 ## Checkpoints
 
 - **CP0–CP2** — env, inventory, references, tool installs. COMPLETE.
