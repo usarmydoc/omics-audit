@@ -1,0 +1,49 @@
+dataset_id	short	tissue	pair	jaccard	n_intersection	n_union	n_method_a_only	n_method_b_only	more_permissive
+65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	heart	C1_vs_MAD3	0.9225	43588	47252	1495	2169	MAD3
+65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	heart	C1_vs_MAD5	0.9314	45083	48405	0	3322	MAD5
+65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	heart	C2_vs_MAD3	0.9625	45716	47498	1741	41	C2
+65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	heart	C2_vs_MAD5	0.9804	47457	48405	0	948	MAD5
+65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	heart	C1_vs_C2	0.95	45083	47457	0	2374	C2
+65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	heart	MAD3_vs_MAD5	0.9453	45757	48405	0	2648	MAD5
+48b37086-25f7-4ecd-be66-f5bb378e3aea	bone_marrow	bone marrow	C1_vs_MAD3	0.9267	45951	49583	0	3632	MAD3
+48b37086-25f7-4ecd-be66-f5bb378e3aea	bone_marrow	bone marrow	C1_vs_MAD5	0.919	45951	50000	0	4049	MAD5
+48b37086-25f7-4ecd-be66-f5bb378e3aea	bone_marrow	bone marrow	C2_vs_MAD3	0.9921	49583	49977	394	0	C2
+48b37086-25f7-4ecd-be66-f5bb378e3aea	bone_marrow	bone marrow	C2_vs_MAD5	0.9995	49977	50000	0	23	MAD5
+48b37086-25f7-4ecd-be66-f5bb378e3aea	bone_marrow	bone marrow	C1_vs_C2	0.9194	45951	49977	0	4026	C2
+48b37086-25f7-4ecd-be66-f5bb378e3aea	bone_marrow	bone marrow	MAD3_vs_MAD5	0.9917	49583	50000	0	417	MAD5
+34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	liver	C1_vs_MAD3	0.8174	38495	47097	6132	2470	C1
+34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	liver	C1_vs_MAD5	0.8946	42430	47429	2197	2802	MAD5
+34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	liver	C2_vs_MAD3	0.8442	39941	47313	6348	1024	C2
+34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	liver	C2_vs_MAD5	0.9276	44042	47479	2247	1190	C2
+34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	liver	C1_vs_C2	0.9641	44627	46289	0	1662	C2
+34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	liver	MAD3_vs_MAD5	0.9057	40965	45232	0	4267	MAD5
+46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	blood	C1_vs_MAD3	0.9185	44538	48491	0	3953	MAD3
+46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	blood	C1_vs_MAD5	0.8927	44538	49890	0	5352	MAD5
+46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	blood	C2_vs_MAD3	0.9597	47008	48981	490	1483	MAD3
+46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	blood	C2_vs_MAD5	0.949	47421	49967	77	2469	MAD5
+46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	blood	C1_vs_C2	0.9377	44538	47498	0	2960	C2
+46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	blood	MAD3_vs_MAD5	0.972	48491	49890	0	1399	MAD5
+89840cec-5734-455d-b68e-34d27650e148	lung	lung	C1_vs_MAD3	0.9394	44308	47164	868	1988	MAD3
+89840cec-5734-455d-b68e-34d27650e148	lung	lung	C1_vs_MAD5	0.9242	45176	48883	0	3707	MAD5
+89840cec-5734-455d-b68e-34d27650e148	lung	lung	C2_vs_MAD3	0.9747	46296	47500	1204	0	C2
+89840cec-5734-455d-b68e-34d27650e148	lung	lung	C2_vs_MAD5	0.9717	47500	48883	0	1383	MAD5
+89840cec-5734-455d-b68e-34d27650e148	lung	lung	C1_vs_C2	0.9511	45176	47500	0	2324	C2
+89840cec-5734-455d-b68e-34d27650e148	lung	lung	MAD3_vs_MAD5	0.9471	46296	48883	0	2587	MAD5
+a37f857c-779f-464e-9310-3db43a1811e7	small_intestine	small intestine	C1_vs_MAD3	0.9099	44799	49234	0	4435	MAD3
+a37f857c-779f-464e-9310-3db43a1811e7	small_intestine	small intestine	C1_vs_MAD5	0.896	44799	50000	0	5201	MAD5
+a37f857c-779f-464e-9310-3db43a1811e7	small_intestine	small intestine	C2_vs_MAD3	0.786	38700	49234	0	10534	MAD3
+a37f857c-779f-464e-9310-3db43a1811e7	small_intestine	small intestine	C2_vs_MAD5	0.774	38700	50000	0	11300	MAD5
+a37f857c-779f-464e-9310-3db43a1811e7	small_intestine	small intestine	C1_vs_C2	0.8639	38700	44799	6099	0	C1
+a37f857c-779f-464e-9310-3db43a1811e7	small_intestine	small intestine	MAD3_vs_MAD5	0.9847	49234	50000	0	766	MAD5
+e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	pancreas	C1_vs_MAD3	0.9174	44190	48169	0	3979	MAD3
+e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	pancreas	C1_vs_MAD5	0.8838	44190	49998	0	5808	MAD5
+e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	pancreas	C2_vs_MAD3	0.9857	47491	48178	9	678	MAD3
+e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	pancreas	C2_vs_MAD5	0.95	47500	49998	0	2498	MAD5
+e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	pancreas	C1_vs_C2	0.9303	44190	47500	0	3310	C2
+e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	pancreas	MAD3_vs_MAD5	0.9634	48169	49998	0	1829	MAD5
+16023185-de21-4c0d-a9c8-73abdd52d142	large_intestine	large intestine	C1_vs_MAD3	0.9295	44316	47676	0	3360	MAD3
+16023185-de21-4c0d-a9c8-73abdd52d142	large_intestine	large intestine	C1_vs_MAD5	0.8863	44316	50000	0	5684	MAD5
+16023185-de21-4c0d-a9c8-73abdd52d142	large_intestine	large intestine	C2_vs_MAD3	0.9963	47499	47676	0	177	MAD3
+16023185-de21-4c0d-a9c8-73abdd52d142	large_intestine	large intestine	C2_vs_MAD5	0.95	47499	50000	0	2501	MAD5
+16023185-de21-4c0d-a9c8-73abdd52d142	large_intestine	large intestine	C1_vs_C2	0.933	44316	47499	0	3183	C2
+16023185-de21-4c0d-a9c8-73abdd52d142	large_intestine	large intestine	MAD3_vs_MAD5	0.9535	47676	50000	0	2324	MAD5

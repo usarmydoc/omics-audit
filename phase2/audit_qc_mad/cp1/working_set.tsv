@@ -1,0 +1,9 @@
+short	dataset_id	tissue	p1_median_mito	p1_n_cells
+heart	65badd7a-9262-4fd1-9ce2-eb5dc0ca8039	heart	0.07	50000
+bone_marrow	48b37086-25f7-4ecd-be66-f5bb378e3aea	bone marrow	0.00	40220
+liver	34f5307e-7b4d-4a48-b68f-2ba844c6414b	liver	1.97	50000
+blood	46104f0b-9af5-466a-ae0f-56b8dc1969a2	blood	3.11	50000
+lung	89840cec-5734-455d-b68e-34d27650e148	lung	3.15	50000
+small_intestine	a37f857c-779f-464e-9310-3db43a1811e7	small intestine	8.32	50000
+pancreas	e51bae9a-c747-4b64-904a-4da7cda218ab	pancreas	9.50	50000
+large_intestine	16023185-de21-4c0d-a9c8-73abdd52d142	large intestine	10.83	50000

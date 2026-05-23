@@ -1,0 +1,241 @@
+short	tissue	pair	concentration_category	n_cells
+heart	heart	C1_vs_MAD3	low_genes	1882
+heart	heart	C1_vs_MAD3	low_counts	1856
+heart	heart	C1_vs_MAD3	high_mito	0
+heart	heart	C1_vs_MAD3	multiple	1569
+heart	heart	C1_vs_MAD3	none_of_3	1495
+heart	heart	C1_vs_MAD5	low_genes	2233
+heart	heart	C1_vs_MAD5	low_counts	2209
+heart	heart	C1_vs_MAD5	high_mito	905
+heart	heart	C1_vs_MAD5	multiple	1912
+heart	heart	C1_vs_MAD5	none_of_3	0
+heart	heart	C2_vs_MAD3	low_genes	266
+heart	heart	C2_vs_MAD3	low_counts	260
+heart	heart	C2_vs_MAD3	high_mito	0
+heart	heart	C2_vs_MAD3	multiple	239
+heart	heart	C2_vs_MAD3	none_of_3	1495
+heart	heart	C2_vs_MAD5	low_genes	167
+heart	heart	C2_vs_MAD5	low_counts	175
+heart	heart	C2_vs_MAD5	high_mito	905
+heart	heart	C2_vs_MAD5	multiple	186
+heart	heart	C2_vs_MAD5	none_of_3	0
+heart	heart	C1_vs_C2	low_genes	2066
+heart	heart	C1_vs_C2	low_counts	2034
+heart	heart	C1_vs_C2	high_mito	0
+heart	heart	C1_vs_C2	multiple	1726
+heart	heart	C1_vs_C2	none_of_3	0
+heart	heart	MAD3_vs_MAD5	low_genes	351
+heart	heart	MAD3_vs_MAD5	low_counts	353
+heart	heart	MAD3_vs_MAD5	high_mito	905
+heart	heart	MAD3_vs_MAD5	multiple	343
+heart	heart	MAD3_vs_MAD5	none_of_3	1495
+bone_marrow	bone marrow	C1_vs_MAD3	low_genes	2079
+bone_marrow	bone marrow	C1_vs_MAD3	low_counts	2411
+bone_marrow	bone marrow	C1_vs_MAD3	high_mito	0
+bone_marrow	bone marrow	C1_vs_MAD3	multiple	858
+bone_marrow	bone marrow	C1_vs_MAD3	none_of_3	0
+bone_marrow	bone marrow	C1_vs_MAD5	low_genes	2496
+bone_marrow	bone marrow	C1_vs_MAD5	low_counts	2500
+bone_marrow	bone marrow	C1_vs_MAD5	high_mito	0
+bone_marrow	bone marrow	C1_vs_MAD5	multiple	947
+bone_marrow	bone marrow	C1_vs_MAD5	none_of_3	0
+bone_marrow	bone marrow	C2_vs_MAD3	low_genes	394
+bone_marrow	bone marrow	C2_vs_MAD3	low_counts	66
+bone_marrow	bone marrow	C2_vs_MAD3	high_mito	0
+bone_marrow	bone marrow	C2_vs_MAD3	multiple	66
+bone_marrow	bone marrow	C2_vs_MAD3	none_of_3	0
+bone_marrow	bone marrow	C2_vs_MAD5	low_genes	23
+bone_marrow	bone marrow	C2_vs_MAD5	low_counts	23
+bone_marrow	bone marrow	C2_vs_MAD5	high_mito	0
+bone_marrow	bone marrow	C2_vs_MAD5	multiple	23
+bone_marrow	bone marrow	C2_vs_MAD5	none_of_3	0
+bone_marrow	bone marrow	C1_vs_C2	low_genes	2473
+bone_marrow	bone marrow	C1_vs_C2	low_counts	2477
+bone_marrow	bone marrow	C1_vs_C2	high_mito	0
+bone_marrow	bone marrow	C1_vs_C2	multiple	924
+bone_marrow	bone marrow	C1_vs_C2	none_of_3	0
+bone_marrow	bone marrow	MAD3_vs_MAD5	low_genes	417
+bone_marrow	bone marrow	MAD3_vs_MAD5	low_counts	89
+bone_marrow	bone marrow	MAD3_vs_MAD5	high_mito	0
+bone_marrow	bone marrow	MAD3_vs_MAD5	multiple	89
+bone_marrow	bone marrow	MAD3_vs_MAD5	none_of_3	0
+liver	liver	C1_vs_MAD3	low_genes	1936
+liver	liver	C1_vs_MAD3	low_counts	2136
+liver	liver	C1_vs_MAD3	high_mito	0
+liver	liver	C1_vs_MAD3	multiple	1602
+liver	liver	C1_vs_MAD3	none_of_3	6132
+liver	liver	C1_vs_MAD5	low_genes	2262
+liver	liver	C1_vs_MAD5	low_counts	2355
+liver	liver	C1_vs_MAD5	high_mito	0
+liver	liver	C1_vs_MAD5	multiple	1815
+liver	liver	C1_vs_MAD5	none_of_3	2197
+liver	liver	C2_vs_MAD3	low_genes	1232
+liver	liver	C2_vs_MAD3	low_counts	1141
+liver	liver	C2_vs_MAD3	high_mito	0
+liver	liver	C2_vs_MAD3	multiple	1133
+liver	liver	C2_vs_MAD3	none_of_3	6132
+liver	liver	C2_vs_MAD5	low_genes	1238
+liver	liver	C2_vs_MAD5	low_counts	1186
+liver	liver	C2_vs_MAD5	high_mito	0
+liver	liver	C2_vs_MAD5	multiple	1184
+liver	liver	C2_vs_MAD5	none_of_3	2197
+liver	liver	C1_vs_C2	low_genes	1120
+liver	liver	C1_vs_C2	low_counts	1229
+liver	liver	C1_vs_C2	high_mito	0
+liver	liver	C1_vs_C2	multiple	687
+liver	liver	C1_vs_C2	none_of_3	0
+liver	liver	MAD3_vs_MAD5	low_genes	326
+liver	liver	MAD3_vs_MAD5	low_counts	219
+liver	liver	MAD3_vs_MAD5	high_mito	0
+liver	liver	MAD3_vs_MAD5	multiple	213
+liver	liver	MAD3_vs_MAD5	none_of_3	3935
+blood	blood	C1_vs_MAD3	low_genes	1804
+blood	blood	C1_vs_MAD3	low_counts	1772
+blood	blood	C1_vs_MAD3	high_mito	1483
+blood	blood	C1_vs_MAD3	multiple	1056
+blood	blood	C1_vs_MAD3	none_of_3	0
+blood	blood	C1_vs_MAD5	low_genes	2384
+blood	blood	C1_vs_MAD5	low_counts	2390
+blood	blood	C1_vs_MAD5	high_mito	2469
+blood	blood	C1_vs_MAD5	multiple	1688
+blood	blood	C1_vs_MAD5	none_of_3	0
+blood	blood	C2_vs_MAD3	low_genes	552
+blood	blood	C2_vs_MAD3	low_counts	592
+blood	blood	C2_vs_MAD3	high_mito	1483
+blood	blood	C2_vs_MAD3	multiple	604
+blood	blood	C2_vs_MAD3	none_of_3	0
+blood	blood	C2_vs_MAD5	low_genes	308
+blood	blood	C2_vs_MAD5	low_counts	396
+blood	blood	C2_vs_MAD5	high_mito	2469
+blood	blood	C2_vs_MAD5	multiple	424
+blood	blood	C2_vs_MAD5	none_of_3	0
+blood	blood	C1_vs_C2	low_genes	2230
+blood	blood	C1_vs_C2	low_counts	2144
+blood	blood	C1_vs_C2	high_mito	0
+blood	blood	C1_vs_C2	multiple	1414
+blood	blood	C1_vs_C2	none_of_3	0
+blood	blood	MAD3_vs_MAD5	low_genes	580
+blood	blood	MAD3_vs_MAD5	low_counts	618
+blood	blood	MAD3_vs_MAD5	high_mito	986
+blood	blood	MAD3_vs_MAD5	multiple	632
+blood	blood	MAD3_vs_MAD5	none_of_3	0
+lung	lung	C1_vs_MAD3	low_genes	1620
+lung	lung	C1_vs_MAD3	low_counts	1729
+lung	lung	C1_vs_MAD3	high_mito	0
+lung	lung	C1_vs_MAD3	multiple	1361
+lung	lung	C1_vs_MAD3	none_of_3	868
+lung	lung	C1_vs_MAD5	low_genes	2203
+lung	lung	C1_vs_MAD5	low_counts	2256
+lung	lung	C1_vs_MAD5	high_mito	1383
+lung	lung	C1_vs_MAD5	multiple	1923
+lung	lung	C1_vs_MAD5	none_of_3	0
+lung	lung	C2_vs_MAD3	low_genes	316
+lung	lung	C2_vs_MAD3	low_counts	291
+lung	lung	C2_vs_MAD3	high_mito	0
+lung	lung	C2_vs_MAD3	multiple	271
+lung	lung	C2_vs_MAD3	none_of_3	868
+lung	lung	C2_vs_MAD5	low_genes	267
+lung	lung	C2_vs_MAD5	low_counts	236
+lung	lung	C2_vs_MAD5	high_mito	1383
+lung	lung	C2_vs_MAD5	multiple	291
+lung	lung	C2_vs_MAD5	none_of_3	0
+lung	lung	C1_vs_C2	low_genes	1936
+lung	lung	C1_vs_C2	low_counts	2020
+lung	lung	C1_vs_C2	high_mito	0
+lung	lung	C1_vs_C2	multiple	1632
+lung	lung	C1_vs_C2	none_of_3	0
+lung	lung	MAD3_vs_MAD5	low_genes	583
+lung	lung	MAD3_vs_MAD5	low_counts	527
+lung	lung	MAD3_vs_MAD5	high_mito	1383
+lung	lung	MAD3_vs_MAD5	multiple	562
+lung	lung	MAD3_vs_MAD5	none_of_3	868
+small_intestine	small intestine	C1_vs_MAD3	low_genes	2359
+small_intestine	small intestine	C1_vs_MAD3	low_counts	2414
+small_intestine	small intestine	C1_vs_MAD3	high_mito	1734
+small_intestine	small intestine	C1_vs_MAD3	multiple	1931
+small_intestine	small intestine	C1_vs_MAD3	none_of_3	0
+small_intestine	small intestine	C1_vs_MAD5	low_genes	2454
+small_intestine	small intestine	C1_vs_MAD5	low_counts	2493
+small_intestine	small intestine	C1_vs_MAD5	high_mito	2500
+small_intestine	small intestine	C1_vs_MAD5	multiple	2032
+small_intestine	small intestine	C1_vs_MAD5	none_of_3	0
+small_intestine	small intestine	C2_vs_MAD3	low_genes	2359
+small_intestine	small intestine	C2_vs_MAD3	low_counts	2414
+small_intestine	small intestine	C2_vs_MAD3	high_mito	1734
+small_intestine	small intestine	C2_vs_MAD3	multiple	1931
+small_intestine	small intestine	C2_vs_MAD3	none_of_3	6099
+small_intestine	small intestine	C2_vs_MAD5	low_genes	2454
+small_intestine	small intestine	C2_vs_MAD5	low_counts	2493
+small_intestine	small intestine	C2_vs_MAD5	high_mito	2500
+small_intestine	small intestine	C2_vs_MAD5	multiple	2032
+small_intestine	small intestine	C2_vs_MAD5	none_of_3	6099
+small_intestine	small intestine	C1_vs_C2	low_genes	0
+small_intestine	small intestine	C1_vs_C2	low_counts	0
+small_intestine	small intestine	C1_vs_C2	high_mito	0
+small_intestine	small intestine	C1_vs_C2	multiple	0
+small_intestine	small intestine	C1_vs_C2	none_of_3	6099
+small_intestine	small intestine	MAD3_vs_MAD5	low_genes	95
+small_intestine	small intestine	MAD3_vs_MAD5	low_counts	79
+small_intestine	small intestine	MAD3_vs_MAD5	high_mito	766
+small_intestine	small intestine	MAD3_vs_MAD5	multiple	101
+small_intestine	small intestine	MAD3_vs_MAD5	none_of_3	0
+pancreas	pancreas	C1_vs_MAD3	low_genes	2089
+pancreas	pancreas	C1_vs_MAD3	low_counts	2358
+pancreas	pancreas	C1_vs_MAD3	high_mito	678
+pancreas	pancreas	C1_vs_MAD3	multiple	1120
+pancreas	pancreas	C1_vs_MAD3	none_of_3	0
+pancreas	pancreas	C1_vs_MAD5	low_genes	2498
+pancreas	pancreas	C1_vs_MAD5	low_counts	2499
+pancreas	pancreas	C1_vs_MAD5	high_mito	2498
+pancreas	pancreas	C1_vs_MAD5	multiple	1564
+pancreas	pancreas	C1_vs_MAD5	none_of_3	0
+pancreas	pancreas	C2_vs_MAD3	low_genes	99
+pancreas	pancreas	C2_vs_MAD3	low_counts	48
+pancreas	pancreas	C2_vs_MAD3	high_mito	678
+pancreas	pancreas	C2_vs_MAD3	multiple	112
+pancreas	pancreas	C2_vs_MAD3	none_of_3	0
+pancreas	pancreas	C2_vs_MAD5	low_genes	490
+pancreas	pancreas	C2_vs_MAD5	low_counts	175
+pancreas	pancreas	C2_vs_MAD5	high_mito	2498
+pancreas	pancreas	C2_vs_MAD5	multiple	542
+pancreas	pancreas	C2_vs_MAD5	none_of_3	0
+pancreas	pancreas	C1_vs_C2	low_genes	2008
+pancreas	pancreas	C1_vs_C2	low_counts	2324
+pancreas	pancreas	C1_vs_C2	high_mito	0
+pancreas	pancreas	C1_vs_C2	multiple	1022
+pancreas	pancreas	C1_vs_C2	none_of_3	0
+pancreas	pancreas	MAD3_vs_MAD5	low_genes	409
+pancreas	pancreas	MAD3_vs_MAD5	low_counts	141
+pancreas	pancreas	MAD3_vs_MAD5	high_mito	1820
+pancreas	pancreas	MAD3_vs_MAD5	multiple	444
+pancreas	pancreas	MAD3_vs_MAD5	none_of_3	0
+large_intestine	large intestine	C1_vs_MAD3	low_genes	2369
+large_intestine	large intestine	C1_vs_MAD3	low_counts	2496
+large_intestine	large intestine	C1_vs_MAD3	high_mito	176
+large_intestine	large intestine	C1_vs_MAD3	multiple	1681
+large_intestine	large intestine	C1_vs_MAD3	none_of_3	0
+large_intestine	large intestine	C1_vs_MAD5	low_genes	2492
+large_intestine	large intestine	C1_vs_MAD5	low_counts	2496
+large_intestine	large intestine	C1_vs_MAD5	high_mito	2500
+large_intestine	large intestine	C1_vs_MAD5	multiple	1804
+large_intestine	large intestine	C1_vs_MAD5	none_of_3	0
+large_intestine	large intestine	C2_vs_MAD3	low_genes	1
+large_intestine	large intestine	C2_vs_MAD3	low_counts	2
+large_intestine	large intestine	C2_vs_MAD3	high_mito	176
+large_intestine	large intestine	C2_vs_MAD3	multiple	2
+large_intestine	large intestine	C2_vs_MAD3	none_of_3	0
+large_intestine	large intestine	C2_vs_MAD5	low_genes	124
+large_intestine	large intestine	C2_vs_MAD5	low_counts	2
+large_intestine	large intestine	C2_vs_MAD5	high_mito	2500
+large_intestine	large intestine	C2_vs_MAD5	multiple	125
+large_intestine	large intestine	C2_vs_MAD5	none_of_3	0
+large_intestine	large intestine	C1_vs_C2	low_genes	2368
+large_intestine	large intestine	C1_vs_C2	low_counts	2494
+large_intestine	large intestine	C1_vs_C2	high_mito	0
+large_intestine	large intestine	C1_vs_C2	multiple	1679
+large_intestine	large intestine	C1_vs_C2	none_of_3	0
+large_intestine	large intestine	MAD3_vs_MAD5	low_genes	123
+large_intestine	large intestine	MAD3_vs_MAD5	low_counts	0
+large_intestine	large intestine	MAD3_vs_MAD5	high_mito	2324
+large_intestine	large intestine	MAD3_vs_MAD5	multiple	123
+large_intestine	large intestine	MAD3_vs_MAD5	none_of_3	0

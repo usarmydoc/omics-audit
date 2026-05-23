@@ -8457,6 +8457,69 @@
       "sha256": "c7d9162fe5f6db74dffc00e140b6dab5ecece75c4e4c417c1c7411b9fd909c32",
       "size_bytes": 4471
     },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/compare.py": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_compare_script",
+      "registered_at": "2026-05-23T09:47:27",
+      "sha256": "598c9ed2257748cc1521f433fd4b7969f0b115a1de3aa6bdc9d84cbc13fa6484",
+      "size_bytes": 6936
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/disagreement_concentration.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_concentration",
+      "registered_at": "2026-05-23T09:46:18",
+      "sha256": "7b54dff8d4df8469a5ede2d3c936f951a8643a47ef79dc79d2169302ee5012d0",
+      "size_bytes": 10575
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/mad_filter.R": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_mad_script",
+      "registered_at": "2026-05-23T09:47:27",
+      "sha256": "77f77694a0543ef32b1dff3a4bd8298708691aa1cae44435beb440260b1429ad",
+      "size_bytes": 1141
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/per_dataset_jaccards.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_jaccards",
+      "registered_at": "2026-05-23T09:46:18",
+      "sha256": "c764e661cae57aa6bc8ed3073bba4edd8c59a09507b13e44f54d176b132c6224",
+      "size_bytes": 4786
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/per_dataset_metrics.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_per_dataset_metrics",
+      "registered_at": "2026-05-23T09:46:18",
+      "sha256": "75e62cefb32c157ae7f7b8b4bbe9ceb8a918084381983cf0a7adce71ca7ae611",
+      "size_bytes": 772
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/per_stratum_bootstrap.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_bootstrap",
+      "registered_at": "2026-05-23T09:46:18",
+      "sha256": "0059b06df0dcfa049f0ec6eea1fb83f1e9ff0910f4ff872c9d789a678d649f52",
+      "size_bytes": 915
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/pull_qc.py": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_pull_script",
+      "registered_at": "2026-05-23T09:47:27",
+      "sha256": "33de0b67e76790ecf3c5aff92493b66337e3c3dc467af8a06a30af903064a046",
+      "size_bytes": 2654
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/tool_failure_modes.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_failure_modes",
+      "registered_at": "2026-05-23T09:46:18",
+      "sha256": "dabc0c9bc358031c26589a4e1b63dd0691b28222df7e0eaed01df53f43f04125",
+      "size_bytes": 272
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/working_set.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_working_set",
+      "registered_at": "2026-05-23T09:47:27",
+      "sha256": "fb8a4d7e2bb064d4e98e71c7553beac511e895ed77926c11a5f81c08d0cde925",
+      "size_bytes": 587
+    },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
       "kind": "documentation_v2_closeout",
