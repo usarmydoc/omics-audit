@@ -319,9 +319,9 @@
     "/mnt/nvme1/omics-audit/phase2/DEFERRED.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "phase2_deferred_corpus",
-      "registered_at": "2026-05-23T08:56:20",
-      "sha256": "e30d64637fe78cdb2b4cc6055d57600d91406260dd7d9103a96a851d85c1e5da",
-      "size_bytes": 1819
+      "registered_at": "2026-05-23T09:09:07",
+      "sha256": "450c4966224b07c3f9f01e5c7d4ff7c9a4db0b6fb755e9f47009ead4d7f8188f",
+      "size_bytes": 5442
     },
     "/mnt/nvme1/omics-audit/phase2/MIGRATION_NOTES.md": {
       "environment_id": "464cdbd07774154b",
@@ -13481,12 +13481,19 @@
       "sha256": "8f05bd2c1f82c9f246865330df840504ca377d6cff6207b47f7ac1d39e37758b",
       "size_bytes": 4261757
     },
+    "/mnt/nvme1/omics-audit/standards/reference_literature/heumos_2023_corpus_coverage.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "reference_heumos_2023_coverage",
+      "registered_at": "2026-05-23T09:09:07",
+      "sha256": "280cd104264ec0a504a9b84d8311c475a0189a5ad39dc094f39224f6b8529cf8",
+      "size_bytes": 4569
+    },
     "/mnt/nvme1/omics-audit/standards/reference_literature/heumos_2023_index.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "reference_heumos_2023_index",
-      "registered_at": "2026-05-23T08:56:20",
-      "sha256": "d8908f26a18021d96c262a5d61210faaeae60f66a5c08e5ffceaa7328fb169c8",
-      "size_bytes": 5884
+      "registered_at": "2026-05-23T09:09:07",
+      "sha256": "430cd9ecedeae41ae8fae616f531f8e84db17ae8d80bb03ffa382694e10b5b5a",
+      "size_bytes": 5952
     },
     "/mnt/nvme1/omics-audit/tools/gse_scraper/A_human_brain.tsv": {
       "environment_id": "464cdbd07774154b",
