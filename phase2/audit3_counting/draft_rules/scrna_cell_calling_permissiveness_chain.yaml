@@ -1,0 +1,93 @@
+- rule_id: scrna_cell_calling_permissiveness_chain
+  schema_version: "1.0.3"
+  status: draft
+  title: "scRNA-seq native cell-callers form a permissiveness chain"
+  description: >
+    The native cell-callers of the audited counting tools form a strict
+    nested permissiveness ordering: STARsolo (--soloCellFilter EmptyDrops_CR)
+    is most conservative, alevin-fry (generate-permit-list --knee-distance) is
+    middle, kb-python (bustools knee) is most permissive. The nesting
+    STARsolo-called cells subset of alevin-fry subset of kb_count holds in
+    9/9 datasets (cell-count ordering universal; set containment 0.99-1.00 on
+    both links). DIRECTION CLAIM (the ordering) is hard_default by
+    AUDIT_STANDARDS §5.3.2 nested-effect criterion. MAGNITUDE CLAIM (the gap
+    size) varies by ambient burden: negligible on clean data (cell-set Jaccard
+    ~0.95+ across pairs) but up to 3x cell-count spread on high-ambient tissue
+    (intestine: 21,875 / 42,414 / 67,132 native cells) — the magnitude is
+    flag_and_warn (§5.3.1), resting on n=1 high-ambient dataset. The extra
+    cells admitted by more-permissive callers are low-UMI ambient barcodes.
+  created_date: "2026-05-23"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_cell_calling
+        parameter: cell_caller
+      description: >
+        Fires when one of the audited tools' native cell-callers is used at
+        default settings (STARsolo soloCellFilter, alevin-fry knee, bustools knee).
+  recommendation:
+    text: >
+      The audited tools' native cell-callers are not interchangeable: they form
+      a permissiveness ordering (STARsolo most conservative subset alevin-fry
+      subset kb-python most permissive), universal across 9 datasets. On
+      clean low-ambient samples the difference is negligible (cell-set Jaccard
+      ~0.95+); on high-ambient tissue it reaches a 3x cell-count spread (n=1,
+      intestine), with the extra cells being low-UMI ambient barcodes. Be aware
+      which caller a pipeline uses; for cross-pipeline reproducibility apply a
+      uniform downstream caller (see scrna_uniform_cell_caller_eliminates_disagreement).
+      Companion evidence: for barcodes called by both tools, per-cell total-UMI
+      Spearman is 0.999 — the divergence is confined to the low-UMI calling
+      boundary, not the high-confidence cells.
+    action_type: flag_only
+  confidence_tier: hard_default
+  severity: warn
+  prior_audit_relationship: novel
+  evidence:
+    - audit_id: "Audit3-C2-native"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c2/c_native_4tool/per_dataset_metrics.tsv"
+        - "audit3_counting/c2/a_native_3tool/per_dataset_metrics.tsv"
+      lock_file_entries:
+        - "042cfaa582718541e0b9e8780abec6aadd2e65ed3ea1d453f5fc15bf54003081"
+        - "34c5beb2ff5a3d7d3acc3302d3a3858451cc7cb082cd8069bb3b47b398ab7077"
+      findings_md_section: "audit3_counting/c2/C2_findings.md#claim-2"
+      summary: >
+        9 datasets: nesting STAR subset alevin subset kb holds 9/9 (containment
+        0.99-1.00); native cross-tool cell-set Jaccard median ~0.90-0.95 with
+        dataset-level bootstrap CIs; per-cell UMI Spearman 0.999 on jointly
+        called cells. Stratified by chemistry (v2/v3): equivalence
+        chemistry-independent. Direction tiered hard_default per §5.3.2.
+    - audit_id: "Audit3-C2-findings"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c2/C2_findings.md"
+      lock_file_entries:
+        - "06f57b2fd70d24fd3d8405305b55a3a4693edae38f9a6db71d90cd6304de76d3"
+      findings_md_section: "audit3_counting/c2/C2_findings.md#where-the-tools-still-differ"
+      summary: >
+        Magnitude sub-claim: on high-ambient intestine the chain spreads 3x
+        (STAR 21,875 / alevin 42,414 / kb 67,132); kb's 45k extra barcodes
+        median 3,414 UMI vs 23,582 for jointly-called. n=1 high-ambient ->
+        magnitude tiered flag_and_warn per §5.3.1.
+  out_of_scope:
+    - "Magnitude generalization beyond intestine (n=1 high-ambient; flag_and_warn)"
+    - "5' v2 chemistry (Audit 3e), CellRanger (Audit 3c), multiome (Audit 3d)"
+    - "tissues beyond the 9 audited datasets"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_counting_tool_per_gene_count_convergence
+    - scrna_uniform_cell_caller_eliminates_disagreement
+    - scrna_cell_calling_biological_propagation_high_ambient
+  mechanism_notes: >
+    bustools knee places its inflection at a lower UMI threshold than
+    EmptyDrops_CR-style callers, admitting more low-UMI barcodes; alevin-fry's
+    knee lands between bustools and EmptyDrops_CR. STARsolo's native
+    --soloCellFilter parameters are stricter than DropletUtils default
+    emptyDropsCellRanger, so parameter-within-algorithm differences also
+    contribute. The nesting is universal because each caller's threshold is a
+    monotone function of the same per-barcode UMI rank; only the cut point
+    differs. Magnitude scales with ambient burden because the contested region
+    (low-UMI barcodes) is densely populated only when ambient RNA is high.

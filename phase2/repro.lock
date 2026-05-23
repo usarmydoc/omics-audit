@@ -7759,9 +7759,9 @@
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/STATUS.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit3_status",
-      "registered_at": "2026-05-23T08:31:02",
-      "sha256": "06d16016194475edefb98d05d557ce9094329d80da0465fdc3502100ebafea7e",
-      "size_bytes": 2781
+      "registered_at": "2026-05-23T08:37:35",
+      "sha256": "285d495ab030bdf87f2a32304861065cf8d1bb5a0023c564c9e5a37b2d1e9299",
+      "size_bytes": 4517
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/C1_findings.md": {
       "environment_id": "0d16e5eee33da990",
@@ -8241,6 +8241,34 @@
       "registered_at": "2026-05-23T07:47:36",
       "sha256": "cdf4e761b40bc2b4e99293ca194b76734add4a7ac7be04a9b6199ae564d04846",
       "size_bytes": 3056
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/draft_rules/scrna_cell_calling_biological_propagation_high_ambient.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_draft_rule",
+      "registered_at": "2026-05-23T08:37:08",
+      "sha256": "3588f5f9655750ab759103068b3b8480d1847d49275e62b7bfd6042b21b27992",
+      "size_bytes": 5693
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/draft_rules/scrna_cell_calling_permissiveness_chain.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_draft_rule",
+      "registered_at": "2026-05-23T08:37:08",
+      "sha256": "fd82ed39e54d29b9481afdb88351257d4ce8012bfb8b2fbeb8eab8f440484c0f",
+      "size_bytes": 5178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/draft_rules/scrna_counting_tool_per_gene_count_convergence.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_draft_rule",
+      "registered_at": "2026-05-23T08:37:08",
+      "sha256": "1757a403db7e35687f5b3b881d145e9db900fb32e9e70fbd2eb35b514b7810cb",
+      "size_bytes": 4889
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/draft_rules/scrna_uniform_cell_caller_eliminates_disagreement.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_draft_rule",
+      "registered_at": "2026-05-23T08:37:08",
+      "sha256": "717f6ab70e419ccf57212f679b9ab9f8319e8aec44535b0cdec290b30692cfe5",
+      "size_bytes": 4430
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/logs/build_human_refs.log": {
       "environment_id": "464cdbd07774154b",

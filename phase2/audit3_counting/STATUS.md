@@ -15,8 +15,34 @@ Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
   propagates on intestine (ARI 0.61, annotation 0.34), washes out on clean PBMC.
 - **Standards amendment §5.3.2** — equivalence-finding tier criteria. COMPLETE
   2026-05-23 (see below).
-- **CP7** — rule drafting. PAUSED → resuming against amended §5.3.2.
+- **CP7** — rule drafting. COMPLETE 2026-05-23. 4 rules drafted, all pass
+  validator `--strict-steps` (schema v1.0.3); see below.
 - **CP8** — final synthesis + BO integration prep. NOT STARTED.
+
+## CP7 — rule drafting (COMPLETE 2026-05-23)
+
+4 rules in `audit3_counting/draft_rules/`, all PASS `validate_rules.py
+--strict-steps`, all hash-registered (verify 4/4, 0 drift), all
+`prior_audit_relationship: novel`, tiered under §5.3.2 (equivalence):
+
+| rule | tier | severity | claim |
+|---|---|---|---|
+| `scrna_counting_tool_per_gene_count_convergence` | hard_default | info | counting tools agree on per-gene counts (ρ~0.96) |
+| `scrna_cell_calling_permissiveness_chain` | hard_default | warn | native callers nest STAR⊂alevin⊂kb (9/9); magnitude 3× on intestine = flag_and_warn (§5.3.1, n=1) |
+| `scrna_uniform_cell_caller_eliminates_disagreement` | hard_default | warn | uniform EmptyDrops_CR → mean Jaccard 0.99 (94% divergence removed) — the actionable recommendation |
+| `scrna_cell_calling_biological_propagation_high_ambient` | hard_default | warn | high-ambient: caller choice changes clustering/markers/annotation (existence hard_default by §5.3.2 contrast; generalization flag_and_warn, n=1) |
+
+Original Rule 2 was split into 2a (permissiveness chain, descriptive) + 2b
+(uniform caller, actionable) so the three sub-claims (nesting direction,
+uniform-caller convergence, magnitude) carry distinct tiers cleanly.
+
+2 new pipeline_step names (`scrnaseq_counting`, `scrnaseq_cell_calling`) added
+to the registry via the §5.3.2 standards amendment. Companion metrics (§3.4):
+per-gene log2 ratio + direction (Rule 1); per-cell UMI Spearman + set
+differences (Rule 2a); 3 biological readouts (Rule 3) — surfaced in-rule.
+
+Ready for CP8 (final synthesis + BO integration prep) on approval. No BO
+changes made; rules staged in draft_rules/ for review.
 
 ## Standards amendment — §5.3.2 equivalence-finding tier criteria (2026-05-23)
 

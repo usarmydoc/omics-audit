@@ -1,0 +1,85 @@
+- rule_id: scrna_uniform_cell_caller_eliminates_disagreement
+  schema_version: "1.0.3"
+  status: draft
+  title: "Apply a uniform downstream cell-caller for cross-tool reproducibility"
+  description: >
+    When a single cell-caller (EmptyDrops_CR via DropletUtils, documented
+    parameters) is applied uniformly to each counting tool's RAW per-barcode
+    counts, the resulting called-cell sets become nearly identical across
+    tools — mean cell-set Jaccard rises from ~0.88 (native callers) to ~0.99
+    (uniform caller), a ~94% reduction in cross-tool divergence, holding
+    even on the high-ambient intestine dataset (native pair 0.33 -> uniform
+    0.99). Because the uniform caller runs on each tool's raw counts, this
+    isolates the native-caller disagreement (rule
+    scrna_cell_calling_permissiveness_chain) to the calling algorithm, not the
+    count distributions (which already agree, rule
+    scrna_counting_tool_per_gene_count_convergence). hard_default by
+    AUDIT_STANDARDS §5.3.2 equivalence criterion (9 datasets, mean Jaccard
+    0.99, dataset-level bootstrap CIs overlap across all pairs).
+  created_date: "2026-05-23"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_cell_calling
+        parameter: cell_caller
+      description: >
+        Fires at the cell-calling step when reproducibility across counting
+        tools / pipelines is a goal.
+  recommendation:
+    text: >
+      For reproducibility across counting tools, do not rely on each tool's
+      native cell-caller (which form a permissiveness chain). Instead apply a
+      single cell-caller — EmptyDrops_CR (DropletUtils emptyDropsCellRanger,
+      FDR <= 0.01, documented n.expected.cells) — uniformly to every tool's
+      raw count matrix. This raises mean cross-tool called-cell Jaccard from
+      ~0.88 to ~0.99 over 9 datasets and collapses the high-ambient blow-up
+      (intestine 0.33 -> 0.99). Document the caller and its parameters; the
+      caller choice, not the counter choice, is what must be pinned.
+    action_type: add_step
+  confidence_tier: hard_default
+  severity: warn
+  prior_audit_relationship: novel
+  evidence:
+    - audit_id: "Audit3-C2-B"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c2/b_common_caller_4tool/per_dataset_metrics.tsv"
+      lock_file_entries:
+        - "52a8dbefdd85b4f715db52f41e3f0c174955a5e126e1489a153cb78ee950bef7"
+      findings_md_section: "audit3_counting/c2/C2_findings.md#claim-3"
+      summary: >
+        9 datasets, EmptyDrops_CR applied uniformly to all 4 tools' raw counts:
+        mean cross-tool cell-set Jaccard 0.99 (per-pair 0.986-0.997),
+        dataset-level bootstrap CIs overlap; Spearman-equivalent agreement
+        holds on every dataset including high-ambient intestine. Tier
+        hard_default per §5.3.2 equivalence.
+    - audit_id: "Audit3-C2-contrast"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c2/c_native_4tool/per_dataset_metrics.tsv"
+      lock_file_entries:
+        - "042cfaa582718541e0b9e8780abec6aadd2e65ed3ea1d453f5fc15bf54003081"
+      findings_md_section: "audit3_counting/c2/C2_findings.md#claim-3"
+      summary: >
+        Contrast vs native callers (same 9 datasets): native mean Jaccard 0.88
+        (disagreement 0.118) -> uniform 0.99 (disagreement 0.007); ~94% of
+        cross-tool cell-calling divergence removed by holding the caller
+        constant.
+  out_of_scope:
+    - "Non-default EmptyDrops_CR parameters not swept (FDR 0.01, default expected-cells)"
+    - "5' v2 chemistry (Audit 3e), CellRanger (Audit 3c), multiome (Audit 3d)"
+    - "callers other than EmptyDrops_CR not benchmarked as the uniform choice"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_cell_calling_permissiveness_chain
+    - scrna_cell_calling_biological_propagation_high_ambient
+  mechanism_notes: >
+    The counting tools already agree on per-gene counts and on per-barcode UMI
+    totals (rule scrna_counting_tool_per_gene_count_convergence). A single
+    caller applied to those near-identical raw counts therefore selects
+    near-identical cell sets. The residual ~1% disagreement reflects the small
+    count differences that remain between tools plus caller stochasticity. This
+    is why pinning the caller (not the counter) is the effective reproducibility
+    lever.

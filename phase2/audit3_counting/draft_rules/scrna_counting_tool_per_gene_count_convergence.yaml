@@ -1,0 +1,91 @@
+- rule_id: scrna_counting_tool_per_gene_count_convergence
+  schema_version: "1.0.3"
+  status: draft
+  title: "scRNA-seq counting tool choice does not change per-gene counts"
+  description: >
+    Across 9 public 10x datasets (2 chemistries, human + mouse), STARsolo,
+    alevin-fry, and kb-python (kallisto|bustools) produce per-gene count
+    matrices that agree at median Spearman ~0.96 (95% bootstrap CIs overlap
+    across all tool pairs in 3' v3, n=7). The same-tool baseline
+    (STARsolo default vs CR-mimic) is 0.991. Per-cell total-UMI ranking
+    agrees at ~0.93-0.97. Companion direction-of-effect: the per-gene
+    log2 ratio between any two tools is centered at 0.0 across all gene
+    categories (median |log2FC| = 0). The choice of counter is therefore
+    low-risk for count-level analysis and can be made on operational grounds
+    (runtime, memory, pipeline integration). Excludes CellRanger (gated,
+    Audit 3c) and 5' v2 chemistry (Audit 3e).
+  created_date: "2026-05-23"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_counting
+        parameter: counting_tool
+      description: >
+        Fires at the scRNA-seq counting step when one of the audited tools
+        (STARsolo, alevin-fry, kb-python) is specified at default settings.
+  recommendation:
+    text: >
+      Counting-tool choice among STARsolo, alevin-fry, and kb-python does not
+      materially change per-gene count distributions at default settings
+      (cross-tool per-gene Spearman ~0.96 over 9 datasets; per-gene log2FC
+      between tools centered at 0; direction agreement near-symmetric).
+      Select the counter on operational grounds without expecting count-level
+      differences. NOTE for alevin-fry: load its splici output by summing the
+      S + A (spliced + ambiguous) buckets per gene before comparison — the raw
+      USA-mode columns are not directly comparable (see mechanism_notes).
+    action_type: flag_only
+  confidence_tier: hard_default
+  severity: info
+  prior_audit_relationship: novel
+  evidence:
+    - audit_id: "Audit3-C1"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c1/per_dataset_metrics.tsv"
+        - "audit3_counting/c1/per_stratum_bootstrap.tsv"
+      lock_file_entries:
+        - "859c93539d586023c8e407680470fd03ad9f55d99a8c19d08ef1525c5ea40723"
+        - "c2ed1a52a77cb5968a5e490813c9232d46d4739e9f33b2b8a09a4e7340f55f31"
+      findings_md_section: "audit3_counting/c1/C1_findings.md#headlines"
+      summary: >
+        9 datasets x 6 tool_pairs (2 chemistries, human+mouse): cross-tool
+        per-gene Spearman 0.956-0.968 (v3, n=7), dataset-level bootstrap CIs
+        (B=1000) overlapping across all pairs; per-gene log2 ratio median 0.0
+        across all gene categories; per-cell UMI Spearman 0.93-0.97.
+        Tier basis: AUDIT_STANDARDS §5.3.2 equivalence hard_default
+        (>=8 datasets, overlapping CIs, rho>=0.90 median, chemistry-independent).
+    - audit_id: "Audit3-C1-corrected"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c1/C1_findings.md"
+      lock_file_entries:
+        - "5a834941acf82a523d52e0f15ff4ee46be905bab3809c36c9c0c5b54249b1845"
+      findings_md_section: "audit3_counting/c1/C1_findings.md#prior-audit-relationship"
+      summary: >
+        Step-6 confirmation: recomputing per-gene Spearman on alevin-fry's
+        knee-filtered matrices (0.976/0.981/0.971) matches the ~0.96 finding,
+        confirming convergence is robust to alevin-fry cell-calling config.
+        Documents the S+A USA-collapse requirement (a first-pass bug that,
+        unfixed, produced a spurious rho ~0.58).
+  out_of_scope:
+    - "5' v2 chemistry (queued as Audit 3e)"
+    - "CellRanger (gated access, queued as Audit 3c)"
+    - "multiome chemistry (queued as Audit 3d)"
+    - "tissues / chemistries beyond the 9 audited datasets"
+    - "cell-calling and downstream biology (covered by separate Audit 3 rules)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_cell_calling_permissiveness_chain
+    - scrna_cell_calling_biological_propagation_high_ambient
+  mechanism_notes: >
+    The three counters use different algorithms (STARsolo alignment, alevin-fry
+    salmon pseudoalignment, kb-python kallisto pseudoalignment) but converge on
+    per-gene counts because the dominant signal — which gene a read came from —
+    is robust to the alignment paradigm for the majority of uniquely-mapping
+    reads. alevin-fry's splici index emits three rows per gene (spliced /
+    unspliced / ambiguous); summing spliced + ambiguous per Ensembl base
+    reproduces a STARsolo-comparable abundance. Failing to collapse these
+    (comparing only the ~10% ambiguous bucket) is the single largest source
+    of apparent disagreement and is a setup error, not an algorithmic one.

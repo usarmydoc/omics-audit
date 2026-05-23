@@ -1,0 +1,102 @@
+- rule_id: scrna_cell_calling_biological_propagation_high_ambient
+  schema_version: "1.0.3"
+  status: draft
+  title: "On high-ambient tissue, cell-caller choice changes downstream biology"
+  description: >
+    On high-ambient tissue, the counting tools' native cell-caller defaults
+    produce different downstream biology — different clustering, different
+    marker genes, different cell-type annotations — even for the cells all
+    tools agree are real. On the intestine stress case, comparing each tool's
+    pipeline to STARsolo on the shared-cell intersection: clustering ARI
+    0.60-0.65, matched-cluster marker Jaccard 0.47-0.49, CellTypist label
+    agreement 0.34 (STARsolo vs kb). On a clean PBMC control the same
+    comparison gives ARI 0.86-0.89, marker Jaccard 0.87-0.91, label agreement
+    0.90-0.97. EXISTENCE of the effect is hard_default by AUDIT_STANDARDS
+    §5.3.2 contrast-based criterion (intestine vs PBMC bootstrap ARI CIs
+    non-overlapping: [0.59,0.65] vs [0.84,0.91]). GENERALIZATION to other
+    high-ambient tissues is flag_and_warn (n=1 high-ambient: intestine only).
+    The contested low-UMI barcodes survive standard QC (21,476 of 67,132 kb
+    cells, median 2,086 genes) so QC does not neutralize the effect.
+  created_date: "2026-05-23"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_cell_calling
+        parameter: cell_caller
+      description: "Fires at the cell-calling step."
+    - condition_type: analysis_context
+      parameters:
+        context: high_ambient_tissue
+      description: >
+        Gated to high-ambient tissues (intestine, lung, certain tumors, other
+        mucus-/debris-rich samples) where native cell-callers are used at default.
+  recommendation:
+    text: >
+      On high-ambient tissue, applying different counting tools' native
+      cell-caller defaults yields different clustering, marker genes, and
+      cell-type annotations on the same data (intestine: ARI 0.61, marker
+      Jaccard 0.48, annotation agreement 0.34 STARsolo-vs-kb; clean PBMC shows
+      none of this). The contested low-UMI barcodes survive standard QC
+      (min-genes / mito thresholds), so QC does not remove the effect. For
+      studies on high-ambient tissue, apply a uniform cell-caller across tool
+      outputs (see scrna_uniform_cell_caller_eliminates_disagreement) OR
+      pre-register the caller and state that biological conclusions may depend
+      on it. Generalization beyond intestine is unverified (n=1 high-ambient);
+      treat as a flag-and-warn for tissues not yet tested.
+    action_type: require_documentation
+  confidence_tier: hard_default
+  severity: warn
+  prior_audit_relationship: novel
+  evidence:
+    - audit_id: "Audit3-C3-intestine"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c3/intestine/cluster_agreement_metrics.tsv"
+        - "audit3_counting/c3/C3_findings.md"
+      lock_file_entries:
+        - "03efd4fada698650a2f647df000527684071a199bcd788b0cff3f40f4470e6ea"
+        - "1e10e163262bb4e9c272faa3f44be318183241e741733fb1ab4d6be9a9e9ff3f"
+      findings_md_section: "audit3_counting/c3/C3_findings.md#evidence"
+      summary: >
+        Intestine (high-ambient), shared-cell intersection vs STARsolo: ARI
+        0.60-0.65, marker Jaccard 0.47-0.49, CellTypist label agreement 0.34;
+        dataset-level / cell-level bootstrap ARI CI [0.59,0.65]. Three
+        independent biological readouts diverge.
+    - audit_id: "Audit3-C3-control-contrast"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit3_counting/c3/C3_findings.md"
+      lock_file_entries:
+        - "1e10e163262bb4e9c272faa3f44be318183241e741733fb1ab4d6be9a9e9ff3f"
+      findings_md_section: "audit3_counting/c3/C3_findings.md#headline"
+      summary: >
+        2 datasets (1 high-ambient intestine + 1 clean PBMC control), 4 tools
+        each. Clean PBMC control, same pipeline: ARI 0.86-0.89, marker Jaccard
+        0.87-0.91, label agreement 0.90-0.97; bootstrap ARI CI [0.84,0.91],
+        non-overlapping with intestine. Contrast establishes the effect is
+        ambient-burden-dependent, not intestine-idiosyncratic. Existence
+        tiered hard_default per §5.3.2 contrast-based criterion (n=1 per
+        condition permitted when between-condition bootstrap CIs non-overlap);
+        generalization across high-ambient tissues flag_and_warn (n=1).
+  out_of_scope:
+    - "Generalization to high-ambient tissues other than intestine (n=1; flag_and_warn)"
+    - "Whether contested cells are biologically real rare types vs ambient artifact (not resolved)"
+    - "5' v2 chemistry (Audit 3e), CellRanger (Audit 3c), multiome (Audit 3d)"
+    - "cross-study integration (only within-study comparison tested)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_cell_calling_permissiveness_chain
+    - scrna_uniform_cell_caller_eliminates_disagreement
+  mechanism_notes: >
+    Permissive callers admit extra low-UMI barcodes on high-ambient tissue.
+    These have moderate gene counts (median 2,086) so min-genes/min-counts QC
+    does not reliably remove them. In the larger, ambient-laden graph the
+    shared core cells re-partition (ARI drops vs the clean baseline) and the
+    larger reference pool re-weights CellTypist majority voting, so annotation
+    of even the shared cells shifts. The effect is amplified by tissue ambient
+    burden, not caused by any one tool being wrong. High-ambient data also
+    destabilizes clustering generally (same-tool param change ARI 0.61 on
+    intestine vs 0.86 on PBMC); caller permissiveness adds further divergence
+    on top.
