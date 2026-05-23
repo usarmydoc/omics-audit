@@ -24,6 +24,14 @@ numbered §5.3.1 (tool-selection criteria).
 
 ## §3.5 candidate — "Bootstrap CIs reflect sampling variance, not correctness"
 
+**DISPOSITION (Audit 3 CP8 close, 2026-05-23): QUEUED for next batched
+standards pass — NOT adopted at Audit 3 close.** Rationale: unlike §5.3.2
+(which blocked CP7 tiering and was adopted mid-process out of necessity), §3.5
+blocks nothing. It is process guidance (a pre-publication sanity-check norm),
+best written alongside the related `clean-control-for-stress-test` candidate
+in a single deliberate pass rather than adopted one-off. Both candidates
+below travel together to that pass.
+
 **Surfaced from:** Audit 3 CP4 verification, 2026-05-22.
 
 **Content:** Tight bootstrap CIs measure internal consistency of the sampling

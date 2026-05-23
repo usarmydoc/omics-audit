@@ -17,7 +17,22 @@ Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
   2026-05-23 (see below).
 - **CP7** — rule drafting. COMPLETE 2026-05-23. 4 rules drafted, all pass
   validator `--strict-steps` (schema v1.0.3); see below.
-- **CP8** — final synthesis + BO integration prep. NOT STARTED.
+- **CP8** — close-out: synthesis + lock verify + index + DEFERRED triage.
+  COMPLETE 2026-05-23. **AUDIT 3 COMPLETE.** See below.
+
+## CP8 — close-out (COMPLETE 2026-05-23) — AUDIT 3 COMPLETE
+
+- **Lock verification:** all 91 `audit3_counting/` entries verify, 0 drift,
+  0 missing (inventory TSV re-registered after CP3-completion edits).
+- **Audit synthesis:** `AUDIT3_SYNTHESIS.md` — C1+C2+C3 + 4 rules in one
+  narrative (counts converge → cells nest → biology diverges on high-ambient).
+- **AUDIT_INDEX.md** (repo root) created — Audit 3 listed COMPLETE, 4 rules.
+- **DEFERRED.md** final triage: 3c/3d/3e/3f captured with triggers; 3g
+  resolved in-audit (CP5 Deliverable C).
+- **§3.5 decision:** QUEUED for next batched standards pass (non-blocking;
+  travels with the clean-control closeout candidate). Not adopted at close.
+- BioOrchestrator integration deferred to next batched BO update (4 Audit 3
+  rules + the 2a/2b standards-review candidates).
 
 ## CP7 — rule drafting (COMPLETE 2026-05-23)
 

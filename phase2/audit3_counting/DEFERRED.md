@@ -6,7 +6,78 @@ starts.
 
 ---
 
+## CP8 closeout state (2026-05-23) — final triage
+
+Audit 3 closed. Deferred follow-up audits, all captured below with triggers:
+- **3c** — CellRanger re-test (needs 10x license)
+- **3d** — multiome chemistry (gated 737K-arc-v1 whitelist)
+- **3e** — 5' v2 chemistry (gated FASTQ URLs)
+- **3f** — Tabula Muris re-pull (GSE109774 SRA submission gap; alt-source needed)
+- **3g** (alevin-fry knee follow-up) — **RESOLVED in-audit** by CP5 Deliverable C;
+  not a future audit (see "Resolved in-audit" section below).
+None block Audit 3 completion. Each runs only on its stated trigger.
+
+---
+
 ## Queued future audits (real audits, scoped, sized — NOT acted on here)
+
+### Audit 3f — Tabula Muris re-pull from alternative source
+
+**Queued during:** CP3 SRA processing (2026-05-17) — both
+`tabula_muris_liver_droplet` and `tabula_muris_heart_droplet` dropped
+from Audit 3 working set because the GSE109774 SRA submission only
+deposited the 90 bp transcript reads. The cell-barcode + UMI reads
+(28 bp R1 for 10x 3' v2 chemistry) are MISSING from the SRA records.
+None of the 4 counting tools (STARsolo, alevin-fry, kb count) can
+process single-cell data without CB+UMI structure.
+
+**Trigger to run:** alternative deposit of Tabula Muris 10x droplet
+data with proper CB+UMI reads becomes available. Candidates worth
+checking:
+
+- HCA Data Explorer (project `e0009214-c0a0-4a7b-96e2-d6a83e966ce0`)
+  may host the original 10x BAM files which can be reverse-converted
+  via `bamtofastq` (10x's tool) to recover the missing CB+UMI reads.
+- CZ Biohub's `tabula-muris.ds.czbiohub.org` resource may have the
+  full FASTQs hosted directly.
+- ENA may have re-deposited the data with technical reads preserved.
+
+**Why this is its own audit, not part of Audit 3:**
+Resolving the missing-reads problem requires either (a) `bamtofastq`
+conversion from 10x BAMs (a separate processing pipeline) or (b)
+verifying that an alternative deposit has proper FASTQs (verification
+step + potential re-download). Either path adds ~1-3 days of work
+that wasn't anticipated in the original Audit 3 scope. The mouse
+n=3 → n=2 drop has been accepted as a CP7 limitation; recovering n=3
+via Tabula Muris is nice-to-have but not blocking.
+
+**Methodological lesson:** the failure mode here (SRA submission with
+only "biological" reads deposited, "technical" reads dropped) is a
+real CP1-quality risk for any GEO/SRA dataset. Future audits should
+add a "read-structure-verification" step during inventory: pull a
+1000-read sample via `fastq-dump -X 1000` and confirm read lengths
+match expected layout for the declared chemistry. This catches the
+Tabula Muris failure mode BEFORE committing to full download. Add
+to CP7 closeout amendments and to the inventory-quality directive
+in MEMORY.md.
+
+**Proposed Audit 3f scope (locked at audit time, not now):**
+
+- **Tools:** same 4 configurations as Audit 3 (already validated)
+- **Reference:** mouse mm39 from CP0 cache (already built)
+- **Datasets:** Tabula Muris liver + heart droplet (the 4 GSMs already
+  identified in CP3: GSM3040892, 3040898, 3040899 for liver +
+  GSM3040902 for heart, plus the 3 additional heart SRRs that landed
+  via SRA before we caught the gap)
+- **Acquisition:** verify alternative source + re-pull
+- **Estimated effort:** 1-3 days (alternative source verification +
+  optional `bamtofastq` conversion + processing + comparison to
+  scraper-recruited mouse replacement)
+
+**Sequencing:** runs only after Audit 3 main is complete and only if
+alternative source confirmed with verified CB+UMI reads.
+
+---
 
 ### Audit 3e — 5' v2 chemistry sub-audit if 10x access acquired
 
@@ -170,7 +241,93 @@ the species-dependence trigger fires.
 
 ---
 
+## Resolved in-audit (no longer deferred)
+
+### alevin-fry cell-calling follow-up (would-have-been "Audit 3g") — RESOLVED 2026-05-22
+
+CP5/C2 surfaced that CP3's alevin-fry used `--unfiltered-pl` (cell-calling
+deferred), making its output incomparable for cell-barcode agreement. Rather
+than queue a separate follow-up audit, CP5 Deliverable C resolved it in-line:
+regenerated alevin-fry rad files (6 of 9 re-downloaded + re-sketched; scope
+exception approved) and ran `generate-permit-list --knee-distance` for native
+knee-point cell calls across all 9 datasets. No separate Audit 3g needed.
+
+---
+
 ## Open questions captured but not acted on
+
+### alevin-fry mode comparison: cr-like vs cr-like-em
+
+**Queued during:** CP4 closeout (2026-05-18). Audit 3 ran alevin-fry
+with `-r cr-like` (multi-mappers discarded). The cr-like-em mode rescues
+multi-mappers via EM. With the USA-suffix bug fixed, cross-tool per-gene
+Spearman rose to ~0.95–0.99 across all pairs — the empirical effect of
+the cr-like vs cr-like-em choice on the "are tools equivalent" headline
+appears smaller than first feared.
+
+**Why deferred, not acted on now:**
+- The corrected CP4 finding ("all four tools converge to rho_gene ~0.96")
+  does not depend on resolving this question. Whether cr-like-em closes
+  the residual ~0.04 gap on overlapping genes or not, the audit conclusion
+  is the same.
+- The deferred work is a refinement of the eventual BO rule about
+  alevin-fry mode selection, not a re-derivation of the C1 finding.
+
+**Proposed scope when run:**
+- Re-run one v3 dataset (recommended: pbmc_10k_v3.1 — largest, best CI
+  resolution) with `alevin-fry quant -r cr-like-em`
+- Compute per-gene Spearman rho_cr_like vs rho_cr_like_em
+- Threshold: if rho > 0.99, modes are interchangeable for abundance
+  counting → rule wording stays mode-agnostic. If rho < 0.99, rule
+  must specify mode and quantify gap.
+- Output: `c1/cr_like_vs_em_comparison.tsv` + 2-3 paragraph note in
+  C1_findings.md addendum
+
+**Trigger:** CP8 rule drafting time. If the BO rule on alevin-fry needs
+mode specificity for downstream tool selection, run this comparison
+first. If the eventual rule is purely about preprocessing (S+A
+collapse), this is not blocking.
+
+**Estimated effort:** ~30 min runtime + 1 hour analysis.
+
+---
+
+### CP6 (Phase 1 robustness) reframing
+
+**Queued during:** CP4 closeout (2026-05-18). The original CP6 scope
+("re-run one Phase 1 finding with each of the 4 counting tools and
+test whether Phase 1 conclusions hold across tools") was scoped before
+CP4 evidence existed. With CP4 corrected, tools converge to rho_gene
+~0.96 / rho_cell_total_umi ~0.95 across all pairs — substantially closer
+than was anticipated when CP6 was scoped.
+
+**The reframing question:** does CP6 still answer a sharp question, or
+does CP4's convergence finding already answer the "robustness" question
+implicitly?
+
+**Two paths to consider at CP6 scoping time:**
+
+1. **Confirmation-pass framing:** run one Phase 1 finding through
+   alevin-fry's output and confirm it reproduces. ~1-2 days of work.
+   Mostly closes a loop; doesn't add new evidence beyond CP4.
+
+2. **Sharper-question framing:** instead of "do counts agree," ask
+   "do cell-calling differences (which CP5 will measure) propagate
+   into clustering, marker-gene identification, or annotation results,
+   or wash out in downstream normalization?" This is a more
+   informative question and a genuinely different audit than "do
+   counts agree." ~1 week of work; produces a stronger finding.
+
+**Trigger to pick path:** CP5 findings. If CP5 shows cell-calling
+differences are large at the low-UMI / ambient boundary, the
+sharper-question framing (path 2) is high-value. If CP5 shows cell
+calls converge as much as counts do, the confirmation-pass framing
+(path 1) is sufficient.
+
+**Per CP4's recommendation, do not write the CP6 prompt yet.** The
+choice between paths depends on CP5 evidence.
+
+---
 
 ### `chemistry_exact` v3 vs v3.1 finding disposition
 
