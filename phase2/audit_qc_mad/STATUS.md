@@ -12,7 +12,9 @@ Extends Phase 1 p1 (mito-threshold QC). Heumos 2023 positioning: extends.
   datasets (subset of Phase 1 p1, census 2025-11-08), mito 0.07–10.83%,
   human+mouse. 6 pairwise Jaccards + disagreement concentration + bootstrap.
 - **CP2** — synthesis + findings + §5.3.2 tiers. COMPLETE. `cp2/findings.md`.
-- **CP3** — rule drafting + closeout. NOT STARTED (awaiting rule-count decision).
+- **CP3** — rule drafting. COMPLETE 2026-05-23. 2 rules drafted, both pass
+  validator --strict-steps (0 errors, 0 warnings); hash-registered.
+- **CP4** — final synthesis + corpus integration. NOT STARTED.
 
 ## Findings (CP2)
 

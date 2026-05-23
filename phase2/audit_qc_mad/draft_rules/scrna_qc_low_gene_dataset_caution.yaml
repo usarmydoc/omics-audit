@@ -1,0 +1,93 @@
+# xref: Extends Heumos 2023 QC guidance — Heumos recommends MAD as more robust than fixed thresholds without specifying when the choice matters; this rule identifies gene-count distribution as that feature. See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_qc_low_gene_dataset_caution
+  schema_version: "1.0.3"
+  status: draft
+  title: "Fixed-floor QC filtering can be harsh on low-gene-cell datasets"
+  description: >
+    Cross-method QC filtering disagreement is driven by dataset gene-count
+    distribution, not tissue or mitochondrial fraction. On datasets with many
+    genuinely low-gene cells, fixed-floor methods (n_genes<200, counts<500)
+    remove cells that data-driven methods (MAD-based, percentile) retain.
+    Demonstrated on small_intestine: C2 vs MAD k=5 Jaccard 0.774 (worst case in
+    the 8-dataset comparison), C2 removing 11,300 cells MAD k=5 kept.
+    CONDITIONAL tier (§5.3.2 equivalence with documented feature-dependence on
+    gene-count distribution). Existence robust; generalization rests on
+    small_intestine as the cleanest demonstration (n=1 low-gene tissue) and
+    needs replication on more low-gene datasets.
+  created_date: "2026-05-23"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_qc_filtering
+        parameter: filtering_method
+      description: "Fires at the scRNA-seq QC filtering step."
+    - condition_type: dataset_feature_threshold
+      parameters:
+        feature: low_gene_cell_fraction
+        threshold: "substantial population below n_genes_by_counts = 500"
+      description: >
+        Gated to datasets with many low-gene cells (intestine, some immune
+        populations, low-input experiments) or a known low-gene tissue.
+  recommendation:
+    text: >
+      On datasets with many cells in the low-gene-count region, fixed-floor QC
+      (n_genes<200, counts<500) can be harsh, removing cells that data-driven
+      methods retain (small_intestine: C2 vs MAD k=5 Jaccard 0.774; C2 dropped
+      11,300 cells MAD kept). For datasets with known/suspected low-gene-cell
+      populations, prefer MAD-based filtering (scuttle::isOutlier nmads=3 or 5
+      on log-transformed count metrics) or permissive percentile floors (e.g.
+      5th-pct rather than fixed 200/500). MAD k matters: k=3 aggressive, k=5
+      permissive. Companion metrics: directional agreement + per-dataset cell
+      count differences reported alongside Jaccard.
+    action_type: flag_only
+  confidence_tier: conditional
+  severity: warn
+  prior_audit_relationship: novel
+  evidence:
+    - audit_id: "AuditQCMAD-CP1-smallintestine"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_qc_mad/cp1/per_dataset_jaccards.tsv"
+        - "audit_qc_mad/cp1/disagreement_concentration.tsv"
+      lock_file_entries:
+        - "c764e661cae57aa6bc8ed3073bba4edd8c59a09507b13e44f54d176b132c6224"
+        - "7b54dff8d4df8469a5ede2d3c936f951a8643a47ef79dc79d2169302ee5012d0"
+      findings_md_section: "audit_qc_mad/cp2/findings.md#sub-finding-3"
+      summary: >
+        8 Census datasets, dataset-level bootstrap: disagreement tracks
+        gene-count distribution, not mito (C1-vs-MAD3 Jaccard flat 0.82-0.94
+        across mito range; blood/PBMC indistinguishable from high-mito).
+        small_intestine worst case: C2 vs MAD5 Jaccard 0.774, C2 removed 11,300
+        low-gene cells MAD retained. Disagreement concentrates in low_genes +
+        low_counts cells.
+    - audit_id: "AuditQCMAD-CP2"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_qc_mad/cp2/findings.md"
+      lock_file_entries:
+        - "bbf7cdb63157412cf3070907728d9809ad8d1910e904ced214ce88974ffd3dba"
+      findings_md_section: "audit_qc_mad/cp2/findings.md#sub-finding-3"
+      summary: >
+        Feature-dependence reasoning + §5.3.2 conditional tiering; n=1 low-gene
+        tissue (small_intestine) is the demonstration case, generalization
+        flagged as needing replication.
+  out_of_scope:
+    - "Typical PBMC / immune datasets where fixed floors approximate MAD well"
+    - "Non-droplet protocols"
+    - "Generalization beyond small_intestine (n=1 low-gene tissue; needs replication)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_qc_filtering_method_equivalence
+  mechanism_notes: >
+    Datasets with bimodal or low-mode gene-count distributions have substantial
+    cell populations below typical fixed-floor thresholds. These cells may be
+    biologically real (resting lymphocytes, certain epithelial states) rather
+    than dying or empty droplets. Fixed thresholds at 200/500 genes were
+    calibrated on PBMC-like distributions and can inappropriately filter genuine
+    cells in tissues with different distributions. MAD-based and percentile
+    methods adapt to the dataset's own distribution and are more permissive on
+    low-gene-mode datasets. Heumos 2023 recommends MAD as more robust without
+    specifying when it matters; this audit names gene-count distribution as the
+    feature (extends).

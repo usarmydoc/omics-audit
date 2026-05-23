@@ -8460,9 +8460,9 @@
     "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/STATUS.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit_qcmad_status",
-      "registered_at": "2026-05-23T09:57:06",
-      "sha256": "2258586c8cf596e6473bfe9e3133781fca3be57a0eb8e50f327590c2e8ac8651",
-      "size_bytes": 2207
+      "registered_at": "2026-05-23T10:27:30",
+      "sha256": "939c09652eb31bdf255f52d350d66a65690dbbdcf4c3c0add1cb2127105ef71e",
+      "size_bytes": 2333
     },
     "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/compare.py": {
       "environment_id": "0d16e5eee33da990",
@@ -8533,6 +8533,20 @@
       "registered_at": "2026-05-23T09:57:06",
       "sha256": "bbf7cdb63157412cf3070907728d9809ad8d1910e904ced214ce88974ffd3dba",
       "size_bytes": 7429
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/draft_rules/scrna_qc_filtering_method_equivalence.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_draft_rule",
+      "registered_at": "2026-05-23T10:27:29",
+      "sha256": "dca6e33cd336b6a66ff271e8d68c337cb3f8ba50ce79432dbf44521cf12e19bb",
+      "size_bytes": 5018
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/draft_rules/scrna_qc_low_gene_dataset_caution.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_draft_rule",
+      "registered_at": "2026-05-23T10:27:29",
+      "sha256": "90809e217033245a3278a04ab0c8230898d0afa17897085aaf0fc69467c53c52",
+      "size_bytes": 5088
     },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",

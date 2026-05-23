@@ -1,0 +1,90 @@
+# xref: Extends Heumos 2023 QC guidance — Heumos recommends MAD filtering (Germain 2020) over fixed thresholds without quantifying the cell-set difference; this rule shows MAD ≈ common fixed-floor defaults. See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_qc_filtering_method_equivalence
+  schema_version: "1.0.3"
+  status: draft
+  title: "scRNA-seq QC filtering method choice is a modest variance source"
+  description: >
+    Across 8 Census datasets (median-mito 0.07-10.83%, human + mouse), four
+    low-quality-cell filtering methods — quantile-data-driven (C1), fixed-floors
+    (C2; n_genes<200, counts<500, mito>95th pct), MAD k=3, MAD k=5 — produce
+    largely equivalent retained-cell sets. Per-pair mean Jaccard 0.90-0.96
+    (medians 0.895-0.969), all dataset-level bootstrap CIs overlap, all per-pair
+    CI lower bounds >=0.88. CONDITIONAL tier (§5.3.2 equivalence): the numerical
+    bar for hard_default is met, but equivalence does not hold uniformly — a
+    documented feature-dependent exception (small_intestine, driven by
+    gene-count distribution; see scrna_qc_low_gene_dataset_caution) makes this
+    conditional, not hard_default.
+  created_date: "2026-05-23"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_qc_filtering
+        parameter: filtering_method
+      description: >
+        Fires at the scRNA-seq QC filtering step when choosing among
+        quantile-data-driven, fixed-floor, or MAD-based filtering.
+  recommendation:
+    text: >
+      QC filtering method choice (quantile-data-driven, fixed-floors, MAD-based)
+      is a modest variance source on typical scRNA-seq data. Across 8 Census
+      datasets all 6 pairwise comparisons give median retained-cell Jaccard
+      0.895-0.969. Common fixed floors (n_genes<200, counts<500, mito>95th pct)
+      vs Heumos-recommended MAD k=3 give median Jaccard 0.969 — switching is
+      unlikely to change downstream conclusions on typical data. Method choice
+      matters more on datasets with many low-gene cells (see
+      scrna_qc_low_gene_dataset_caution). Within MAD, k matters: k=3 filters
+      2-3x more cells than k=5. Companion metrics: directional agreement (which
+      method retains more cells per pair) + per-metric retained-vs-filtered
+      distributions reported alongside Jaccard.
+    action_type: flag_only
+  confidence_tier: conditional
+  severity: info
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: "AuditQCMAD-CP1"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_qc_mad/cp1/per_dataset_jaccards.tsv"
+        - "audit_qc_mad/cp1/per_stratum_bootstrap.tsv"
+      lock_file_entries:
+        - "c764e661cae57aa6bc8ed3073bba4edd8c59a09507b13e44f54d176b132c6224"
+        - "0059b06df0dcfa049f0ec6eea1fb83f1e9ff0910f4ff872c9d789a678d649f52"
+      findings_md_section: "audit_qc_mad/cp2/findings.md#headline-finding"
+      summary: >
+        8 Census datasets, 6 method pairs: per-pair mean Jaccard 0.90-0.96,
+        median 0.895-0.969; dataset-level bootstrap CIs (B=1000) overlap, all
+        CI lower bounds >=0.88. C2 vs MAD3 median 0.969. Equivalence
+        chemistry/tissue-stratified; conditional per §5.3.2 due to gene-count
+        feature-dependence.
+    - audit_id: "AuditQCMAD-precursor-p1"
+      audit_phase: "Phase 1"
+      output_paths:
+        - "scrnaseq_audit/output/p1_mito_threshold.tsv"
+      lock_file_entries:
+        - "a6c46d15c86623ce59f6a8061c5fef5004cd1f9d1f5f10eba5937674141000a8"
+      findings_md_section: "phase1_references.md#p1-mito-threshold"
+      summary: >
+        Phase 1 p1 used quantile-based mito filtering across 60 dataset-tissues
+        (the precursor this audit extends by adding MAD-based filtering as a
+        method alternative).
+  out_of_scope:
+    - "Non-droplet protocols"
+    - "Datasets with unusual / low-gene-mode gene-count distributions (see scrna_qc_low_gene_dataset_caution)"
+    - "Other QC dimensions (ambient RNA correction, doublet detection)"
+    - "Which MAD k to use (k=3 vs k=5 sensitivity is descriptive, not a recommendation here)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_qc_low_gene_dataset_caution
+  mechanism_notes: >
+    MAD on log-transformed count metrics flags cells far from the bulk in log
+    space. Fixed floors at 200 genes / 500 counts happen to sit near where MAD's
+    lower bound lands on typical scRNA-seq data, producing the C2 ≈ MAD3
+    equivalence (Jaccard 0.969). Pure-quantile (C1) cuts differently because
+    percentile rank does not track outlier-ness the same way as deviation from
+    median. Heumos 2023 / Germain 2020 recommend MAD as more robust than fixed
+    thresholds; this audit confirms MAD is empirically distinct from pure
+    quantiles but very close to common fixed-floor defaults — so the practical
+    magnitude of adopting MAD over typical defaults is small (extends Heumos by
+    quantifying it).
