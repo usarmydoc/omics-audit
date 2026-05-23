@@ -60,6 +60,11 @@ audits didn't address. Each is a natural EXTENSION of an existing audit, not a
 new modality program. Re-surface trigger (all): the parent audit is revisited
 OR a study needs the specific dimension. None committed.
 
+- **QC filtering method (MAD vs quantile)** — **RESOLVED 2026-05-23 by Audit
+  QC-MAD** (`phase2/audit_qc_mad/`). MAD vs fixed-floor vs pure-quantile produce
+  largely equivalent cell sets (pair Jaccard 0.90–0.97, 8 Census datasets);
+  C2≈MAD3 (0.969); disagreement driven by gene-count distribution. No longer a
+  gap. (Ambient RNA correction, below, remains separate and open.)
 - **Ambient RNA correction** — Phase 1 covered mito-QC; Heumos also recommends
   ambient correction (SoupX / CellBender / DecontX). Gap: do these correct the
   same contamination, and does the choice change DEGs/clusters? Natural

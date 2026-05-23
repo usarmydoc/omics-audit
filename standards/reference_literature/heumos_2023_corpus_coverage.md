@@ -16,6 +16,7 @@ audit — not from the full DEFERRED list._
 | Read counting agreement | Audit 3 C1 (ρ~0.96, 9 datasets) | fills_gap |
 | Cell calling | Audit 3 C2/C3 (permissiveness chain + biological propagation) | extends |
 | Batch integration | Phase 1 p3 (bbknn/harmony/scanorama/scvi via ARI/LISI/kBET) | confirms |
+| QC filtering method (MAD vs quantile) | Audit QC-MAD (8 Census datasets; pair Jaccard 0.90–0.97; C2≈MAD3 0.969) | extends |
 
 ## What's partially covered
 
@@ -24,7 +25,7 @@ All captured in `phase2/DEFERRED.md` → "Partially-covered gaps."
 
 | Area | Covered | Heumos dimension missed | DEFERRED? |
 |---|---|---|---|
-| QC | mito threshold (quantile-on-data, p1) | MAD-based filtering; ambient RNA correction (SoupX/CellBender) | yes (ambient = high-value) |
+| QC — ambient RNA | mito threshold (p1) + filtering-method equivalence (Audit QC-MAD) | ambient RNA correction (SoupX/CellBender/DecontX) still uncovered | yes (ambient = high-value; MAD-vs-quantile now RESOLVED by Audit QC-MAD) |
 | Doublet | scDblFinder>Scrublet (p2/A5) | multi-method ensemble | yes (small) |
 | Clustering | resolution + metric (p9/A2) | Leiden-vs-Louvain algorithm itself | yes (small) |
 | Annotation | MarkerScore vs SingleR accuracy (p5) | CellTypist; 3-step workflow | yes (medium) |

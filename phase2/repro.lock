@@ -319,9 +319,9 @@
     "/mnt/nvme1/omics-audit/phase2/DEFERRED.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "phase2_deferred_corpus",
-      "registered_at": "2026-05-23T09:09:07",
-      "sha256": "450c4966224b07c3f9f01e5c7d4ff7c9a4db0b6fb755e9f47009ead4d7f8188f",
-      "size_bytes": 5442
+      "registered_at": "2026-05-23T09:57:06",
+      "sha256": "4715d30c1d84882e56e984a6f9d32e6cb2084a8779352f2e95df9a9a0f61279e",
+      "size_bytes": 5828
     },
     "/mnt/nvme1/omics-audit/phase2/MIGRATION_NOTES.md": {
       "environment_id": "464cdbd07774154b",
@@ -8457,6 +8457,13 @@
       "sha256": "c7d9162fe5f6db74dffc00e140b6dab5ecece75c4e4c417c1c7411b9fd909c32",
       "size_bytes": 4471
     },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/STATUS.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_status",
+      "registered_at": "2026-05-23T09:57:06",
+      "sha256": "2258586c8cf596e6473bfe9e3133781fca3be57a0eb8e50f327590c2e8ac8651",
+      "size_bytes": 2207
+    },
     "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/compare.py": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit_qcmad_compare_script",
@@ -8519,6 +8526,13 @@
       "registered_at": "2026-05-23T09:47:27",
       "sha256": "fb8a4d7e2bb064d4e98e71c7553beac511e895ed77926c11a5f81c08d0cde925",
       "size_bytes": 587
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp2/findings.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_findings",
+      "registered_at": "2026-05-23T09:57:06",
+      "sha256": "bbf7cdb63157412cf3070907728d9809ad8d1910e904ced214ce88974ffd3dba",
+      "size_bytes": 7429
     },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
@@ -13547,16 +13561,16 @@
     "/mnt/nvme1/omics-audit/standards/reference_literature/heumos_2023_corpus_coverage.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "reference_heumos_2023_coverage",
-      "registered_at": "2026-05-23T09:09:07",
-      "sha256": "280cd104264ec0a504a9b84d8311c475a0189a5ad39dc094f39224f6b8529cf8",
-      "size_bytes": 4569
+      "registered_at": "2026-05-23T09:57:06",
+      "sha256": "703f0623ebc26c9a8dfd8e779b725e35c57a68b45977f2cc2588ba63f4bc400b",
+      "size_bytes": 4792
     },
     "/mnt/nvme1/omics-audit/standards/reference_literature/heumos_2023_index.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "reference_heumos_2023_index",
-      "registered_at": "2026-05-23T09:09:07",
-      "sha256": "430cd9ecedeae41ae8fae616f531f8e84db17ae8d80bb03ffa382694e10b5b5a",
-      "size_bytes": 5952
+      "registered_at": "2026-05-23T09:57:06",
+      "sha256": "15f51cb6607eeb2487bab791a4b3eacedec6563ac4cc08166b4bbde0df68083d",
+      "size_bytes": 6194
     },
     "/mnt/nvme1/omics-audit/tools/gse_scraper/A_human_brain.tsv": {
       "environment_id": "464cdbd07774154b",
