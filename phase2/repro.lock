@@ -285,9 +285,16 @@
     "/mnt/nvme1/omics-audit/AUDIT_INDEX.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit_index",
-      "registered_at": "2026-05-23T08:49:07",
-      "sha256": "c206f2bde05c3fa19ca473f6ae646083c40c6aa9ddd1cb3aa23c999daa6ad054",
-      "size_bytes": 3083
+      "registered_at": "2026-05-23T10:39:15",
+      "sha256": "4a1b9935e4e4cfaa593dd2f38d86bcabdd644e47dc2381b78d7e306b293f41b6",
+      "size_bytes": 4260
+    },
+    "/mnt/nvme1/omics-audit/REFERENCE_USE.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "reference_use",
+      "registered_at": "2026-05-23T10:39:15",
+      "sha256": "d0fd0ff09eb462edff8dadcbe28aea88db7d4ebee4943d6049ee9508b349ba0c",
+      "size_bytes": 2331
     },
     "/mnt/nvme1/omics-audit/bulk_audit/output/b4_batch_correction.tsv": {
       "environment_id": "464cdbd07774154b",
@@ -319,9 +326,9 @@
     "/mnt/nvme1/omics-audit/phase2/DEFERRED.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "phase2_deferred_corpus",
-      "registered_at": "2026-05-23T09:57:06",
-      "sha256": "4715d30c1d84882e56e984a6f9d32e6cb2084a8779352f2e95df9a9a0f61279e",
-      "size_bytes": 5828
+      "registered_at": "2026-05-23T10:39:15",
+      "sha256": "c54891898f030fca66c1cf8f0412c8d32adc2e3a10c93196348eb8b7e1a65c8c",
+      "size_bytes": 6833
     },
     "/mnt/nvme1/omics-audit/phase2/MIGRATION_NOTES.md": {
       "environment_id": "464cdbd07774154b",
@@ -8457,12 +8464,26 @@
       "sha256": "c7d9162fe5f6db74dffc00e140b6dab5ecece75c4e4c417c1c7411b9fd909c32",
       "size_bytes": 4471
     },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/AUDIT_QC_MAD_SYNTHESIS.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_synthesis",
+      "registered_at": "2026-05-23T10:39:15",
+      "sha256": "b919c49c7e26c0269cea1a21eecbc62d4536f2cc027e5603ee3aa5ae1928910a",
+      "size_bytes": 5336
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/FINAL_LOCK_VERIFICATION.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit_qcmad_final_lock_verification",
+      "registered_at": "2026-05-23T10:39:15",
+      "sha256": "7f43225862c4c9da012e45cfb9d1a0182d6edde2e502d0b9e256cb1ccab37f23",
+      "size_bytes": 1431
+    },
     "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/STATUS.md": {
       "environment_id": "0d16e5eee33da990",
       "kind": "audit_qcmad_status",
-      "registered_at": "2026-05-23T10:27:30",
-      "sha256": "939c09652eb31bdf255f52d350d66a65690dbbdcf4c3c0add1cb2127105ef71e",
-      "size_bytes": 2333
+      "registered_at": "2026-05-23T10:39:15",
+      "sha256": "56db194f343f6a11b92e0122a7592bd7feb172fdc108369d3e8a517e78eefac3",
+      "size_bytes": 3398
     },
     "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/cp1/compare.py": {
       "environment_id": "0d16e5eee33da990",

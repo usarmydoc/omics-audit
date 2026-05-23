@@ -12,6 +12,24 @@ Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
 | **Audit 1 — pathway enrichment** | bulk + scRNA DEG → pathway tools (ORA/GSEA), databases, MT-correction, backgrounds | COMPLETE (2026-05-16) | 5 (+A6 muscat from 2a) | `phase2/audit1_main/`, rules in `phase2/draft_rules/` |
 | **Phase 2 / 2a — version & method sensitivity** | DESeq2/edgeR/limma version drift; clustering metric; mito threshold; muscat dream | COMPLETE | (folded into Audit 1 rule set) | `phase2/version_sensitivity/`, `phase2a/` |
 | **Audit 3 — scRNA-seq counting tools** | STARsolo / alevin-fry / kb-python: counts, cell-calling, biological propagation | **COMPLETE (2026-05-23)** | **4** (`audit3_counting/draft_rules/`) | `phase2/audit3_counting/` |
+| **Audit QC-MAD — low-quality cell filtering** | MAD vs quantile vs fixed-floor QC filtering on scRNA-seq | **COMPLETE (2026-05-23)** | **2** (`audit_qc_mad/draft_rules/`) | `phase2/audit_qc_mad/` |
+
+## Audit QC-MAD — at a glance
+
+**Audit ID:** Audit QC-MAD (scRNA-seq low-quality cell filtering). **Status:** COMPLETE / CLOSED.
+**Work window:** 2026-05-23 (extends Phase 1 p1).
+**Checkpoints:** CP0 (inventory + Census re-pull) · CP1 (4-method comparison, 8 datasets) ·
+CP2 (synthesis + §5.3.2 tiers) · CP3 (2 rules) · CP4 (synthesis + closeout) — **all complete.**
+**Standards contributed:** none (used existing §5.3.2 amendment).
+
+**Key finding:** the 4 QC filtering methods (pure-quantile, fixed-floor, MAD k=3/5)
+produce largely equivalent cell sets (pair Jaccard 0.90–0.97); typical fixed-floor
+defaults ≈ Heumos-recommended MAD k=3 (0.969). Disagreement is driven by dataset
+gene-count distribution, not tissue/mito.
+
+**2 rules:** `scrna_qc_filtering_method_equivalence` (conditional/info),
+`scrna_qc_low_gene_dataset_caution` (conditional/warn). Both §5.3.2-tiered.
+**Synthesis:** `phase2/audit_qc_mad/AUDIT_QC_MAD_SYNTHESIS.md`. **Heumos:** extends.
 
 ## Audit 3 — at a glance
 

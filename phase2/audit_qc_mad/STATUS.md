@@ -3,6 +3,25 @@
 Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
 Extends Phase 1 p1 (mito-threshold QC). Heumos 2023 positioning: extends.
 
+## AUDIT STATUS: CLOSED (2026-05-23)
+
+- **Checkpoints:** CP0–CP4 all complete (work window 2026-05-23; extends Phase 1 p1).
+- **Datasets:** 8 Census (subset of Phase 1 p1, census 2025-11-08), 8 tissues
+  incl. blood/bone_marrow (PBMC-like) + high-mito GI/pancreas, human + mouse.
+- **Methods:** 4 (C1 pure-quantile, C2 fixed-floor, MAD k=3, MAD k=5).
+- **Rules contributed:** 2 (both conditional, §5.3.2-tiered).
+- **Standards contributed:** none (used existing §5.3.2 amendment).
+- **Lock:** 13 entries, 0 drift, 0 missing (`FINAL_LOCK_VERIFICATION.md`).
+- **Synthesis:** `AUDIT_QC_MAD_SYNTHESIS.md`.
+
+**Staged-rules framing:** 6 rules total now sit across the corpus
+(4 from Audit 3 in `audit3_counting/draft_rules/`, 2 from QC-MAD in
+`audit_qc_mad/draft_rules/`) as **reference documentation** for scRNA analyses
+(see `REFERENCE_USE.md`). **BioOrchestrator integration is not planned** per the
+tabling decision — the rules function as reference material for manual
+application, not engine input. (Supersedes earlier "awaiting batched BO update"
+framing.)
+
 ## Checkpoints
 
 - **CP0** — inventory + pre-flight. COMPLETE. Surfaced: Audit 3 matrices cleaned

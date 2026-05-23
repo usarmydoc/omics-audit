@@ -61,10 +61,27 @@ new modality program. Re-surface trigger (all): the parent audit is revisited
 OR a study needs the specific dimension. None committed.
 
 - **QC filtering method (MAD vs quantile)** — **RESOLVED 2026-05-23 by Audit
-  QC-MAD** (`phase2/audit_qc_mad/`). MAD vs fixed-floor vs pure-quantile produce
-  largely equivalent cell sets (pair Jaccard 0.90–0.97, 8 Census datasets);
-  C2≈MAD3 (0.969); disagreement driven by gene-count distribution. No longer a
-  gap. (Ambient RNA correction, below, remains separate and open.)
+  QC-MAD** (`phase2/audit_qc_mad/AUDIT_QC_MAD_SYNTHESIS.md`). MAD vs fixed-floor
+  vs pure-quantile produce largely equivalent cell sets (pair Jaccard 0.90–0.97,
+  8 Census datasets); C2≈MAD3 (0.969); disagreement driven by gene-count
+  distribution. 2 rules drafted. No longer a gap. (Ambient RNA correction,
+  below, remains separate and open.)
+
+### Audit QC-MAD follow-up candidates (surfaced at CP4 close, 2026-05-23)
+
+Extensions of the closed QC-MAD audit. Re-surface trigger (all): bandwidth +
+specific motivation. None committed.
+- **QC method downstream propagation** — does QC filtering-method choice cascade
+  to clustering / DE, or wash out? Addressable on the same 8 Census datasets by
+  running standard downstream pipelines under each filtering method (mirrors
+  Audit 3 C3's cell-calling→biology design). **Bounded.** Highest-value (closes
+  the same loop C3 closed for cell-calling).
+- **Additional low-gene-cell tissue replication** — small_intestine demonstrated
+  the gene-count-distribution mechanism (Rule 2); replicating on more low-gene
+  tissues would lift Rule 2's generalization from conditional toward stronger.
+  **Small, bounded.**
+- **Hybrid filtering methods** — median + N*MAD variants and other approaches
+  not tested in the 4-method comparison. **Small, bounded.**
 - **Ambient RNA correction** — Phase 1 covered mito-QC; Heumos also recommends
   ambient correction (SoupX / CellBender / DecontX). Gap: do these correct the
   same contamination, and does the choice change DEGs/clusters? Natural
