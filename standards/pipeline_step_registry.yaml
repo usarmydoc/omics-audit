@@ -83,3 +83,37 @@ steps:
     referenced_by_rules:
       - scrna_muscat_dream_cell_level_de_inflation_warn
     first_referenced_in: "Phase 2a A6 / 2026-05-16"
+
+  - name: scrnaseq_counting
+    description: >
+      scRNA-seq read counting / quantification. Maps reads to features and
+      produces a gene-by-barcode count matrix. Covers STARsolo, alevin-fry
+      (salmon), kallisto|bustools (kb-python), CellRanger. Cell-calling is a
+      SEPARATE downstream step (scrnaseq_cell_calling).
+    modalities: ["scRNA-seq"]
+    parameters_used:
+      - counting_tool            # STARsolo | alevin-fry | kb-python | CellRanger
+      - chemistry                # 10x 3' v2/v3/v3.1, 5' v2, etc.
+      - reference                # genome + annotation build
+      - multimapper_handling     # discard | EM-rescue (alevin cr-like vs cr-like-em)
+    referenced_by_rules:
+      - scrna_counting_tool_per_gene_count_convergence
+    first_referenced_in: "Audit 3 / 2026-05-23"
+
+  - name: scrnaseq_cell_calling
+    description: >
+      scRNA-seq cell-vs-empty-droplet calling on the raw count matrix.
+      Distinguishes real cells from ambient/empty barcodes. Covers STARsolo
+      --soloCellFilter (EmptyDrops_CR), alevin-fry generate-permit-list
+      (knee / unfiltered), kb/bustools knee, and uniform downstream callers
+      (DropletUtils emptyDropsCellRanger). DISTINCT from scrnaseq_qc_filtering,
+      which filters already-called cells by gene/UMI/mito thresholds.
+    modalities: ["scRNA-seq"]
+    parameters_used:
+      - cell_caller              # EmptyDrops_CR | bustools_knee | alevin_knee | unfiltered
+      - caller_parameters        # FDR, expected-cells, knee params
+      - ambient_burden           # tissue ambient-RNA level (modulates effect severity)
+    referenced_by_rules:
+      - scrna_cell_calling_permissiveness_chain
+      - scrna_cell_calling_biological_propagation_high_ambient
+    first_referenced_in: "Audit 3 / 2026-05-23"

@@ -342,7 +342,38 @@ def validate_rule(rule: dict, rule_idx: int,
                 f"has_direction={has_direction}, has_lfc={has_lfc}"
             )
 
+    # ---- Equivalence-finding tier watchdog (per AUDIT_STANDARDS.md §5.3.2) ----
+    # Warn-only: if a rule reads as an equivalence/agreement finding at an
+    # evidence-bearing tier, its evidence should cite the §5.3.2 criteria
+    # (bootstrap CIs / cross-tool correlation / stratification). Does NOT block.
+    eq_warn = _check_equivalence_tier_evidence(rule)
+    if eq_warn:
+        warnings.append(eq_warn)
+
     return errors, warnings
+
+
+def _check_equivalence_tier_evidence(rule: dict):
+    """Watchdog for equivalence-finding rules (§5.3.2): warn (not block) if an
+    equivalence/agreement/convergence finding is assigned an evidence-bearing
+    tier but its evidence summaries don't mention the §5.3.2 criteria
+    (bootstrap CIs, cross-tool correlation, or stratification)."""
+    tier = rule.get("confidence_tier")
+    if tier not in ("hard_default", "conditional", "flag_and_warn"):
+        return None
+    evidence_text = " ".join(e.get("summary", "") for e in rule.get("evidence", []))
+    el = evidence_text.lower()
+    equivalence_indicators = ("converge", "agreement", "equivalent", "nest",
+                              "jaccard", "correlation", "overlap", "spearman")
+    if not any(ind in el for ind in equivalence_indicators):
+        return None  # not an equivalence finding; §5.3.1 applies
+    tier_criteria_indicators = ("bootstrap", "ci", "confidence interval",
+                                "spearman", "stratif", "rho", "ρ")
+    if not any(ind in el for ind in tier_criteria_indicators):
+        return (f"[equivalence-tier] rule {rule.get('rule_id','<unknown>')} reads as an "
+                f"equivalence finding at tier '{tier}' but evidence does not cite "
+                f"bootstrap CIs, cross-tool correlation, or stratification per §5.3.2")
+    return None
 
 
 # ---- Light validation for superseded / pending_engine_support rules ----

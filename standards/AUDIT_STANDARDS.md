@@ -305,6 +305,15 @@ Every rule cites specific output paths and lock file entries as evidence.
 
 Rules are tiered by evidence strength. Boundaries below are numerical, not soft, so that two audits use each tier to mean the same thing.
 
+The tier values are unchanged (`hard_default` / `conditional` / `flag_and_warn` / `literature_based` / `insufficient_data`). What differs by audit type is *which numerical boundaries apply*:
+
+- **§5.3.1 (tool-selection criteria)** applies to audits whose finding is "tool/method/parameter X wins" — the default, used by most audits.
+- **§5.3.2 (equivalence-finding criteria)** applies to audits whose finding is equivalence, agreement, or convergence between tools/parameters — where there is no winning tool, so §5.3.1's dominance criteria are structurally inapplicable.
+
+When an audit produces both selection and equivalence findings, each finding is tiered by the applicable subsection.
+
+#### 5.3.1 Tool-selection tier criteria
+
 **Tier: hard_default**
 
 All of the following must hold:
@@ -369,6 +378,72 @@ Rule wording: explicitly acknowledges insufficient evidence; recommends quantile
 - A `conditional` rule can be promoted to `hard_default` when additional audit work meets the dominance criteria
 - Any tier can be demoted to `insufficient_data` if subsequent audit work undercuts its evidence base
 - All promotions and demotions are documented in the rule's revision history within the YAML metadata
+
+#### 5.3.2 Equivalence-finding tier criteria
+
+§5.3.1 above assumes tool-selection audits where the finding is "tool X wins."
+For audits where the finding is **equivalence, agreement, or convergence**
+between tools or parameters, §5.3.1's dominance criteria ("a single tool
+dominates: wins >60%") are structurally inapplicable — there is no winning
+tool. The following tiers apply instead. (Adopted in response to Audit 3 CP7,
+2026-05-23, which surfaced that a robust "counting tools converge" finding had
+no tier under §5.3.1.)
+
+**Tier: hard_default (equivalence)**
+
+All of the following must hold:
+
+- ≥8 datasets, spanning ≥2 tissues or chemistries
+- Bootstrap CIs overlap across all tool pairs (B ≥ 1000, dataset-level)
+- Cross-tool Spearman ρ ≥ 0.90 median, with all per-pair lower bounds ≥ 0.80
+- The equivalence holds uniformly across stratifications — no
+  chemistry-dependent or tissue-dependent exception to the equivalence
+
+Rule wording: declarative — states that the tools/parameters are
+interchangeable for the audited purpose; recommends choice on operational
+grounds.
+
+**Tier: conditional (equivalence)**
+
+All of the following must hold:
+
+- ≥6 datasets, spanning ≥2 conditions
+- Bootstrap CIs overlap on most tool pairs
+- Cross-tool ρ ≥ 0.80, with documented feature-dependence (the degree of
+  equivalence varies by an identifiable axis: chemistry, ambient burden, etc.)
+
+Rule wording: conditional — equivalence holds, with the feature-based
+qualifier embedded.
+
+**Tier: flag_and_warn (equivalence)**
+
+Triggered by any of:
+
+- Bootstrap CIs overlap substantially but cross-tool ρ < 0.80
+- Equivalence holds only on a subset of stratifications
+- Equivalence is directional only (e.g., a nesting/ordering holds but the
+  magnitude varies materially across datasets)
+
+Rule wording: surfaces the partial/conditional equivalence; recommends user
+awareness and reporting of the tool/parameter choice.
+
+**Tier: insufficient_data (equivalence)**
+
+- <6 datasets for any aggregate equivalence claim.
+
+**Nested-effect findings** (ordering universal, magnitude varies — e.g., a
+permissiveness chain STAR ⊂ alevin-fry ⊂ kb): tier the **direction/ordering
+claim** by the equivalence criteria above; tier any **magnitude sub-claim**
+("the effect is 3× on tissue X") separately by §5.3.1, since a specific
+magnitude claim about a between-tool difference resembles a selection finding.
+
+**Contrast-based findings** (evidence from comparing two conditions — e.g.,
+intestine vs PBMC control demonstrating ambient-burden dependence): the
+**existence-of-effect** claim may be tiered by §5.3.2 if the contrast is
+statistically robust (non-overlapping bootstrap CIs between conditions),
+*even when n=1 per condition*. The **generalization** claim (does the effect
+appear on other high-ambient tissues?) is tiered separately by the number of
+conditions tested.
 
 ### 5.4 Rule YAML schema — full specification
 

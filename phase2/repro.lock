@@ -1,6 +1,89 @@
 {
   "created_at": "2026-05-15T20:25:34",
   "environments": {
+    "0d16e5eee33da990": {
+      "captured_at": "2026-05-22T19:08:36-0500",
+      "hostname": "ross-MS-7E70",
+      "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
+      "python_packages": {
+        "anndata": "0.11.4",
+        "cellxgene_census": null,
+        "numpy": "1.26.4",
+        "pandas": "1.5.3",
+        "pydeseq2": null,
+        "scanpy": "1.11.5",
+        "scipy": "1.17.1",
+        "scrublet": null,
+        "tiledbsoma": null
+      },
+      "python_version": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:45:40) [GCC 14.3.0]",
+      "r": {
+        "bioconductor_version": "3.22",
+        "captured_at": "2026-05-22T19:08:37-0500",
+        "packages": {
+          "Biobase": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:41 UTC; unix",
+            "date": "2025-10-29",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/Biobase",
+            "repository": "Bioconductor 3.22",
+            "version": "2.70.0"
+          },
+          "BiocGenerics": {
+            "built": "R 4.5.3; ; 2026-05-02 18:06:34 UTC; unix",
+            "date": "2025-10-29",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/BiocGenerics",
+            "repository": "Bioconductor 3.22",
+            "version": "0.56.0"
+          },
+          "Matrix": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 'Wed, 08 Apr 2026 00:59:51 +0000'; unix",
+            "date": "2026-03-20",
+            "installed": true,
+            "library": "/usr/lib/R/library/Matrix",
+            "repository": "CRAN",
+            "version": "1.7.5"
+          },
+          "S4Vectors": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:30 UTC; unix",
+            "date": "2026-04-05",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/S4Vectors",
+            "repository": "Bioconductor 3.22",
+            "version": "0.48.1"
+          },
+          "edgeR": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:38 UTC; unix",
+            "date": "2025-12-23",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/edgeR",
+            "repository": "Bioconductor 3.22",
+            "version": "4.8.2"
+          },
+          "limma": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:06:53 UTC; unix",
+            "date": "2025-10-21",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/limma",
+            "repository": "Bioconductor 3.22",
+            "version": "3.66.0"
+          },
+          "statmod": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-22 23:59:59 UTC; unix",
+            "date": "2026-05-17",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/statmod",
+            "repository": "CRAN",
+            "version": "1.5.2"
+          }
+        },
+        "r_arch": "x86_64",
+        "r_platform": "x86_64-pc-linux-gnu",
+        "r_svn_revision": "89597",
+        "r_version": "R version 4.5.3 (2026-03-11)"
+      }
+    },
     "464cdbd07774154b": {
       "captured_at": "2026-05-15T20:48:36-0500",
       "hostname": "ross-MS-7E70",
@@ -7667,19 +7750,25 @@
       "size_bytes": 9242
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/DEFERRED.md": {
-      "environment_id": "dd59a1a614f6e3cf",
+      "environment_id": "0d16e5eee33da990",
       "kind": "audit3_deferred",
-      "registered_at": "2026-05-18T21:03:26",
-      "sha256": "938d800a289fd5800a5db2f90d4daebe3b73cfbb3a95fe2df1fbce549f8acb4c",
-      "size_bytes": 16293
+      "registered_at": "2026-05-22T22:39:13",
+      "sha256": "db3203ee21b92f99d35f5174a64d0a1707b9933b889745bd1f3a9f7c4b6a738f",
+      "size_bytes": 16892
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/STATUS.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_status",
+      "registered_at": "2026-05-23T08:31:02",
+      "sha256": "06d16016194475edefb98d05d557ce9094329d80da0465fdc3502100ebafea7e",
+      "size_bytes": 2781
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/C1_findings.md": {
-      "environment_id": "dd59a1a614f6e3cf",
-      "gap_fix": "cp4_2026-05-25",
+      "environment_id": "0d16e5eee33da990",
       "kind": "audit3_c1_findings_corrected",
-      "registered_at": "2026-05-22T18:02:19",
-      "sha256": "7f433ca967c07912f4f9c9ddf8e9f4add4505b9703863a83f0494f5633f83a1b",
-      "size_bytes": 10378
+      "registered_at": "2026-05-22T22:39:13",
+      "sha256": "5a834941acf82a523d52e0f15ff4ee46be905bab3809c36c9c0c5b54249b1845",
+      "size_bytes": 10940
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/c1/CP4_verification_report.md": {
       "environment_id": "dd59a1a614f6e3cf",
@@ -7769,6 +7858,389 @@
       "registered_at": "2026-05-18T19:51:04",
       "sha256": "fcab5ff9f0555160a69433cea17e6bbdf0501fbe8dc4ce476095ed2aed28ea56",
       "size_bytes": 437
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/C2_findings.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_findings",
+      "registered_at": "2026-05-22T22:39:13",
+      "sha256": "06f57b2fd70d24fd3d8405305b55a3a4693edae38f9a6db71d90cd6304de76d3",
+      "size_bytes": 8864
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/a_native_3tool/disagreement_concentration.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_a_native_3tool_disagreement",
+      "n_rows": 104,
+      "registered_at": "2026-05-22T19:08:37",
+      "sha256": "3a68e4e5820c9377014187c636b3e73eef04752dcede0b890dc9cae73d8f9d41",
+      "size_bytes": 6326
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/a_native_3tool/per_dataset_metrics.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_a_native_3tool_per_dataset",
+      "n_rows": 27,
+      "registered_at": "2026-05-22T19:08:37",
+      "sha256": "34c5beb2ff5a3d7d3acc3302d3a3858451cc7cb082cd8069bb3b47b398ab7077",
+      "size_bytes": 4464
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/a_native_3tool/per_stratum_bootstrap.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_a_native_3tool_bootstrap",
+      "n_rows": 18,
+      "registered_at": "2026-05-22T19:08:37",
+      "sha256": "a143e276d092e9b452c5c178a7e2c4afbeacf34d59ec5ae0abfdf3acc4c7f9ae",
+      "size_bytes": 2122
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/b_common_caller_4tool/disagreement_concentration.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_b_common_caller_4tool_disagreement",
+      "n_rows": 216,
+      "registered_at": "2026-05-22T20:45:53",
+      "sha256": "1d86d87c8771d29405f32043ce66803548f897938a01311a19a16c5101a36028",
+      "size_bytes": 12876
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/b_common_caller_4tool/per_dataset_metrics.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_b_common_caller_4tool_per_dataset",
+      "n_rows": 54,
+      "registered_at": "2026-05-22T20:45:53",
+      "sha256": "52a8dbefdd85b4f715db52f41e3f0c174955a5e126e1489a153cb78ee950bef7",
+      "size_bytes": 8796
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/b_common_caller_4tool/per_stratum_bootstrap.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_b_common_caller_4tool_bootstrap",
+      "n_rows": 36,
+      "registered_at": "2026-05-22T20:45:53",
+      "sha256": "56ebc89469b21bfe68a98dbe0b511240c7a86e234b43903caba0ab1b7822131f",
+      "size_bytes": 4118
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/c_native_4tool/disagreement_concentration.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_c_native_4tool_disagreement",
+      "n_rows": 212,
+      "registered_at": "2026-05-22T22:21:26",
+      "sha256": "c6300a20ad2897375c11218c863d8d8e4d533b0e48dc667d9268d3287171019d",
+      "size_bytes": 12719
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/c_native_4tool/per_dataset_metrics.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_c_native_4tool_per_dataset",
+      "n_rows": 54,
+      "registered_at": "2026-05-22T22:21:26",
+      "sha256": "042cfaa582718541e0b9e8780abec6aadd2e65ed3ea1d453f5fc15bf54003081",
+      "size_bytes": 8806
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/c_native_4tool/per_stratum_bootstrap.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_c_native_4tool_bootstrap",
+      "n_rows": 36,
+      "registered_at": "2026-05-22T22:21:26",
+      "sha256": "952f916dd26e73202d6c1518afa06bbb5e6c2d78b4add58902db4ad8d0e8b11a",
+      "size_bytes": 4125
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/tool_failure_modes.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_tool_failure_modes",
+      "registered_at": "2026-05-22T22:39:13",
+      "sha256": "dfc69744788e5711dffee3dc10ded8de4d9b75c2cf2b2af2bc915993af4d0995",
+      "size_bytes": 2935
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c2/verification_prerule.txt": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c2_verification_prerule",
+      "registered_at": "2026-05-22T22:39:13",
+      "sha256": "16cbd99555a0c8b39bf6252bc6bfcc98598eacd165a930e39c5d200b7bca9b6f",
+      "size_bytes": 1438
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/C3_findings.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_findings",
+      "registered_at": "2026-05-23T07:47:36",
+      "sha256": "1e10e163262bb4e9c272faa3f44be318183241e741733fb1ab4d6be9a9e9ff3f",
+      "size_bytes": 7516
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/annotation_agreement.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_control/10x_pbmc_5k_v3.1_annotation_agreement",
+      "registered_at": "2026-05-23T07:45:46",
+      "sha256": "781f1d4eabcf0a7674573dd0e4336f149f180fde20f2d559f1268b82bfa4ae30",
+      "size_bytes": 243
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/cluster_agreement_metrics.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_control/10x_pbmc_5k_v3.1_cluster_agreement_metrics",
+      "registered_at": "2026-05-23T07:45:46",
+      "sha256": "edafc4036d09e89c38b030ef70a28054bb02c8a361243d58ca90043b95a9c312",
+      "size_bytes": 274
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/contested_cell_disposition.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_control/10x_pbmc_5k_v3.1_contested_cell_disposition",
+      "registered_at": "2026-05-23T07:45:46",
+      "sha256": "3262629bccbb11b23e4b2201e5c464484a9714d84ad03e3fb68dc5b3df4e33e8",
+      "size_bytes": 233
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/contested_cell_summary.json": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_control/10x_pbmc_5k_v3.1_contested_cell_summary",
+      "registered_at": "2026-05-23T07:45:46",
+      "sha256": "85eb256e4bf3bb0bf1c867052c38ca37a1438ef43515a249bb99905594fc7a89",
+      "size_bytes": 502
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/doublet_agreement.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_control/10x_pbmc_5k_v3.1_doublet_agreement",
+      "registered_at": "2026-05-23T07:45:46",
+      "sha256": "17a8f346b7922cdb93d1fde912f97e874242345545d141c03f606020bfce8831",
+      "size_bytes": 303
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/marker_overlap.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_control/10x_pbmc_5k_v3.1_marker_overlap",
+      "registered_at": "2026-05-23T07:45:46",
+      "sha256": "ca335a7df7331928f5f33d001c2458f1aa4e1d372f4e76d5f796ca7e1c823769",
+      "size_bytes": 1286
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/alevin_fry.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_alevin_fry_markers",
+      "registered_at": "2026-05-23T07:29:23",
+      "sha256": "af8c49af32c2456e983fe2d28b95e3dc96594f034bb349b2b305cb537359c961",
+      "size_bytes": 26720
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/alevin_fry.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_alevin_fry_obs",
+      "registered_at": "2026-05-23T07:29:23",
+      "sha256": "d4d6c05af5166b7c30b6617dd28c1d2ebf365de1a71aa3d3c5d862fa5aa7f3a1",
+      "size_bytes": 433801
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/alevin_fry.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_alevin_fry_summary",
+      "registered_at": "2026-05-23T07:29:23",
+      "sha256": "8513b088720a2db65db0ec7695e893e4febf89b5ebdd354a9caa3b2e6aeee924",
+      "size_bytes": 316
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/kb_count.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_kb_count_markers",
+      "registered_at": "2026-05-23T07:28:49",
+      "sha256": "1da18b0a85d6b9f4a6c3b3af3a87f69bf71b5242807c63f282f4a8d4e5d183c8",
+      "size_bytes": 28212
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/kb_count.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_kb_count_obs",
+      "registered_at": "2026-05-23T07:28:49",
+      "sha256": "e6f722d80377852c2fb756b64a7be6f4088ba3f2ca701dbe663042011a3cf689",
+      "size_bytes": 434954
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/kb_count.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_kb_count_summary",
+      "registered_at": "2026-05-23T07:28:49",
+      "sha256": "22ee1e0e7f80400c6661078a7b5ce8aacfe62ca1b3e076d90e994e746de55bfa",
+      "size_bytes": 314
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/star_cr_mimic.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_cr_mimic_markers",
+      "registered_at": "2026-05-23T07:28:16",
+      "sha256": "a2027d11bfa977fcd30b09e4c0e96d8c04fcca45b9bf4fdc9ac626cdd6da0857",
+      "size_bytes": 23629
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/star_cr_mimic.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_cr_mimic_obs",
+      "registered_at": "2026-05-23T07:28:16",
+      "sha256": "8c16bd44a9808e8bb588ec81c44e777d11f83692850bec420e464e75dedcfe65",
+      "size_bytes": 427369
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/star_cr_mimic.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_cr_mimic_summary",
+      "registered_at": "2026-05-23T07:28:16",
+      "sha256": "fbfc58b63ff588ac3b33dc957b56faf2d2fc6a410011f78881ac60c86f69984b",
+      "size_bytes": 319
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/star_default.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_default_markers",
+      "registered_at": "2026-05-23T07:26:57",
+      "sha256": "072c91e1a18c6a5779496bb17f3d36d11d3acda462c7dd11e5cb4fa296a76350",
+      "size_bytes": 23656
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/star_default.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_default_obs",
+      "registered_at": "2026-05-23T07:26:57",
+      "sha256": "2c67291b8953373b9546e53a93e68529d4439d8a9f855c78a1f5a741040884c6",
+      "size_bytes": 427455
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/control/10x_pbmc_5k_v3.1/per_tool_pipeline_outputs/star_default.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_default_summary",
+      "registered_at": "2026-05-23T07:26:57",
+      "sha256": "a1125e340857e5e26f9905e9bcdc031996ce9a40c92976f2bd7964eee1bd379f",
+      "size_bytes": 318
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/annotation_agreement.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_intestine_annotation_agreement",
+      "registered_at": "2026-05-23T07:45:00",
+      "sha256": "0ed6a7220a06c7d7a03f0a838336bf1f039439fe58599a94a9a6bdab69e0ba75",
+      "size_bytes": 250
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/cluster_agreement_metrics.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_intestine_cluster_agreement_metrics",
+      "registered_at": "2026-05-23T07:45:00",
+      "sha256": "03efd4fada698650a2f647df000527684071a199bcd788b0cff3f40f4470e6ea",
+      "size_bytes": 276
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/contested_cell_disposition.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_intestine_contested_cell_disposition",
+      "registered_at": "2026-05-23T07:45:00",
+      "sha256": "8a60123d978a2e113d66e96320cf476422d61c69fc491ed4761b7052b3afb606",
+      "size_bytes": 463
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/contested_cell_summary.json": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_intestine_contested_cell_summary",
+      "registered_at": "2026-05-23T07:45:00",
+      "sha256": "14076a55d914904a96fb0abd3ca18ad4cb66eeba005f85b64498b502a8aa6751",
+      "size_bytes": 647
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/doublet_agreement.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_intestine_doublet_agreement",
+      "registered_at": "2026-05-23T07:45:00",
+      "sha256": "e144ce4fb8f84ae5a0525f331074b4fd58cf059ed4c812a18ed05d7724a54dac",
+      "size_bytes": 306
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/marker_overlap.tsv": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_intestine_marker_overlap",
+      "registered_at": "2026-05-23T07:45:00",
+      "sha256": "1f278540493bb28c5b7da1fad7093551312dc66fc2fed4bbe4391947e8973d60",
+      "size_bytes": 1754
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/alevin_fry.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_alevin_fry_markers",
+      "registered_at": "2026-05-23T07:42:11",
+      "sha256": "6337af1253e724b8dff9564a69ec0fe7b9ec80d9a878179ede0cbde0d38563e2",
+      "size_bytes": 42015
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/alevin_fry.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_alevin_fry_obs",
+      "registered_at": "2026-05-23T07:42:11",
+      "sha256": "8ce8fbb45b19ff65248b8f9018edd491d6255613659660a53e43e14edca96dc1",
+      "size_bytes": 3106780
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/alevin_fry.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_alevin_fry_summary",
+      "registered_at": "2026-05-23T07:42:11",
+      "sha256": "fb8ee57d2419d33eb82c159cdd7f667d27bb668e477c05e7a183afadbdb98a71",
+      "size_bytes": 336
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/kb_count.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_kb_count_markers",
+      "registered_at": "2026-05-23T07:38:29",
+      "sha256": "65a164723b5ca12b5bc9ff56b354cb1604c3df4c07760b8f2d66b637a025fd33",
+      "size_bytes": 51122
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/kb_count.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_kb_count_obs",
+      "registered_at": "2026-05-23T07:38:29",
+      "sha256": "abb8c412a397d92ebd7c8c43d79c346c2a6732eb3a4d21eac7b368c78220af8e",
+      "size_bytes": 3646776
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/kb_count.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_kb_count_summary",
+      "registered_at": "2026-05-23T07:38:29",
+      "sha256": "0a13fb88e550a659fce3d329c33115e5ebd5fa0678be32efd1e3304d6aae19e4",
+      "size_bytes": 334
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/star_cr_mimic.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_cr_mimic_markers",
+      "registered_at": "2026-05-23T07:34:34",
+      "sha256": "afe84c23b712d07c70d328456e0462e1b1dd8e775f07e301195eb3f78fb72a13",
+      "size_bytes": 37674
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/star_cr_mimic.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_cr_mimic_obs",
+      "registered_at": "2026-05-23T07:34:34",
+      "sha256": "8b583c8f28afabc026aa55e1d7720fe47e6cd18bd3baf081c30391eb7edd631c",
+      "size_bytes": 1880331
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/star_cr_mimic.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_cr_mimic_summary",
+      "registered_at": "2026-05-23T07:34:34",
+      "sha256": "8e8e7a23ecb5ce2167aeff09dcccb845f73b6e230b3d75a76db3e3af9d70f48c",
+      "size_bytes": 339
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/star_default.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_default_markers",
+      "registered_at": "2026-05-23T07:32:00",
+      "sha256": "2ced2335e15fe6f548bdce9f8b7f45fc15cfc019eda1f2c6ab177c99bd757787",
+      "size_bytes": 31598
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/star_default.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_default_obs",
+      "registered_at": "2026-05-23T07:32:00",
+      "sha256": "07aa6fa3e1f3d7bb4ffd41d6be52d01c1395f975db2a21ee41c717150973f7b9",
+      "size_bytes": 1860292
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/intestine/per_tool_pipeline_outputs/star_default.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_star_default_summary",
+      "registered_at": "2026-05-23T07:32:00",
+      "sha256": "54a3b507f3e6f50b8c390f8175c27604ee8d73d456994e59cdc0926f8f253065",
+      "size_bytes": 338
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/c3/pipeline_parameters.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_c3_pipeline_params",
+      "registered_at": "2026-05-23T07:47:36",
+      "sha256": "cdf4e761b40bc2b4e99293ca194b76734add4a7ac7be04a9b6199ae564d04846",
+      "size_bytes": 3056
     },
     "/mnt/nvme1/omics-audit/phase2/audit3_counting/environment/logs/build_human_refs.log": {
       "environment_id": "464cdbd07774154b",
@@ -7910,6 +8382,13 @@
       "registered_at": "2026-05-17T10:11:57",
       "sha256": "d9a897c5ee883de8264af95336097ce7f0dc8ca6802ba66b29d0b3f3269a377b",
       "size_bytes": 6137
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit3_counting/standards_amendment_review.md": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "audit3_standards_amendment_review",
+      "registered_at": "2026-05-23T08:31:02",
+      "sha256": "c7d9162fe5f6db74dffc00e140b6dab5ecece75c4e4c417c1c7411b9fd909c32",
+      "size_bytes": 4471
     },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
@@ -9487,11 +9966,11 @@
       "tool": "wilcoxon_cellwise"
     },
     "/mnt/nvme1/omics-audit/phase2/scripts/validate_rules.py": {
-      "environment_id": "464cdbd07774154b",
-      "kind": "v102_migration",
-      "registered_at": "2026-05-16T08:44:56",
-      "sha256": "1772079436dd3671a20724f086f13b6c960b839d36fd44f0edbff8479c03c136",
-      "size_bytes": 19149
+      "environment_id": "0d16e5eee33da990",
+      "kind": "validate_rules_script",
+      "registered_at": "2026-05-23T08:31:02",
+      "sha256": "ffa8585280c64693d452a92b5f68c52b052f4dc14e0fd788ffbe9865487eb475",
+      "size_bytes": 24003
     },
     "/mnt/nvme1/omics-audit/phase2/version_sensitivity/edger/bioc-3.21/BLCA.tsv": {
       "bioc_version": "3.21",
@@ -12864,11 +13343,11 @@
       "size_bytes": 10068
     },
     "/mnt/nvme1/omics-audit/standards/AUDIT_STANDARDS.md": {
-      "environment_id": "464cdbd07774154b",
-      "kind": "v102_final_dispositions",
-      "registered_at": "2026-05-16T09:04:59",
-      "sha256": "1a0c3dcec1d3d65b1b8bfdedd6ad29f839d47ec7e2b992a1ca1ee5ed51177e2f",
-      "size_bytes": 36270
+      "environment_id": "0d16e5eee33da990",
+      "kind": "standards_audit_standards",
+      "registered_at": "2026-05-23T08:31:02",
+      "sha256": "50073b30c46d7d7806fa23bd5cc99b738e4599b97dd24bb33bf2c8ea2edf96ce",
+      "size_bytes": 44055
     },
     "/mnt/nvme1/omics-audit/standards/CLOSEOUT_v1.0.2_migration.md": {
       "environment_id": "464cdbd07774154b",
@@ -12878,12 +13357,11 @@
       "size_bytes": 12417
     },
     "/mnt/nvme1/omics-audit/standards/PENDING_AMENDMENTS.md": {
-      "environment_id": "dd59a1a614f6e3cf",
-      "gap_fix": "cp4_2026-05-25",
+      "environment_id": "0d16e5eee33da990",
       "kind": "standards_pending_amendments",
-      "registered_at": "2026-05-22T18:02:19",
-      "sha256": "31a04dfa03071341ba5482532868f7f440639ebe6a192f0778764beb90e33f00",
-      "size_bytes": 1712
+      "registered_at": "2026-05-23T08:31:02",
+      "sha256": "00abdebf668625cca26b306f83b63d561d301080f9060b59fb8212184ba2f3be",
+      "size_bytes": 7127
     },
     "/mnt/nvme1/omics-audit/standards/RECONNAISSANCE_2026-05-16.md": {
       "environment_id": "464cdbd07774154b",
@@ -12912,6 +13390,13 @@
       "registered_at": "2026-05-16T08:20:44",
       "sha256": "818cf65db077b189f605b0b0a51540a3bc2d19c6f93177f6bb5cfe66e0bf919e",
       "size_bytes": 18871
+    },
+    "/mnt/nvme1/omics-audit/standards/pipeline_step_registry.yaml": {
+      "environment_id": "0d16e5eee33da990",
+      "kind": "standards_pipeline_step_registry",
+      "registered_at": "2026-05-23T08:31:02",
+      "sha256": "5a6e9f6867bb7462c94d6f887429864ddb3f003edeeeb0ec127fd29520b2f381",
+      "size_bytes": 5617
     },
     "/mnt/nvme1/omics-audit/tools/gse_scraper/A_human_brain.tsv": {
       "environment_id": "464cdbd07774154b",
