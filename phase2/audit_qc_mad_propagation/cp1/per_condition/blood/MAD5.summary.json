@@ -1,0 +1,15 @@
+{
+  "dataset": "blood",
+  "method": "MAD5",
+  "n_survivors": 49890,
+  "n_postdoublet_genes": 21748,
+  "n_doublets": 9395,
+  "n_clusters": {
+    "r1.0": 21,
+    "r0.5": 16,
+    "r1.5": 27
+  },
+  "n_celltypist_labels": 19,
+  "celltypist_model": "Immune_All_Low.pkl",
+  "runtime_s": 176.1
+}

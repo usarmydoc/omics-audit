@@ -1,0 +1,15 @@
+{
+  "dataset": "small_intestine",
+  "method": "C2",
+  "n_survivors": 38700,
+  "n_postdoublet_genes": 19722,
+  "n_doublets": 5759,
+  "n_clusters": {
+    "r1.0": 28,
+    "r0.5": 22,
+    "r1.5": 39
+  },
+  "n_celltypist_labels": 24,
+  "celltypist_model": "Cells_Intestinal_Tract.pkl",
+  "runtime_s": 138.9
+}

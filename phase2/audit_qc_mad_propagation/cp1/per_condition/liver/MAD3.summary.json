@@ -1,0 +1,15 @@
+{
+  "dataset": "liver",
+  "method": "MAD3",
+  "n_survivors": 40965,
+  "n_postdoublet_genes": 28017,
+  "n_doublets": 6829,
+  "n_clusters": {
+    "r1.0": 62,
+    "r0.5": 52,
+    "r1.5": 71
+  },
+  "n_celltypist_labels": 10,
+  "celltypist_model": "Healthy_Human_Liver.pkl",
+  "runtime_s": 207.8
+}

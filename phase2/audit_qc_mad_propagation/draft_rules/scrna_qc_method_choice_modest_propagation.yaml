@@ -1,0 +1,103 @@
+# xref: Extends Heumos 2023 — Heumos recommends MAD filtering (Germain 2020) over fixed thresholds without testing downstream biological consequences. This rule shows the choice is biologically low-stakes (modest, tissue-independent). See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_qc_method_choice_modest_propagation
+  schema_version: "1.0.3"
+  status: draft
+  title: "scRNA-seq QC filtering method choice barely affects downstream biology"
+  description: >
+    Running the standard downstream pipeline (scDblFinder, scry deviance HVG,
+    Leiden, CellTypist) on the outputs of 4 QC filtering methods (C1
+    quantile-data, C2 fixed-floors, MAD k=3, MAD k=5) across 3 datasets (blood,
+    liver, small_intestine; soma_joinid-matched to the QC-MAD working set) shows
+    that QC method choice produces a MODEST, TISSUE-INDEPENDENT effect on
+    biology. Cluster-assignment ARI vs the C2 fixed-floor reference is 0.80-0.91
+    across all 3 datasets x 3 comparisons (bootstrap CIs ±0.005); annotation
+    agreement 88-98%. The edge-case tissue (small_intestine, where QC-MAD found
+    the largest cell-set disagreement, Jaccard 0.774) is NO more affected than
+    the clean blood control. Even where MAD5 retains 11,300 more low-gene cells
+    than C2, the shared core co-clusters at ARI 0.84. This CONTRASTS cell-calling
+    (Audit 3 C3) and ambient correction (Ambient CP3), which propagate strongly
+    on high-ambient tissue (ARI 0.50-0.70).
+  created_date: "2026-05-25"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_qc_filtering
+        parameter: filtering_method
+      description: >
+        Fires at the scRNA-seq QC filtering step when choosing among
+        quantile-data-driven, fixed-floor, or MAD-based filtering, regarding the
+        downstream biological impact of that choice.
+  recommendation:
+    text: >
+      The choice between quantile-based, fixed-floor, and MAD-based QC filtering
+      is methodological hygiene rather than a substantive analytical decision:
+      cross-method cluster ARI on shared cells is 0.80-0.91 across tissues
+      (including the high-disagreement small_intestine case), with 88-98%
+      annotation agreement. Method choice can be made on operational grounds
+      (team conventions, downstream tool expectations) without expecting
+      biological conclusions to shift. NOTE the contrast: cell-calling (Audit 3
+      C3) and ambient correction (Ambient CP3) choices DO propagate to biology on
+      high-ambient tissue — QC filtering method does not. Companion metrics
+      (§3.4): ARI reported alongside cluster-matched marker Jaccard and per-cell
+      annotation agreement — three readouts converging on the modest-effect
+      finding.
+    action_type: flag_only
+  confidence_tier: hard_default
+  severity: info
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: "AuditQCMADProp-CP1"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_qc_mad_propagation/cp1/per_comparison_metrics.tsv"
+        - "audit_qc_mad_propagation/cp1/per_stratum_bootstrap.tsv"
+      lock_file_entries:
+        - "b084d72fb31f85fdb260bd47d014385419b496b0fadb56a234088cd71dcf104c"
+        - "0e42bdb57154e11600d697d6790b76857a0ccb38334aacbbe00bb7367ff3b115"
+      findings_md_section: "audit_qc_mad_propagation/cp1/findings.md#headline"
+      summary: >
+        3 datasets x 4 QC methods x downstream pipeline. ARI vs C2: blood
+        0.80-0.88, liver 0.88-0.91, small_intestine 0.84-0.87 (no tissue
+        amplification); annotation agreement 88-98%; bootstrap CIs ±0.005.
+        small_intestine MAD5 retains 11,300 more low-gene cells than C2, shared
+        core ARI 0.84. QC methods reproduced QC-MAD's exact cell counts.
+    - audit_id: "AuditQCMADProp-CP1-synthesis"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_qc_mad_propagation/AUDIT_QC_MAD_PROPAGATION_SYNTHESIS.md"
+      lock_file_entries:
+        - "51984692bfda4d5661e215b3c91b31752bc6eb7c824a7b7fb21a54306b7c0594"
+      findings_md_section: "audit_qc_mad_propagation/cp1/findings.md#cross-audit-pattern-the-third-propagation-test"
+      summary: >
+        Third corpus propagation test. Pattern: counts-reshaping choices
+        (cell-calling, ambient correction) propagate on edge-case tissue;
+        cell-filtering choices (QC method) do not. n=3 datasets (1 edge + 1 mid +
+        1 control); generalization flag_and_warn pending broader replication.
+  out_of_scope:
+    - "QC filtering method's effect on the retained CELL SET (that is Audit QC-MAD; this rule is downstream biology)"
+    - "Cell-calling and ambient-correction choices (DO propagate; separate rules)"
+    - "Extreme high-ambient tissues beyond small_intestine"
+    - "Downstream pipeline parameter sensitivity (clustering resolution, HVG)"
+    - "Datasets beyond the 3-dataset subset (broader replication deferred)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human"]
+  related_rules:
+    - scrna_qc_filtering_method_equivalence
+    - scrna_qc_low_gene_dataset_caution
+    - scrna_cell_calling_biological_propagation_high_ambient
+    - scrna_ambient_correction_high_ambient_biology_propagation
+  mechanism_notes: >
+    QC method choice filters cells without reshaping counts. The cells removed by
+    stricter methods are mostly low-information borderline cells (low n_genes /
+    total_counts); when retained by permissive methods they cluster at the
+    periphery of existing clusters or form small standalone clusters without
+    reorganizing the core analysis — hence the modest, tissue-independent ARI.
+    This contrasts cell-calling and ambient correction, which change WHICH
+    barcodes are admitted / WHAT counts remain, reshaping downstream structure
+    and amplifying on high-ambient tissue. Heumos 2023 / Germain 2020 recommend
+    MAD as more robust than fixed thresholds; this audit confirms that while the
+    cell sets differ (QC-MAD), the downstream biology barely does — so the choice
+    is operational, not analytical. Extends QC-MAD (biological propagation of its
+    finding) and Audit 3 C3 / Ambient CP3 (third propagation test; the
+    counts-reshaping-vs-cell-filtering cross-audit pattern).

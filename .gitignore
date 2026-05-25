@@ -13,3 +13,7 @@ phase2/audit_ambient_correction/cp2/per_dataset/
 phase2/audit_ambient_correction/cp3/matrices/
 phase2/audit_ambient_correction/cp3/*/*.h5ad
 phase2/audit_ambient_correction/cp1/per_gene_contamination.tsv
+
+# Audit QC-MAD Propagation — large outputs (provenance via repro.lock, not git)
+phase2/audit_qc_mad_propagation/cp1/matrices/
+phase2/audit_qc_mad_propagation/cp1/per_dataset_pipeline_outputs/

@@ -14,6 +14,31 @@ Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
 | **Audit 3 — scRNA-seq counting tools** | STARsolo / alevin-fry / kb-python: counts, cell-calling, biological propagation | **COMPLETE (2026-05-23)** | **4** (`audit3_counting/draft_rules/`) | `phase2/audit3_counting/` |
 | **Audit QC-MAD — low-quality cell filtering** | MAD vs quantile vs fixed-floor QC filtering on scRNA-seq | **COMPLETE (2026-05-23)** | **2** (`audit_qc_mad/draft_rules/`) | `phase2/audit_qc_mad/` |
 | **Audit Ambient Correction — ambient RNA removal** | SoupX / CellBender / DecontX: per-gene contamination equivalence, correction-vs-QC ordering, biological propagation | **COMPLETE (2026-05-25)** | **4** (`audit_ambient_correction/draft_rules/`) | `phase2/audit_ambient_correction/` |
+| **Audit QC-MAD Propagation — QC method → biology** | does QC filtering-method choice (quantile / fixed-floor / MAD) cascade to downstream clustering/annotation? | **COMPLETE (2026-05-25)** | **1** (`audit_qc_mad_propagation/draft_rules/`) | `phase2/audit_qc_mad_propagation/` |
+
+## Audit QC-MAD Propagation — at a glance
+
+**Audit ID:** Audit QC-MAD Propagation (does QC filtering-method choice propagate to biology?). **Status:** COMPLETE / CLOSED.
+**Work window:** 2026-05-25 (extends Audit QC-MAD + Audit 3 C3 + Ambient CP3).
+**Checkpoints:** CP0 (inventory + Census re-pull feasibility) · CP1 (3 datasets ×
+4 QC methods × downstream pipeline, 12 runs) · CP2 (synthesis + 1 rule + closeout)
+— **all complete.**
+**Standards contributed:** none (used existing §5.3.2 + `scrnaseq_qc_filtering` step).
+
+**Key finding:** QC filtering-method choice is a **modest, tissue-INDEPENDENT**
+downstream effect — ARI vs C2 reference 0.80–0.91 across blood/liver/small_intestine
+(annotation 88–98%); the edge-case tissue is no worse than the clean control. The
+edge-case amplification seen for cell-calling (C3) and ambient correction (CP3)
+does NOT replicate — QC method is operational, not analytical.
+
+**Cross-audit pattern (surfaced, not yet a rule):** technical choices that
+**reshape counts** (cell-calling, ambient correction) propagate on edge-case
+tissue; choices that **filter cells** (QC method) don't. Emerges from 3 propagation
+tests; revisit as a rule after a 4th.
+
+**1 rule:** `scrna_qc_method_choice_modest_propagation` (hard_default / info).
+**Synthesis:** `phase2/audit_qc_mad_propagation/AUDIT_QC_MAD_PROPAGATION_SYNTHESIS.md`. **Heumos:** extends.
+**Deferred follow-ups:** broader replication, extreme high-ambient, downstream-param sensitivity — `phase2/DEFERRED.md`.
 
 ## Audit Ambient Correction — at a glance
 

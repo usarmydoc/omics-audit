@@ -1,0 +1,15 @@
+{
+  "dataset": "liver",
+  "method": "C2",
+  "n_survivors": 46289,
+  "n_postdoublet_genes": 28157,
+  "n_doublets": 8758,
+  "n_clusters": {
+    "r1.0": 59,
+    "r0.5": 51,
+    "r1.5": 66
+  },
+  "n_celltypist_labels": 10,
+  "celltypist_model": "Healthy_Human_Liver.pkl",
+  "runtime_s": 230.9
+}

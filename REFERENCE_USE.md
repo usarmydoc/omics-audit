@@ -14,8 +14,8 @@ scRNA / bulk analyses, not engine input.
 
 ## Current rule inventory
 
-**10 scRNA audit rules across 3 audits** (Audit 3: 4 + QC-MAD: 2 + Ambient
-Correction: 4), plus the Audit 1 pathway rule set.
+**11 scRNA audit rules across 4 audits** (Audit 3: 4 + QC-MAD: 2 + Ambient
+Correction: 4 + QC-MAD Propagation: 1), plus the Audit 1 pathway rule set.
 
 - **Audit 3 (counting tools):** 4 rules — `phase2/audit3_counting/draft_rules/`
   (per-gene convergence, permissiveness chain, uniform caller, biological
@@ -26,6 +26,9 @@ Correction: 4), plus the Audit 1 pathway rule set.
   `phase2/audit_ambient_correction/draft_rules/` (tool non-equivalence,
   DecontX ordering sensitivity, correct→QC stricter, high-ambient biology
   propagation).
+- **Audit QC-MAD Propagation (QC method → biology):** 1 rule —
+  `phase2/audit_qc_mad_propagation/draft_rules/` (QC method choice has modest,
+  tissue-independent downstream effect — operational, not analytical).
 - **Audit 1 main (pathway enrichment):** rules — `phase2/draft_rules/`.
 - **Phase 2a (Audit 1 rules + A6):** deployed copies —
   `bioorchestrator/src/bioorchestrator/knowledge/rules/`.

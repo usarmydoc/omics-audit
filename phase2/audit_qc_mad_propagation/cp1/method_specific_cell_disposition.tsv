@@ -1,0 +1,36 @@
+dataset	method	vs	cells_kept_not_in_C2	annotated_label	n
+blood	MAD3	C2	1483	Classical monocytes	288
+blood	MAD3	C2	1483	MAIT cells	264
+blood	MAD3	C2	1483	CD16+ NK cells	172
+blood	MAD3	C2	1483	Naive B cells	156
+blood	MAD3	C2	1483	Tem/Trm cytotoxic T cells	116
+blood	MAD5	C2	2469	Classical monocytes	531
+blood	MAD5	C2	2469	MAIT cells	437
+blood	MAD5	C2	2469	CD16+ NK cells	277
+blood	MAD5	C2	2469	Naive B cells	230
+blood	MAD5	C2	2469	Tcm/Naive helper T cells	224
+liver	MAD3	C2	1024	T cells	704
+liver	MAD3	C2	1024	Macrophages	305
+liver	MAD3	C2	1024	Fibroblasts	9
+liver	MAD3	C2	1024	Basophils	3
+liver	MAD3	C2	1024	Cholangiocytes	3
+liver	MAD5	C2	1190	T cells	854
+liver	MAD5	C2	1190	Macrophages	317
+liver	MAD5	C2	1190	Fibroblasts	10
+liver	MAD5	C2	1190	Basophils	7
+liver	MAD5	C2	1190	Cholangiocytes	2
+small_intestine	C1	C2	6099	cDC2	1893
+small_intestine	C1	C2	6099	IgA plasma cell	1484
+small_intestine	C1	C2	6099	Activated CD4 T	1397
+small_intestine	C1	C2	6099	SELL+ CD4 T	434
+small_intestine	C1	C2	6099	LYVE1+ Macrophage	228
+small_intestine	MAD3	C2	10534	IgA plasma cell	2727
+small_intestine	MAD3	C2	10534	cDC2	2703
+small_intestine	MAD3	C2	10534	Activated CD4 T	1735
+small_intestine	MAD3	C2	10534	SELL+ CD4 T	1171
+small_intestine	MAD3	C2	10534	Mast cell	562
+small_intestine	MAD5	C2	11300	cDC2	3150
+small_intestine	MAD5	C2	11300	IgA plasma cell	3110
+small_intestine	MAD5	C2	11300	SELL+ CD4 T	1396
+small_intestine	MAD5	C2	11300	Activated CD4 T	1393
+small_intestine	MAD5	C2	11300	Mast cell	648

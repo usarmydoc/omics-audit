@@ -10194,6 +10194,350 @@
       "sha256": "90809e217033245a3278a04ab0c8230898d0afa17897085aaf0fc69467c53c52",
       "size_bytes": 5088
     },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/AUDIT_QC_MAD_PROPAGATION_SYNTHESIS.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp2_synthesis_rule",
+      "registered_at": "2026-05-25T12:01:55",
+      "sha256": "65dbd29ba8392934b62aa7bd6e53ec3d5a5ce5899bc05e3f44d9cb3334cf6535",
+      "size_bytes": 5659
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/RUN_STATUS.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp1_compare",
+      "registered_at": "2026-05-25T11:57:26",
+      "sha256": "6033386b157f8de18cf82aed446ef02d9c08058f5ff8195394260f42bf59dfca",
+      "size_bytes": 355
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/findings.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp1_compare",
+      "registered_at": "2026-05-25T11:57:26",
+      "sha256": "51984692bfda4d5661e215b3c91b31752bc6eb7c824a7b7fb21a54306b7c0594",
+      "size_bytes": 6097
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/method_specific_cell_disposition.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp1_compare",
+      "registered_at": "2026-05-25T11:57:26",
+      "sha256": "5106a711ada688ca32e15b571a905263c4afb4fd3d923143e87433c7a5ac6405",
+      "size_bytes": 1482
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_comparison_metrics.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp1_compare",
+      "registered_at": "2026-05-25T11:57:26",
+      "sha256": "b084d72fb31f85fdb260bd47d014385419b496b0fadb56a234088cd71dcf104c",
+      "size_bytes": 3474
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/C1.markers.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "cfb6384f8e17f1e09f7d98ba0fc6782f59ce0ae7e50c2af2e0e6ee4180dc9ab0",
+      "size_bytes": 34211
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/C1.obs.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "b4b72348fa6e25fef9101123de4239ce314076f58bde5cac598afe0f27df1235",
+      "size_bytes": 3949580
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/C1.summary.json": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "059b26de10453c747d4112b41164aeba033f6d7793666e9c93af9009f642e342",
+      "size_bytes": 285
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/C2.markers.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "0d70248cb61ec7cf1efe039470951d5cbb0de4ab6b3b948caada252187ab3ee2",
+      "size_bytes": 34231
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/C2.obs.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "2e9049ce9a3fa4ed791c2d9ff4603b57dd5b9c093b197c3c4fdd80a7097f0473",
+      "size_bytes": 4199061
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/C2.summary.json": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "7fce2af5e4d94f575b557092cd1033a139ba70038a49ecbbcb7020189aed32cd",
+      "size_bytes": 285
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/MAD3.markers.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "70537d971cc250e2953863b1ffe4b17243b1d649cadb25b8314b506dd4449437",
+      "size_bytes": 32691
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/MAD3.obs.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "1e00f760f913f90eae0c206a8f662bc842c4b6fe06c4e2a43e21980093185cb8",
+      "size_bytes": 4292569
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/MAD3.summary.json": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "99b13d1be2319832d712c50d25e36576427e50cb6e9d89559731e7b947b25743",
+      "size_bytes": 287
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/MAD5.markers.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "ca20898997823a105f705d1dc2182a71d04d6f0e7d9eb222d4c3a9d878950788",
+      "size_bytes": 31196
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/MAD5.obs.tsv": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "ea5d540ce0d8fb63375dcd55f92b4c0f4099e9748895a1a0639b8c69e119c1cb",
+      "size_bytes": 4431333
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/blood/MAD5.summary.json": {
+      "dataset": "blood",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "f57a52ffe40c20205e18f0a8acd8d392e88b79299f0d4568698f53f269e5f7fb",
+      "size_bytes": 287
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/C1.markers.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "11866ebd24951151d42bc97a3da8a487c1f81d656d198f6d8dd1596365a7a459",
+      "size_bytes": 91842
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/C1.obs.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "891758578ed815b19a3bbd4807704cdb08c3363efd09b77cce3660d9611abfde",
+      "size_bytes": 3615944
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/C1.summary.json": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "1b5547b7a1c156852e587dec9b719b706134493c8a13f90ab2ff8b4a435fea0f",
+      "size_bytes": 290
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/C2.markers.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "6a133a6c320562012ca7894694a2d6ce29a0ff3fe54e0e1da325205e08426d5b",
+      "size_bytes": 90303
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/C2.obs.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "eb7225244e614d11597a177395e50aa1168027722a35386647f9d630792380c7",
+      "size_bytes": 3740382
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/C2.summary.json": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "5e665a18c2ddf4c2be88cd9742995ad103ee08ab4f6fd4b90a906a9335d94944",
+      "size_bytes": 290
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/MAD3.markers.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "607fec3462d3758f8598fa06c7e9ac5c67f3d2aa2a6e8b095d2781aa47c544b3",
+      "size_bytes": 95004
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/MAD3.obs.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "2f0f65df8725c6ca47a81f5dc8ebb51f8cc9a63d3b9e0fd308802733664715c8",
+      "size_bytes": 3296693
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/MAD3.summary.json": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "c8e7fd841d94b1f3bc8732af0253424df017cdb3db415b423a0ecb16a6edd2ee",
+      "size_bytes": 292
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/MAD5.markers.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "d6c4270d4ac14242e07cffe048ba82dfe07b1ecb873aee59fc01c7bace0ebb95",
+      "size_bytes": 90405
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/MAD5.obs.tsv": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "d8ea39bc4c36735f6bd844b3ab60155a2e348eb045de940142ae56136907b5bc",
+      "size_bytes": 3646593
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/liver/MAD5.summary.json": {
+      "dataset": "liver",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "638570a4b37c55e12efcd154a43d411ac21ce07e354f240a83b404acec926b90",
+      "size_bytes": 292
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/C1.markers.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "993ead35342698905acf8f4552586b5f736e4eddf3cd21670b316e8d427a5276",
+      "size_bytes": 43418
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/C1.obs.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "c9049688c8bc8d1f951114a0af44e997e1d9643c57712941e3ea00cb10ad598c",
+      "size_bytes": 3477947
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/C1.summary.json": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "ed6ece5ed148f50f10745d5411d238178659ec2f9187230d90546a6e4b04f20b",
+      "size_bytes": 303
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/C2.markers.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "909e5fa76cff660f9f2f53986297b5c1afd52f72bea3b118506a33c61e689893",
+      "size_bytes": 41972
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/C2.obs.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "49a31fb9537b311642f02b2433829fab8c0cc7d4d97c507bf188327875279014",
+      "size_bytes": 3003455
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/C2.summary.json": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "5be0e92731fafe84d72d1a8d06d4c5c4956edf9428bb8718b4df06886d5c435b",
+      "size_bytes": 303
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/MAD3.markers.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "f2f869832d1ea3c42111c53ddadaff25fa48e2a8e2b523bffe8944a4e89ff382",
+      "size_bytes": 38833
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/MAD3.obs.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "5fdf53dc57a78360161728b320640aa726c1aaae0371baacc08f40942279c9b9",
+      "size_bytes": 3818192
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/MAD3.summary.json": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "5f6b116c69fa49d008fd6e06788f660db49dfb289cc78cccb7dc92aa1ea9586c",
+      "size_bytes": 305
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/MAD5.markers.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "7defda244b2f18f0f2e720aeef3f2fbb5b73533aabdea227eb9066d459b819ba",
+      "size_bytes": 38894
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/MAD5.obs.tsv": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "ee5dd9cc85a6d1ae39fbe565c930a7489d40e2942888210241436c5e4e553d7c",
+      "size_bytes": 3874025
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_condition/small_intestine/MAD5.summary.json": {
+      "dataset": "small_intestine",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "qcprop_cp1",
+      "registered_at": "2026-05-25T11:39:53",
+      "sha256": "c94aca1d7898246bc516ac2a8eaad371a9b7d528ac18dce0fafdf0da8ba12c5f",
+      "size_bytes": 305
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/per_stratum_bootstrap.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp1_compare",
+      "registered_at": "2026-05-25T11:57:26",
+      "sha256": "0e42bdb57154e11600d697d6790b76857a0ccb38334aacbbe00bb7367ff3b115",
+      "size_bytes": 1536
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/cp1/tool_failure_modes.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp1_compare",
+      "registered_at": "2026-05-25T11:57:26",
+      "sha256": "1270c119f0ab6b9f464a8770ef2c0a56ea40cd6cf62c5e8c9e71cd2d9e78da57",
+      "size_bytes": 2688
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_qc_mad_propagation/draft_rules/scrna_qc_method_choice_modest_propagation.yaml": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "qcprop_cp2_synthesis_rule",
+      "registered_at": "2026-05-25T12:01:55",
+      "sha256": "1e95214551b6079e69eb9b8a2afa90603278ce399631090ec483a8e80f6c7039",
+      "size_bytes": 6254
+    },
     "/mnt/nvme1/omics-audit/phase2/datasets/audit1_inputs.tsv": {
       "environment_id": "464cdbd07774154b",
       "kind": "documentation_v2_closeout",

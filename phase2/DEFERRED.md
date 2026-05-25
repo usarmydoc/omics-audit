@@ -71,11 +71,26 @@ OR a study needs the specific dimension. None committed.
 
 Extensions of the closed QC-MAD audit. Re-surface trigger (all): bandwidth +
 specific motivation. None committed.
-- **QC method downstream propagation** — does QC filtering-method choice cascade
-  to clustering / DE, or wash out? Addressable on the same 8 Census datasets by
-  running standard downstream pipelines under each filtering method (mirrors
-  Audit 3 C3's cell-calling→biology design). **Bounded.** Highest-value (closes
-  the same loop C3 closed for cell-calling).
+- **QC method downstream propagation** — **RESOLVED 2026-05-25 (audit
+  qc-mad-propagation CP0–CP2, CLOSED)** → `audit_qc_mad_propagation/`. 3 datasets
+  (blood/liver/small_intestine, soma_joinid-matched to QC-MAD) × 4 QC methods ×
+  downstream pipeline. **Finding: QC method choice is a modest, tissue-INDEPENDENT
+  effect (ARI 0.80–0.91 vs C2 everywhere; annotation 88–98%) — the edge-case
+  amplification of C3/Ambient-CP3 does NOT replicate; QC method is operational, not
+  analytical.** 1 rule. Surfaced the cross-audit pattern (counts-reshaping choices
+  propagate; cell-filtering choices don't). Synthesis:
+  `audit_qc_mad_propagation/AUDIT_QC_MAD_PROPAGATION_SYNTHESIS.md`. Follow-ups below.
+
+### QC-MAD-propagation follow-ups (surfaced at CP2 close, 2026-05-25)
+- **Broader replication** — lift the tissue-independence claim from 3 to all 8
+  QC-MAD datasets (flag_and_warn → stronger). **Small.**
+- **Extreme high-ambient testing** — does the no-propagation finding break at
+  ambient burden beyond small_intestine (e.g. tumor/organoid)? **Medium.**
+- **Downstream-parameter sensitivity** — does QC-method propagation depend on
+  clustering resolution / HVG choice (fixed at cp6 defaults here)? **Small-medium.**
+- **Cross-audit pattern as a rule** — revisit "counts-reshaping propagates,
+  cell-filtering doesn't" as a corpus-level rule after a 4th propagation test
+  (3 audits = suggestive, not yet load-bearing).
 - **Additional low-gene-cell tissue replication** — small_intestine demonstrated
   the gene-count-distribution mechanism (Rule 2); replicating on more low-gene
   tissues would lift Rule 2's generalization from conditional toward stronger.

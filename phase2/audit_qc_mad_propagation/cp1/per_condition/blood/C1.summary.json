@@ -1,0 +1,15 @@
+{
+  "dataset": "blood",
+  "method": "C1",
+  "n_survivors": 44538,
+  "n_postdoublet_genes": 21588,
+  "n_doublets": 7393,
+  "n_clusters": {
+    "r1.0": 23,
+    "r0.5": 16,
+    "r1.5": 26
+  },
+  "n_celltypist_labels": 19,
+  "celltypist_model": "Immune_All_Low.pkl",
+  "runtime_s": 156.4
+}

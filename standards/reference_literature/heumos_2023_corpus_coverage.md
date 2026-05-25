@@ -16,7 +16,7 @@ audit — not from the full DEFERRED list._
 | Read counting agreement | Audit 3 C1 (ρ~0.96, 9 datasets) | fills_gap |
 | Cell calling | Audit 3 C2/C3 (permissiveness chain + biological propagation) | extends |
 | Batch integration | Phase 1 p3 (bbknn/harmony/scanorama/scvi via ARI/LISI/kBET) | confirms |
-| QC filtering method (MAD vs quantile) | Audit QC-MAD (8 Census datasets; pair Jaccard 0.90–0.97; C2≈MAD3 0.969) | extends |
+| QC filtering method (MAD vs quantile) | Audit QC-MAD (8 Census datasets; pair Jaccard 0.90–0.97; C2≈MAD3 0.969) + **Audit QC-MAD Propagation** (biology: ARI 0.80–0.91, tissue-independent, modest) | extends |
 | QC — ambient RNA correction | Audit Ambient Correction (SoupX/CellBender/DecontX; 9 datasets + intestine/PBMC propagation; non-equivalent ρ 0.39–0.57; biology propagates on high-ambient) | extends |
 
 ## What's partially covered
