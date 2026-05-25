@@ -117,3 +117,26 @@ steps:
       - scrna_cell_calling_permissiveness_chain
       - scrna_cell_calling_biological_propagation_high_ambient
     first_referenced_in: "Audit 3 / 2026-05-23"
+
+  - name: scrnaseq_ambient_correction
+    description: >
+      scRNA-seq ambient (soup / free-floating) RNA correction on the
+      called-cell matrix. Covers SoupX (cluster-based soup profile from empty
+      droplets), CellBender remove-background (Bayesian VI on the raw droplet
+      distribution; also does its own cell-calling), and DecontX (celda;
+      per-cell mixture model on the cell-by-gene matrix). DISTINCT from
+      scrnaseq_cell_calling (which decides cell vs empty droplet) and from
+      scrnaseq_qc_filtering (which removes low-quality called cells). The
+      relevant axes are tool choice, correction-vs-QC ordering, and the
+      tissue's ambient burden (which modulates effect magnitude).
+    modalities: ["scRNA-seq"]
+    parameters_used:
+      - ambient_tool             # SoupX | CellBender | DecontX
+      - correction_qc_ordering   # correct_then_qc (O1) | qc_then_correct (O2)
+      - ambient_burden           # tissue ambient-RNA level (modulates effect severity)
+    referenced_by_rules:
+      - scrna_ambient_correction_tool_non_equivalence
+      - scrna_ambient_correction_decontx_ordering_sensitivity
+      - scrna_ambient_correction_correct_then_qc_stricter
+      - scrna_ambient_correction_high_ambient_biology_propagation
+    first_referenced_in: "Audit Ambient Correction / 2026-05-25"

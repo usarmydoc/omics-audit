@@ -1,0 +1,16 @@
+{
+  "dataset": "10x_pbmc_5k_v3.1",
+  "condition": "CellBender",
+  "n_cells_input": 5721,
+  "n_cells_postqc": 4619,
+  "n_genes": 22300,
+  "n_doublets": 202,
+  "n_clusters": {
+    "r1.0": 17,
+    "r0.5": 12,
+    "r1.5": 22
+  },
+  "n_celltypist_labels": 17,
+  "celltypist_model": "Immune_All_Low.pkl",
+  "runtime_s": 31.1
+}

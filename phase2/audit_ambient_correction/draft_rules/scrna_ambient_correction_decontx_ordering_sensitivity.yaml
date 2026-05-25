@@ -1,0 +1,88 @@
+# xref: Extends Heumos 2023 — Heumos does not address the order of ambient correction relative to QC. This rule shows DecontX (which Heumos does not cover) is ordering-sensitive. See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_ambient_correction_decontx_ordering_sensitivity
+  schema_version: "1.0.3"
+  status: draft
+  title: "DecontX ambient correction depends on whether QC precedes or follows correction"
+  description: >
+    Across 9 datasets, DecontX's per-gene contamination estimate changes
+    materially depending on whether QC is applied before correction (fit on
+    QC-passed cells) or after (fit on all called cells): pooled per-gene
+    Spearman between the two orderings is 0.81 (v2) / 0.86 (v3), dropping as
+    low as 0.38 (mouse kidney). By contrast SoupX is ordering-invariant
+    (Spearman ~0.99) and CellBender's correction is ordering-invariant by
+    construction (it learns ambient from the raw droplet distribution and
+    cannot be refit on a QC-passed subset). DecontX is the lone ordering-
+    sensitive tool because it fits a per-cell mixture model on the cell-by-gene
+    matrix, so the input cell population changes its estimate. Tiered
+    hard_default: the pattern is consistent across all 9 datasets and both
+    chemistries and is mechanistically explained.
+  created_date: "2026-05-25"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_ambient_correction
+        parameter: correction_qc_ordering
+      description: >
+        Fires at the scRNA-seq ambient-correction step when the tool is DecontX
+        and the correction-vs-QC ordering (correct_then_qc vs qc_then_correct)
+        is unspecified.
+  recommendation:
+    text: >
+      When using DecontX, pin and document the correction-vs-QC ordering: its
+      contamination estimate is ordering-sensitive (per-gene Spearman between
+      orderings 0.81-0.86 pooled, as low as 0.38 on one dataset), so an
+      unspecified order is a reproducibility hazard. SoupX and CellBender are
+      ordering-robust and do not require this. Companion metric (§3.4): report
+      the per-gene Spearman and global fraction-removed under each ordering so
+      the magnitude of the ordering effect is visible for the dataset at hand.
+    action_type: require_documentation
+  confidence_tier: hard_default
+  severity: warn
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: "AuditAmbientCorrection-CP2"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp2/per_dataset_ordering_metrics.tsv"
+        - "audit_ambient_correction/cp2/per_stratum_bootstrap.tsv"
+      lock_file_entries:
+        - "88493d74fb18baaa3eaedbf92ada52e2ba376b0a45e6f3181df40b4f48a4ea22"
+        - "2ab7d1877ac06bdb9c1fb12ad0d3eefcae7440722a8d881eb82a1b1cf339ba04"
+      findings_md_section: "audit_ambient_correction/cp2/findings.md#1-does-ordering-change-the-correction"
+      summary: >
+        9 datasets x 3 tools x 2 orderings (O1 correct->QC, O2 QC->correct).
+        Per-tool O1-vs-O2 per-gene Spearman: DecontX pooled 0.813 (v2) / 0.855
+        (v3), per-dataset 0.377-0.965; SoupX 0.992-0.999 (ordering-invariant);
+        CellBender invariant by design. Validated by the CellBender O1/O2 cell-
+        set sanity check (non-identical on all 9 datasets).
+    - audit_id: "AuditAmbientCorrection-CP2-findings"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp2/findings.md"
+      lock_file_entries:
+        - "483cb96d1717ab88bf0bc2f459f6ffc843e356e09b1351b4b179968efac35b9c"
+      findings_md_section: "audit_ambient_correction/cp2/findings.md#headline"
+      summary: >
+        Tool effects dominate ordering; cross-tool disagreement persists within
+        both orderings (≈ CP1). Ordering matters specifically for DecontX.
+  out_of_scope:
+    - "SoupX and CellBender (ordering-robust; no documentation requirement)"
+    - "Non-default DecontX parameters"
+    - "QC method other than the cp6/C2 fixed-floor used here"
+    - "Biological consequences of the ordering (see scrna_ambient_correction_high_ambient_biology_propagation)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_ambient_correction_tool_non_equivalence
+    - scrna_ambient_correction_correct_then_qc_stricter
+    - scrna_ambient_correction_high_ambient_biology_propagation
+  mechanism_notes: >
+    DecontX fits a per-cell Bayesian mixture model (contamination fraction per
+    cell) directly from the cell-by-gene matrix, so restricting the input to
+    QC-passed cells vs all called cells changes the fitted contamination
+    distribution and hence per-gene removal — most on heterogeneous / high-
+    ambient tissue (kidney rho 0.38). SoupX's global soup profile (from empty
+    droplets) and CellBender's raw-droplet VI do not depend on the called-cell
+    QC subset, so they are ordering-robust. Heumos 2023 does not discuss
+    ordering or DecontX; this rule fills both gaps. Extends Audit 3 C3.

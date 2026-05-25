@@ -1,0 +1,31 @@
+dataset	condition	baseline_label	n_reannotated
+pbmc	SoupX_O1	Tcm/Naive helper T cells	264
+pbmc	SoupX_O1	Tcm/Naive cytotoxic T cells	75
+pbmc	SoupX_O1	CD16+ NK cells	52
+pbmc	SoupX_O1	Regulatory T cells	28
+pbmc	SoupX_O1	Classical monocytes	5
+pbmc	DecontX_O1	Tcm/Naive helper T cells	274
+pbmc	DecontX_O1	CD16+ NK cells	67
+pbmc	DecontX_O1	Regulatory T cells	28
+pbmc	DecontX_O1	Naive B cells	26
+pbmc	DecontX_O1	Tcm/Naive cytotoxic T cells	14
+pbmc	CellBender	Tcm/Naive helper T cells	471
+pbmc	CellBender	CD16+ NK cells	75
+pbmc	CellBender	Regulatory T cells	26
+pbmc	CellBender	Tcm/Naive cytotoxic T cells	19
+pbmc	CellBender	Classical monocytes	6
+intestine	SoupX_O1	Epithelial	1570
+intestine	SoupX_O1	Cd11c Mac	1031
+intestine	SoupX_O1	Enterocyte	891
+intestine	SoupX_O1	Sirpa DC	680
+intestine	SoupX_O1	Enterocyte.prox	366
+intestine	DecontX_O1	Epithelial	2014
+intestine	DecontX_O1	Cd11c Mac	1457
+intestine	DecontX_O1	Enterocyte	707
+intestine	DecontX_O1	Sirpa DC	635
+intestine	DecontX_O1	Stem	373
+intestine	CellBender	Cd11c Mac	2775
+intestine	CellBender	Epithelial	2390
+intestine	CellBender	Sirpa DC	1500
+intestine	CellBender	Enterocyte	438
+intestine	CellBender	Enterocyte.prox	169

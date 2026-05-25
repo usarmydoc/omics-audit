@@ -13,6 +13,37 @@ Canonical drive: `/mnt/nvme1/omics-audit/`. Lock: `phase2/repro.lock`.
 | **Phase 2 / 2a — version & method sensitivity** | DESeq2/edgeR/limma version drift; clustering metric; mito threshold; muscat dream | COMPLETE | (folded into Audit 1 rule set) | `phase2/version_sensitivity/`, `phase2a/` |
 | **Audit 3 — scRNA-seq counting tools** | STARsolo / alevin-fry / kb-python: counts, cell-calling, biological propagation | **COMPLETE (2026-05-23)** | **4** (`audit3_counting/draft_rules/`) | `phase2/audit3_counting/` |
 | **Audit QC-MAD — low-quality cell filtering** | MAD vs quantile vs fixed-floor QC filtering on scRNA-seq | **COMPLETE (2026-05-23)** | **2** (`audit_qc_mad/draft_rules/`) | `phase2/audit_qc_mad/` |
+| **Audit Ambient Correction — ambient RNA removal** | SoupX / CellBender / DecontX: per-gene contamination equivalence, correction-vs-QC ordering, biological propagation | **COMPLETE (2026-05-25)** | **4** (`audit_ambient_correction/draft_rules/`) | `phase2/audit_ambient_correction/` |
+
+## Audit Ambient Correction — at a glance
+
+**Audit ID:** Audit Ambient Correction (scRNA-seq ambient RNA correction). **Status:** COMPLETE / CLOSED.
+**Work window:** 2026-05-24 → 2026-05-25 (extends Audit 3 C3).
+**Checkpoints:** CP0 (inventory + tool install; CellBender checkpoint patch) ·
+CP1 (per-gene contamination, 9 datasets × 3 tools) · CP2 (ordering analysis,
+2 orderings) · CP3 (biological propagation, intestine + PBMC) · CP4 (synthesis
++ 4 rules + closeout) — **all complete.**
+**Standards contributed:** none to AUDIT_STANDARDS.md (used existing §5.3.2);
+one registry extension `scrnaseq_ambient_correction` (no schema change).
+
+**Arc:** tools produce non-equivalent per-gene corrections (CP1, ρ 0.39–0.57;
+SoupX under-detects high ambient, CellBender tracks burden, DecontX most
+aggressive) → only DecontX is ordering-sensitive while correct→QC is
+universally stricter (CP2) → these differences propagate to clustering/markers/
+annotation on high-ambient intestine (ARI 0.50–0.70 vs baseline) and wash out
+on clean PBMC (0.85–0.90) (CP3).
+
+**4 rules** (`audit_ambient_correction/draft_rules/`, all `extends_prior`, all
+validate under `--strict-steps`):
+1. `scrna_ambient_correction_tool_non_equivalence` (hard_default / info)
+2. `scrna_ambient_correction_decontx_ordering_sensitivity` (hard_default / warn)
+3. `scrna_ambient_correction_correct_then_qc_stricter` (hard_default / info)
+4. `scrna_ambient_correction_high_ambient_biology_propagation` (flag_and_warn / warn)
+
+**Synthesis:** `phase2/audit_ambient_correction/AUDIT_AMBIENT_CORRECTION_SYNTHESIS.md`
+**Status detail:** `phase2/audit_ambient_correction/STATUS.md`. **Heumos:** extends.
+**Deferred follow-ups:** parameter sensitivity, tool–counting interaction,
+high-ambient replication — `phase2/DEFERRED.md`.
 
 ## Audit QC-MAD — at a glance
 

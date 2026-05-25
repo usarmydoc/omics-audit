@@ -1,0 +1,16 @@
+{
+  "dataset": "10x_pbmc_5k_v3.1",
+  "condition": "DecontX_O1",
+  "n_cells_input": 4751,
+  "n_cells_postqc": 4514,
+  "n_genes": 22158,
+  "n_doublets": 127,
+  "n_clusters": {
+    "r1.0": 16,
+    "r0.5": 10,
+    "r1.5": 21
+  },
+  "n_celltypist_labels": 16,
+  "celltypist_model": "Immune_All_Low.pkl",
+  "runtime_s": 30.1
+}

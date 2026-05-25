@@ -249,6 +249,89 @@
         "r_svn_revision": "89597",
         "r_version": "R version 4.5.3 (2026-03-11)"
       }
+    },
+    "e4e6d8cff97ac2d7": {
+      "captured_at": "2026-05-24T22:18:30-0500",
+      "hostname": "ross-MS-7E70",
+      "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
+      "python_packages": {
+        "anndata": "0.11.4",
+        "cellxgene_census": null,
+        "numpy": "1.26.4",
+        "pandas": "2.3.3",
+        "pydeseq2": null,
+        "scanpy": null,
+        "scipy": "1.15.3",
+        "scrublet": null,
+        "tiledbsoma": null
+      },
+      "python_version": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+      "r": {
+        "bioconductor_version": "3.22",
+        "captured_at": "2026-05-24T22:18:31-0500",
+        "packages": {
+          "Biobase": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:41 UTC; unix",
+            "date": "2025-10-29",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/Biobase",
+            "repository": "Bioconductor 3.22",
+            "version": "2.70.0"
+          },
+          "BiocGenerics": {
+            "built": "R 4.5.3; ; 2026-05-02 18:06:34 UTC; unix",
+            "date": "2025-10-29",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/BiocGenerics",
+            "repository": "Bioconductor 3.22",
+            "version": "0.56.0"
+          },
+          "Matrix": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 'Wed, 08 Apr 2026 00:59:51 +0000'; unix",
+            "date": "2026-03-20",
+            "installed": true,
+            "library": "/usr/lib/R/library/Matrix",
+            "repository": "CRAN",
+            "version": "1.7.5"
+          },
+          "S4Vectors": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:30 UTC; unix",
+            "date": "2026-04-05",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/S4Vectors",
+            "repository": "Bioconductor 3.22",
+            "version": "0.48.1"
+          },
+          "edgeR": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:07:38 UTC; unix",
+            "date": "2025-12-23",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/edgeR",
+            "repository": "Bioconductor 3.22",
+            "version": "4.8.2"
+          },
+          "limma": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-02 18:06:53 UTC; unix",
+            "date": "2025-10-21",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/limma",
+            "repository": "Bioconductor 3.22",
+            "version": "3.66.0"
+          },
+          "statmod": {
+            "built": "R 4.5.3; x86_64-pc-linux-gnu; 2026-05-22 23:59:59 UTC; unix",
+            "date": "2026-05-17",
+            "installed": true,
+            "library": "/home/ross/R/x86_64-pc-linux-gnu-library/4.5/statmod",
+            "repository": "CRAN",
+            "version": "1.5.2"
+          }
+        },
+        "r_arch": "x86_64",
+        "r_platform": "x86_64-pc-linux-gnu",
+        "r_svn_revision": "89597",
+        "r_version": "R version 4.5.3 (2026-03-11)"
+      }
     }
   },
   "repro_schema_version": "1.0",
@@ -8463,6 +8546,1548 @@
       "registered_at": "2026-05-23T08:31:02",
       "sha256": "c7d9162fe5f6db74dffc00e140b6dab5ecece75c4e4c417c1c7411b9fd909c32",
       "size_bytes": 4471
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/AUDIT_AMBIENT_CORRECTION_SYNTHESIS.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_cp4_synthesis_rules",
+      "registered_at": "2026-05-25T10:17:07",
+      "sha256": "260cfc35d86810451e89d40776a6d08c0c50e6240d336d4485a0d5351c9492ba",
+      "size_bytes": 7975
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/RUN_STATUS.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "5010c075d8c80c43eb1715bb3fa4c18c53779ec14071dd6ebcad98eedeca1952",
+      "size_bytes": 358
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/findings.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "2ac5e73494492f8b9ed4c47076adaf7b25c0471014fdb73d4bc1bba2619ea7fb",
+      "size_bytes": 6601
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_neuron_1k_v3/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "50d1cf98b51b979b8bbce93daa22d7a8c14649ff8d045d7914bbe9cee9a2c6cb",
+      "size_bytes": 2772776
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_neuron_1k_v3/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "c32dfe0287f391d8a224dcb6e261b5a0ee6676ebc277ce3127cfdd1970434b92",
+      "size_bytes": 170
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_neuron_1k_v3/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "f2f8c7961c1815fff6b4dd375b90025c321709fc8b6510e33e5299f9fc01a3f9",
+      "size_bytes": 2227174
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_neuron_1k_v3/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "9f6583cc2cd800266d2c4ad2847ceba5b1f4de8ce205582d8bf1476fdd5264af",
+      "size_bytes": 243
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_neuron_1k_v3/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "48b5a9810fdc82df962ea2f81fd4aaf065b29e9be926851d1b74650e0867c98e",
+      "size_bytes": 2193875
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_neuron_1k_v3/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "b2dd16df0597d0e496705d28e3f1924204254e9b7c7fa94c671840c6a1ee4d68",
+      "size_bytes": 214
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_10k_v3.1/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "6ad5745c17e40f4e01575a66e1dda744add297a96b8099d47129fb07cbf8ac73",
+      "size_bytes": 2710081
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_10k_v3.1/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "e34843c5f3900451e908da68d2ffc955d14a58134c22827c55d89bc692b06073",
+      "size_bytes": 171
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_10k_v3.1/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "b2cb0e3501ada1ca74660e28bebae9d92e8558eeab650403a26b941022f962c9",
+      "size_bytes": 2588761
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_10k_v3.1/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "2ae16ee493b0193b9d823a7086f04036e46d56e94921794e026da8b22eb04f9e",
+      "size_bytes": 239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_10k_v3.1/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "0f6537de64c51b5723871a9972956724d0b040ce55e94590ab8e862b045c6896",
+      "size_bytes": 2417830
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_10k_v3.1/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "21504af191c4f56d8840add51e40ee456a70a96b0f03ba87fad2396013554bb3",
+      "size_bytes": 215
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_1k_v3/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "25e6280123b749a6e1fbdf601c8ab6b852d4208be1d646e6558cbf0f52a74a19",
+      "size_bytes": 2669143
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_1k_v3/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "53b577b0fd163b5cb1471a632b8f9af46baa00f3b2e6c87cf1a66234d899fee8",
+      "size_bytes": 170
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_1k_v3/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "d1a3656b7679cff1b389f80f24273559e85023b0309061336ebe54826e7f6c88",
+      "size_bytes": 2399096
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_1k_v3/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "a303ac7658add1afcac13078e657e378ce0af10f3fb4c12a74fa945a20f7a30f",
+      "size_bytes": 239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_1k_v3/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "b9a6c3d2879d464cc12c4181b071b448ffaa652c2c9cf45c03be80431a51ed6b",
+      "size_bytes": 2327504
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_1k_v3/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "8b7f39e6ceb3f1d0f6f47c672ee51a82555ce3378f44dcdc79ca6bf820805a4b",
+      "size_bytes": 214
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_4k_v2/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "753062248e658b52f694467591abc2070aba8e88c53185109ce31864c9a742d0",
+      "size_bytes": 2679768
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_4k_v2/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "9dc2c6247ad164b4af79dea4ca63eb354425a4d3149b2fdba6a362444b729d70",
+      "size_bytes": 170
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_4k_v2/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "e61234da4404b8534c404b1e8495e7dc7db56eecbe62bae09d122ecde1112557",
+      "size_bytes": 2492314
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_4k_v2/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "136490e09a9d0744be4f64a301347d2d5d5f25603cf23d00135ad834149913aa",
+      "size_bytes": 239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_4k_v2/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "5a42fc5b975ee7c625fe062da87db02908e75d4dff60acac35c0e354ecef652b",
+      "size_bytes": 2375629
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_4k_v2/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "cfd696ec08df76a33712d181497f5758803be11b4f7584d132ad94214e4a2c5e",
+      "size_bytes": 219
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_5k_v3.1/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "536fa7ba3fb5738675071dc954372f1805f938409248ae9ce053e253b3d1ed83",
+      "size_bytes": 2686448
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_5k_v3.1/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "1801d7dd6b115377476868a321a7473d007109538324748f70951609667f4652",
+      "size_bytes": 168
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_5k_v3.1/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "1dd3018d2c2455fcdf4b231b0d25d74414d313b3cd94c4958b104e0aacf1b1d1",
+      "size_bytes": 2450799
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_5k_v3.1/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "0937d45d374cec98541f5177f3143f3b5aa8ed1e16324f8dcdd68a42728bce08",
+      "size_bytes": 234
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_5k_v3.1/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "5c38425914cef00e071f902d62f30c9272b16e720a3cb0cf01bd96a8c09b818e",
+      "size_bytes": 2376051
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_pbmc_5k_v3.1/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "56333d5d6ba81b7e4d9fcfb081ad5de867f93417c0be3cd9b8f586d2107d4d92",
+      "size_bytes": 214
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_t_3k_v2/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "dea36dfe917b211eb3ae3e49d81d6fc19189d22794897becbbee264d2d924c68",
+      "size_bytes": 2672855
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_t_3k_v2/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "1908a1e240a76c66cc23bb2128942979f0d00b0bbba3393e9092a30191fbf862",
+      "size_bytes": 169
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_t_3k_v2/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "8deeb8acf86e529830e2f8ab7c0bf19f556b134fbe3278bcf273a3c9a72ec9b2",
+      "size_bytes": 2357840
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_t_3k_v2/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "ae68bbc6e2d465bee51533e54d735e6e2d829889c238a61d5317786ed89a7cb5",
+      "size_bytes": 239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_t_3k_v2/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "bad9ce26f678e6a010f544ce496cc5f3f577eb841b27921503e4c697a09a59d6",
+      "size_bytes": 2378894
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/10x_t_3k_v2/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "74c4067008b13d5aea0114887b684042b5672160f1a53f91f73762d309bc4a2f",
+      "size_bytes": 218
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse287209_human_lung_organoid/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "001141787a92e0ef23ffd0cc3b77d0d191aaed4cb4b041046b0764597abbf8d9",
+      "size_bytes": 2739900
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse287209_human_lung_organoid/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "46425b588f1c9493cea46a9c4b13f538bac6177523b0d754aaef7c5ef6fbe899",
+      "size_bytes": 171
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse287209_human_lung_organoid/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "6ef37807799f058fac1b2d52341e14a6970e49a7ad841ac1dde95224aca1078a",
+      "size_bytes": 2689370
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse287209_human_lung_organoid/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "c04c5221df3744919f0af1262377449cf8f472a0b7c427c0347160ae8520d9f0",
+      "size_bytes": 239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse287209_human_lung_organoid/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "c5537f9831e5c89e5cc11af7058c0801b6d8c823965f702890f32ad857d3f25c",
+      "size_bytes": 2467206
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse287209_human_lung_organoid/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "7a48a98a8294d6616de669052d8269db597cee81c50466a7fda632e7fafe5969",
+      "size_bytes": 215
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse288156_mouse_intestine_scrna/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "fc7468d4660efa693b64988d0746392922703e13a5995817f7de343abdab9a37",
+      "size_bytes": 2831231
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse288156_mouse_intestine_scrna/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "a817d172b3d0658c384cc8c7ee625f384e0ada21decfbc1f9ea59712c302e8c4",
+      "size_bytes": 169
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse288156_mouse_intestine_scrna/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "fafa69bde797190228900cf13436a9c529a6d95b0dc9896b3c693da813d170f9",
+      "size_bytes": 2461500
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse288156_mouse_intestine_scrna/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "57620ca7c6d1f23bedc89055733ae5ddb87fa6d82bb80ec1c7aecd03d02e719a",
+      "size_bytes": 239
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse288156_mouse_intestine_scrna/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "e2eeab08cf9bb0358a3f3ed7c826f6537ae7ad34e4d9e5796bfbbb92142e22e4",
+      "size_bytes": 2309909
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse288156_mouse_intestine_scrna/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "7ca77b32ef7b6ea1200cebb78c100984e85770357bcb05c948e29e34333e4bae",
+      "size_bytes": 220
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse325955_mouse_kidney_E18_5/CellBender_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "6b7db478e0e9c3fc6ae7c3136e1104ef074be36639cd8fae4881aaedc33fb18e",
+      "size_bytes": 2830984
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse325955_mouse_kidney_E18_5/CellBender_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "2ee094c040585ce197e1ce96dcf61f53b0786dda2e08b41884179c8cfa7932d2",
+      "size_bytes": 170
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse325955_mouse_kidney_E18_5/DecontX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "45d65ed8601198a5d6bb3a036fec63e6e65d7301938c1afde8c28f1c866f3838",
+      "size_bytes": 2409489
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse325955_mouse_kidney_E18_5/DecontX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "b4cb576b79dc391fe351e74805d59b790fb49ccb0f3193aff01c2d6e75784c46",
+      "size_bytes": 244
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse325955_mouse_kidney_E18_5/SoupX_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "7f44c6548e8f109ae65baa92e726766e5e75127d34881d40b948253ec6f8b8be",
+      "size_bytes": 2324067
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset/gse325955_mouse_kidney_E18_5/SoupX_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "064f9396186e6610765c4d024e24313ac40b331af7e638e72fa51c858985cd2e",
+      "size_bytes": 215
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_dataset_metrics.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "41a5ee23ac33970338bd04d02be8b493105a6bc7cf68278ec73c096aa2589c87",
+      "size_bytes": 7504
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_gene_contamination.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "e1a7ad7cd1a215f2062d774c4238af3394812d47f230eb90798560bd68a8428b",
+      "size_bytes": 63870964
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/per_stratum_bootstrap.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "859187cbdb20d74da370d95a9754a3b1ca5eb6165e449f184ac58d304fbbc664",
+      "size_bytes": 596
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp1/tool_failure_modes.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_contamination_cp1",
+      "registered_at": "2026-05-24T22:18:31",
+      "sha256": "dd209f7075db62f500fab2593aeed91a188206ebef3e7ddd26d806943c7926db",
+      "size_bytes": 4367
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/RUN_STATUS.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "dc278898695759b6263ac2e16af85a7b3ea9341ca704b7efcb1974f2528c12fe",
+      "size_bytes": 393
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/cell_disposition.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "ca15d539ce8d03fb3c0486a88f594f9255365aec7a41e16bec382116ac767ea2",
+      "size_bytes": 1877
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/findings.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "483cb96d1717ab88bf0bc2f459f6ffc843e356e09b1351b4b179968efac35b9c",
+      "size_bytes": 8253
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "3168ada2bce6692e5c4b524a30e997c7aa24490f7a0bc6c113ab2193bca75bff",
+      "size_bytes": 2009648
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "b80e419a6c91bcd12389019006b7a56beb63f85accc14d4328a82b595502b351",
+      "size_bytes": 201
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "7cce40254dd3854a2c5c3fe08a1ed5215d20b3bf13d43ca9b7fb7cd37e1f8e2e",
+      "size_bytes": 2009657
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "ba44ce1433f08b8f376bda072c237e9b6f78913d53676697daa476a1f9b652c1",
+      "size_bytes": 200
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "ff095d6d15b74ce48fdda4589124d753a446186eee203d46f417cdf8329147f0",
+      "size_bytes": 2226394
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "e1871c96323bb1e2f8fc2903b64dfe246ff9bf1f832dddf6f96bcb69257315fc",
+      "size_bytes": 161
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "dfab486a6d7b33c83a7aff0cc23c7111b023c3ffa509c1d220d9a0d6dc3dfb74",
+      "size_bytes": 2234017
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5e0990b36e4bec57825c558d06a035c9f4b3ae01fdfe3f2487657d9aab321c7f",
+      "size_bytes": 158
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "2ecd23633425714c97cf6415923d88ad988ec7ee5214612961b1d29079128118",
+      "size_bytes": 2193132
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5e6a908ae7a0d3ac4a036fe762c49912e32a896f57470d5aec57f80624a843c8",
+      "size_bytes": 179
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "d854748534025caa79f94ae1631b3f095c2fcf2d4efed9e1974aeb14fe8a0437",
+      "size_bytes": 2193067
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_neuron_1k_v3/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "4c2ae54dd55d67f74fd569092b72c536866d1815052e066e2d434c9ad34d6dc2",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "f89285c4949ae42f33becc536d6c3117646a310b845968efa898f169fe9d38b1",
+      "size_bytes": 2216812
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "cbe2d14aec21644cc1e87a58d942f8b040f4fb7e81d124f6fd6f0fe971eba3c8",
+      "size_bytes": 203
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "c28051771548b46ab04979bc8e2ef0dac946bb7369eb556f3ecbd6847b7eaeba",
+      "size_bytes": 2216796
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "985cf9dd5fee566bc271bd68be0757df00dd60968dc4324f7690aa002f7e89fa",
+      "size_bytes": 203
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "a4fb18cd6372f04b30b1be035c1678bffe4a4ffde6fc96d2436ea114879a3c5b",
+      "size_bytes": 2585912
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "4536f15d63cf894c8577996d31ac3f2d2b8b9d38e2d9f21bd16efdd6a1222f74",
+      "size_bytes": 163
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "0ba9bf270c46fadc0940b7642c3ae45dca316ca06b054258aa61dff8ecf07765",
+      "size_bytes": 2586496
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "092c007b7be3c898b27b260b3e338c3c03f335e6e90e3ffcfa978982e747cf55",
+      "size_bytes": 161
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "70b275d997b138bd6bd3a4d5409bb04ae7ecb178dc62949f871821ded5b22404",
+      "size_bytes": 2417067
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5f001935e07cbc0d91f069036f4cf18732632d88d6a34f0bf2adc6120f85e741",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "a4c8bd1b9f1938923138aa84f91b74756f1f712b16fa2bfc4dc810068266910f",
+      "size_bytes": 2417585
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_10k_v3.1/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "bce4e1a5d50cf210c4df9c43df74d72c986612a00b8a0d31279d6b0fcab03fed",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "4ae5c7e25a3913602562460cc4ed7c90a0ae21d51fe17622452df238faf5b382",
+      "size_bytes": 2176048
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5bb366632a0df9c4caa9047c2a6bbfffb4bdd2e546e8165b665a849b6d0b4c13",
+      "size_bytes": 200
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "056bf5a85f5f7de7727ad92c8b2faacb067bd7045ddd0c23965837ff73c210a2",
+      "size_bytes": 2176091
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "bb2d8ad6f1c8a0deef5d08abcf230b66abb8407d1cb71a8e2ac69fbaaf6365bb",
+      "size_bytes": 200
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "5c77ea39273851adfed0306333027b41c79ae986b1b4d2bcc7e7faa2e4302017",
+      "size_bytes": 2398021
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "15aadde884d0def55f63bb84f7be551860b4e702d59e4e88a5f2f5525cfb083d",
+      "size_bytes": 160
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "41952e8ffde0626a73679e433a1494fadf01bf38c0f09a9f8d45e11960d7e004",
+      "size_bytes": 2399514
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "e38fd5fb5a9d46c648bbb78e1cea24e5e2fa41d3a4baa7d3a5daab19895b4540",
+      "size_bytes": 160
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "708bff449b249a5bfbfe55204f2aa2f95cade752de90516df92178061db4cc39",
+      "size_bytes": 2327170
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "c5d2e95370278a3df65ec28529869f7b105fcfefb2ed450444ec03e7d7d9c1fa",
+      "size_bytes": 176
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "4c6f7210a59b1fbad2d2131dd8b602679f19e4b14406c09958fcfcb28af11156",
+      "size_bytes": 2327115
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_1k_v3/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "650aa923af1c21be89bf0aad4a5c769be29da79748230a570c253d8630f511d6",
+      "size_bytes": 176
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "dfe14a13dd3f69e5a026d527d65c2a9fd094335be2a5dd39a45edfb90b95c86f",
+      "size_bytes": 2186466
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "39589bedc37a2100b075c3df8a2d9e7e6f3fd945575efe12a2c589ad768a1743",
+      "size_bytes": 201
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "cb6bba2fa1bccd6bb1304a9f1f3cbe70057d7703fe405d1307fbac85ea459650",
+      "size_bytes": 2186477
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "3c249463eefb8d3de955513605ac9e13617be814e0a8322f0113e27e09d4be56",
+      "size_bytes": 199
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "010bce1b883d0a199dafa86eb85995f81d1717ccd9e3f42fbb3eb6a1204fe905",
+      "size_bytes": 2489719
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "6ce9d4815fabee41108864e4e9ea9822a196ce807fba7f594197fb3fd59f566a",
+      "size_bytes": 159
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "d6b785ea5cbfd9ceb9dbf8749bbe6e43a4c4f396fc1429d3c057960a327aba24",
+      "size_bytes": 2489079
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "6b30f790b3d714273db7308d5f10e16fe52d1045cca92bb457dc66f3d1a35d5d",
+      "size_bytes": 158
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "c62785c8b30de42f93dc4f9a9f37a7e1bf9f009852b0636ce7fc69e97fad988a",
+      "size_bytes": 2374988
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "aca4183ff4092e7a31bc445f905f3f8566edab61435854d5065c4ad0072124e7",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "06890c1df1d815d3d4826821f5883795b6d66c5c30887e1dd4733eb2ed1c031c",
+      "size_bytes": 2374683
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_4k_v2/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "76d267cc6b376a27110f8b2c876225e9359b508abc979217df3acc9aafdb6da7",
+      "size_bytes": 176
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "7a1e7d132eb9e0c40c56c4c4a88759c95d7320692f554e2c988a17ceaa8bd96c",
+      "size_bytes": 2192842
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "950b12738c7f6d44083dc4287eb8cac6098fed54b3c46a95d63affa419e5911c",
+      "size_bytes": 201
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "aa94c6a62764d51770b5c05fe25099c3d85a4938cb551b79e0c376464193d546",
+      "size_bytes": 2192989
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "008b1b4ce3dc982e0c29cc505c80fbe9ddc25fa720757a3f176732b2cd754ff9",
+      "size_bytes": 201
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "874e80cd5eab9b6333bb880188ba693438baa05d74f7719353d64f889c9c295a",
+      "size_bytes": 2448626
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "b04279b9dc353aa8355a964be20230a9e0672a4b95416b967ad7bf4067f371ee",
+      "size_bytes": 162
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "0efcc3a6ceb6da91344472c0870a2aea0b3e404bad00fc0f928c89fbdd65f7b5",
+      "size_bytes": 2463363
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "f0c49dad1b14cfc8dddaf05a05f629944aa2027bd00b71563359cacc75a83eb1",
+      "size_bytes": 161
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "fe73021cd2a45ea7d9aadcb1bd1af1f241a65a6c5479255f1ef6b6559ee86cb7",
+      "size_bytes": 2375016
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "c927620a48d957228bf3ffd3a85fe2ce2b5697b2c188c163bf4e58347242b3e3",
+      "size_bytes": 180
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "a85e1bafe5afd606ffabe7de7df3ef0a34057ea7d486fadac259476c5248ee42",
+      "size_bytes": 2373509
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_pbmc_5k_v3.1/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "d8649ae962ab2ffdb8299203575dfab046713e913fb337bd5cc18f64cd1697a2",
+      "size_bytes": 177
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "282dcc92df472ff6d1afe5149862ff795e7482676bc9268f845aaea79f57c09d",
+      "size_bytes": 2179578
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "f408cc3d65c2467a2d191e5e0f70ccf3ca5d87baa640dc0afa84ffb4dd427bb6",
+      "size_bytes": 201
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "bdd45c3f17d17d4048d5d9c37942920b74debb1342b75a91392c43745e9730c5",
+      "size_bytes": 2179686
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "71e5c552ca639278dd574889d3152a80e16ea2525764dd345b53dc109461cfa4",
+      "size_bytes": 199
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "9bc136b0206dcc062c9e71b7d7bf45b3e9670079c152a20aa7e01383133e3e0e",
+      "size_bytes": 2355547
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "9786036f933e30565eedf3396c36fe83125b070f3de1ad9896258e6a262f01e4",
+      "size_bytes": 159
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "fe842a0045d9090db27dd3e7ab1da2cfb1d7eb6f36af3a7fb535d049563605de",
+      "size_bytes": 2423111
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "317ec09f90a5e306ee735a42df3f6b7988c3ef040278ed6b4c8de4d37675354e",
+      "size_bytes": 159
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "55684e6e11fcae0c415ecd7f7ca69877721aa9a32235acfe661e7ba1527abe2f",
+      "size_bytes": 2377881
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "ecbf94aeaf8aa4c93ed62b0e10255f05f8b114db1fa35d6ca946bc587ae093b2",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "de20d396061a205ba0a2bd6d71f45141dd447270df99973a7bee06d9ca2487ec",
+      "size_bytes": 2378257
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/10x_t_3k_v2/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "95ab6f2d09220eb5c0e784753b40be44ba61bf598ecad1b801352fb0b07439c4",
+      "size_bytes": 175
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "fa910835ad1ca75ba7fc3e152f8f25c5e172c8763d6cb1cd9be65508cc4a0f01",
+      "size_bytes": 2246496
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "48b5c66deaccb13ec7c0ab9621e7494efed2b22536fcaf76eaaadcb6de975a88",
+      "size_bytes": 201
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "b4ca465c4f01b520a1372620fcb4e874e5e20b1837f90b7c5b0e311deefbd13a",
+      "size_bytes": 2246556
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5c3669f514b611354e364204f8b0825aa38a53c74ffc84168bbb706b7d5a70fe",
+      "size_bytes": 202
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "065fffcaad7edc7e2f1c08fa4ab0c2a4418255e6ebda70e8c2920e14ba50c079",
+      "size_bytes": 2684074
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "ab0125b49a09b1149622249e28e616e25e905d75699471c93d9f53d94a63ff61",
+      "size_bytes": 163
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "622197146529a81393803ca616dd8f9c4f5512d6b8ac55627a58780ae6aa8859",
+      "size_bytes": 2683753
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "93dfc553d2613b44cc17a9d70c1da3b779f632a3434eb04e3bacc08adae11359",
+      "size_bytes": 161
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5e217b43eb914e71114a047e7ec43fd3886ea13bfcff58e610b010a04d09b0f4",
+      "size_bytes": 2466343
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "e7cb2da0b2fee8011855de01d2c2c21e5890818d3598be600314d6e794be3ae3",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "80891476a0f2ad3d0435687832f2488a3c83aca704cbea8015f9646bb94ecbc4",
+      "size_bytes": 2466584
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse287209_human_lung_organoid/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "336211afce21612041a3a6cd9a648a5aabcd114d193ef36faf2e53a45fceccee",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "8c612641d4f57383aeb5392fb8418c8965e2c267b93c2189810a88ca5ff2f92a",
+      "size_bytes": 2067232
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "3b3fa0334f6b1504ce8820c3dc25438778409de850117cca8c4416b8db52f10c",
+      "size_bytes": 198
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "978d315bdd2a2d3b8a8a5f68dd8705b7126d4536a0cdc8bc713b81dff8dd9015",
+      "size_bytes": 2067345
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "87fc58720088478ef58be3194233b1d22030b76d10dd442a07c4a528ea382541",
+      "size_bytes": 200
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "919cf2a20c6b2fe3cdbcf82a97b7a92c640f56a7bc6af064f150d5a1d7d81c61",
+      "size_bytes": 2455422
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "a7fecb2620393769c72ec72825aee3631a5950941ac4ca25a8418c33f72e020d",
+      "size_bytes": 164
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "f1ecd0d16b0d88b50f97c10a816f9d4e364f9c183ff07fe2e0d5fc2ab97a033b",
+      "size_bytes": 2460651
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "f9e4bd3ea6c63592403136676b354dabb8960c1363dd1aaf2b4ec52a4f6066ba",
+      "size_bytes": 162
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5e2e37c216c5545387a59380b99bac4285199d8a1a0b5f4f85895f0a15d4ce32",
+      "size_bytes": 2309260
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "ca290d6b69adda4b4c260043099ac80c4b62b894a4c2b70b27f29cf81e85f20c",
+      "size_bytes": 180
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "cc9f23dc34e0e607f4ee1b1cce085ac7ceec76a9c5e6b38ce678698a2a0c1bba",
+      "size_bytes": 2309323
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse288156_mouse_intestine_scrna/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "456f9a3ff6ba768eaabe8256a988ca68667ad5d2fa6d7d2039b6bb51f65b89c4",
+      "size_bytes": 180
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/CellBender_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "cfba21fbcb263a9475d43213fcb0536378e650f973cec0d7a2bd8b12cec57979",
+      "size_bytes": 2066897
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/CellBender_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "d27f9d30216870ddad9f4d0a51701d358caa52214dd08822e19d2e418b21dd0e",
+      "size_bytes": 203
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/CellBender_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5b0e5d58a60a5736ecb3376fd356e2c6b3e1635c4c036edc17cec7ed31b00c1e",
+      "size_bytes": 2066985
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/CellBender_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "b9e9587a9204f3f8266e1501d30090e6ee2052fbadb89faebd4ca632a8315da8",
+      "size_bytes": 203
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/DecontX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "9b92fc50c272b8e2c6d860f506c48cc25495f68063502bb799d2a56939f8c410",
+      "size_bytes": 2404042
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/DecontX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "5f5deb989d8ad1f50d07a2e81953adb47409bc537e703368fc147ff05e58a439",
+      "size_bytes": 162
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/DecontX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "681b1c28290588a960b765af0417919c11a05ad13f6b5280d3bde3f94d26b005",
+      "size_bytes": 2432774
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/DecontX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "e3d831c54e9f838303394211bb3f9b7a1827cb45729639c13d643106fffac8e9",
+      "size_bytes": 162
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/SoupX_O1_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "e14fbabcb28c6bbb053c879cce6678b41fd7742fd4c662d4751406134d13e586",
+      "size_bytes": 2322294
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/SoupX_O1_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "a1dc75fe7162f3e485b531bc3331f52f99700116800bbb9b15156379974ad131",
+      "size_bytes": 178
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/SoupX_O2_pergene.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "9ff5f7d964d34f29406db47f118135aacdb82a0083a90bda52c103efc6dd8159",
+      "size_bytes": 2322439
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset/gse325955_mouse_kidney_E18_5/SoupX_O2_summary.json": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:03",
+      "sha256": "28c41dfbd1808e539c75c7e52a31d4741451bb3dd2d905cc45f99e1f28c727a9",
+      "size_bytes": 179
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset_cross_tool_metrics.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "f25c07f562baa44d163c4917b53a99dce8ada9b5d4c932491d7041cccd057020",
+      "size_bytes": 4809
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_dataset_ordering_metrics.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "88493d74fb18baaa3eaedbf92ada52e2ba376b0a45e6f3181df40b4f48a4ea22",
+      "size_bytes": 3896
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/per_stratum_bootstrap.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "2ab7d1877ac06bdb9c1fb12ad0d3eefcae7440722a8d881eb82a1b1cf339ba04",
+      "size_bytes": 1582
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp2/tool_failure_modes.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_ordering_cp2",
+      "registered_at": "2026-05-24T22:48:02",
+      "sha256": "c51cacd46c687617004e1196ca1bb54fb58135d40d20ba26cb0e7cdb1c0fdd20",
+      "size_bytes": 3112
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/RUN_STATUS.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_propagation_cp3",
+      "registered_at": "2026-05-25T07:38:55",
+      "sha256": "359ae18af8655de57f4c672195d195af11a00229d9cc37f45f5542b890ef0700",
+      "size_bytes": 475
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/all_per_condition_metrics.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_propagation_cp3",
+      "registered_at": "2026-05-25T07:38:55",
+      "sha256": "2fc94ee487523e143141915997b6ed32b524793e9d4f99cec094ea8dacae9076",
+      "size_bytes": 1736
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/contested_cell_disposition.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_propagation_cp3",
+      "registered_at": "2026-05-25T07:38:55",
+      "sha256": "69ec8257c86c045d43adfaddc0d2d47669bd25fffb331f321a42546dbf3d1486",
+      "size_bytes": 1170
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/cross_condition_comparison.tsv": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_propagation_cp3",
+      "registered_at": "2026-05-25T07:38:55",
+      "sha256": "2e4f5e3484b51ef050fb0809d608be25c4aff7f80f216968b1dac4cb6d54b65a",
+      "size_bytes": 2813
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/findings.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_propagation_cp3",
+      "registered_at": "2026-05-25T07:38:55",
+      "sha256": "7c6189da3b20ba96317278c9e79c524f972b7bd33239ca139a2797ae1cd61cfb",
+      "size_bytes": 7340
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/CellBender.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_CellBender_markers",
+      "registered_at": "2026-05-25T07:25:06",
+      "sha256": "1e2df59c6d734318939e20ceb986579b8a24579b45702235a58c2207c145eed1",
+      "size_bytes": 36194
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/CellBender.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_CellBender_obs",
+      "registered_at": "2026-05-25T07:25:06",
+      "sha256": "d4ec5a8798bdd83694789e9938b08f265c3d1840722475658d74d3a4a715b21e",
+      "size_bytes": 1416518
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/CellBender.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_CellBender_summary",
+      "registered_at": "2026-05-25T07:25:06",
+      "sha256": "566252068dc5ab791189bae9685f5413c1e685883a41a1d58dbd399f609cb0cc",
+      "size_bytes": 339
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/DecontX_O1.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O1_markers",
+      "registered_at": "2026-05-25T07:32:17",
+      "sha256": "0acec05328bfa113071d1b0b9b6dc909fd0e5cbbda6a66bb6f03b4bdceb189da",
+      "size_bytes": 37660
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/DecontX_O1.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O1_obs",
+      "registered_at": "2026-05-25T07:32:17",
+      "sha256": "3d82b823ff41fcdbced5f05beee0f14b79359204d3590ba851fe32deb2ee1ac3",
+      "size_bytes": 1758032
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/DecontX_O1.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O1_summary",
+      "registered_at": "2026-05-25T07:32:17",
+      "sha256": "6e8706f61f39ef0863fbd2b2d93fcb61f16bef17a7e21020c7748113993f53f3",
+      "size_bytes": 340
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/DecontX_O2.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O2_markers",
+      "registered_at": "2026-05-25T07:34:32",
+      "sha256": "72a173c01e784dedd2877bd3cfbbd25238c1c06196f69bb9325a09bb4ee55bdc",
+      "size_bytes": 37710
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/DecontX_O2.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O2_obs",
+      "registered_at": "2026-05-25T07:34:32",
+      "sha256": "8ae606442b777209c2738a1356294a5bcc57af8ffabc4785f83083f9b3713524",
+      "size_bytes": 1757083
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/DecontX_O2.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O2_summary",
+      "registered_at": "2026-05-25T07:34:32",
+      "sha256": "da3d1ebb02abdffbeb087e8ee8db47b78adedcd3dec8e9374312362fe087cce6",
+      "size_bytes": 340
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/SoupX_O1.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O1_markers",
+      "registered_at": "2026-05-25T07:27:33",
+      "sha256": "34721746c310d2c750fd64de4caa686e0d599764403e1c607289f9664c2c9ac6",
+      "size_bytes": 37743
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/SoupX_O1.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O1_obs",
+      "registered_at": "2026-05-25T07:27:33",
+      "sha256": "5358a515a95d7f6b4e876d67bba3b8b4b7393b913d7cb38ae9104ff75403a08a",
+      "size_bytes": 1854606
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/SoupX_O1.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O1_summary",
+      "registered_at": "2026-05-25T07:27:33",
+      "sha256": "4493bb575c8d77791ada16dce617d7f4f2e6876cc5d482c9f5634a882ce051d3",
+      "size_bytes": 338
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/SoupX_O2.markers.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O2_markers",
+      "registered_at": "2026-05-25T07:30:02",
+      "sha256": "e748c378153613a32d608cbcf398459674db626361ba90583ada08bf16a68217",
+      "size_bytes": 36130
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/SoupX_O2.obs.tsv": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O2_obs",
+      "registered_at": "2026-05-25T07:30:02",
+      "sha256": "5627bb98ce89f7732b9834fbc7d9bd475b68ae1b50ae585676a6b05998b17a51",
+      "size_bytes": 1859722
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/intestine/SoupX_O2.summary.json": {
+      "dataset": "gse288156_mouse_intestine_scrna",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O2_summary",
+      "registered_at": "2026-05-25T07:30:02",
+      "sha256": "2f60db67c75924a5393952d60a725bc8ad37c182e8e0a9167fd514925211958c",
+      "size_bytes": 338
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/CellBender.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_CellBender_markers",
+      "registered_at": "2026-05-25T07:14:15",
+      "sha256": "9ce47e6c136d9d32dec6bea1f1b206a44801bbf4489cd6f9e74432924a60b90d",
+      "size_bytes": 25107
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/CellBender.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_CellBender_obs",
+      "registered_at": "2026-05-25T07:14:15",
+      "sha256": "0836fca079763a4782e85b350dc7b7b72fc85b96e3934d9729c7fe6cbadfdcd3",
+      "size_bytes": 440130
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/CellBender.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_CellBender_summary",
+      "registered_at": "2026-05-25T07:14:15",
+      "sha256": "b654f58e85bca604973ca357dd53f7747cfa05ec22a50b861036a517647755d9",
+      "size_bytes": 320
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/DecontX_O1.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O1_markers",
+      "registered_at": "2026-05-25T07:17:50",
+      "sha256": "1a109bbc86f5f1652839aa6d0b01fa36bf68dfa7ac039c5a1af7cbefaee32414",
+      "size_bytes": 23649
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/DecontX_O1.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O1_obs",
+      "registered_at": "2026-05-25T07:17:50",
+      "sha256": "cebc19693353c357d77390ea82a3429200670c3643ba639bdd3fbb97399ec027",
+      "size_bytes": 427884
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/DecontX_O1.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O1_summary",
+      "registered_at": "2026-05-25T07:17:50",
+      "sha256": "498eadd30266ef9418c95aa6a6118afd2063b4322b2c71717ae9a8dc7b98f4e3",
+      "size_bytes": 320
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/DecontX_O2.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O2_markers",
+      "registered_at": "2026-05-25T07:18:22",
+      "sha256": "f7977a2a3a69a2abef4cf4f5a701b288302d6a31ca7232208e20425b512aee53",
+      "size_bytes": 22121
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/DecontX_O2.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O2_obs",
+      "registered_at": "2026-05-25T07:18:22",
+      "sha256": "499225ca943f29c44cb5805ca6a6a09364991301afad1ae2747d2812a4941b78",
+      "size_bytes": 426152
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/DecontX_O2.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_DecontX_O2_summary",
+      "registered_at": "2026-05-25T07:18:22",
+      "sha256": "d138c21379958056e9946e53002b83b473b4aed17fa5b5a13a96d0cf612df256",
+      "size_bytes": 320
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/SoupX_O1.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O1_markers",
+      "registered_at": "2026-05-25T07:16:46",
+      "sha256": "67b44eb11534fd5a046bd60255debfd7572408cf0d5a6476e94a4cf7fc4fa25f",
+      "size_bytes": 25096
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/SoupX_O1.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O1_obs",
+      "registered_at": "2026-05-25T07:16:46",
+      "sha256": "8b7d7e48701bd1f30ec6611d038b66ec897583ad8cc9ce2758c22a01242bdfd0",
+      "size_bytes": 424472
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/SoupX_O1.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O1_summary",
+      "registered_at": "2026-05-25T07:16:46",
+      "sha256": "ac96a00b99bfb705a57884988a6e23ccffc98e46a4db321cea0a16b401c03be1",
+      "size_bytes": 318
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/SoupX_O2.markers.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O2_markers",
+      "registered_at": "2026-05-25T07:17:18",
+      "sha256": "b11080221cf9d82aabaf37b4f3f2301a3dcbb3541270c9fa6e71ad3d4a843f43",
+      "size_bytes": 26622
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/SoupX_O2.obs.tsv": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O2_obs",
+      "registered_at": "2026-05-25T07:17:18",
+      "sha256": "6c1045f8cebec1d703435efcea1312683c6250bd68a3ebb2dd239d6d1605433a",
+      "size_bytes": 423402
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/pbmc/SoupX_O2.summary.json": {
+      "dataset": "10x_pbmc_5k_v3.1",
+      "environment_id": "0d16e5eee33da990",
+      "kind": "cp3_SoupX_O2_summary",
+      "registered_at": "2026-05-25T07:17:18",
+      "sha256": "22b785c3ad40e701bf525a73ff2b2e4e28f474c9b9abff23d80f7fde285b220f",
+      "size_bytes": 318
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/cp3/tool_failure_modes.md": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_propagation_cp3",
+      "registered_at": "2026-05-25T07:38:55",
+      "sha256": "ecee74dbd24f17798420ba841bbd84b1a95d1fca64572331236abc15f5d3ac62",
+      "size_bytes": 2377
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/draft_rules/scrna_ambient_correction_correct_then_qc_stricter.yaml": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_cp4_synthesis_rules",
+      "registered_at": "2026-05-25T10:17:07",
+      "sha256": "4d45018686ab5c92e7e2e3c6088aa2343631f9d2722da078bca5bab1d9ee23a5",
+      "size_bytes": 4739
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/draft_rules/scrna_ambient_correction_decontx_ordering_sensitivity.yaml": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_cp4_synthesis_rules",
+      "registered_at": "2026-05-25T10:17:07",
+      "sha256": "0670520caab8d36ba18499102135362aa72b096324a3acb7031238fbd37c228f",
+      "size_bytes": 5061
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/draft_rules/scrna_ambient_correction_high_ambient_biology_propagation.yaml": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_cp4_synthesis_rules",
+      "registered_at": "2026-05-25T10:17:07",
+      "sha256": "28e93206de5f9d0e7a2784881e31c7bb68047edeefe233bbf71fa15c02c73a92",
+      "size_bytes": 6543
+    },
+    "/mnt/nvme1/omics-audit/phase2/audit_ambient_correction/draft_rules/scrna_ambient_correction_tool_non_equivalence.yaml": {
+      "environment_id": "e4e6d8cff97ac2d7",
+      "kind": "ambient_cp4_synthesis_rules",
+      "registered_at": "2026-05-25T10:17:07",
+      "sha256": "7a8ff6ee328f1a55da9d8a1c7a32b84920d261a501780f19ed8390e074972138",
+      "size_bytes": 5884
     },
     "/mnt/nvme1/omics-audit/phase2/audit_qc_mad/AUDIT_QC_MAD_SYNTHESIS.md": {
       "environment_id": "0d16e5eee33da990",

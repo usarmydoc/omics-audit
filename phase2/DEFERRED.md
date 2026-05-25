@@ -82,12 +82,27 @@ specific motivation. None committed.
   **Small, bounded.**
 - **Hybrid filtering methods** — median + N*MAD variants and other approaches
   not tested in the 4-method comparison. **Small, bounded.**
-- **Ambient RNA correction** — Phase 1 covered mito-QC; Heumos also recommends
-  ambient correction (SoupX / CellBender / DecontX). Gap: do these correct the
-  same contamination, and does the choice change DEGs/clusters? Natural
-  extension of the QC audit + relevant to Audit 3's ambient finding.
-  **Small-medium. Bounded.** Highest-value of the partials (ties to Audit 3
-  C3's ambient story).
+- **Ambient RNA correction** — **RESOLVED 2026-05-25 (CP0–CP4 complete, audit CLOSED)** →
+  `audit_ambient_correction/`. SoupX / CellBender / DecontX, 9 datasets +
+  intestine/PBMC biological propagation. Findings: tools NON-equivalent
+  (cross-tool ρ 0.39–0.57; SoupX under-detects high ambient, CellBender tracks
+  burden, DecontX most aggressive); only DecontX is ordering-sensitive;
+  correct→QC is universally stricter; tool/ordering propagate to biology on
+  high-ambient tissue (intestine ARI 0.50–0.70 vs baseline) and wash out on
+  clean PBMC (0.85–0.90). 4 rules contributed. Synthesis:
+  `audit_ambient_correction/AUDIT_AMBIENT_CORRECTION_SYNTHESIS.md`.
+  Follow-up candidates surfaced (below).
+
+### Ambient correction follow-ups (surfaced by Audit Ambient Correction CP4)
+- **Ambient correction parameter sensitivity** — this audit used defaults only.
+  Gap: do tuned parameters (SoupX manual rho, CellBender --expected-cells /
+  FPR, DecontX priors) close or widen the cross-tool gap? **Bounded.**
+- **Tool–counting interaction** — ambient correction was run only on STARsolo
+  upstream. Gap: does correction behave differently on alevin-fry / kb_count
+  outputs (different ambient-gene profiles)? Cross with Audit 3. **Medium.**
+- **High-ambient tissue replication** — biological propagation rests on n=1
+  high-ambient (intestine). Gap: replicate on additional high-ambient tissues
+  to move Finding 4 generalization from flag_and_warn toward hard_default.
 - **Normalization-by-purpose** — not a corpus project. Heumos: shifted-log for
   DR, Pearson residuals for HVG, scran for depth. Gap: does the
   normalization-method choice change downstream clustering/DE? **Medium.

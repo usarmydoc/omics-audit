@@ -1,0 +1,16 @@
+{
+  "dataset": "10x_pbmc_5k_v3.1",
+  "condition": "SoupX_O2",
+  "n_cells_input": 4520,
+  "n_cells_postqc": 4489,
+  "n_genes": 22155,
+  "n_doublets": 196,
+  "n_clusters": {
+    "r1.0": 18,
+    "r0.5": 10,
+    "r1.5": 22
+  },
+  "n_celltypist_labels": 16,
+  "celltypist_model": "Immune_All_Low.pkl",
+  "runtime_s": 30.3
+}

@@ -1,0 +1,82 @@
+# xref: Extends Heumos 2023 — Heumos does not specify whether ambient correction should precede or follow QC. This rule quantifies that "correct then QC" is stricter (removes more cells). See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_ambient_correction_correct_then_qc_stricter
+  schema_version: "1.0.3"
+  status: draft
+  title: "Applying ambient correction before QC removes more cells than the reverse order"
+  description: >
+    Across 9 datasets and all 3 tools, "correct -> QC" (O1) retains FEWER cells
+    than "QC -> correct" (O2). Ambient correction lowers per-cell counts;
+    computing QC thresholds (gene/UMI floors) on the corrected counts therefore
+    drops cells that would pass QC on the original counts. The gap is small on
+    clean data (correction removes ~1%) and large on high-ambient tissue:
+    under correct->QC, CellBender drops 2,347 more cells on the lung organoid
+    and 823 more on kidney than under QC->correct. The direction (O1 stricter)
+    is universal across all 9 datasets and both chemistries; tiered
+    hard_default and mechanistically explained.
+  created_date: "2026-05-25"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_ambient_correction
+        parameter: correction_qc_ordering
+      description: >
+        Fires at the scRNA-seq ambient-correction step when the
+        correction-vs-QC ordering is being chosen for any tool.
+  recommendation:
+    text: >
+      Choose the correction-vs-QC ordering deliberately: "correct -> QC"
+      computes QC on corrected (lowered) counts and so removes more cells than
+      "QC -> correct", with the gap scaling by ambient burden (up to ~2,300
+      extra cells dropped on high-ambient tissue). Neither order is wrong, but
+      the field's common "correct then QC" is the more conservative (stricter)
+      cell filter — document which order was used and be aware that switching
+      changes the retained-cell count. Companion metric (§3.4): report cells
+      retained under each ordering (cell-set Jaccard and O1-only/O2-only counts)
+      so the magnitude is visible per dataset.
+    action_type: flag_only
+  confidence_tier: hard_default
+  severity: info
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: "AuditAmbientCorrection-CP2-disposition"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp2/cell_disposition.tsv"
+      lock_file_entries:
+        - "ca15d539ce8d03fb3c0486a88f594f9255365aec7a41e16bec382116ac767ea2"
+      findings_md_section: "audit_ambient_correction/cp2/findings.md#3-cell-retention-asymmetry-correctqc-is-stricter-the-universal-ordering-effect"
+      summary: >
+        9 datasets x 3 tools. O2 (QC->correct) retains more cells than O1
+        (correct->QC) on every dataset (O2-only >> O1-only). High-ambient
+        extremes: CellBender lung O2-only=2,347, kidney 823; DecontX intestine
+        O2-only=1,221. Clean PBMC <130. Cell-set Jaccard 0.92-1.00.
+    - audit_id: "AuditAmbientCorrection-CP2-findings"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp2/findings.md"
+      lock_file_entries:
+        - "483cb96d1717ab88bf0bc2f459f6ffc843e356e09b1351b4b179968efac35b9c"
+      findings_md_section: "audit_ambient_correction/cp2/findings.md#3-cell-retention-asymmetry-correctqc-is-stricter-the-universal-ordering-effect"
+      summary: >
+        Universal direction (O1 stricter), magnitude scales with how much the
+        tool removes; biologically consequential on intestine (see CP3).
+  out_of_scope:
+    - "Non-default ambient correction parameters"
+    - "QC method other than the fixed-floor / cp6 QC used here"
+    - "Which ordering is 'correct' (descriptive direction, not a recommendation to switch)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_ambient_correction_decontx_ordering_sensitivity
+    - scrna_ambient_correction_high_ambient_biology_propagation
+  mechanism_notes: >
+    Ambient correction reduces each cell's total UMI and detected-gene counts.
+    A fixed QC floor (e.g. min 200 genes / 500 counts) applied to the corrected
+    matrix therefore fails some cells that passed on the uncorrected matrix —
+    so correct->QC is a strictly heavier filter than QC->correct. The size of
+    the effect tracks the fraction removed, hence it is large for CellBender on
+    high-ambient tissue (35% removal) and negligible on clean PBMC (~1%).
+    Heumos 2023 recommends ambient correction as an early step but does not
+    specify its order relative to QC; this rule quantifies that the order is
+    not neutral for cell retention. Extends Audit 3 C3.

@@ -1,0 +1,16 @@
+{
+  "dataset": "gse288156_mouse_intestine_scrna",
+  "condition": "SoupX_O1",
+  "n_cells_input": 21875,
+  "n_cells_postqc": 21807,
+  "n_genes": 29320,
+  "n_doublets": 1883,
+  "n_clusters": {
+    "r1.0": 25,
+    "r0.5": 15,
+    "r1.5": 29
+  },
+  "n_celltypist_labels": 13,
+  "celltypist_model": "Adult_Mouse_Gut.pkl",
+  "runtime_s": 145.6
+}

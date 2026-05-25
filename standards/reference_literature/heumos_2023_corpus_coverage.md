@@ -17,6 +17,7 @@ audit — not from the full DEFERRED list._
 | Cell calling | Audit 3 C2/C3 (permissiveness chain + biological propagation) | extends |
 | Batch integration | Phase 1 p3 (bbknn/harmony/scanorama/scvi via ARI/LISI/kBET) | confirms |
 | QC filtering method (MAD vs quantile) | Audit QC-MAD (8 Census datasets; pair Jaccard 0.90–0.97; C2≈MAD3 0.969) | extends |
+| QC — ambient RNA correction | Audit Ambient Correction (SoupX/CellBender/DecontX; 9 datasets + intestine/PBMC propagation; non-equivalent ρ 0.39–0.57; biology propagates on high-ambient) | extends |
 
 ## What's partially covered
 
@@ -25,7 +26,7 @@ All captured in `phase2/DEFERRED.md` → "Partially-covered gaps."
 
 | Area | Covered | Heumos dimension missed | DEFERRED? |
 |---|---|---|---|
-| QC — ambient RNA | mito threshold (p1) + filtering-method equivalence (Audit QC-MAD) | ambient RNA correction (SoupX/CellBender/DecontX) still uncovered | yes (ambient = high-value; MAD-vs-quantile now RESOLVED by Audit QC-MAD) |
+| QC — ambient RNA | mito threshold (p1) + filtering-method equivalence (Audit QC-MAD) + **ambient correction (Audit Ambient Correction)** | — (ambient RNA correction now RESOLVED) | no — ambient correction RESOLVED 2026-05-25 by Audit Ambient Correction |
 | Doublet | scDblFinder>Scrublet (p2/A5) | multi-method ensemble | yes (small) |
 | Clustering | resolution + metric (p9/A2) | Leiden-vs-Louvain algorithm itself | yes (small) |
 | Annotation | MarkerScore vs SingleR accuracy (p5) | CellTypist; 3-step workflow | yes (medium) |
@@ -57,11 +58,12 @@ No corpus coverage; captured in `phase2/DEFERRED.md`.
 
 ## Specific candidates worth considering when bandwidth allows
 
-1. **Ambient RNA correction** (SoupX vs CellBender vs DecontX). *Highest
-   value:* directly extends Audit 3 C3's ambient-burden finding (does
-   correcting ambient before cell-calling change the C3 propagation?),
-   qualitative-in-Heumos → quantifiable, durable, small-medium. Compounds an
-   existing headline.
+1. ~~**Ambient RNA correction** (SoupX vs CellBender vs DecontX).~~
+   **RESOLVED 2026-05-25 by Audit Ambient Correction** — tools non-equivalent
+   (ρ 0.39–0.57), only DecontX ordering-sensitive, correct→QC stricter,
+   biology propagates on high-ambient tissue. 4 rules. Follow-ups (parameter
+   sensitivity, tool–counting interaction, high-ambient replication) queued in
+   `phase2/DEFERRED.md`.
 2. **Normalization-by-purpose** (shifted-log vs Pearson-residual vs scran →
    downstream clustering/DE). Architectural, durable, the kind of "does the
    default choice matter" question the corpus answers well. Medium.

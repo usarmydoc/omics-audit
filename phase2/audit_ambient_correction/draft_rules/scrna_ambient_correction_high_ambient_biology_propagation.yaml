@@ -1,0 +1,107 @@
+# xref: Extends Heumos 2023 — Heumos recommends ambient correction without quantifying downstream biological consequences of tool/ordering choice. This rule shows those choices propagate to clustering/markers/annotation on high-ambient tissue. See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_ambient_correction_high_ambient_biology_propagation
+  schema_version: "1.0.3"
+  status: draft
+  title: "Ambient correction choices propagate to biology on high-ambient tissue"
+  description: >
+    The technical disagreements among ambient-correction tools (non-equivalence,
+    CP1) and DecontX's ordering sensitivity (CP2) propagate into downstream
+    biology, and the magnitude is governed by ambient burden. Running the
+    identical CP6 downstream pipeline (QC, scDblFinder, scry HVG, Leiden,
+    CellTypist) under each correction condition: on the clean PBMC control all
+    5 corrected conditions stay close to the no-correction baseline (ARI
+    0.85-0.90; cross-tool ARI 0.78-0.89; ordering effects negligible), but on
+    high-ambient intestine correction substantially alters clustering (ARI to
+    baseline 0.50-0.70), tools diverge from each other (cross-tool ARI
+    0.46-0.60), and DecontX's ordering choice shifts the result (O1 0.57 vs O2
+    0.66 vs baseline). CellBender is the most disruptive on intestine (ARI 0.50,
+    and its 35% removal + correct->QC drops 23% of cells). Existence-of-effect
+    is hard_default-strength (clear, tight, well-separated PBMC-vs-intestine
+    contrast, mirroring Audit 3 C3); generalization is limited to n=1 high-
+    ambient + n=1 control, so the binding tier is flag_and_warn.
+  created_date: "2026-05-25"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_ambient_correction
+        parameter: ambient_tool
+      description: >
+        Fires at the scRNA-seq ambient-correction step on high-ambient tissue
+        (high ambient_burden), where tool and ordering choices have downstream
+        biological consequences.
+  recommendation:
+    text: >
+      On high-ambient tissues (e.g. intestine, lung organoid), treat ambient
+      correction tool choice AND (for DecontX) ordering as decisions that affect
+      biological conclusions: clustering, markers, and cell-type annotation
+      shift materially between tools (cross-tool cluster ARI 0.46-0.60 vs ~0.85
+      on clean tissue) and CellBender's heavy correction can drop ~20% of cells.
+      Pin and document the tool + ordering, and acknowledge that conclusions may
+      change under a different choice; re-running a key analysis under a second
+      tool is advisable on high-ambient data. On clean, low-ambient tissue the
+      choice is effectively neutral (ARI 0.85-0.90 to baseline). Companion
+      metrics (§3.4): report ARI/NMI and annotation agreement vs the
+      no-correction baseline, plus cluster-matched marker Jaccard, so the
+      biological sensitivity is quantified for the dataset at hand.
+    action_type: require_documentation
+  confidence_tier: flag_and_warn
+  severity: warn
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: "AuditAmbientCorrection-CP3"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp3/all_per_condition_metrics.tsv"
+        - "audit_ambient_correction/cp3/cross_condition_comparison.tsv"
+      lock_file_entries:
+        - "2fc94ee487523e143141915997b6ed32b524793e9d4f99cec094ea8dacae9076"
+        - "2e4f5e3484b51ef050fb0809d608be25c4aff7f80f216968b1dac4cb6d54b65a"
+      findings_md_section: "audit_ambient_correction/cp3/findings.md#headline"
+      summary: >
+        2 datasets (intestine high-ambient, pbmc_5k clean control), 6 conditions
+        each through identical cp6 pipeline. ARI vs no-correction baseline: PBMC
+        0.85-0.90, intestine 0.50-0.70. Cross-tool ARI: PBMC 0.78-0.89,
+        intestine 0.46-0.60. DecontX O1-vs-baseline 0.566 vs O2 0.661 on
+        intestine (negligible on PBMC). CellBender intestine postQC 16,700 vs
+        baseline 21,807 (-23%). Bootstrap CIs tight (±0.01), PBMC/intestine
+        bands non-overlapping.
+    - audit_id: "AuditAmbientCorrection-CP3-findings"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp3/findings.md"
+      lock_file_entries:
+        - "7c6189da3b20ba96317278c9e79c524f972b7bd33239ca139a2797ae1cd61cfb"
+      findings_md_section: "audit_ambient_correction/cp3/findings.md#5-where-do-contested-cells-go"
+      summary: >
+        Contested cells reassign within related subtypes (T/NK compartment on
+        PBMC), not across major lineages — correction perturbs sub-clustering
+        granularity. Existence-of-effect hard_default; generalization
+        flag_and_warn (n=1 high-ambient + n=1 control, same structure as C3).
+  out_of_scope:
+    - "Generalization beyond n=1 high-ambient (intestine) + n=1 control (pbmc_5k) — flagged, needs replication"
+    - "Non-default ambient correction parameters"
+    - "QC method other than cp6 QC (used for C3-baseline comparability)"
+    - "Counting tools other than STARsolo upstream"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_ambient_correction_tool_non_equivalence
+    - scrna_ambient_correction_decontx_ordering_sensitivity
+    - scrna_ambient_correction_correct_then_qc_stricter
+    - scrna_cell_calling_biological_propagation_high_ambient
+  mechanism_notes: >
+    On clean tissue the tools remove little (~1%) and largely agree, so
+    downstream clustering/annotation barely moves (near-null control). On
+    high-ambient tissue the tools' divergent removal (SoupX ~1.5%, DecontX 21%,
+    CellBender 35% on intestine) reshapes the expression matrix differently,
+    splitting/merging clusters and reassigning fine subtypes; CellBender's
+    aggressive removal combined with correct->QC also discards ~20% of cells.
+    This is the biological realization of CP1's non-equivalence and CP2's
+    ordering effect. Heumos 2023 recommends ambient correction as initial QC
+    without quantifying these consequences; this audit shows the qualitative
+    framing is directionally right but underspecifies tool/ordering choices that
+    have substantive downstream effects where ambient burden is high. Extends
+    Audit 3 C3, which established high-ambient tissue as the regime where
+    upstream cell-handling choices diverge biologically; this rule adds ambient
+    correction as a second such variance source on the same regime.

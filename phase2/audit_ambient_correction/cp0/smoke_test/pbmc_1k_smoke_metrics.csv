@@ -1,0 +1,17 @@
+total_raw_counts,10387120
+total_output_counts,9368320
+total_counts_removed,1018800
+fraction_counts_removed,0.09808301049761628
+total_raw_counts_in_cells,9473111
+total_counts_removed_from_cells,104791
+fraction_counts_removed_from_cells,0.011061941531140087
+average_counts_removed_per_cell,81.35947204968944
+target_fpr,0.01
+expected_cells,1200
+found_cells,1288
+output_average_counts_per_cell,7273.540372670807
+ratio_of_found_cells_to_expected_cells,1.0733333333333333
+found_empties,3712
+fraction_of_analyzed_droplets_that_are_nonempty,0.2576
+convergence_indicator,not enough training epochs to compute (requires more than 20)
+overall_change_in_train_elbo,3693.206149953441

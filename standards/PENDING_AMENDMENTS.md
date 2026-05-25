@@ -6,6 +6,21 @@ implemented mid-audit (schema changes mid-audit are forbidden).
 
 ---
 
+## pipeline_step registry extension: scrnaseq_ambient_correction — ADOPTED 2026-05-25
+
+**STATUS: ADOPTED** into `pipeline_step_registry.yaml` (2026-05-25). Registry
+vocabulary extension only — **no schema change** (schema_version stays 1.0.3).
+Added the canonical step name `scrnaseq_ambient_correction` (ambient/soup RNA
+correction on the called-cell matrix: SoupX / CellBender / DecontX), distinct
+from `scrnaseq_cell_calling` and `scrnaseq_qc_filtering`. Parameters:
+`ambient_tool`, `correction_qc_ordering`, `ambient_burden`. Required before the
+4 Audit Ambient Correction rules could reference it (per the registry's
+"add before use" rule). Not ad-hoc: registered with full provenance and
+validated under `--strict-steps`. first_referenced_in: "Audit Ambient
+Correction / 2026-05-25".
+
+---
+
 ## §5.3.2 equivalence-finding tier criteria — ADOPTED 2026-05-23
 
 **STATUS: ADOPTED** into AUDIT_STANDARDS.md §5.3.2 (2026-05-23). Tier values

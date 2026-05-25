@@ -1,0 +1,99 @@
+# xref: Extends Heumos 2023 — Heumos names SoupX and CellBender as ambient-correction options to "consider" without empirical comparison, and does not cover DecontX. This rule quantifies that the three tools are NOT equivalent. See standards/reference_literature/heumos_2023_index.md.
+- rule_id: scrna_ambient_correction_tool_non_equivalence
+  schema_version: "1.0.3"
+  status: draft
+  title: "scRNA-seq ambient correction tools produce non-equivalent per-gene estimates"
+  description: >
+    Across 9 datasets (2 chemistries: 3' v2, v3; human + mouse; multiple
+    tissues), SoupX, CellBender, and DecontX produce non-equivalent per-gene
+    ambient contamination estimates at default settings. Cross-tool per-gene
+    Spearman is moderate at best — means 0.57 (SoupX vs CellBender), 0.41
+    (CellBender vs DecontX), 0.39 (SoupX vs DecontX); all 27 dataset x pair
+    values fall in 0.24-0.69, far below the rho>=0.90 §5.3.2 equivalence bar.
+    Three distinct, architecture-driven behaviors: CellBender tracks ambient
+    burden (~1% on clean PBMC to 35% on high-ambient intestine); DecontX is
+    systematically the most aggressive (up to ~26%); SoupX floors at ~1% on
+    6/9 datasets and fails to detect high ambient (intestine 1.5% vs
+    CellBender's 35%). This is an inverse-§5.3.2 finding: the equivalence
+    criteria are met in reverse (>=8 datasets, >=2 chemistries, the
+    DISagreement is robust and CIs are tight around moderate rho), so the
+    non-equivalence is tiered hard_default.
+  created_date: "2026-05-25"
+  trigger_conditions:
+    - condition_type: pipeline_step
+      parameters:
+        step: scrnaseq_ambient_correction
+        parameter: ambient_tool
+      description: >
+        Fires at the scRNA-seq ambient-correction step when choosing among
+        SoupX, CellBender, and DecontX.
+  recommendation:
+    text: >
+      Ambient correction tool choice is methodologically substantive: the three
+      tools do NOT produce equivalent per-gene contamination estimates
+      (cross-tool Spearman 0.39-0.57 mean; none >=0.7). Choosing a different
+      tool changes which genes are flagged as contaminated and by how much.
+      Document the tool used. Expect: CellBender to scale removal with ambient
+      burden, DecontX to remove the most, and SoupX to under-detect on
+      high-ambient tissue (it floored at ~1% even where CellBender found 35%).
+      Companion metrics reported alongside Spearman (§3.4): per-pair log2-ratio
+      distributions (directional magnitude), directional agreement (which tool
+      estimates higher), and gene-category stratification (mito, expression
+      decile).
+    action_type: flag_only
+  confidence_tier: hard_default
+  severity: info
+  prior_audit_relationship: extends_prior
+  evidence:
+    - audit_id: "AuditAmbientCorrection-CP1"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp1/per_dataset_metrics.tsv"
+        - "audit_ambient_correction/cp1/per_stratum_bootstrap.tsv"
+      lock_file_entries:
+        - "41a5ee23ac33970338bd04d02be8b493105a6bc7cf68278ec73c096aa2589c87"
+        - "859187cbdb20d74da370d95a9754a3b1ca5eb6165e449f184ac58d304fbbc664"
+      findings_md_section: "audit_ambient_correction/cp1/findings.md#headline"
+      summary: >
+        9 datasets, 2 chemistries, 3 tools. Per-gene contamination cross-tool
+        Spearman means: SoupX-CellBender 0.574 (0.49-0.69), CellBender-DecontX
+        0.411, SoupX-DecontX 0.391; pooled chemistry CIs tight (±0.003-0.008).
+        Global fraction removed: SoupX floors ~1% (6/9 datasets, incl intestine
+        1.5%), CellBender 1-35% (tracks ambient), DecontX 2.6-26%. Fails §5.3.2
+        equivalence (needs rho>=0.90).
+    - audit_id: "AuditAmbientCorrection-CP1-failuremodes"
+      audit_phase: "Phase 2"
+      output_paths:
+        - "audit_ambient_correction/cp1/findings.md"
+      lock_file_entries:
+        - "2ac5e73494492f8b9ed4c47076adaf7b25c0471014fdb73d4bc1bba2619ea7fb"
+      findings_md_section: "audit_ambient_correction/cp1/findings.md#magnitude-divergence-global-fraction-removed"
+      summary: >
+        Gene-ID integrity verified across all 3 tools (identical Ensembl
+        universe; C1 USA-mode check passed). Magnitudes within published tissue
+        expectations except SoupX's documented high-ambient under-detection.
+  out_of_scope:
+    - "Non-default ambient correction parameters (defaults only)"
+    - "Counting tools other than STARsolo as upstream (held constant)"
+    - "Whether non-equivalence propagates to biology (see scrna_ambient_correction_high_ambient_biology_propagation)"
+    - "Doublet detection, QC filtering, cell calling (other QC dimensions)"
+  applicability:
+    modalities: ["scRNA-seq"]
+    organisms: ["human", "mouse"]
+  related_rules:
+    - scrna_ambient_correction_decontx_ordering_sensitivity
+    - scrna_ambient_correction_high_ambient_biology_propagation
+    - scrna_cell_calling_biological_propagation_high_ambient
+  mechanism_notes: >
+    The three tools estimate ambient by different mechanisms, which explains the
+    disagreement: SoupX builds a global soup profile from empty droplets and
+    estimates a single contamination fraction (autoEstCont), which floored at
+    its ~0.01 lower bound on most datasets and under-detected high ambient;
+    CellBender learns ambient by Bayesian variational inference over the raw
+    droplet distribution, so its removal scales with true ambient burden;
+    DecontX fits a per-cell mixture model on the cell-by-gene matrix and is the
+    most aggressive. Heumos 2023 names SoupX and CellBender to "consider"
+    without comparing them and omits DecontX; this audit quantifies the
+    disagreement Heumos leaves qualitative and surfaces SoupX's high-ambient
+    under-detection, which a Heumos-following user would not anticipate.
+    Extends Audit 3 C3 (high-ambient tissue as a stress regime).

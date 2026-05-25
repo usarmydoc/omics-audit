@@ -1,0 +1,16 @@
+{
+  "dataset": "gse288156_mouse_intestine_scrna",
+  "condition": "CellBender",
+  "n_cells_input": 16726,
+  "n_cells_postqc": 16700,
+  "n_genes": 28599,
+  "n_doublets": 1025,
+  "n_clusters": {
+    "r1.0": 24,
+    "r0.5": 13,
+    "r1.5": 31
+  },
+  "n_celltypist_labels": 14,
+  "celltypist_model": "Adult_Mouse_Gut.pkl",
+  "runtime_s": 98.9
+}
