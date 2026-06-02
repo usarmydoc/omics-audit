@@ -91,16 +91,3 @@ python scrnaseq/master_run.py  # ~12 hours total
 ## Reproducibility
 
 All outputs include `repro.lock` files (via [repro-lock](https://github.com/usarmydoc/repro)) capturing the exact environment state at runtime. Census queries are pinned to version `2025-11-08`.
-
-## BioOrchestrator Integration
-
-Audit findings are encoded as machine-readable artifacts for [BioOrchestrator](https://github.com/usarmydoc/bioorchestrator):
-- **L2**: 5 prompt enrichment paragraphs (empirical guidance for LLM pipeline design)
-- **L3**: 18 validation rules appended to `scrna_seq.yaml`
-- **L4**: 13 Snakefile templates with real shell commands
-
-## Citation
-
-If you use this code or data, please cite:
-
-> [Manuscript in preparation]
